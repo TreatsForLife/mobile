@@ -32,19 +32,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pet.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="pet.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/controllers/pet.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="109" selection-start="4630" selection-end="4630" vertical-scroll-proportion="-14.4" vertical-offset="1188" max-vertical-offset="6138">
+            <state line="67" column="25" selection-start="2578" selection-end="2578" vertical-scroll-proportion="0.29777777" vertical-offset="1005" max-vertical-offset="6138">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pet.scss" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pet.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/pet.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="36" selection-start="1930" selection-end="1944" vertical-scroll-proportion="0.33333334" vertical-offset="1861" max-vertical-offset="5184">
+            <state line="114" column="36" selection-start="1930" selection-end="1944" vertical-scroll-proportion="-2.1954024" vertical-offset="1861" max-vertical-offset="5184">
               <folding />
             </state>
           </provider>
@@ -62,10 +62,19 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="0" selection-start="1486" selection-end="1486" vertical-scroll-proportion="-7.4814816" vertical-offset="500" max-vertical-offset="1422">
+            <state line="32" column="31" selection-start="1239" selection-end="1248" vertical-scroll-proportion="-20.814816" vertical-offset="14" max-vertical-offset="1422">
               <folding>
                 <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tipdialog.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/directives/tipdialog.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="53" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.0" vertical-offset="145" max-vertical-offset="900">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -92,15 +101,6 @@
         <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/pets.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state line="49" column="0" selection-start="949" selection-end="949" vertical-scroll-proportion="-16.666666" vertical-offset="432" max-vertical-offset="2196">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tipDialog.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/tipDialog.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="29" selection-start="1554" selection-end="1554" vertical-scroll-proportion="-8.481482" vertical-offset="1103" max-vertical-offset="1854">
               <folding />
             </state>
           </provider>
@@ -155,16 +155,17 @@
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/index.html" />
         <option value="$PROJECT_DIR$/www/templates/pet.html" />
-        <option value="$PROJECT_DIR$/www/js/controllers/pet.js" />
         <option value="$PROJECT_DIR$/www/lib/tfl/scss/pet.scss" />
+        <option value="$PROJECT_DIR$/www/js/directives/tipdialog.js" />
+        <option value="$PROJECT_DIR$/www/js/controllers/pet.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="64" />
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="1857" />
-    <option name="height" value="1057" />
+    <option name="height" value="1085" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -363,13 +364,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="24" width="1857" height="1057" extended-state="6" />
+    <frame x="64" y="-4" width="1857" height="1085" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7713987" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2580645" sideWeight="0.4996016" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25052193" sideWeight="0.4996016" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20508568" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -423,13 +424,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/js/controllers/welcome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="104" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="2736">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="9" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1008">
@@ -723,15 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1486" selection-end="1486" vertical-scroll-proportion="-7.4814816" vertical-offset="500" max-vertical-offset="1422">
-          <folding>
-            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/pets.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="94" selection-start="578" selection-end="578" vertical-scroll-proportion="-8.0" vertical-offset="0" max-vertical-offset="504">
@@ -746,16 +731,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controllers/pet.js">
+    <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/pet.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="109" selection-start="4630" selection-end="4630" vertical-scroll-proportion="-14.4" vertical-offset="1188" max-vertical-offset="6138">
+        <state line="114" column="36" selection-start="1930" selection-end="1944" vertical-scroll-proportion="-2.1954024" vertical-offset="1861" max-vertical-offset="5184">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/pet.scss">
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="36" selection-start="1930" selection-end="1944" vertical-scroll-proportion="0.33333334" vertical-offset="1861" max-vertical-offset="5184">
+        <state line="32" column="31" selection-start="1239" selection-end="1248" vertical-scroll-proportion="-20.814816" vertical-offset="14" max-vertical-offset="1422">
+          <folding>
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/directives/tipdialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="53" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.0" vertical-offset="145" max-vertical-offset="900">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers/pet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="25" selection-start="2578" selection-end="2578" vertical-scroll-proportion="0.29777777" vertical-offset="1005" max-vertical-offset="6138">
           <folding />
         </state>
       </provider>

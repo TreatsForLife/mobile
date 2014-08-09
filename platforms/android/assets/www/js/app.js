@@ -101,7 +101,7 @@ angular.module('clientApp', ['ionic',
                 return ('/welcome');
             } else if (!localStorage.user_pet_id) {
                 console.log('ROUTER: Redirecting to Pets');
-                return ('/pets');
+                return ('/pets/lonely');
             } else {
                 console.log('ROUTER: Redirecting to Pet');
                 return ('/pet');

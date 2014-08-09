@@ -8,6 +8,7 @@
 angular.module('clientApp', ['ionic',
         'ngResource',
         'ngSanitize',
+        'ngRoute',
         'ngAnimate',
         'timer',
     ])

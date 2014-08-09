@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="32" selection-start="1955" selection-end="1955" vertical-scroll-proportion="0.7383721" vertical-offset="392" max-vertical-offset="2106">
+            <state line="12" column="16" selection-start="501" selection-end="501" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="2124">
               <folding />
             </state>
           </provider>
@@ -45,15 +45,6 @@
         <entry file="file://$PROJECT_DIR$/www/js/controllers/welcome.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="106" column="21" selection-start="5382" selection-end="5382" vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="2682">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="31" selection-start="1239" selection-end="1248" vertical-scroll-proportion="-7.3333335" vertical-offset="378" max-vertical-offset="1476">
               <folding />
             </state>
           </provider>
@@ -113,6 +104,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="0" selection-start="2200" selection-end="2200" vertical-scroll-proportion="0.21028744" vertical-offset="815" max-vertical-offset="1476">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -143,12 +143,12 @@
         <option value="$PROJECT_DIR$/www/js/controllers/pet.js" />
         <option value="$PROJECT_DIR$/www/js/controllers/pets.js" />
         <option value="$PROJECT_DIR$/www/js/controllers/shop.js" />
-        <option value="$PROJECT_DIR$/platforms/android/assets/www/index.html" />
-        <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/lib/tfl/scss/root.scss" />
         <option value="$PROJECT_DIR$/www/lib/tfl/scss/tipDialog.scss" />
         <option value="$PROJECT_DIR$/www/lib/tfl/scss/navbar.scss" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/index.html" />
+        <option value="$PROJECT_DIR$/www/index.html" />
       </list>
     </option>
   </component>
@@ -701,27 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controllers/welcome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="21" selection-start="5382" selection-end="5382" vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="2682">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="31" selection-start="1239" selection-end="1248" vertical-scroll-proportion="-7.3333335" vertical-offset="378" max-vertical-offset="1476">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="46" selection-start="1269" selection-end="1269" vertical-scroll-proportion="-20.666666" vertical-offset="54" max-vertical-offset="1476">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/root.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="171" column="0" selection-start="3052" selection-end="3052" vertical-scroll-proportion="-8.814815" vertical-offset="2840" max-vertical-offset="6480">
@@ -745,7 +724,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="32" selection-start="1955" selection-end="1955" vertical-scroll-proportion="0.7383721" vertical-offset="392" max-vertical-offset="2106">
+        <state line="12" column="16" selection-start="501" selection-end="501" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="2124">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="0" selection-start="2259" selection-end="2259" vertical-scroll-proportion="0.29954615" vertical-offset="756" max-vertical-offset="1476">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers/welcome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="21" selection-start="5382" selection-end="5382" vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="2682">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="0" selection-start="2200" selection-end="2200" vertical-scroll-proportion="0.21028744" vertical-offset="815" max-vertical-offset="1476">
           <folding />
         </state>
       </provider>

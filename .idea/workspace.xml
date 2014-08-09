@@ -23,91 +23,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/platforms/android/FacebookLib/AndroidManifest.xml">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="39" selection-start="809" selection-end="809" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+            <state line="38" column="30" selection-start="1512" selection-end="1512" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="1818">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/platforms/android/FacebookLib/project.properties">
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="17" selection-start="583" selection-end="583" vertical-scroll-proportion="-10.08" vertical-offset="0" max-vertical-offset="378">
+            <state line="1" column="6" selection-start="20" selection-end="20" vertical-scroll-proportion="0.030456852" vertical-offset="0" max-vertical-offset="591">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="welcome.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="welcome.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/controllers/welcome.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="109" selection-start="714" selection-end="714" vertical-scroll-proportion="0.36" vertical-offset="0" max-vertical-offset="2718">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="project.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plugins/com.phonegap.plugins.facebookconnect/platforms/android/FacebookLib/project.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="17" selection-start="583" selection-end="583" vertical-scroll-proportion="-10.08" vertical-offset="0" max-vertical-offset="378">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utils.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/services/utils.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="67" selection-start="821" selection-end="836" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="774">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="android.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plugins/android.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="61" selection-start="1189" selection-end="1189" vertical-scroll-proportion="-10.888889" vertical-offset="84" max-vertical-offset="972">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="facebookconnect.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/platforms/android/res/values/facebookconnect.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="44" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="198">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plugins/com.phonegap.plugins.facebookconnect/platforms/android/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="124" selection-start="1719" selection-end="1719" vertical-scroll-proportion="16.76" vertical-offset="941" max-vertical-offset="1566">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="51" selection-start="2087" selection-end="2087" vertical-scroll-proportion="0.0" vertical-offset="521" max-vertical-offset="1476">
+            <state line="130" column="27" selection-start="6690" selection-end="6690" vertical-scroll-proportion="0.0" vertical-offset="1953" max-vertical-offset="2628">
               <folding />
             </state>
           </provider>
@@ -131,7 +68,6 @@
         <option value="$PROJECT_DIR$/platforms/android/assets/www/js/controllers/root.js" />
         <option value="$PROJECT_DIR$/www/js/controllers/root.js" />
         <option value="$PROJECT_DIR$/www/index.html" />
-        <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/www/lib/tfl/scss/welcome.scss" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/platforms/android/FacebookLib/AndroidManifest.xml" />
@@ -142,14 +78,16 @@
         <option value="$PROJECT_DIR$/platforms/android/res/values/facebookconnect.xml" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/js/controllers/welcome.js" />
         <option value="$PROJECT_DIR$/www/js/controllers/welcome.js" />
+        <option value="$PROJECT_DIR$/www/js/app.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="64" />
     <option name="y" value="-4" />
-    <option name="width" value="1857" />
-    <option name="height" value="1085" />
+    <option name="width" value="1303" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -376,16 +314,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-4" width="1857" height="1085" extended-state="6" />
+    <frame x="64" y="-4" width="1303" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7713987" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25052193" sideWeight="0.4996016" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20342731" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29561752" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5975232" sideWeight="0.5003984" order="9" side_tool="true" content_ui="tabs" />
@@ -393,10 +330,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25052193" sideWeight="0.4996016" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -414,9 +352,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3878205" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -436,11 +374,65 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/root.scss">
+    <entry file="file://$PROJECT_DIR$/www/js/controllers/welcome.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="201" column="1" selection-start="3647" selection-end="3647" vertical-scroll-proportion="0.0" vertical-offset="3236" max-vertical-offset="6480">
+        <state line="13" column="109" selection-start="714" selection-end="714" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="2718">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugins/com.phonegap.plugins.facebookconnect/platforms/android/FacebookLib/project.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="17" selection-start="583" selection-end="583" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="378">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/services/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="67" selection-start="821" selection-end="836" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="774">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugins/android.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="61" selection-start="1189" selection-end="1189" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="972">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/res/values/facebookconnect.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="44" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="198">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugins/com.phonegap.plugins.facebookconnect/platforms/android/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="124" selection-start="1719" selection-end="1719" vertical-scroll-proportion="0.0" vertical-offset="941" max-vertical-offset="1566">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="51" selection-start="2087" selection-end="2087" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="1476">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/root.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="201" column="1" selection-start="3647" selection-end="3647" vertical-scroll-proportion="0.0" vertical-offset="3236" max-vertical-offset="6480" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
@@ -459,9 +451,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="9" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1008">
-          <folding />
-        </state>
+        <state line="10" column="9" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1008" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/welcome.scss">
@@ -473,16 +463,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/controllers/root.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="51" selection-start="977" selection-end="977" vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="2286">
-          <folding />
-        </state>
+        <state line="21" column="51" selection-start="977" selection-end="977" vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="2286" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controllers/root.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="146" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="2268">
-          <folding />
-        </state>
+        <state line="3" column="146" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="2268" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -494,9 +480,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/controllers/welcome.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="62" selection-start="3260" selection-end="3260" vertical-scroll-proportion="0.0" vertical-offset="1170" max-vertical-offset="2646">
-          <folding />
-        </state>
+        <state line="65" column="62" selection-start="3260" selection-end="3260" vertical-scroll-proportion="0.0" vertical-offset="1170" max-vertical-offset="2646" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
@@ -538,16 +522,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bower.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="762">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="762" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/.bowerrc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="162">
-          <folding />
-        </state>
+        <state line="3" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="162" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/lib/ionic/css/ionic.css">
@@ -562,9 +542,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scss/ionic.app.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="29" selection-start="876" selection-end="876" vertical-scroll-proportion="-16.0" vertical-offset="0" max-vertical-offset="576">
-          <folding />
-        </state>
+        <state line="24" column="29" selection-start="876" selection-end="876" vertical-scroll-proportion="-16.0" vertical-offset="0" max-vertical-offset="576" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/navbar.scss">
@@ -589,32 +567,14 @@
         <state line="9" column="0" selection-start="139" selection-end="139" vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="270" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="610">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/controllers/root.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="51" selection-start="839" selection-end="839" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="2268">
-          <folding />
-        </state>
+        <state line="19" column="51" selection-start="839" selection-end="839" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="2268" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controllers/root.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="146" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2268">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="14" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="1728">
-          <folding />
-        </state>
+        <state line="3" column="146" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2268" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
@@ -626,9 +586,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/root.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="201" column="1" selection-start="3647" selection-end="3647" vertical-scroll-proportion="0.0" vertical-offset="3236" max-vertical-offset="6480">
-          <folding />
-        </state>
+        <state line="201" column="1" selection-start="3647" selection-end="3647" vertical-scroll-proportion="0.0" vertical-offset="3236" max-vertical-offset="6480" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/welcome.scss">
@@ -640,9 +598,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="9" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1008">
-          <folding />
-        </state>
+        <state line="10" column="9" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1008" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/FacebookLib/AndroidManifest.xml">
@@ -675,14 +631,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/plugins/android.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="61" selection-start="1189" selection-end="1189" vertical-scroll-proportion="-10.888889" vertical-offset="84" max-vertical-offset="972">
+        <state line="21" column="61" selection-start="1189" selection-end="1189" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="972">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plugins/com.phonegap.plugins.facebookconnect/platforms/android/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="124" selection-start="1719" selection-end="1719" vertical-scroll-proportion="16.76" vertical-offset="941" max-vertical-offset="1566">
+        <state line="29" column="124" selection-start="1719" selection-end="1719" vertical-scroll-proportion="0.0" vertical-offset="941" max-vertical-offset="1566">
           <folding />
         </state>
       </provider>
@@ -696,21 +652,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/controllers/welcome.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="40" selection-start="2981" selection-end="3060" vertical-scroll-proportion="0.49846154" vertical-offset="864" max-vertical-offset="2718">
-          <folding />
-        </state>
+        <state line="66" column="40" selection-start="2981" selection-end="3060" vertical-scroll-proportion="0.49846154" vertical-offset="864" max-vertical-offset="2718" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plugins/com.phonegap.plugins.facebookconnect/platforms/android/FacebookLib/project.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="17" selection-start="583" selection-end="583" vertical-scroll-proportion="-10.08" vertical-offset="0" max-vertical-offset="378">
+        <state line="14" column="17" selection-start="583" selection-end="583" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="378">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controllers/welcome.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="109" selection-start="714" selection-end="714" vertical-scroll-proportion="0.36" vertical-offset="0" max-vertical-offset="2718">
+        <state line="130" column="27" selection-start="6690" selection-end="6690" vertical-scroll-proportion="0.0" vertical-offset="1953" max-vertical-offset="2628">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="30" selection-start="1512" selection-end="1512" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="1818">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="6" selection-start="20" selection-end="20" vertical-scroll-proportion="0.030456852" vertical-offset="0" max-vertical-offset="591">
           <folding />
         </state>
       </provider>

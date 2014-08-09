@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('clientApp')
-    .controller('ShopCtrl', ['$scope', '$rootScope', '$routeParams', '$timeout', '$location', 'Treats', 'Pets', 'Donations', function ($scope, $rootScope, $routeParams, $timeout, $location, Treats, Pets, Donations) {
+    .controller('ShopCtrl', ['$scope', '$rootScope', '$stateParams', '$timeout', '$location', 'Treats', 'Pets', 'Donations', function ($scope, $rootScope, $stateParams, $timeout, $location, Treats, Pets, Donations) {
 
         console.log('ShopCtrl');
 
-        var pet_id = $routeParams['id'] || $rootScope.user_pet_id;
+        var pet_id = $stateParams['id'] || $rootScope.user_pet_id;
 
         $rootScope.bodyClass = 'shop';
         $rootScope.navbarTitle = 'החנות';

@@ -52,8 +52,8 @@ angular.module('clientApp', ['ionic',
             })
             .state('shop', {
                 url: "/shop/:id",
-                templateUrl: 'templates/pet.html',
-                controller: 'PetCtrl'
+                templateUrl: 'templates/shop.html',
+                controller: 'ShopCtrl'
             })
 
         /*

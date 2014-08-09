@@ -46,8 +46,10 @@
     }
   }
   .tip-dialog-point {
+    position: relative;
+
     &::before, &::after {
-      content: '';
+      content: ' ';
       border-style: solid;
       position: absolute;
       bottom: -40px;
@@ -67,6 +69,7 @@
       border-color: #f7f7f7 transparent transparent;
       z-index: 2;
     }
+
   }
   .tip-dialog-dog {
     position: absolute;

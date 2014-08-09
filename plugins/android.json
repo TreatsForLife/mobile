@@ -7,7 +7,25 @@
         "res/xml/config.xml": {
             "/*": {
                 "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"com.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>": 1,
-                "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>": 1
+                "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>": 1,
+                "<feature name=\"FacebookConnectPlugin\"><param name=\"android-package\" value=\"org.apache.cordova.facebook.ConnectPlugin\" /></feature>": 1,
+                "<access origin=\"https://m.facebook.com\" />": 1,
+                "<access origin=\"https://graph.facebook.com\" />": 1,
+                "<access origin=\"https://api.facebook.com\" />": 1,
+                "<access origin=\"https://*.fbcdn.net\" />": 1,
+                "<access origin=\"https://*.akamaihd.net\" />": 1
+            }
+        },
+        "res/values/facebookconnect.xml": {
+            "/*": {
+                "<string name=\"fb_app_id\">123456789</string>": 1,
+                "<string name=\"fb_app_name\">myApplication</string>": 1
+            }
+        },
+        "AndroidManifest.xml": {
+            "application": {
+                "<meta-data android:name=\"com.facebook.sdk.ApplicationId\" android:value=\"@string/fb_app_id\" />": 1,
+                "<activity android:label=\"@string/fb_app_name\" android:name=\"com.facebook.LoginActivity\" />": 1
             }
         }
     },
@@ -19,6 +37,11 @@
             "PACKAGE_NAME": "com.ionicframework.treatsforlife803933"
         },
         "org.apache.cordova.device": {
+            "PACKAGE_NAME": "com.ionicframework.treatsforlife803933"
+        },
+        "com.phonegap.plugins.facebookconnect": {
+            "APP_ID": "123456789",
+            "APP_NAME": "myApplication",
             "PACKAGE_NAME": "com.ionicframework.treatsforlife803933"
         }
     },

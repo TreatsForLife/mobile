@@ -13,6 +13,13 @@ module.exports = [
         "clobbers": [
             "device"
         ]
+    },
+    {
+        "file": "plugins/com.phonegap.plugins.facebookconnect/www/phonegap/plugin/facebookConnectPlugin/facebookConnectPlugin.js",
+        "id": "com.phonegap.plugins.facebookconnect.FacebookConnectPlugin",
+        "clobbers": [
+            "window.facebookConnectPlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -20,7 +27,8 @@ module.exports.metadata =
 {
     "com.ionic.keyboard": "1.0.2",
     "org.apache.cordova.console": "0.2.9",
-    "org.apache.cordova.device": "0.2.10"
+    "org.apache.cordova.device": "0.2.10",
+    "com.phonegap.plugins.facebookconnect": "0.7.0"
 }
 // BOTTOM OF METADATA
 });

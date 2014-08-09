@@ -92,7 +92,7 @@ angular.module('clientApp', ['ionic',
         $urlRouterProvider.otherwise('/welcome');
 
     })
-    .run(function ($location, $cookies) {
+    .run(function ($location) {
 
         if ($location.path().length <= 1) {
             console.log('localStorage', localStorage);

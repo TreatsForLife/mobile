@@ -5,12 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
-    -->
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -18,25 +13,61 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
   </head>
-  <body ng-app="starter" animation="slide-left-right-ios7">
+  <body ng-app="clientApp" ng-controller="RootCtrl" ng-class="bodyClass"  animation="slide-left-right-ios7" class="platform-android platform-cordova platform-webview">
     <!-- 
       The nav bar that will be updated as we navigate between views.
     -->
     <ion-nav-bar class="bar-stable nav-title-slide-ios7">
-      <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
-        Back
+      <ion-nav-back-button class="button-icon icon ion-ios7-arrow-back">
       </ion-nav-back-button>
     </ion-nav-bar>
-    <!-- 
-      The views will be rendered in the <ion-nav-view> directive below
-      Templates are in the /templates folder (but you could also
-      have templates inline in this html file if you'd like).
-    -->
-    <ion-nav-view></ion-nav-view>
+
+    <div ng-include="'views/partials/pushmenu.html'"></div>
+
+    <div class="navbar" ng-include="'views/partials/navbar.html'"></div>
+
+    <div player="player" show="show_player" video-src="player_src" is-edit-mode="false"></div>
+
+    <tip-dialog></tip-dialog>
+
+    <div class="container-wrapper" style="padding: 0">
+        <!--<div class="container {{bodyClass}} {{bodyBg}}" ng-class="{goingBack: goingBack, animated: canAnimate}"-->
+        <!--ng-view="" ng-class=""></div>-->
+        <div class="container {{bodyClass}} {{bodyBg}}" >
+            <ion-nav-view class="container {{bodyClass}} {{bodyBg}}" ></ion-nav-view>
+        </div>
+    </div>
+
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/Swipe/swipe.js"></script>
+    <script src="bower_components/angular-timer/dist/angular-timer.js"></script>
+    <script src="bower_components/momentjs/moment.js"></script>
+
+    <script src="js/services/utils.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/root.js"></script>
+    <script src="js/services/instagram.js"></script>
+    <script src="js/services/pets.js"></script>
+    <script src="js/controllers/pet.js"></script>
+    <script src="js/controllers/pets.js"></script>
+    <script src="js/controllers/welcome.js"></script>
+    <script src="js/directives/draggable.js"></script>
+    <script src="js/directives/tipdialog.js"></script>
+    <script src="js/services/pets.js"></script>
+    <script src="js/services/users.js"></script>
+    <script src="js/services/donations.js"></script>
+    <script src="js/controllers/shop.js"></script>
+    <script src="js/services/treats.js"></script>
+    <script src="js/directives/player.js"></script>
+
   </body>
 </html>

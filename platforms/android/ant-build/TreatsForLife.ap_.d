@@ -152,9 +152,9 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/tfl/fonts/Alef-regular.html \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/tfl/fonts/Alef-regular.svg \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/tfl/scss/pet.scss \
-/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/tfl/scss/ionic.app.scss \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/tfl/scss/navbar.scss \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/tfl/scss/pets.scss \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/tfl/scss/tfl.scss \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/tfl/scss/welcome.scss \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/tfl/scss/_consts.scss \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/tfl/scss/shop.scss \
@@ -920,6 +920,8 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/angular-scenario/bower.json \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/angular-scenario/jstd-scenario-adapter-config.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/angular-scenario/README.md \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/css/ionic.app.css \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/css/ionic.app.min.css \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/css/style.css \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/plugins/com.ionic.keyboard \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/plugins/org.apache.cordova.device \

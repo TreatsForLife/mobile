@@ -6,11 +6,6 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular.module('clientApp', ['ionic',
-        'ngCookies',
-        'ngResource',
-        'ngSanitize',
-        'ngTouch',
-        'ngRoute',
         'ngAnimate',
         'timer',
     ])

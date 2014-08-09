@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clientApp')
-    .controller('WelcomeCtrl', ['$scope', '$rootScope', '$cookies', '$timeout', '$interval', '$location', 'Users', function ($scope, $rootScope, $cookies, $timeout, $interval, $location, Users) {
+    .controller('WelcomeCtrl', ['$scope', '$rootScope', '$timeout', '$interval', '$location', 'Users', function ($scope, $rootScope, $timeout, $interval, $location, Users) {
         $rootScope.bodyClass = 'welcome';
 
         $scope.placeLogo = function (iterations) {

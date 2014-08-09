@@ -40,6 +40,11 @@ angular.module('clientApp', ['ionic',
                 templateUrl: 'templates/welcome.html',
                 controller: 'WelcomeCtrl'
             })
+            .state('pets', {
+                url: "/pets/:filter",
+                templateUrl: 'templates/pets.html',
+                controller: 'PetsCtrl'
+            })
 
         /*
          // Each tab has its own nav history stack:

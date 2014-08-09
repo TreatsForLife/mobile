@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clientApp')
-    .controller('PetCtrl', ['$scope', 'Pets', 'Donations', 'Treats', 'Users', '$rootScope', '$routeParams', '$timeout', '$interval', '$sce', '$location', function ($scope, Pets, Donations, Treats, Users, $rootScope, $routeParams, $timeout, $interval, $sce, $location) {
+    .controller('PetCtrl', ['$scope', 'Pets', 'Donations', 'Treats', 'Users', '$rootScope', '$stateParams', '$timeout', '$interval', '$sce', '$location', function ($scope, Pets, Donations, Treats, Users, $rootScope, $stateParams, $timeout, $interval, $sce, $location) {
 
         console.log('PetCtrl');
 
@@ -26,7 +26,7 @@ angular.module('clientApp')
         }
 
         $scope.getPetId = function () {
-            $scope.pet_id = $routeParams['id'] || $rootScope.user_pet_id;
+            $scope.pet_id = $stateParams['id'] || $rootScope.user_pet_id;
             if (!$scope.pet_id && $rootScope.user && $rootScope.user.pet && $rootScope.user.pet._id) {
                 $scope.pet_id = $rootScope.user.pet._id;
             }

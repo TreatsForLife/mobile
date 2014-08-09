@@ -8230,7 +8230,8 @@ div.container.pets, div.container.pet {
   div.container.pets .pets-pic, div.container.pet .pets-pic {
     display: block;
     width: 100%;
-    overflow: visible; }
+    overflow: visible;
+    height: 210px; }
     div.container.pets .pets-pic .pet, div.container.pet .pets-pic .pet {
       padding: 25px 15px 25px; }
   div.container.pets .pet, div.container.pet .pet {

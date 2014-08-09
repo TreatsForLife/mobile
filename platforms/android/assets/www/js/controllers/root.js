@@ -1,13 +1,12 @@
 'use strict';
 
 angular.module('clientApp')
-    .controller('RootCtrl', ['$scope', '$rootScope', '$timeout', '$cookies', '$location', '$sce', 'Donations', 'Users', function ($scope, $rootScope, $timeout, $cookies, $location, $sce, Donations, Users) {
+    .controller('RootCtrl', ['$scope', '$rootScope', '$timeout', '$location', '$sce', 'Donations', 'Users', function ($scope, $rootScope, $timeout, $location, $sce, Donations, Users) {
 
         console.log('APP VERSION: 1.0');
 
         $scope.isWeb = $(window).width() > 700;
 
-        console.log('Getting data from cookies', $cookies);
         console.log('Getting data from cookies', localStorage);
         $rootScope.fb_id = localStorage.fb_id;
         $rootScope.user_id = localStorage.user_id;

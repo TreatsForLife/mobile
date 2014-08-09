@@ -35,11 +35,9 @@ div.container.welcome {
     font-size: 30px;
   }
   .bottom-wrapper {
-    position: absolute;
-    bottom: 0;
-    left:5%;
+    position: relative;
+    margin:0 5%;
     width: 90%;
-    margin: 0;
     display: block;
     text-align: center;
     .welcome-app-explained {

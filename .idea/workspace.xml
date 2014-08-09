@@ -44,16 +44,25 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="6" selection-start="989" selection-end="989" vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="1692">
+            <state line="10" column="14" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="1728">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="welcome.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="welcome.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/controllers/welcome.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="133" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2646">
+            <state line="76" column="19" selection-start="3574" selection-end="3574" vertical-scroll-proportion="0.53333336" vertical-offset="1008" max-vertical-offset="2664">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="welcome.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/welcome.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="69" selection-start="413" selection-end="413" vertical-scroll-proportion="-3.3333333" vertical-offset="234" max-vertical-offset="2952">
               <folding />
             </state>
           </provider>
@@ -62,16 +71,16 @@
       <file leaf-file-name="root.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/controllers/root.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="43" selection-start="869" selection-end="869" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="2286">
+            <state line="21" column="51" selection-start="977" selection-end="977" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2286">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="root.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="root.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/controllers/root.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="146" selection-start="189" selection-end="189" vertical-scroll-proportion="0.08" vertical-offset="0" max-vertical-offset="2268">
+            <state line="3" column="146" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2268">
               <folding />
             </state>
           </provider>
@@ -98,27 +107,9 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="19" selection-start="186" selection-end="186" vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="1422">
+            <state line="51" column="51" selection-start="2087" selection-end="2087" vertical-scroll-proportion="-14.703704" vertical-offset="521" max-vertical-offset="1476">
               <folding>
                 <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ionic.app.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/css/ionic.app.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8623" column="0" selection-start="254079" selection-end="254079" vertical-scroll-proportion="0.0" vertical-offset="154269" max-vertical-offset="155322">
-              <folding>
-                <marker date="1407547730990" expanded="true" signature="252559:252589" placeholder="{...}" />
-                <marker date="1407547730990" expanded="true" signature="252608:252635" placeholder="{...}" />
-                <marker date="1407547730990" expanded="true" signature="252725:252752" placeholder="{...}" />
-                <marker date="1407547730990" expanded="true" signature="252783:253010" placeholder="{...}" />
-                <marker date="1407547730990" expanded="true" signature="253044:253436" placeholder="{...}" />
-                <marker date="1407547730990" expanded="true" signature="253507:253571" placeholder="{...}" />
-                <marker date="1407547730990" expanded="true" signature="253624:253723" placeholder="{...}" />
-                <marker date="1407547730990" expanded="true" signature="253761:253928" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -140,12 +131,13 @@
         <option value="$PROJECT_DIR$/scss/ionic.app.scss" />
         <option value="$PROJECT_DIR$/www/lib/tfl/scss/tfl.scss" />
         <option value="$PROJECT_DIR$/www/lib/tfl/scss/root.scss" />
-        <option value="$PROJECT_DIR$/www/index.html" />
-        <option value="$PROJECT_DIR$/www/js/app.js" />
-        <option value="$PROJECT_DIR$/www/js/controllers/welcome.js" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/js/controllers/welcome.js" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/js/controllers/root.js" />
         <option value="$PROJECT_DIR$/www/js/controllers/root.js" />
+        <option value="$PROJECT_DIR$/www/index.html" />
+        <option value="$PROJECT_DIR$/www/js/app.js" />
+        <option value="$PROJECT_DIR$/www/js/controllers/welcome.js" />
+        <option value="$PROJECT_DIR$/www/lib/tfl/scss/welcome.scss" />
       </list>
     </option>
   </component>
@@ -506,14 +498,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="8623" column="0" selection-start="254079" selection-end="254079" vertical-scroll-proportion="0.0" vertical-offset="154269" max-vertical-offset="155322">
           <folding>
-            <marker date="1407547730990" expanded="true" signature="252559:252589" placeholder="{...}" />
-            <marker date="1407547730990" expanded="true" signature="252608:252635" placeholder="{...}" />
-            <marker date="1407547730990" expanded="true" signature="252725:252752" placeholder="{...}" />
-            <marker date="1407547730990" expanded="true" signature="252783:253010" placeholder="{...}" />
-            <marker date="1407547730990" expanded="true" signature="253044:253436" placeholder="{...}" />
-            <marker date="1407547730990" expanded="true" signature="253507:253571" placeholder="{...}" />
-            <marker date="1407547730990" expanded="true" signature="253624:253723" placeholder="{...}" />
-            <marker date="1407547730990" expanded="true" signature="253761:253928" placeholder="{...}" />
+            <marker date="1407547730990" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1407547730990" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1407547730990" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1407547730990" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1407547730990" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1407547730990" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1407547730990" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1407547730990" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -525,39 +517,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="19" selection-start="186" selection-end="186" vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="1422">
-          <folding>
-            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/root.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="201" column="1" selection-start="3647" selection-end="3647" vertical-scroll-proportion="-14.148149" vertical-offset="3236" max-vertical-offset="6480">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="6" selection-start="989" selection-end="989" vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="1692">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/controllers/welcome.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="65" column="62" selection-start="3260" selection-end="3260" vertical-scroll-proportion="0.0" vertical-offset="837" max-vertical-offset="2646">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controllers/welcome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="133" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2646">
           <folding />
         </state>
       </provider>
@@ -571,14 +533,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/controllers/root.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="43" selection-start="869" selection-end="869" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="2286">
+        <state line="21" column="51" selection-start="977" selection-end="977" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2286">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controllers/root.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="146" selection-start="189" selection-end="189" vertical-scroll-proportion="0.08" vertical-offset="0" max-vertical-offset="2268">
+        <state line="3" column="146" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2268">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="14" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="1728">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="51" selection-start="2087" selection-end="2087" vertical-scroll-proportion="-14.703704" vertical-offset="521" max-vertical-offset="1476">
+          <folding>
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/root.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="201" column="1" selection-start="3647" selection-end="3647" vertical-scroll-proportion="-14.148149" vertical-offset="3236" max-vertical-offset="6480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/welcome.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="69" selection-start="413" selection-end="413" vertical-scroll-proportion="-3.3333333" vertical-offset="234" max-vertical-offset="2952">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers/welcome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="19" selection-start="3574" selection-end="3574" vertical-scroll-proportion="0.53333336" vertical-offset="1008" max-vertical-offset="2664">
           <folding />
         </state>
       </provider>

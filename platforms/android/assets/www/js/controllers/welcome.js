@@ -74,6 +74,7 @@ angular.module('clientApp')
         }
 
         $timeout(function () {
+            return;
             facebookConnectPlugin.getLoginStatus(['email'], function (response) {
                 console.log('Response arrived from facebook', response);
                 if (response.status === 'connected') {

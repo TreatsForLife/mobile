@@ -6,6 +6,8 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular.module('clientApp', ['ionic',
+        'ngResource',
+        'ngSanitize',
         'ngAnimate',
         'timer',
     ])
@@ -35,7 +37,7 @@ angular.module('clientApp', ['ionic',
             // setup an abstract state for the tabs directive
             .state('welcome', {
                 url: "/welcome",
-                templateUrl: 'views/welcome.html',
+                templateUrl: 'templates/welcome.html',
                 controller: 'WelcomeCtrl'
             })
 

@@ -7,7 +7,7 @@
                     <div class="pet">
                         <div class="pet-inner">
                             <div class="pet-pic" ng-click="playVideo(item.media.video)"
-                                 ng-style="{'background-image': 'url('+item.media.image+')', height: picHeight}">
+                                 ng-style="{'background-image': 'url('+item.media.image+')', height: picHeightPX}">
                                 <span class="pet-pic-play fa-stack fa-lg">
                                   <i class="fa fa-circle fa-stack-2x pet-pic-play-circle"
                                      ng-style="{lineHeight: (picHeight +'px')}"></i>
@@ -29,45 +29,30 @@
         </div>
     </div>
 
-    <!--<div id='slider-treats' class='swipe'>-->
-    <div class='treat-wrapper' ng-style="{height: grassHeight, padding: buttonMargin}">
+    <div class='treat-wrapper' ng-style="{height: grassHeightPX, padding: buttonMarginPX}">
         <div ng-if="showButton == 'buy'">
             <div class="pet-buy-button" ng-click="animateButton();"
-                 ng-style="{width:buttonHeight, height:buttonHeight}">
+                 ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
             </div>
         </div>
         <div ng-if="showButton == 'share'">
             <div class="pet-share-button" ng-click="animateShareButton();"
-                 ng-style="{width:buttonHeight, height:buttonHeight}">
+                 ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
             </div>
         </div>
         <div ng-if="showButton == 'adopt'" class="treat-share-wrapper">
             <div class="pet-adopt-button-gif" ng-click="animateAdoptButton();"
-                 ng-style="{width:buttonHeight, height:buttonHeight}">
+                 ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
             </div>
             <div class="pet-adopt-button" style="display:none;"
-                 ng-style="{width:buttonHeight, height:buttonHeight}">
+                 ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
             </div>
         </div>
         <div ng-if="showButton == 'love'">
             <div class="pet-like-button" ng-click="animateLikeButton();"
-                 ng-style="{width:buttonHeight, height:buttonHeight}">
+                 ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
             </div>
         </div>
-<!--
-        <div ng-if="showButton == 'love'" class="treat-love-wrapper" ng-click="loved = !loved">
-            <span class="" ng-style="{fontSize: (buttonHeight)}">
-                <span class="fa-stack fa-lg" ng-style="{fontSize: (buttonHeight/2)}" ng-show="!loved">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-heart-o fa-stack-1x color-white"></i>
-                </span>
-                <span class="fa-stack fa-lg" ng-style="{fontSize: (buttonHeight/2)}" ng-show="loved">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-heart fa-stack-1x color-red"></i>
-                </span>
-            </span>
-        </div>
--->
     </div>
 
 

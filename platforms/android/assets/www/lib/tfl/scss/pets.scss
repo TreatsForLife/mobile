@@ -25,7 +25,6 @@ div.container.pets, div.container.pet {
     display: block;
     width: 100%;
     overflow: visible;
-    height: 210px;
     .pet {
       padding: 25px 15px 25px;
     }
@@ -47,6 +46,7 @@ div.container.pets, div.container.pet {
         background-size: cover;
         display: block;
         line-height: 0;
+        height: 210px;
         .pet-pic-play{
           line-height: inherit;
           width: 100%;

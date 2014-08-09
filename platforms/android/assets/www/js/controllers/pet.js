@@ -122,11 +122,11 @@ angular.module('clientApp')
                     $scope.picHeight = $scope.windowHeight - ($scope.grassHeight + 62) - 40 - ($scope.showCart ? 50 : 0);
                 }
 
-                $scope.picHeight += 'px';
-                $scope.grassHeight += 'px';
-                $scope.buttonMargin += 'px';
-                $scope.buttonHeight += 'px';
-                $scope.buttonWidth += 'px';
+                $scope.picHeightPX = $scope.picHeight + 'px';
+                $scope.grassHeightPX = $scope.grassHeight + 'px';
+                $scope.buttonMarginPX = $scope.buttonMargin + 'px';
+                $scope.buttonHeightPX = $scope.buttonHeight + 'px';
+                $scope.buttonWidthPX = $scope.buttonWidth + 'px';
 
 
                 if (iterations > 0) {

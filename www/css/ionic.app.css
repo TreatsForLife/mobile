@@ -8230,8 +8230,7 @@ div.container.pets, div.container.pet {
   div.container.pets .pets-pic, div.container.pet .pets-pic {
     display: block;
     width: 100%;
-    overflow: visible;
-    height: 210px; }
+    overflow: visible; }
     div.container.pets .pets-pic .pet, div.container.pet .pets-pic .pet {
       padding: 25px 15px 25px; }
   div.container.pets .pet, div.container.pet .pet {
@@ -8250,7 +8249,8 @@ div.container.pets, div.container.pet {
         background-position: center center;
         background-size: cover;
         display: block;
-        line-height: 0; }
+        line-height: 0;
+        height: 210px; }
         div.container.pets .pet .pet-inner .pet-pic .pet-pic-play, div.container.pet .pet .pet-inner .pet-pic .pet-pic-play {
           line-height: inherit;
           width: 100%;

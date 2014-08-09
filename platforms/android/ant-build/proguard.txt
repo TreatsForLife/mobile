@@ -5,5 +5,5 @@
 -keep class com.facebook.widget.LoginButton { <init>(...); }
 
 # view AndroidManifest.xml #generated:6
--keep class com.ionicframework.treatsforlife803933.TreatsForLife { <init>(...); }
+-keep class org.treatsforlife.app.TreatsForLife { <init>(...); }
 

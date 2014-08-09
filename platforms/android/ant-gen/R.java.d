@@ -1,4 +1,4 @@
-/home/guy/Projects/TreatsForLife/mobile/platforms/android/ant-gen/com/ionicframework/treatsforlife803933/R.java \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/ant-gen/org/treatsforlife/app/R.java \
  : /home/guy/Projects/TreatsForLife/mobile/platforms/android/FacebookLib/res/drawable-mdpi/com_facebook_button_blue_focused.9.png \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/FacebookLib/res/drawable-mdpi/com_facebook_tooltip_blue_topnub.png \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/FacebookLib/res/drawable-mdpi/com_facebook_inverse_icon.png \

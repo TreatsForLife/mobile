@@ -38,7 +38,9 @@ angular.module('clientApp')
         }
 
         $scope.getPet = function () {
+            console.log('Getting pet_id: ' + $scope.pet_id);
             Pets.one({id: $scope.pet_id}, function (pet) {
+                console.log('Found pet: ', pet);
                 $rootScope.pet = pet;
                 $rootScope.navbarTitle = pet.name;
                 $scope.donations = [];
@@ -46,7 +48,9 @@ angular.module('clientApp')
 
                 $scope.initButtonInterval();
 
+                console.log('Getting given donations: ' + $scope.pet_id);
                 Donations.given({pet_id: $scope.pet_id}, function (res) {
+                    console.log('Found given donations: ', res);
                     $timeout(function () {
                         for (var i = 0, donation; donation = res[i]; i++) {
                             $scope.donations.push(donation);
@@ -69,7 +73,9 @@ angular.module('clientApp')
                     $timeout(function () {
                         //get pending items
                         $scope.getPendingItems = function () {
+                            console.log('Getting pending donations: ' + $scope.pet_id);
                             Donations.pending({pet_id: $scope.pet_id}, function (res) {
+                                console.log('Found pending donations: ', res);
                                 $timeout(function () {
                                     $scope.pending = res;
                                     $scope.showCart = (res.length > 0);
@@ -200,32 +206,32 @@ angular.module('clientApp')
             });
         }
 
-        $scope.initButtonInterval = function(){
-        var showButtonInterval = $interval(function () {
-            if (!$scope.user || !$scope.pet) return;
-            if (!!($scope.pet.user && ($scope.pet.user._id == $scope.user._id))) {
-                // BUY : if its my pet
-                $scope.showButton = 'buy';
-                $rootScope.bodyBg = ' mine';
-            } else if (!!(!$scope.pet.user && $scope.user.pet)) {
-                // SHARE : if I have a pet and the pet has no owner
-                $scope.showButton = 'share';
-                $rootScope.bodyBg = ' lonely';
-            } else if (!!($scope.pet.user && ($scope.pet.user._id != $scope.user._id))) {
-                // LOVE : if the pet has owner and its not me
-                $scope.showButton = 'love';
-                $rootScope.bodyBg = ' adopted';
-            } else if (!$scope.pet.user && !$scope.user.pet) {
-                //ADOPT : if I have no pet and the this pet has no owner
-                $scope.showButton = 'adopt';
-                $rootScope.bodyBg = ' lonely';
-            } else {
-                $scope.showButton = false;
-            }
-            if ($scope.showButton)
-                $interval.cancel(showButtonInterval);
+        $scope.initButtonInterval = function () {
+            var showButtonInterval = $interval(function () {
+                if (!$scope.user || !$scope.pet) return;
+                if (!!($scope.pet.user && ($scope.pet.user._id == $scope.user._id))) {
+                    // BUY : if its my pet
+                    $scope.showButton = 'buy';
+                    $rootScope.bodyBg = ' mine';
+                } else if (!!(!$scope.pet.user && $scope.user.pet)) {
+                    // SHARE : if I have a pet and the pet has no owner
+                    $scope.showButton = 'share';
+                    $rootScope.bodyBg = ' lonely';
+                } else if (!!($scope.pet.user && ($scope.pet.user._id != $scope.user._id))) {
+                    // LOVE : if the pet has owner and its not me
+                    $scope.showButton = 'love';
+                    $rootScope.bodyBg = ' adopted';
+                } else if (!$scope.pet.user && !$scope.user.pet) {
+                    //ADOPT : if I have no pet and the this pet has no owner
+                    $scope.showButton = 'adopt';
+                    $rootScope.bodyBg = ' lonely';
+                } else {
+                    $scope.showButton = false;
+                }
+                if ($scope.showButton)
+                    $interval.cancel(showButtonInterval);
 
-        }, 250);
+            }, 250);
         }
 
         $scope.animateButton = function () {

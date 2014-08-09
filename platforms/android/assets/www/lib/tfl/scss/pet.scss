@@ -1,0 +1,282 @@
+@import '_consts';
+
+div.container.pet {
+
+  overflow: hidden;
+  transform: none;
+
+  &.adopted{
+    background-color: $scheme-yellow;
+  }
+
+  &.lonely{
+    background-color: $scheme-red;
+  }
+
+  &.mine{
+    background-color: $scheme-green;
+  }
+
+  #pet-pic {
+    margin-bottom: -10px;
+  }
+
+  .cart-wrapper {
+    background-color: $scheme-blue;
+    border-top: 1px solid #111;
+    transition: all 0.5s ease;
+    height: 100%;
+    position: fixed;
+    top: 100%;
+    margin-top: -50px;
+    width: 100%;
+    max-width: 600px;
+    z-index: 99;
+    &.up {
+      margin-top: 0;
+      padding-top: 40px;
+      top: 0;
+      overflow: auto;
+    }
+
+    .cart-items {
+      float: right;
+      line-height: 50px;
+      .cart-items-title {
+        font-size: 20px;
+        color: #fefefe;
+        float: right;
+        line-height: 50px;
+        text-align: right;
+        direction: rtl;
+      }
+      .pet-info {
+        font-size: 32px;
+        color: #fefefe;
+        float: right;
+        margin: 0 12px;
+        line-height: 50px;
+      }
+    }
+
+    .cart-center {
+      width: 100%;
+      text-align: center;
+      line-height: 50px;
+      height: 0;
+      div {
+        display: inline-block;
+        width: 20px;
+        height: 6px;
+        border: 1px solid #111;
+        border-width: 1px 0;
+        margin: 22px;
+      }
+    }
+
+    .cart-timer {
+      float: left;
+      line-height: 50px;
+      .pet-clock {
+        font-size: 32px;
+        color: #fefefe;
+        float: left;
+        line-height: 50px;
+        margin: 0 12px;
+      }
+
+      .pet-timer {
+        font-size: 20px;
+        color: #fefefe;
+        float: left;
+        height: 50px;
+      }
+    }
+
+    .cart-shop-title {
+      font-size: 16px;
+      color: #fefefe;
+      text-align: center;
+      padding: 15px;
+    }
+  }
+
+  .pet-treat {
+    width: 100px;
+  }
+
+}
+
+.treat-wrapper {
+  text-align: center;
+  margin-top: 0px;
+
+  .pet-buy-button {
+    background-image: url('/images/buy_button_row.png');
+    margin: auto;
+    background-position: 0 0;
+    background-size: auto 100%;
+  }
+
+  .pet-share-button {
+    background-image: url('/images/animated-share-button.png');
+    margin: auto;
+    background-position: 0 0;
+    background-size: auto 100%;
+  }
+
+  .pet-like-button {
+    background-image: url('/images/animated-like-button.png');
+    margin: auto;
+    background-position: 0 0;
+    background-size: auto 100%;
+  }
+
+  .pet-adopt-button-gif {
+    background-image: url('/images/animated-adopt-button.gif');
+    margin: auto;
+    background-position: 0 0;
+    background-size: auto 100%;
+  }
+  .pet-adopt-button {
+    background-image: url('/images/animated-adopt-button.png');
+    margin: auto;
+    background-position: 0 0;
+    background-size: auto 100%;
+  }
+
+  .treat-share-wrapper {
+    i {
+      color: $scheme-red;
+      &.fa-inverse {
+        color: white;
+      }
+    }
+  }
+  .treat-love-wrapper {
+    i.fa-circle {
+      color: $scheme-yellow;
+    }
+    i.fa-heart, i.fa-heart-o {
+      margin-top: 4px;
+      color: $scheme-red;
+    }
+  }
+}
+
+.swipe {
+  overflow: hidden;
+  //  visibility: hidden;
+  position: relative;
+}
+
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.swipe-wrap > div {
+  float: left;
+  width: 100%;
+  position: relative;
+  //    padding: 10px;
+}
+
+.swipe-wrap.treat {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto 85%;
+}
+
+.dialog-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 100000;
+  video {
+    width: 100%;
+    height: 100%;
+  }
+  #video-loading-indicator {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 24px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -31px;
+    margin-left: -65px;
+    border-radius: 5px;
+    color: white;
+    i {
+      margin-left: 10px;
+    }
+  }
+  #video-controls-wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    &.ng-enter, &.ng-leave.ng-leave-active {
+      opacity: 0;
+    }
+    &.ng-leave, &.ng-enter.ng-enter-active {
+      opacity: 1;
+    }
+
+    .video-controls {
+      font-size: 26px;
+      padding: 6px 12px;
+      color: white;
+      .video-controls-section {
+        display: inline-block;
+        margin: -3px;
+        &.progress-wrapper {
+          position: absolute;
+          left: 0;
+          bottom: 33px;
+          width: 100%;
+          box-sizing: border-box;
+          padding: 0 85px 0 42px;
+          .video-progress-total {
+            position: relative;
+            top: 25px;
+            left: 10px;
+            margin: 10px 0;
+            height: 10px;
+            background: #333;
+            border-radius: 10px;
+            .video-progress-current {
+              height: 100%;
+              background: #fff;
+              border-radius: 10px;
+              transition-property: width;
+              transition-duration: 0.25s;
+              transition-timing-function: linear;
+            }
+          }
+        }
+      }
+      .video-position-indicator {
+        position: absolute;
+        top: 10px;
+        right: 14px;
+        font-size: 15px;
+        font-family: $font-reg;
+      }
+    }
+  }
+  .dialog-video-close {
+    background: transparent;
+    color: white;
+    position: absolute;
+    top: 6px;
+    right: 4px;
+    font-size: 23px;
+    border: none;
+    padding: 0;
+  }
+}

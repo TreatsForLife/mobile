@@ -1,0 +1,355 @@
+@import 'consts';
+
+//reset styles
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+
+blockquote, q {
+  quotes: "" "";
+}
+
+//reset end
+
+body, html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: transparent;
+  font-family: verdana, arial, helvetica, sans-serif;
+  position: relative;
+  margin: 0 auto;
+}
+
+//styles start
+
+.container-wrapper{
+  height:100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  max-width: 600px;
+  position: relative;
+  font-family: $font-alef;
+  margin: 0 auto;
+}
+.container {
+  min-height: 100%;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  margin: 0 auto;
+  &.animated {
+    &.ng-enter {
+      position: absolute;
+      top: 0;
+      z-index: 888;
+    }
+    &.ng-leave {
+      animation: bounceOutLeft;
+      animation-duration: 1s;
+      z-index: 999;
+    }
+    &.goingBack {
+      &.ng-enter-active {
+        position: absolute;
+        top: 0;
+        animation: bounceInLeft;
+        animation-duration:1s;
+        z-index: 999;
+      }
+      &.ng-leave-active {
+        position: absolute;
+        top: 0;
+        animation: none;
+        animation-duration:1s;
+        z-index: 888;
+      }
+    }
+    &.zoom {
+      &.ng-enter {
+        animation: zoomIn 0.5s both ease-in;
+        z-index: 9999;
+      }
+      &.ng-leave {
+        animation: fadeOut 0.5s both ease-in;
+        z-index: 8888;
+      }
+    }
+  }
+}
+
+html {
+  background: #ccc;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.page {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.rtl {
+  direction: rtl;
+  //  font-family: Alef;
+}
+
+.right {
+  direction: rtl;
+}
+
+.clear {
+  clear: both;
+}
+
+i {
+  text-rendering: auto !important;
+}
+
+@font-face {
+  font-family: 'Alef';
+  src: url('/fonts/Alef-bold.eot');
+  src: url('/fonts/Alef-bold.eot?#iefix') format('embedded-opentype'), url('/fonts/Alef-bold.woff') format('woff'), url('/fonts/Alef-bold.ttf') format('truetype'), url('/fonts/Alef-bold.svg#alefbold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'Alef';
+  src: url('/fonts/Alef-regular.eot');
+  src: url('/fonts/Alef-regular.eot?#iefix') format('embedded-opentype'), url('/fonts/Alef-regular.woff') format('woff'), url('/fonts/Alef-regular.ttf') format('truetype'), url('/fonts/Alef-regular.svg#alefregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+//general classes
+
+.color-white{
+  color: $scheme-white !important;
+}
+.color-blue{
+  color: $scheme-blue !important;
+}
+.color-green{
+  color: $scheme-green !important;
+}
+.color-red{
+  color: $scheme-red !important;
+}
+.color-facebook{
+  color: #3b5998 !important;
+}
+.blacknwhite{
+  filter: grayscale(100%);
+}
+.stretch{
+  width: 100%;
+  display: block;
+}
+button, a.button, input[type="submit"] {
+  font-size: 14px;
+  background: none;
+  cursor: pointer;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 500;
+  outline: none;
+  position: relative;
+  border-radius: 5px;
+  user-select: none;
+  background: white;
+  background: linear-gradient(white, #f1f1f1); /* Standard syntax (must be last) */
+  border:none;
+  font-family: $font-alef;
+
+  &:active, &.button-active, &.button-active:hover, &.button-active:active {
+    background: white;
+    background: linear-gradient(#f1f1f1, white); /* Standard syntax (must be last) */
+    box-shadow: none;
+    text-decoration: none;
+  }
+
+  &.button-disabled, &.button-disabled:hover, &.button-disabled:active {
+    background: rgba(255,255,255,0.5);
+    box-shadow: none;
+    text-decoration: none;
+    border-color: transparent;
+    color: rgba(255,255,255,0.7);
+  }
+
+  &.button-facebook {
+    background: $button-facebook;
+    background: linear-gradient($button-facebook-light, $button-facebook); /* Standard syntax (must be last) */
+    border-color: transparent;
+    color: white;
+    &:active, &.button-active, &.button-active:hover, &.button-active:active {
+      background: $button-facebook;
+      background: linear-gradient($button-facebook, $button-facebook-light); /* Standard syntax (must be last) */
+      box-shadow: none;
+      text-decoration: none;
+    }
+  }
+  &.button-blue {
+    background: $button-blue;
+    background: linear-gradient($button-blue-light, $button-blue); /* Standard syntax (must be last) */
+    border-color: transparent;
+    color: white;
+    &:active, &.button-active, &.button-active:hover, &.button-active:active {
+      background: $button-blue;
+      background: linear-gradient($button-blue, $button-blue-light); /* Standard syntax (must be last) */
+      box-shadow: none;
+      text-decoration: none;
+    }
+  }
+  &.button-green {
+    background: $button-green;
+    background: linear-gradient($button-green-light, $button-green); /* Standard syntax (must be last) */
+    border-color: transparent;
+    color: white;
+
+    &:active, &.button-active, &.button-active:hover, &.button-active:active {
+      background: $button-green;
+      background: linear-gradient($button-green, $button-green-light); /* Standard syntax (must be last) */
+      box-shadow: none;
+      text-decoration: none;
+    }
+  }
+  &.button-red {
+    background: $button-red;
+    background: linear-gradient($button-red-light, $button-red); /* Standard syntax (must be last) */
+    border-color: transparent;
+    color: white;
+
+    &:active, &.button-active, &.button-active:hover, &.button-active:active {
+      background: $button-red;
+      background: linear-gradient($button-red, $button-red-light); /* Standard syntax (must be last) */
+      box-shadow: none;
+      text-decoration: none;
+    }
+  }
+}
+
+
+
+//animations
+
+.delayed-animation{
+  animation-delay: 0.5s;
+}
+
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+

@@ -91,5 +91,18 @@ angular.module('clientApp', ['ionic',
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/welcome');
 
+    })
+    .run(function ($location, $cookies) {
+
+        if ($location.path().length <= 1) {
+            console.log('localStorage', localStorage);
+            if (!localStorage.fb_id || $location.search()['s'] == 'w') {
+                $location.path('/welcome');
+            } else if (!localStorage.user_pet_id) {
+                $location.path('/pets');
+            } else {
+                $location.path('/pet');
+            }
+        }
     });
 

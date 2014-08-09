@@ -89,7 +89,7 @@ angular.module('clientApp', ['ionic',
          */
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/welcome');
+        $urlRouterProvider.otherwise('/');
 
     })
     .run(function ($location) {

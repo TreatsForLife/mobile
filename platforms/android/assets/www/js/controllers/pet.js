@@ -1,15 +1,13 @@
 'use strict';
 
 angular.module('clientApp')
-    .controller('PetCtrl', ['$scope', 'Pets', 'Donations', 'Treats', 'Users', '$rootScope', '$stateParams', '$timeout', '$interval', '$sce', '$location', function ($scope, Pets, Donations, Treats, Users, $rootScope, $stateParams, $timeout, $interval, $sce, $location) {
-
-        console.log('PetCtrl');
+    .controller('PetCtrl', ['$scope', 'Pets', 'Donations', 'Treats', 'Users', '$rootScope', '$routeParams', '$timeout', '$interval', '$sce', '$location', function ($scope, Pets, Donations, Treats, Users, $rootScope, $routeParams, $timeout, $interval, $sce, $location) {
 
         $rootScope.bodyClass = 'pet';
         $scope.grassHeight = 0;
         $scope.buttonAnimationReady = false;
         $scope.buttonClicked = false;
-        $scope.picHeight = $('.container').width() * 0.6;
+        $scope.picHeight = parseInt($('.container').width() * 0.6) + 'px';
         $scope.cartIsUp = false;
 
         //search pet in route or in cookie
@@ -26,7 +24,7 @@ angular.module('clientApp')
         }
 
         $scope.getPetId = function () {
-            $scope.pet_id = $stateParams['id'] || $rootScope.user_pet_id;
+            $scope.pet_id = $routeParams['id'] || $rootScope.user_pet_id;
             if (!$scope.pet_id && $rootScope.user && $rootScope.user.pet && $rootScope.user.pet._id) {
                 $scope.pet_id = $rootScope.user.pet._id;
             }
@@ -113,14 +111,20 @@ angular.module('clientApp')
             $timeout(function () {
                 var min_button_height = 100;
                 $scope.grassHeight = $scope.windowHeight - ($scope.picHeight + 62) - 40 - ($scope.showCart ? 50 : 0);
-                $scope.buttonHeight = $scope.buttonWidth = Math.min(parseInt(($scope.grassHeight - 20) * 0.9), 150);
-                $scope.buttonMargin = ($scope.grassHeight - $scope.buttonHeight) / 2;
+                $scope.buttonHeight = $scope.buttonWidth = parseInt(Math.min(parseInt(($scope.grassHeight - 20) * 0.9), 150));
+                $scope.buttonMargin = parseInt(($scope.grassHeight - $scope.buttonHeight) / 2);
                 if ($scope.buttonHeight < min_button_height) {
                     $scope.buttonHeight = $scope.buttonWidth = min_button_height;
                     $scope.buttonMargin = 20;
                     $scope.grassHeight = min_button_height + ($scope.buttonMargin * 2);
                     $scope.picHeight = $scope.windowHeight - ($scope.grassHeight + 62) - 40 - ($scope.showCart ? 50 : 0);
                 }
+
+                $scope.picHeight += 'px';
+                $scope.grassHeight += 'px';
+                $scope.buttonMargin += 'px';
+                $scope.buttonHeight += 'px';
+                $scope.buttonWidth += 'px';
 
                 if (iterations > 0) {
                     $timeout(function () {

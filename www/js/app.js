@@ -26,7 +26,7 @@ angular.module('clientApp', ['ionic',
         });
     })
 
-    .config(function ($stateProvider, $urlRouterProvider) {
+    .config(function ($stateProvider, $urlRouterProvider, $location) {
 
         // Ionic uses AngularUI Router which uses the concept of states
         // Learn more here: https://github.com/angular-ui/ui-router
@@ -92,10 +92,13 @@ angular.module('clientApp', ['ionic',
         $urlRouterProvider.otherwise(function(){
             console.log('localStorage', localStorage);
             if (!localStorage.fb_id || $location.search()['s'] == 'w') {
+                console.log('ROUTER: Redirecting to Welcome');
                 $location.path('/welcome');
             } else if (!localStorage.user_pet_id) {
+                console.log('ROUTER: Redirecting to Pets');
                 $location.path('/pets');
             } else {
+                console.log('ROUTER: Redirecting to Pet');
                 $location.path('/pet');
             }
         });

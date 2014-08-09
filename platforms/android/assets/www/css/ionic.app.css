@@ -8387,27 +8387,27 @@ div.container.pet {
   text-align: center;
   margin-top: 0px; }
   .treat-wrapper .pet-buy-button {
-    background-image: url('/images/buy_button_row.png');
+    background-image: url('../images/buy_button_row.png');
     margin: auto;
     background-position: 0 0;
     background-size: auto 100%; }
   .treat-wrapper .pet-share-button {
-    background-image: url('/images/animated-share-button.png');
+    background-image: url('../images/animated-share-button.png');
     margin: auto;
     background-position: 0 0;
     background-size: auto 100%; }
   .treat-wrapper .pet-like-button {
-    background-image: url('/images/animated-like-button.png');
+    background-image: url('../images/animated-like-button.png');
     margin: auto;
     background-position: 0 0;
     background-size: auto 100%; }
   .treat-wrapper .pet-adopt-button-gif {
-    background-image: url('/images/animated-adopt-button.gif');
+    background-image: url('../images/animated-adopt-button.gif');
     margin: auto;
     background-position: 0 0;
     background-size: auto 100%; }
   .treat-wrapper .pet-adopt-button {
-    background-image: url('/images/animated-adopt-button.png');
+    background-image: url('../images/animated-adopt-button.png');
     margin: auto;
     background-position: 0 0;
     background-size: auto 100%; }

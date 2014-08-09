@@ -8121,24 +8121,26 @@ body.pushed .body-cover {
           font-weight: bold; }
         .tip-dialog-container .tip-dialog-wrapper .tip-dialog .tip-dialog-content p {
           margin: 8px 0; }
-  .tip-dialog-container .tip-dialog-point::before, .tip-dialog-container .tip-dialog-point::after {
-    content: '';
-    border-style: solid;
-    position: absolute;
-    bottom: -40px;
-    left: 45px; }
-  .tip-dialog-container .tip-dialog-point::before {
-    margin-left: 0;
-    margin-bottom: 1px;
-    border-width: 20px;
-    border-color: #111 transparent transparent;
-    z-index: 1; }
-  .tip-dialog-container .tip-dialog-point::after {
-    margin-left: 1px;
-    margin-bottom: 5px;
-    border-width: 19px;
-    border-color: #f7f7f7 transparent transparent;
-    z-index: 2; }
+  .tip-dialog-container .tip-dialog-point {
+    position: relative; }
+    .tip-dialog-container .tip-dialog-point::before, .tip-dialog-container .tip-dialog-point::after {
+      content: ' ';
+      border-style: solid;
+      position: absolute;
+      bottom: -40px;
+      left: 45px; }
+    .tip-dialog-container .tip-dialog-point::before {
+      margin-left: 0;
+      margin-bottom: 1px;
+      border-width: 20px;
+      border-color: #111 transparent transparent;
+      z-index: 1; }
+    .tip-dialog-container .tip-dialog-point::after {
+      margin-left: 1px;
+      margin-bottom: 5px;
+      border-width: 19px;
+      border-color: #f7f7f7 transparent transparent;
+      z-index: 2; }
   .tip-dialog-container .tip-dialog-dog {
     position: absolute;
     bottom: 0px;

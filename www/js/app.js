@@ -8,7 +8,6 @@
 angular.module('clientApp', ['ionic',
         'ngResource',
         'ngSanitize',
-        'ngRoute',
         'ngAnimate',
         'timer',
     ])
@@ -95,7 +94,7 @@ angular.module('clientApp', ['ionic',
          */
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise(function(){
+        $urlRouterProvider.otherwise(function($location){
             console.log('localStorage', localStorage);
             if (!localStorage.fb_id || $location.search()['s'] == 'w') {
                 console.log('ROUTER: Redirecting to Welcome');

@@ -23,19 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="16" selection-start="454" selection-end="461" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2124">
+            <state line="96" column="55" selection-start="3090" selection-end="3090" vertical-scroll-proportion="0.7063953" vertical-offset="1242" max-vertical-offset="2106">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="angular-route.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="angular-route.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/bower_components/angular-route/angular-route.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="64" selection-start="1343" selection-end="1352" vertical-scroll-proportion="0.33280253" vertical-offset="763" max-vertical-offset="16506">
+            <state line="54" column="64" selection-start="1343" selection-end="1352" vertical-scroll-proportion="-16.2" vertical-offset="0" max-vertical-offset="16506">
               <folding />
             </state>
           </provider>
@@ -107,7 +107,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="0" selection-start="2200" selection-end="2200" vertical-scroll-proportion="-35.333332" vertical-offset="0" max-vertical-offset="1476">
+            <state line="52" column="53" selection-start="2177" selection-end="2177" vertical-scroll-proportion="-10.666667" vertical-offset="648" max-vertical-offset="1458">
               <folding />
             </state>
           </provider>
@@ -146,9 +146,10 @@
         <option value="$PROJECT_DIR$/www/lib/tfl/scss/root.scss" />
         <option value="$PROJECT_DIR$/www/lib/tfl/scss/tipDialog.scss" />
         <option value="$PROJECT_DIR$/www/lib/tfl/scss/navbar.scss" />
-        <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/index.html" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/bower_components/angular-route/angular-route.js" />
         <option value="$PROJECT_DIR$/www/index.html" />
+        <option value="$PROJECT_DIR$/www/js/app.js" />
       </list>
     </option>
   </component>
@@ -729,23 +730,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/bower_components/angular-route/angular-route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="64" selection-start="1343" selection-end="1352" vertical-scroll-proportion="-16.2" vertical-offset="0" max-vertical-offset="16506">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="0" selection-start="2200" selection-end="2200" vertical-scroll-proportion="-35.333332" vertical-offset="0" max-vertical-offset="1476">
+        <state line="52" column="53" selection-start="2177" selection-end="2177" vertical-scroll-proportion="-10.666667" vertical-offset="648" max-vertical-offset="1458">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="16" selection-start="454" selection-end="461" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2124">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/bower_components/angular-route/angular-route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="64" selection-start="1343" selection-end="1352" vertical-scroll-proportion="0.33280253" vertical-offset="763" max-vertical-offset="16506">
+        <state line="96" column="55" selection-start="3090" selection-end="3090" vertical-scroll-proportion="0.7063953" vertical-offset="1242" max-vertical-offset="2106">
           <folding />
         </state>
       </provider>

@@ -45,6 +45,11 @@ angular.module('clientApp', ['ionic',
                 templateUrl: 'templates/pets.html',
                 controller: 'PetsCtrl'
             })
+            .state('pet', {
+                url: "/pet/:id",
+                templateUrl: 'templates/pet.html',
+                controller: 'PetCtrl'
+            })
 
         /*
          // Each tab has its own nav history stack:
@@ -104,7 +109,4 @@ angular.module('clientApp', ['ionic',
         });
 
     })
-    .run(function ($location) {
-
-    });
-
+;

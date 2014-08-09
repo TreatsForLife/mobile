@@ -2,6 +2,9 @@
 
 angular.module('clientApp')
     .controller('PetsCtrl', ['$scope', '$rootScope', '$timeout', '$routeParams', '$location', 'Pets', function ($scope, $rootScope, $timeout, $routeParams, $location, Pets) {
+
+        console.log('PetsCtrl');
+
         $rootScope.bodyClass = 'pets';
         $scope.picHeight = $('.container').width() * 0.6;
 

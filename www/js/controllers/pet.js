@@ -3,6 +3,8 @@
 angular.module('clientApp')
     .controller('PetCtrl', ['$scope', 'Pets', 'Donations', 'Treats', 'Users', '$rootScope', '$routeParams', '$timeout', '$interval', '$sce', '$location', function ($scope, Pets, Donations, Treats, Users, $rootScope, $routeParams, $timeout, $interval, $sce, $location) {
 
+        console.log('PetCtrl');
+
         $rootScope.bodyClass = 'pet';
         $scope.grassHeight = 0;
         $scope.buttonAnimationReady = false;

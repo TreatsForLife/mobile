@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="39" selection-start="2898" selection-end="2898" vertical-scroll-proportion="0.5538793" vertical-offset="1124" max-vertical-offset="2052">
+            <state line="91" column="39" selection-start="2898" selection-end="2898" vertical-scroll-proportion="0.0" vertical-offset="1124" max-vertical-offset="2052">
               <folding />
             </state>
           </provider>
@@ -41,10 +41,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="welcome.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="welcome.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/controllers/welcome.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="27" selection-start="6690" selection-end="6690" vertical-scroll-proportion="0.0" vertical-offset="1953" max-vertical-offset="2628">
+            <state line="5" column="0" selection-start="218" selection-end="254" vertical-scroll-proportion="-1.5540984" vertical-offset="1512" max-vertical-offset="2682">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pet.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/controllers/pet.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="28" selection-start="314" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6030">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pets.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/controllers/pets.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="29" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="846">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="root.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/controllers/root.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="0" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="2268">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shop.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/controllers/shop.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="50" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2250">
               <folding />
             </state>
           </provider>
@@ -77,9 +113,12 @@
         <option value="$PROJECT_DIR$/plugins/android.json" />
         <option value="$PROJECT_DIR$/platforms/android/res/values/facebookconnect.xml" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/js/controllers/welcome.js" />
-        <option value="$PROJECT_DIR$/www/js/controllers/welcome.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
+        <option value="$PROJECT_DIR$/www/js/controllers/welcome.js" />
+        <option value="$PROJECT_DIR$/www/js/controllers/pet.js" />
+        <option value="$PROJECT_DIR$/www/js/controllers/pets.js" />
+        <option value="$PROJECT_DIR$/www/js/controllers/shop.js" />
       </list>
     </option>
   </component>
@@ -157,7 +196,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="scss" />
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -171,47 +214,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="platforms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
+              <option name="myItemId" value="www" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="platforms" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platforms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FacebookLib" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -374,20 +385,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/js/controllers/welcome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="109" selection-start="714" selection-end="714" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="2718">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plugins/com.phonegap.plugins.facebookconnect/platforms/android/FacebookLib/project.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="17" selection-start="583" selection-end="583" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="378">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/services/utils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="67" selection-start="821" selection-end="836" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="774">
@@ -432,7 +429,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/root.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="201" column="1" selection-start="3647" selection-end="3647" vertical-scroll-proportion="0.0" vertical-offset="3236" max-vertical-offset="6480" />
+        <state line="201" column="1" selection-start="3647" selection-end="3647" vertical-scroll-proportion="0.0" vertical-offset="3236" max-vertical-offset="6480">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
@@ -468,7 +467,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controllers/root.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="146" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="2268" />
+        <state line="3" column="146" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="2268">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -493,11 +494,6 @@
     <entry file="file://$PROJECT_DIR$/www/lib/ionic/fonts/ionicons.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="34290" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controllers/pet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="1129" selection-end="1129" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5994" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/partials/navbar.html">
@@ -572,11 +568,6 @@
         <state line="19" column="51" selection-start="839" selection-end="839" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="2268" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controllers/root.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="146" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2268" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="51" selection-start="2087" selection-end="2087" vertical-scroll-proportion="0.0" vertical-offset="521" max-vertical-offset="1476">
@@ -586,7 +577,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/root.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="201" column="1" selection-start="3647" selection-end="3647" vertical-scroll-proportion="0.0" vertical-offset="3236" max-vertical-offset="6480" />
+        <state line="201" column="1" selection-start="3647" selection-end="3647" vertical-scroll-proportion="0.0" vertical-offset="3236" max-vertical-offset="6480">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/lib/tfl/scss/welcome.scss">
@@ -662,13 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controllers/welcome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="27" selection-start="6690" selection-end="6690" vertical-scroll-proportion="0.0" vertical-offset="1953" max-vertical-offset="2628">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="6" selection-start="20" selection-end="20" vertical-scroll-proportion="-0.72" vertical-offset="0" max-vertical-offset="126">
@@ -678,7 +664,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="39" selection-start="2898" selection-end="2898" vertical-scroll-proportion="0.5538793" vertical-offset="1124" max-vertical-offset="2052">
+        <state line="91" column="39" selection-start="2898" selection-end="2898" vertical-scroll-proportion="0.0" vertical-offset="1124" max-vertical-offset="2052">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers/pet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="28" selection-start="314" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6030">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers/pets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="29" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers/root.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="2268">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers/shop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="50" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2250">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers/welcome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="218" selection-end="254" vertical-scroll-proportion="-1.5540984" vertical-offset="1512" max-vertical-offset="2682">
           <folding />
         </state>
       </provider>

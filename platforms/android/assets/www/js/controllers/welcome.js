@@ -2,6 +2,9 @@
 
 angular.module('clientApp')
     .controller('WelcomeCtrl', ['$scope', '$rootScope', '$timeout', '$interval', '$location', 'Users', function ($scope, $rootScope, $timeout, $interval, $location, Users) {
+
+        console.log('WelcomeCtrl');
+
         $rootScope.bodyClass = 'welcome';
 
         $scope.placeLogo = function (iterations) {

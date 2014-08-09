@@ -64,7 +64,7 @@ angular.module('clientApp')
                     var fb_id = response.authResponse.userID;
                     localStorage.setItem('fb_id', fb_id);
                     console.log('saved fb_id cookie', localStorage['fb_id'], response.authResponse.userID);
-                    facebookConnectPlugin.api('/me', [], function (response) {
+                    facebookConnectPlugin.api('/me', ['email'], function (response) {
                         console.log('fetched /me data from facebook - creating user', response);
                         Users.create({fb_id: fb_id, name: response.name, email: response.email, image: 'https://graph.facebook.com/' + response.username + '/picture'}, function (user) {
                             console.log('user created', user);
@@ -78,7 +78,7 @@ angular.module('clientApp')
         }
 
         $timeout(function () {
-            facebookConnectPlugin.getLoginStatus(['email'], function (response) {
+            facebookConnectPlugin.getLoginStatus(function (response) {
                 console.log('Response arrived from facebook', response);
                 if (response.status === 'connected') {
                     console.log('the user is logged in and has authenticated your app', response.authResponse);
@@ -97,7 +97,7 @@ angular.module('clientApp')
                                 console.log('User found in db', user);
                                 storeUserAndRedirect(user);
                             }else{
-                                FB.api('/me', function (response) {
+                                facebookConnectPlugin.api('/me', ['email'], function (response) {
                                     console.log('fetched /me data from facebook - creating user', response);
                                     Users.create({fb_id: fb_id, name: response.name, email: response.email, image: 'https://graph.facebook.com/' + response.username + '/picture'}, function (user) {
                                         console.log('user created', user);

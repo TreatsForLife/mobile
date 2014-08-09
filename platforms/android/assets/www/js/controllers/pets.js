@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('clientApp')
-    .controller('PetsCtrl', ['$scope', '$rootScope', '$timeout', '$routeParams', '$location', 'Pets', function ($scope, $rootScope, $timeout, $routeParams, $location, Pets) {
+    .controller('PetsCtrl', ['$scope', '$rootScope', '$timeout', '$stateParams', '$location', 'Pets', function ($scope, $rootScope, $timeout, $stateParams, $location, Pets) {
 
         console.log('PetsCtrl');
 
         $rootScope.bodyClass = 'pets';
         $scope.picHeight = $('.container').width() * 0.6;
 
-        var filter = $scope.filter = $routeParams['filter'];
+        var filter = $scope.filter = $stateParams['filter'];
 
         if (filter == 'adopted') {
             $rootScope.navbarTitle = 'כלבים מאומצים';

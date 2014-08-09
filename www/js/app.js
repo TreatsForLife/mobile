@@ -96,7 +96,7 @@ angular.module('clientApp', ['ionic',
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise(function(){
             console.log('localStorage', localStorage);
-            if (!localStorage.fb_id || $location.search()['s'] == 'w') {
+            if (!localStorage.fb_id) {
                 console.log('ROUTER: Redirecting to Welcome');
                 return ('/welcome');
             } else if (!localStorage.user_pet_id) {

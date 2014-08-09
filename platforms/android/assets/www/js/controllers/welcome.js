@@ -11,7 +11,7 @@ angular.module('clientApp')
                     $rootScope.windowHeight = $(window).height();
                     $rootScope.windowWidth = $(window).width();
 
-                    $scope.logoSpace = parseInt($rootScope.windowHeight - $('.bottom-wrapper').height());
+                    $scope.logoSpace = parseInt($rootScope.windowHeight - $('.bottom-wrapper').height()) - 20;
                     $scope.logoHeight = parseInt((($scope.logoSpace - 80) > 370) ? 370 : ($scope.logoSpace - 80));
 
                     $scope.logoWidth = parseInt($scope.logoHeight / 370 * 266) + 'px';

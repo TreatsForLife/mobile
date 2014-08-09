@@ -8108,11 +8108,9 @@ div.container.welcome {
     color: white;
     font-size: 30px; }
   div.container.welcome .bottom-wrapper {
-    position: absolute;
-    bottom: 0;
-    left: 5%;
+    position: relative;
+    margin: 0 5%;
     width: 90%;
-    margin: 0;
     display: block;
     text-align: center; }
     div.container.welcome .bottom-wrapper .welcome-app-explained {

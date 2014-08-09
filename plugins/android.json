@@ -18,8 +18,8 @@
         },
         "res/values/facebookconnect.xml": {
             "/*": {
-                "<string name=\"fb_app_id\">123456789</string>": 1,
-                "<string name=\"fb_app_name\">myApplication</string>": 1
+                "<string name=\"fb_app_id\">601219569953172</string>": 1,
+                "<string name=\"fb_app_name\">Treats For Life</string>": 1
             }
         },
         "AndroidManifest.xml": {
@@ -40,9 +40,9 @@
             "PACKAGE_NAME": "com.ionicframework.treatsforlife803933"
         },
         "com.phonegap.plugins.facebookconnect": {
-            "APP_ID": "123456789",
-            "APP_NAME": "myApplication",
-            "PACKAGE_NAME": "com.ionicframework.treatsforlife803933"
+            "APP_ID": "601219569953172",
+            "APP_NAME": "Treats For Life",
+            "PACKAGE_NAME": "org.treatsforlife.app"
         }
     },
     "dependent_plugins": {}

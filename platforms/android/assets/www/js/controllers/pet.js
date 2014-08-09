@@ -1,13 +1,15 @@
 'use strict';
 
 angular.module('clientApp')
-    .controller('PetCtrl', ['$scope', 'Pets', 'Donations', 'Treats', 'Users', '$rootScope', '$routeParams', '$timeout', '$interval', '$sce', '$location', function ($scope, Pets, Donations, Treats, Users, $rootScope, $routeParams, $timeout, $interval, $sce, $location) {
+    .controller('PetCtrl', ['$scope', 'Pets', 'Donations', 'Treats', 'Users', '$rootScope', '$stateParams', '$timeout', '$interval', '$sce', '$location', function ($scope, Pets, Donations, Treats, Users, $rootScope, $stateParams, $timeout, $interval, $sce, $location) {
+
+        console.log('PetCtrl');
 
         $rootScope.bodyClass = 'pet';
         $scope.grassHeight = 0;
         $scope.buttonAnimationReady = false;
         $scope.buttonClicked = false;
-        $scope.picHeight = parseInt($('.container').width() * 0.6) + 'px';
+        $scope.picHeight = $('.container').width() * 0.6;
         $scope.cartIsUp = false;
 
         //search pet in route or in cookie
@@ -24,7 +26,7 @@ angular.module('clientApp')
         }
 
         $scope.getPetId = function () {
-            $scope.pet_id = $routeParams['id'] || $rootScope.user_pet_id;
+            $scope.pet_id = $stateParams['id'] || $rootScope.user_pet_id;
             if (!$scope.pet_id && $rootScope.user && $rootScope.user.pet && $rootScope.user.pet._id) {
                 $scope.pet_id = $rootScope.user.pet._id;
             }
@@ -125,6 +127,7 @@ angular.module('clientApp')
                 $scope.buttonMargin += 'px';
                 $scope.buttonHeight += 'px';
                 $scope.buttonWidth += 'px';
+
 
                 if (iterations > 0) {
                     $timeout(function () {

@@ -1,0 +1,116 @@
+@import 'consts';
+
+div.container.pets, div.container.pet {
+
+  overflow-x: hidden;
+  overflow-y: visible;
+
+  &.adopted{
+    background-color: $scheme-yellow;
+  }
+
+  &.lonely{
+    background-color: $scheme-red;
+  }
+
+  .pets-text{
+    display: block;
+    width: 100%;
+    padding: 24px 20px 0;
+    direction: rtl;
+    color:white;
+    text-align: center;
+  }
+  .pets-pic {
+    display: block;
+    width: 100%;
+    overflow: visible;
+    .pet {
+      padding: 25px 15px 25px;
+    }
+  }
+  .pet {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    position: relative;
+    .pet-inner {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 5px;
+      overflow: hidden;
+      .pet-pic {
+        width: 100%;
+        background-position: center center;
+        background-size: cover;
+        display: block;
+        line-height: 0;
+        .pet-pic-play{
+          line-height: inherit;
+          width: 100%;
+          color: white;
+          font-size: 50px;
+          .pet-pic-play-circle{
+            color: rgba(0,0,0,0.6);
+            margin-left: -4px;
+          }
+        }
+      }
+
+      .pet-bar {
+        height: 40px;
+        background: #fefefe;
+        position: relative;
+        .owner-pic {
+          position: absolute;
+          height: 50px;
+          width: 50px;
+          border-radius: 50px;
+          box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
+          top: -20px;
+          left: 10px;
+        }
+        .pet-gender {
+          height: 30px;
+          width: 30px;
+          float: right;
+          margin: 5px 10px;
+        }
+        .pet-name {
+          line-height: 30px;
+          height: 30px;
+          float: right;
+          font-size: 24px;
+          font-weight: bold;
+          margin: 5px 5px;
+          font-family: 'Alef', Verdana, Arial, Helvetica;
+          text-align: right;
+          direction: rtl;
+          color: #333;
+        }
+      }
+    }
+    .pets-zoom {
+      position: absolute;
+      bottom: 27px;
+      left: 50%;
+      margin-left: -25px;
+      width: 50px;
+      height: 50px;
+      line-height: 43px;
+      text-align: center;
+      font-size: 25px;
+      display: block;
+      text-decoration: none;
+      background-color: #f7f7f7;
+      background-image: linear-gradient(top, #f7f7f7, #e7e7e7);
+      color: #a7a7a7;
+      border-radius: 50%;
+      box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+      border: solid 1px transparent;
+
+    }
+  }
+
+}

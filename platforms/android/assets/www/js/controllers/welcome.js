@@ -64,7 +64,7 @@ angular.module('clientApp')
                     var fb_id = response.authResponse.userID;
                     localStorage.setItem('fb_id', fb_id);
                     console.log('saved fb_id cookie', localStorage['fb_id'], response.authResponse.userID);
-                    FB.api('/me', function (response) {
+                    facebookConnectPlugin.api('/me', [], function (response) {
                         console.log('fetched /me data from facebook - creating user', response);
                         Users.create({fb_id: fb_id, name: response.name, email: response.email, image: 'https://graph.facebook.com/' + response.username + '/picture'}, function (user) {
                             console.log('user created', user);
@@ -78,7 +78,6 @@ angular.module('clientApp')
         }
 
         $timeout(function () {
-            return;
             facebookConnectPlugin.getLoginStatus(['email'], function (response) {
                 console.log('Response arrived from facebook', response);
                 if (response.status === 'connected') {

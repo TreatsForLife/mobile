@@ -20,7 +20,7 @@ angular.module('clientApp')
                 scope.$on('showTipDialog', function (e, filename) {
                     if (scope.shown) return;
                     $timeout(function () {
-                        scope.contentUrl = 'views/partials/' + filename + '-dialog.html';
+                        scope.contentUrl = 'templates/partials/' + filename + '-dialog.html';
                         scope.shown = true;
                     }, 100);
                     $location.search({'dialog':'1'});

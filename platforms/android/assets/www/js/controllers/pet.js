@@ -65,7 +65,7 @@ angular.module('clientApp')
                         });
 
 
-                    }, 50);
+                    }, 500);
                     $timeout(function () {
                         //get pending items
                         $scope.getPendingItems = function () {

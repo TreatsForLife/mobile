@@ -83,7 +83,6 @@ angular.module('clientApp')
                         }
 
                         //aprove paypal payments & get pending items from db
-                        debugger;
                         var q = $location.search();
                         if (q['item_number']) {
                             Donations.approve({item_number: q['item_number']}, function (res) {
@@ -113,7 +112,7 @@ angular.module('clientApp')
             $timeout(function () {
                 var min_button_height = 100;
                 $scope.grassHeight = $scope.windowHeight - ($scope.picHeight + 62) - 40 - ($scope.showCart ? 50 : 0);
-                $scope.buttonHeight = $scope.buttonWidth = parseInt(Math.min(parseInt(($scope.grassHeight - 20) * 0.9), 150));
+                $scope.buttonHeight = $scope.buttonWidth = parseInt(Math.min(parseInt(($scope.grassHeight - 30) * 0.9), 150));
                 $scope.buttonMargin = parseInt(($scope.grassHeight - $scope.buttonHeight) / 2);
                 if ($scope.buttonHeight < min_button_height) {
                     $scope.buttonHeight = $scope.buttonWidth = min_button_height;

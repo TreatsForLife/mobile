@@ -49,7 +49,9 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/ant-build/classes/com/ionicframework/treatsforlife803933/R$color.class \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/ant-build/classes/com/ionicframework/treatsforlife803933/BuildConfig.class \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/ant-build/classes/com/ionicframework/treatsforlife803933/R$string.class \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/ant-build/classes/com/paypal/cordova/sdk/PayPalMobileCordovaPlugin.class \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/ant-build/dexedLibs/classes-8954995b1705b8449ec3322085ead89e.jar \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/ant-build/dexedLibs/classes-fc425ec30eb8314f857a1e1aca190e50.jar \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/ant-build/dexedLibs/bolts-f27e5945b0a21f96f0c895329e164bc4.jar \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/ant-build/dexedLibs/android-support-v4-ff292c1eee506d1f4f38f84bce473eeb.jar \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/ant-build/dexedLibs/PayPalAndroidSDK-2.3.1-59982ee5a9eca4e4d48d75bbf3ae55b9.jar \

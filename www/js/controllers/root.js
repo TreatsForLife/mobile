@@ -144,15 +144,6 @@ angular.module('clientApp')
             },
             // Update DOM on a Received Event
             receivedEvent: function(id) {
-                var parentElement = document.getElementById(id);
-                var listeningElement = parentElement.querySelector('.listening');
-                var receivedElement = parentElement.querySelector('.received');
-
-                listeningElement.setAttribute('style', 'display:none;');
-                receivedElement.setAttribute('style', 'display:block;');
-
-                console.log('Received Event: ' + id);
-
                 // start to initialize PayPalMobile library
                 app.initPaymentUI();
             },
@@ -185,18 +176,21 @@ angular.module('clientApp')
                 // buttons defined in index.html
                 //  <button id="buyNowBtn"> Buy Now !</button>
                 //  <button id="buyInFutureBtn"> Pay in Future !</button>
-                var buyNowBtn = document.getElementById("buyNowBtn");
-                var buyInFutureBtn = document.getElementById("buyInFutureBtn");
+                $timeout(function(){
 
-                buyNowBtn.onclick = function(e) {
-                    // single payment
-                    PayPalMobile.renderSinglePaymentUI(app.createPayment(), app.onSuccesfulPayment, app.onUserCanceled);
-                };
+                    var buyNowBtn = document.getElementById("buyNowBtn");
+                    var buyInFutureBtn = document.getElementById("buyInFutureBtn");
 
-                buyInFutureBtn.onclick = function(e) {
-                    // future payment
-                    PayPalMobile.renderFuturePaymentUI(app.onFuturePaymentAuthorization, app.onUserCanceled);
-                };
+                    buyNowBtn.onclick = function (e) {
+                        // single payment
+                        PayPalMobile.renderSinglePaymentUI(app.createPayment(), app.onSuccesfulPayment, app.onUserCanceled);
+                    };
+
+                    buyInFutureBtn.onclick = function (e) {
+                        // future payment
+                        PayPalMobile.renderFuturePaymentUI(app.onFuturePaymentAuthorization, app.onUserCanceled);
+                    };
+                });
             },
             onPayPalMobileInit : function() {
                 // must be called
@@ -207,6 +201,7 @@ angular.module('clientApp')
                 console.log(result);
             }
         };
+        app.initialize();
 
         //PAYPAL-END
 

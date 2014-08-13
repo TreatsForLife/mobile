@@ -19,7 +19,7 @@
     <access origin="https://api.facebook.com" />
     <access origin="https://*.fbcdn.net" />
     <access origin="https://*.akamaihd.net" />
-    <name>TreatsForLife</name>
+    <name>Treats For Life</name>
     <description>
         An Ionic Framework and Cordova project.
     </description>
@@ -35,4 +35,5 @@
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
+    <icon height="96" src="icons/android/icon.png" width="96" />
 </widget>

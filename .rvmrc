@@ -1,0 +1,399 @@
+rvm use ruby-1.9.3-p484
+
+unalias lc &> /dev/null
+alias lc='cd lib/common'
+
+unalias pu &> /dev/null
+pu() {
+    local curr_branch_name=`git branch | awk '/^\*/ { print $2 }'`
+    echo git pull origin $curr_branch_name; git pull origin $curr_branch_name
+}
+
+unalias pus &> /dev/null
+pus() {
+    local curr_branch_name=`git branch | awk '/^\*/ { print $2 }'`
+    echo git push origin $curr_branch_name; git push origin $curr_branch_name
+}
+
+unalias pupu &> /dev/null
+pupu() {
+    echo "we DO NOT use pupu on this project. time to move on."
+}
+
+test_local_changes() {
+    if git diff-index --quiet HEAD --; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+#test function
+has_local_changes() {
+    test_local_changes
+    if [ "$?" -eq 1 ]; then
+        echo 'HAS local changes'
+    else
+        echo 'NO local changes'
+    fi
+
+}
+
+unalias mdd &> /dev/null
+unalias mds &> /dev/null
+unalias mdp &> /dev/null
+alias mdp='export MONGO_DESTINATION=production'
+alias mdd='export MONGO_DESTINATION=development'
+alias mds='export MONGO_DESTINATION=staging'
+
+function smartpu(){
+    local curr_branch_name=`git branch | awk '/^\*/ { print $2 }'`
+    local temp_branch_name="temp-smartpu-$curr_branch_name`date +%b%d-%H%M%S`"
+    git branch $temp_branch_name
+    echo curr_branch_name $curr_branch_name git rev-parse origin/$curr_branch_name `git rev-parse origin/$curr_branch_name`
+    git reset --hard HEAD~10
+    git pull origin $curr_branch_name
+    git merge $temp_branch_name --squash
+
+    echo "DONE. you probably want to 'git commit' now. (also, from time to time its good to run clean_smartpu)"
+#   the following will be enabled when feeling more secured:
+#   git commit
+#   git branch -D 
+}
+
+function clean_smartpu(){
+    for br in `git branch | g temp-smartpu` ; do git branch -D $br ;done
+}
+
+function run_rspec(){
+    time bundle exec rspec spec | grep ^[^\[]
+
+}
+
+
+#--- From Viewer:
+
+is_origin_synced() {
+    local curr_branch_name=`git branch | awk '/^\*/ { print $2 }'`
+    local curr_rev=`git rev-parse $curr_branch_name`
+    local origin_rev=`git rev-parse origin/$curr_branch_name`
+    echo "checking origin for $curr_branch_name version ($curr_rev vs $origin_rev)..."
+    if [ x"$curr_rev" = x"$origin_rev" ]
+    then
+        echo "origin synced."
+        echo "gst $(git status)"
+        return 1
+    else
+        echo "origin not synced..."
+        return 0
+    fi
+}
+
+push_remote() {
+    if git diff-index --quiet HEAD --; then
+        echo "no uncommitted changes..."
+    else
+        echo "i think you should commit first... see git status:"
+        git status
+        return
+    fi
+
+    if ! cmp manifest.bck.yml public/assets/manifest.yml >/dev/null 2>&1
+    then
+        echo "OMG, something is wrong with the manifest, aborting"
+    else
+    local curr_branch_name=`git branch | awk '/^\*/ { print $2 }'`
+
+    if [[ $curr_branch_name == 'api' ]]
+    then
+        echo "me don't like api. try different remote (api-production/api-staging)"
+        return
+    fi
+
+    if [ $1 == "production" ] 
+    then        
+        if [[ $curr_branch_name != 'master' ]]
+        then
+        echo "production and not master? no way. do it manual."
+        return
+        fi
+    fi
+
+        echo "precompiles assets?(hit Y for yes)"
+        read ans
+        if [[ $ans = 'Y' ]]
+        then
+            ap
+        if git diff-index --quiet HEAD --; then
+        echo "manifest is up to date, good"
+        else
+            if [ $1 == "production" ] 
+        then        
+            echo "its production, and we've just compiled a new manifest... sure...?(hit Y for yes)"
+            read ans
+            if [[ $ans != 'Y' ]]
+            then
+            echo "bye"
+            return
+            fi
+        fi
+                echo "commiting manifest(s)"
+                git add manifest.bck.yml public/assets/manifest.yml -f
+                git commit sources_manifest.bck.yml public/assets/sources_manifest.yml manifest.bck.yml public/assets/manifest.yml -m "auto commit of manifest"
+                pus
+ 
+        fi
+        fi
+
+        local curr_rev=`git rev-parse $curr_branch_name`
+        local origin_rev=`git rev-parse origin/$curr_branch_name`
+        is_origin_synced
+        if [ $? = 0 ]
+        then
+            echo "hmm.... sync it(s), ignore(i) or abort(a)?"
+            read ans
+            if [[ $ans = 'a' ]]
+            then
+                echo "sync it and come back soon, i'm waiting..."
+                return
+            elif [[ $ans = 'i' ]]
+            then
+                echo "yes sir! ignoring and moving on..."
+            elif [[ $ans = 's' ]]
+            then
+                echo "yes i will. syncing ..."
+                pus
+                is_origin_synced
+                if [ $? = 0 ]
+                then
+                    echo "oh the shame. failed to auto sync origin for some reason. YOU do it, i'm off. (leaving you with git status)"
+                    git status
+                    return
+                fi
+            else
+                echo "dunno what to do with->$ans :("
+            fi
+
+        fi
+
+        echo pushing to **$1**...
+        echo "pushing branch $curr_branch_name to $1 : git push $1 $curr_branch_name:master"
+        if [ $1 == "production" ]
+        then
+            echo "its production, dude! sure...?(hit Y for yes)"
+            read ans
+            if [[ $ans != 'Y' ]]
+            then
+                echo "chicken :)"
+                return
+            fi
+        fi
+        git push $1 $curr_branch_name:master $2
+    fi
+
+}
+
+unalias pust &> /dev/null
+pust() {
+    push_remote staging
+}
+
+unalias pupr &> /dev/null
+pupr() {
+    push_remote production
+}
+
+bra(){
+    if [[ $1 = '' ]]
+    then
+	echo "I need a branch name..."
+	return
+    fi
+
+    git checkout -b `date +%b%d%y`$1
+}
+
+cha(){
+    git checkout $1
+    lc
+    git checkout $1
+    cd -
+}
+
+show_md5() {
+    echo "staging: heroku config:set momentShowCSSMD5=`grep momentshowapp.css public/assets/manifest.yml | awk '{split($0,a,"-"); print a[2]}' | awk '{split($0,a,"."); print a[1]}'` momentShowJSMD5=`grep momentshowapp.js public/assets/manifest.yml | awk '{split($0,a,"-"); print a[2]}' | awk '{split($0,a,"."); print a[1]}'` -a momentorostaging"
+    echo "production: heroku config:set momentShowCSSMD5=`grep momentshowapp.css public/assets/manifest.yml | awk '{split($0,a,"-"); print a[2]}' | awk '{split($0,a,"."); print a[1]}'` momentShowJSMD5=`grep momentshowapp.js public/assets/manifest.yml | awk '{split($0,a,"-"); print a[2]}' | awk '{split($0,a,"."); print a[1]}'` -a momentme"
+}
+
+ap() {
+    #ap settings
+    export FOG_DIRECTORY=moassets
+    export FOG_PROVIDER=AWS
+    export AWS_ACCESS_KEY_ID=AKIAJDVBEGJ3EA7ROCIA
+    export AWS_SECRET_ACCESS_KEY=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
+    [[ "$MONGO_DESTINATION" = "production" ]] && export MONGO_DESTINATION='staging' && echo "using MONGO_DESTINATION='staging'"
+
+    #precompile
+    echo bundle exec rake assets:precompile
+    mkdir -p public/assets
+    cp sources_manifest.bck.yml public/assets/sources_manifest.yml                          # put the last digest file
+    bundle exec rake assets:precompile RAILS_ENV=production                                 # precompile
+    cp public/assets/manifest.yml manifest.bck.yml                                          # backup
+    cp public/assets/sources_manifest.yml sources_manifest.bck.yml                          # backup
+    bundle exec rake assets:clean RAILS_ENV=production && mkdir public/assets               #clean
+    cp manifest.bck.yml public/assets/manifest.yml                                          # restore backup
+    cp sources_manifest.bck.yml public/assets/sources_manifest.yml                          # restore backup
+    git status
+
+	show_md5    
+}
+
+is_master_merged_to_current_branch() {
+    git fetch origin master:master    
+    if [ `git fetch > /dev/null && git branch --merged | g -c master` -eq 1 ]
+    then
+        echo "master synced."
+        echo "gst $(git status)"
+        return 1
+    else
+        echo "master not synced..."
+        return 0
+    fi
+}
+
+poll_staging_loop(){
+	while true; do date;sleep 60;poll_staging; done
+}
+
+staging_dude(){
+    poll_staging_loop
+}
+
+poll_staging() {
+	is_master_merged_to_current_branch
+	if [ $? = 1 ]
+        then
+            echo "nothing to do"
+            echo "poll_staging: staging is up to date, nothing to do" | logger
+            return
+        fi
+	echo "merging master"
+	echo "poll_staging: merging master" | logger
+	git merge master
+	git submodule update
+	bundle install
+	time ap
+    echo "commiting manifest(s)"
+    git add manifest.bck.yml public/assets/manifest.yml -f
+    git commit sources_manifest.bck.yml public/assets/sources_manifest.yml manifest.bck.yml public/assets/manifest.yml -m "auto commit of manifest"
+    pus
+
+	echo pushing to staging ...
+	echo "poll_staging: pushing to staging" | logger
+    git push staging staging:master
+	echo pushing to wix staging...
+	echo "poll_staging:  pushing to wix staging" | logger
+	git push wixstaging staging:master
+	echo "md5:" > /tmp/stagmail
+	show_md5 >> /tmp/stagmail
+	printf "\n\nlogs" >> /tmp/stagmail
+	git log master -n 10 --since={3.days.ago} >> /tmp/stagmail
+	echo -e "poll_staging: done\n`cat /tmp/stagmail`" | logger
+	cat /tmp/stagmail | mail -aFrom:stagingdude@moment.me -s 'EVENTS staging pushed' boaz@moment.me guy@moment.me yoni@moment.me oded@moment.me ronny@moment.me
+}
+
+poll_staging_log() {
+    grep 'poll_staging' /var/log/syslog | tail -n 30
+}
+
+poll_staging_poll_log() {
+    while true; do date;sleep 10;grep 'poll_staging' /var/log/syslog | tail -n 3 ; done
+}
+
+is_poll_staging_running() {
+    poll_staging_log
+}
+
+promote_events_staging_to_master(){
+	heroku pipeline:promote -a stagmomentmeevents
+}
+
+promote_wixstaging_to_wixmaster(){
+	heroku pipeline:promote -a stagwixmomentmeevents
+}
+
+squash_curr_branch_to_master() {
+    test_local_changes
+    if [ "$?" -eq 1 ]; then
+        echo 'HAS local changes, commit first'
+    else
+        local curr_branch_name=`git branch | awk '/^\*/ { print $2 }'`
+        echo git checkout master; git checkout master
+        echo git merge $curr_branch_name --squash; git merge $curr_branch_name --squash
+        echo git commit; git commit
+    fi
+}
+
+pust2() {
+     local curr_branch_name=`git branch | awk '/^\*/ { print $2 }'`
+     local tmpcmd="git push staging2 $curr_branch_name:master $*"
+     echo $tmpcmd
+     $($tmpcmd)
+}
+
+
+is_otherbranch_merged_to_current_branch() {
+    echo git fetch origin $1:$1
+    git fetch origin $1:$1
+
+    echo "git branch --merged | g -v staging | g -c $1: `git branch --merged | g -v staging | g -c $1`"
+    if [ `git branch --merged | g -v staging | g -c $1` -eq 1 ]
+    then
+        echo "$1 synced."
+        echo "gst $(git status)"
+        return 1
+    else
+        echo "$1 not synced..."
+        return 0
+    fi
+}
+
+poll_pageload() {
+ if ! git diff-index --quiet HEAD --; then
+	echo "something not clean, aborting"
+return
+fi
+
+    ref_master='Jun2314page-load-optimization'
+    ref_staging='Jun2314page-load-optimization-staging'
+	ref_remote='staging3'
+	is_otherbranch_merged_to_current_branch $ref_master
+	if [ $? = 1 ]
+        then
+            echo "nothing to do"
+            echo "poll_staging: staging is up to date, nothing to do" | logger
+            return
+        fi
+	echo "merging $ref_master"
+	echo "poll_staging: merging $ref_master"
+	git merge $ref_master
+	git submodule update
+	bundle install
+	time ap
+ if git diff-index --quiet HEAD --; then
+	echo "no new manifest(s), something went wrong, aborting"
+else
+    echo "commiting manifest(s)"
+    git add manifest.bck.yml public/assets/manifest.yml -f
+    git commit sources_manifest.bck.yml public/assets/sources_manifest.yml manifest.bck.yml public/assets/manifest.yml -m "auto commit of manifest"
+    pus
+
+	echo pushing to staging ...
+	echo "poll_pageload: pushing to $ref_remote (git push $ref_remote $ref_staging:master)"
+    git push $ref_remote $ref_staging:master
+#	printf "\n\nlogs" > /tmp/stagmail
+#	git log $ref_master -n 10 --since={3.days.ago} >> /tmp/stagmail
+#	echo -e "poll_staging: done\n`cat /tmp/stagmail`"
+#	cat /tmp/stagmail | mail -aFrom:stagingdude@moment.me -s 'EVENTS PAGELOAD staging pushed' boaz@moment.me #guy@moment.me oded@moment.me ronny@moment.me
+fi
+}

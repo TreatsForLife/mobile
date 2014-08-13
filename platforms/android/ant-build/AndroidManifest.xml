@@ -22,7 +22,7 @@
         <activity android:configChanges="keyboardHidden|orientation" android:name="io.card.payment.CardIOActivity" />
         <activity android:name="io.card.payment.DataEntryActivity" />
     </application>
-    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="19" />
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-feature android:name="android.hardware.camera" android:required="false" />

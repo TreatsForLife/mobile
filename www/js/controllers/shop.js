@@ -5,6 +5,8 @@ angular.module('clientApp')
 
         console.log('ShopCtrl');
 
+        $rootScope.addDummyToHistory();
+
         var pet_id = $stateParams['id'] || $rootScope.user_pet_id;
 
         $rootScope.bodyClass = 'shop';

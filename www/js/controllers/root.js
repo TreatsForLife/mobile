@@ -52,18 +52,27 @@ angular.module('clientApp')
             return $sce.trustAsResourceUrl(src);
         }
 
+        $scope.history = [];
+        $scope.lastUrl = '';
         $rootScope.canGoBack = function(){
-            return (window.history.length > 1)
+            return ($scope.history.length > 1)
         }
         $rootScope.goBack = function () {
             if (!$scope.canGoBack()) return;
-            $timeout(function () {
-                $scope.goingBack = true;
-            }, 0);
-            $timeout(function () {
-                $scope.goingBack = false;
-            }, 1000);
-            window.history.back();
+            var l = $scope.history.length;
+            var path = $scope.history[l-1];
+            $scope.history = $scope.history.slice(0, l-1);
+            $location.path(path);
+        }
+        $rootScope.addUrlToHistory = function(url){
+            $rootScope.addDummyToHistory();
+            $scope.lastUrl = url;
+        }
+        $rootScope.addDummyToHistory = function(){
+            var l = $scope.history.length;
+            if (!$scope.history[l] == $scope.lastUrl){
+                $scope.history.push($scope.lastUrl);
+            }
         }
 
         $scope.playVideo = function (src) {

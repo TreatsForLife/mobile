@@ -171,7 +171,7 @@ angular.module('clientApp')
                     languageOrLocale: "he",
                     forceDefaultsInSandbox : true,
                     sandboxUserPassword: "Treats41M$",
-                    sandboxUserPin: "treatsforlife.org-facilitator@gmail.com"
+                    sandboxUserEmail: "treatsforlife.org-facilitator@gmail.com"
                 });
                 return config;
             },

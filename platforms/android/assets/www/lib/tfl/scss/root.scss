@@ -85,25 +85,27 @@ body, html {
   max-width: 600px;
   position: relative;
   margin: 0 auto;
-  &.animated {
-    &.ng-enter {
+/*
+    &.custom-animation {
       position: absolute;
       top: 0;
       z-index: 888;
     }
-    &.ng-leave {
+*/
+    &.custom-animation {
       -webkit-animation: bounceOutLeft;
       -webkit-animation-duration: 11s;
       z-index: 999;
     }
-    &.goingBack {
-      &.ng-enter-active {
+    &.reverse {
+      &.custom-animation {
         position: absolute;
         top: 0;
         -webkit-animation: bounceInLeft;
         -webkit-animation-duration:11s;
         z-index: 999;
       }
+/*
       &.ng-leave-active {
         position: absolute;
         top: 0;
@@ -111,6 +113,7 @@ body, html {
         -webkit-animation-duration:11s;
         z-index: 888;
       }
+*/
     }
     &.zoom {
       &.ng-enter {

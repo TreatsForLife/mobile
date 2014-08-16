@@ -75,21 +75,17 @@ angular.module('clientApp')
                     }, 500);
                     $timeout(function () {
                         //get pending items
-                        $scope.getPendingItems = function () {
-                            console.log('Getting pending donations: ' + $scope.pet_id);
-                            Donations.pending({pet_id: $scope.pet_id}, function (res) {
-                                console.log('Found pending donations: ', res);
-                                $timeout(function () {
-                                    $scope.pending = res;
-                                    $scope.showCart = (res.length > 0);
-                                    $scope.cartTitle = res.length + ' ' + ((res.length > 0) ? 'פריטים' : 'פריט');
+                        console.log('Getting pending donations: ' + $scope.pet_id);
+                        Donations.pending({pet_id: $scope.pet_id}, function (res) {
+                            console.log('Found pending donations: ', res);
+                            $timeout(function () {
+                                $scope.pending = res;
+                                $scope.showCart = (res.length > 0);
+                                $scope.cartTitle = res.length + ' ' + ((res.length > 0) ? 'פריטים' : 'פריט');
 
-//                                $scope.htmlReady(); //flags phantom js that the page is ready
-
-                                    calcDims();
-                                });
+                                calcDims();
                             });
-                        }
+                        });
 
                     }, 80);
 

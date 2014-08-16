@@ -7722,19 +7722,19 @@ body, html {
     z-index: 888; }
   .container.animated.ng-leave {
     animation: bounceOutLeft;
-    animation-duration: 1s;
+    animation-duration: 11s;
     z-index: 999; }
   .container.animated.goingBack.ng-enter-active {
     position: absolute;
     top: 0;
     animation: bounceInLeft;
-    animation-duration: 1s;
+    animation-duration: 11s;
     z-index: 999; }
   .container.animated.goingBack.ng-leave-active {
     position: absolute;
     top: 0;
     animation: none;
-    animation-duration: 1s;
+    animation-duration: 11s;
     z-index: 888; }
   .container.animated.zoom.ng-enter {
     animation: zoomIn 0.5s both ease-in;

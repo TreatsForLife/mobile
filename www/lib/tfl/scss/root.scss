@@ -93,7 +93,7 @@ body, html {
     }
     &.ng-leave {
       animation: bounceOutLeft;
-      animation-duration: 1s;
+      animation-duration: 11s;
       z-index: 999;
     }
     &.goingBack {
@@ -101,14 +101,14 @@ body, html {
         position: absolute;
         top: 0;
         animation: bounceInLeft;
-        animation-duration:1s;
+        animation-duration:11s;
         z-index: 999;
       }
       &.ng-leave-active {
         position: absolute;
         top: 0;
         animation: none;
-        animation-duration:1s;
+        animation-duration:11s;
         z-index: 888;
       }
     }

@@ -98,19 +98,17 @@ body, html {
       }
     }
     &.reverse {
-      &.ng-enter-active {
+      position: absolute;
+      top: 0;
+      -webkit-animation: none;
+      -webkit-animation-duration:11s;
+      z-index: 888;
+      ~.container{
         position: absolute;
         top: 0;
         -webkit-animation: bounceInLeft;
         -webkit-animation-duration:2s;
         z-index: 999;
-      }
-      &.ng-leave-active {
-        position: absolute;
-        top: 0;
-        -webkit-animation: none;
-        -webkit-animation-duration:11s;
-        z-index: 888;
       }
     }
     &.zoom {

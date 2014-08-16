@@ -7730,7 +7730,7 @@ body, html {
     position: absolute;
     top: 0;
     -webkit-animation: bounceInLeft;
-    -webkit-animation-duration: 2s;
+    -webkit-animation-duration: 11s;
     z-index: 999; }
   .container.reverse.ng-leave-active {
     position: absolute;

@@ -20,6 +20,13 @@ module.exports = [
         "clobbers": [
             "window.facebookConnectPlugin"
         ]
+    },
+    {
+        "file": "plugins/com.paypal.cordova.mobilesdk/www/cdv-plugin-paypal-mobile-sdk.js",
+        "id": "com.paypal.cordova.mobilesdk.PayPalMobile",
+        "clobbers": [
+            "PayPalMobile"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -28,7 +35,8 @@ module.exports.metadata =
     "com.ionic.keyboard": "1.0.2",
     "org.apache.cordova.console": "0.2.9",
     "org.apache.cordova.device": "0.2.10",
-    "com.phonegap.plugins.facebookconnect": "0.7.0"
+    "com.phonegap.plugins.facebookconnect": "0.7.0",
+    "com.paypal.cordova.mobilesdk": "2.0.2"
 }
 // BOTTOM OF METADATA
 });

@@ -23,6 +23,9 @@ angular.module('clientApp')
                     $scope.getPetId();
                 });
             }
+            if ($stateParams['adopt']){
+                $scope.greetAdoption();
+            }
         }
 
         $scope.getPetId = function () {
@@ -72,38 +75,17 @@ angular.module('clientApp')
                     }, 500);
                     $timeout(function () {
                         //get pending items
-                        $scope.getPendingItems = function () {
-                            console.log('Getting pending donations: ' + $scope.pet_id);
-                            Donations.pending({pet_id: $scope.pet_id}, function (res) {
-                                console.log('Found pending donations: ', res);
-                                $timeout(function () {
-                                    $scope.pending = res;
-                                    $scope.showCart = (res.length > 0);
-                                    $scope.cartTitle = res.length + ' ' + ((res.length > 0) ? 'פריטים' : 'פריט');
+                        console.log('Getting pending donations: ' + $scope.pet_id);
+                        Donations.pending({pet_id: $scope.pet_id}, function (res) {
+                            console.log('Found pending donations: ', res);
+                            $timeout(function () {
+                                $scope.pending = res;
+                                $scope.showCart = (res.length > 0);
+                                $scope.cartTitle = res.length + ' ' + ((res.length > 0) ? 'פריטים' : 'פריט');
 
-//                                $scope.htmlReady(); //flags phantom js that the page is ready
-
-                                    calcDims();
-                                });
+                                calcDims();
                             });
-                        }
-
-                        //aprove paypal payments & get pending items from db
-                        var q = $location.search();
-                        if (q['item_number']) {
-                            Donations.approve({item_number: q['item_number']}, function (res) {
-                                $scope.getPendingItems();
-                                $location.search({});
-                                $scope.getPet();
-                                $scope.getUser();
-                                if (res.newAdoption) {
-                                    $scope.greetAdoption();
-                                }
-                            });
-                        } else {
-                            $scope.getPendingItems();
-                        }
-
+                        });
 
                     }, 80);
 

@@ -117,4 +117,5 @@ angular.module('clientApp')
         $timeout(function () {
             window.scrollTo(0, 1);
         }, 1000);
+
     }]);

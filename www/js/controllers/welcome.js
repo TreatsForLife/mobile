@@ -64,7 +64,7 @@ angular.module('clientApp')
                     console.log('saved fb_id', localStorage['fb_id'], response.authResponse.userID);
                     facebookConnectPlugin.api('/me', ['email'], function (response) {
                         console.log('fetched /me data from facebook - creating user', response);
-                        Users.create({fb_id: fb_id, name: response.name, email: response.email, image: 'https://graph.facebook.com/' + response.username + '/picture'}, function (user) {
+                        Users.create({fb_id: fb_id, name: response.name, email: response.email, image: 'https://graph.facebook.com/' + fb_id + '/picture'}, function (user) {
                             console.log('user created', user);
                             storeUserAndRedirect(user);
                         });

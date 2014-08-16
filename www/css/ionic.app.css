@@ -8052,13 +8052,13 @@ body.welcome .navbar {
   cursor: pointer; }
   .white-links i:hover, .white-links a:hover {
     color: #fff; }
-.white-links li.push-mine {
+.white-links li.push-mine a {
   color: #9aca13; }
-.white-links li.push-adopted {
+.white-links li.push-adopted a {
   color: #FFC408; }
-.white-links li.push-lonely {
+.white-links li.push-lonely a {
   color: #DF2B46; }
-.white-links li.push-fb {
+.white-links li.push-fb a {
   color: #3b5998; }
 
 /* Vertical menu that slides from the left or right */

@@ -94,16 +94,16 @@
     }
   }
   li{
-    &.push-mine{
+    &.push-mine a{
       color: $scheme-green;
     }
-    &.push-adopted {
+    &.push-adopted a{
       color: $scheme-yellow;
     }
-    &.push-lonely {
+    &.push-lonely a{
       color: $scheme-red;
     }
-    &.push-fb {
+    &.push-fb a {
       color: #3b5998;
     }
 

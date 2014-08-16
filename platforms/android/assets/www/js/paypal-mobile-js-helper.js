@@ -72,7 +72,6 @@ function PayPalConfiguration(options) {
       ///
       /// Defaults to YES.
       rememberUser: true,
-      languageOrLocale: null,
       /// If not set, or if set to nil, defaults to the device's current language setting.
       ///
       /// Can be specified as a language code ("en", "fr", "zh-Hans", etc.) or as a locale ("en_AU", "fr_FR", "zh-Hant_HK", etc.).
@@ -85,20 +84,21 @@ function PayPalConfiguration(options) {
       ///
       /// These localizations are currently included:
       /// da,de,en,en_AU,en_GB,en_SV,es,es_MX,fr,he,it,ja,ko,nb,nl,pl,pt,pt_BR,ru,sv,tr,zh-Hans,zh-Hant_HK,zh-Hant_TW.
-      disableBlurWhenBackgrounding : false,
+      languageOrLocale: null,
       /// Normally, the SDK blurs the screen when the app is backgrounded,
       /// to obscure credit card or PayPal account details in the iOS-saved screenshot.
       /// If your app already does its own blurring upon backgrounding, you might choose to disable this.
       /// Defaults to NO.
-      forceDefaultsInSandbox : false,
+      disableBlurWhenBackgrounding : false,
       /// Sandbox credentials can be difficult to type on a mobile device. Setting this flag to YES will
       /// cause the sandboxUserPassword and sandboxUserPin to always be pre-populated into login fields.
       ///
       /// This setting will have no effect if the operation mode is production.
-      sandboxUserPassword: null,
+      forceDefaultsInSandbox : false,
       /// Password to use for sandbox if 'forceDefaultsInSandbox' is set.
-      sandboxUserPin: null
+      sandboxUserPassword: null,
       /// PIN to use for sandbox if 'forceDefaultsInSandbox' is set.
+      sandboxUserPin: null
 
   };
 

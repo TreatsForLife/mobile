@@ -7718,7 +7718,7 @@ body, html {
   margin: 0 auto; }
   .container.ng-leave {
     -webkit-animation: bounceOutLeft;
-    -webkit-animation-duration: 11s;
+    -webkit-animation-duration: 21s;
     z-index: 999; }
     .container.ng-leave ~ .container {
       position: absolute;

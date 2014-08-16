@@ -7726,18 +7726,18 @@ body, html {
       position: absolute !important;
       top: 0 !important;
       z-index: 888; }
-  .container.reverse {
+  .container.reverse.ng-enter-active {
+    position: absolute;
+    top: 0;
+    -webkit-animation: bounceInLeft;
+    -webkit-animation-duration: 2s;
+    z-index: 999; }
+  .container.reverse.ng-leave-active {
     position: absolute;
     top: 0;
     -webkit-animation: none;
     -webkit-animation-duration: 11s;
     z-index: 888; }
-    .container.reverse ~ .container {
-      position: absolute;
-      top: 0;
-      -webkit-animation: bounceInLeft;
-      -webkit-animation-duration: 2s;
-      z-index: 999; }
   .container.zoom.ng-enter {
     -webkit-animation: zoomIn 0.5s both ease-in;
     z-index: 9999; }

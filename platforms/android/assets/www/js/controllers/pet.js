@@ -136,7 +136,7 @@ angular.module('clientApp')
 
         $scope.share = function () {
             var pet_link = Consts.client_root + '#/pet/' + $scope.pet_id;
-            FB.ui({
+            facebookConnectPlugin.ui({
                 method: 'feed',
                 app_id: Consts.fb_app_id,
                 display: ($scope.isWeb ? 'popup' : 'touch'),
@@ -154,7 +154,7 @@ angular.module('clientApp')
 
         $scope.like = function () {
             var pet_link = Consts.client_root + '#/pet/' + $scope.pet_id;
-            FB.ui({
+            facebookConnectPlugin.ui({
                 method: 'feed',
                 app_id: Consts.fb_app_id,
                 to: $scope.pet.user.fb_id,
@@ -173,7 +173,7 @@ angular.module('clientApp')
 
         $scope.adopted = function () {
             var pet_link = Consts.client_root + '#/pet/' + $scope.pet_id;
-            FB.ui({
+            facebookConnectPlugin.ui({
                 method: 'feed',
                 app_id: Consts.fb_app_id,
                 display: ($scope.isWeb ? 'popup' : 'touch'),

@@ -160,7 +160,7 @@ angular.module('clientApp')
                     Donations.approve({_id: donation['_id']}, function (res) {
                         approved--;
                         if (approved==0){
-                            if (res.newAdoption){
+                            if (!$scope.user || !$scope.user.pet){
                                 var path = ('/pet/' + $scope.pet._id + '/adopt');
                             }else{
                                 var path = ('/pet/' + $scope.pet._id);

@@ -114,7 +114,7 @@ angular.module('clientApp', ['ionic',
                 return ('/pets/lonely');
             } else {
                 console.log('ROUTER: Redirecting to Pet');
-                return ('/pet');
+                return ('/pet/'+localStorage.user_pet_id);
             }
         });
 

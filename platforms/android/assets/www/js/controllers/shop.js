@@ -93,8 +93,9 @@ angular.module('clientApp')
             if (!$scope.paymentActive) return;
             $scope.paymentActive = false;
 
+            $scope.paypal.initialize();
 
-            var created = 0;
+            $scope.donationsCreated = [];
             for (var t=0, treat; treat = chosenTreats[t]; t++) {
                 Donations.create({
                     paypalItem: $scope.ItemNumber,
@@ -103,8 +104,8 @@ angular.module('clientApp')
                     pet: $scope.pet._id,
                     payed: false
                 }, function(res){
-                    created++;
-                    if ( created >= (chosenTreats.length) ) {
+                    $scope.donationsCreated.push(res);
+                    if ( $scope.donationsCreated.length >= (chosenTreats.length) ) {
                         $scope.paypal.buyNow();
 //                        if (fakeIt){
 //                            document.location.href = ($scope.returnUrl + '?fake=1&item_number=' + $scope.ItemNumber);
@@ -152,9 +153,25 @@ angular.module('clientApp')
             },
             onSuccesfulPayment : function(payment) {
                 console.log("payment success: " + JSON.stringify(payment, null, 4));
-            },
-            onFuturePaymentAuthorization : function(authorization) {
-                console.log("authorization: " + JSON.stringify(authorization, null, 4));
+                //aprove paypal payments & get pending items from db
+
+                var approved = $scope.donationsCreated.length;
+                for (var i= 0, donation; donation = $scope.donationsCreated[i]; i++){
+                    Donations.approve({_id: donation['_id']}, function (res) {
+                        approved--;
+                        if (approved==0){
+                            if ($scope.user.pet){
+                                $location.path('/pet/' + $scope.pet._id);
+                                scope.user = false;
+                                scope.pet = false;
+                            }else{
+                                $location.path('/pet/' + $scope.pet._id + '?adopt=true');
+                                scope.user = false;
+                                scope.pet = false;
+                            }
+                        }
+                    });
+                }
             },
             createPayment : function () {
                 // for simplicity use predefined amount
@@ -171,7 +188,7 @@ angular.module('clientApp')
                     languageOrLocale: "he",
                     forceDefaultsInSandbox : true,
                     sandboxUserPassword: "Treats41M$",
-                    defaultUserEmail: "treatsforlife.org-facilitator@gmail.com"
+                    defaultUserEmail: "sandbox@treatsforlife.org"
                 });
                 return config;
             },
@@ -192,7 +209,6 @@ angular.module('clientApp')
                 console.log(result);
             }
         };
-        $scope.paypal.initialize();
 
         //PAYPAL-END
 

@@ -53,7 +53,7 @@ angular.module('clientApp')
         }
 
         $rootScope.canGoBack = function(){
-            return (window.history.length > 0)
+            return (window.history.length > 1)
         }
         $rootScope.goBack = function () {
             if (!$scope.canGoBack()) return;

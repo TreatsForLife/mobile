@@ -13,12 +13,12 @@ angular.module('clientApp')
         if (filter == 'adopted') {
             $rootScope.navbarTitle = 'כלבים מאומצים';
             $scope.pets = Pets.adopted();
-            $rootScope.bodyClass = 'pets adopted';
+            $rootScope.bodyBg = 'adopted';
             $rootScope.addUrlToHistory('/pets/adopted');
         } else if (filter == 'lonely') {
             $rootScope.navbarTitle = 'כלבים בודדים';
             $scope.pets = Pets.lonely();
-            $rootScope.bodyClass = 'pets lonely';
+            $rootScope.bodyBg = 'lonely';
             $rootScope.addUrlToHistory('/pets/lonely');
         } else {
             if ($scope.user) {

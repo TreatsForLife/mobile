@@ -23,6 +23,9 @@ angular.module('clientApp')
                     $scope.getPetId();
                 });
             }
+            if ($location.search()['adopt']){
+                $scope.greetAdoption();
+            }
         }
 
         $scope.getPetId = function () {
@@ -87,23 +90,6 @@ angular.module('clientApp')
                                 });
                             });
                         }
-
-                        //aprove paypal payments & get pending items from db
-                        var q = $location.search();
-                        if (q['item_number']) {
-                            Donations.approve({item_number: q['item_number']}, function (res) {
-                                $scope.getPendingItems();
-                                $location.search({});
-                                $scope.getPet();
-                                $scope.getUser();
-                                if (res.newAdoption) {
-                                    $scope.greetAdoption();
-                                }
-                            });
-                        } else {
-                            $scope.getPendingItems();
-                        }
-
 
                     }, 80);
 

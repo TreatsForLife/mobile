@@ -15,6 +15,10 @@
 <div class="shop-checkout" ng-if="showCheckout" ng-init="initCheckout()">
     <div class="shop-checkout-inner">
         <div class="shop-checkout-total">סה"כ תרומה: {{totalToPay}} שקלים</div>
+        <input type="button" class="shop-checkout-button button-{{paymentActive ? 'blue' : 'disabled'}}"
+               ng-click="paypal.buyNow()" value="לתשלום"/>
+
+<!--
         <form id="payment-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_xclick">
             <input type="hidden" name="business" value="treatsforlife.org@gmail.com">
@@ -27,8 +31,8 @@
             <input type="hidden" name="tax_rate" value="0.000">
             <input type="hidden" name="shipping" value="0.00">
             <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
-            <!--<input type="image" src="https://www.paypalobjects.com/en_US/IL/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">-->
-            <!--<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">-->
+            &lt;!&ndash;<input type="image" src="https://www.paypalobjects.com/en_US/IL/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">&ndash;&gt;
+            &lt;!&ndash;<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">&ndash;&gt;
 
             <input type="hidden" name="return" value="{{returnUrl}}">
             <input type="hidden" name="rm" value="2">
@@ -45,5 +49,6 @@
                    ng-click="pay(false)" value="לתשלום"/>
         </form>
         <a class="button shop-checkout-button button-{{paymentActive ? 'green' : 'disabled'}}" ng-click="pay(true)">כאילו תשלום</a>
+-->
     </div>
 </div>

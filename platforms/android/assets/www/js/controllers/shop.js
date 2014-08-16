@@ -105,15 +105,96 @@ angular.module('clientApp')
                 }, function(res){
                     created++;
                     if ( created >= (chosenTreats.length) ) {
-                        if (fakeIt){
-                            document.location.href = ($scope.returnUrl + '?fake=1&item_number=' + $scope.ItemNumber);
-                        }else{
-                            $('#payment-form').submit();
-                        }
+                        $scope.paypal.buyNow();
+//                        if (fakeIt){
+//                            document.location.href = ($scope.returnUrl + '?fake=1&item_number=' + $scope.ItemNumber);
+//                        }else{
+//                            $('#payment-form').submit();
+//                        }
                     }
                 });
             }
 
         }
+
+        //PAYPAL-START
+        $scope.paypal = {
+            // Application Constructor
+            initialize: function() {
+                this.bindEvents();
+            },
+            // Bind Event Listeners
+            //
+            // Bind any events that are required on startup. Common events are:
+            // 'load', 'deviceready', 'offline', and 'online'.
+            bindEvents: function() {
+                document.addEventListener('deviceready', this.onDeviceReady, false);
+            },
+            // deviceready Event Handler
+            //
+            // The scope of 'this' is the event. In order to call the 'receivedEvent'
+            // function, we must explicity call 'app.receivedEvent(...);'
+            onDeviceReady: function() {
+                $scope.paypal.receivedEvent('deviceready');
+            },
+            // Update DOM on a Received Event
+            receivedEvent: function(id) {
+                // start to initialize PayPalMobile library
+                $scope.paypal.initPaymentUI();
+            },
+            initPaymentUI : function () {
+                var clientIDs = {
+                    "PayPalEnvironmentProduction": "ATFL-xCxgAUPAGl4xq_UFp_YKGTLMfPdlbjSTHMvRsIv7VFgyREbfIeC2bVA",
+                    "PayPalEnvironmentSandbox": "AaU98hCYEOjYssUkh9FGKL1CnCMdET8YKuwJ_hzuB9jMLGO5nuKCsbiyZvKu"
+                };
+                PayPalMobile.init(clientIDs, $scope.paypal.onPayPalMobileInit);
+
+            },
+            onSuccesfulPayment : function(payment) {
+                console.log("payment success: " + JSON.stringify(payment, null, 4));
+            },
+            onFuturePaymentAuthorization : function(authorization) {
+                console.log("authorization: " + JSON.stringify(authorization, null, 4));
+            },
+            createPayment : function () {
+                // for simplicity use predefined amount
+                var paymentDetails = new PayPalPaymentDetails($scope.totalToPay, "0", "0");
+                var payment = new PayPalPayment($scope.totalToPay, "ILS", $scope.formattedItemName, "Sale", paymentDetails);
+                return payment;
+            },
+            configuration : function () {
+                // for more options see `paypal-mobile-js-helper.js`
+                var config = new PayPalConfiguration({
+                    merchantName: "חטיפים לחיים",
+                    merchantPrivacyPolicyURL: "http://treatsforlife.org/policy.pdf",
+                    merchantUserAgreementURL: "http://treatsforlife.org/agreement.pdf",
+                    languageOrLocale: "he",
+                    forceDefaultsInSandbox : true,
+                    sandboxUserPassword: null,
+                    sandboxUserPin: null
+                });
+                return config;
+            },
+            onPrepareRender : function() {
+                $scope.paypal.buyNow();
+            },
+            buyNow: function(){
+                $timeout(function(){
+                        PayPalMobile.renderSinglePaymentUI($scope.paypal.createPayment(), $scope.paypal.onSuccesfulPayment, $scope.paypal.onUserCanceled);
+                });
+            },
+            onPayPalMobileInit : function() {
+                // must be called
+                // use PayPalEnvironmentNoNetwork mode to get look and feel of the flow
+                PayPalMobile.prepareToRender("PayPalEnvironmentSandbox", $scope.paypal.configuration(), $scope.paypal.onPrepareRender);
+            },
+            onUserCanceled : function(result) {
+                console.log(result);
+            }
+        };
+        $scope.paypal.initialize();
+
+        //PAYPAL-END
+
 
     }]);

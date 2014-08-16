@@ -196,9 +196,7 @@ angular.module('clientApp')
                 $scope.paypal.buyNow();
             },
             buyNow: function(){
-                $timeout(function(){
-                    PayPalMobile.renderSinglePaymentUI($scope.paypal.createPayment(), $scope.paypal.onSuccesfulPayment, $scope.paypal.onUserCanceled);
-                });
+                PayPalMobile.renderSinglePaymentUI($scope.paypal.createPayment(), $scope.paypal.onSuccesfulPayment, $scope.paypal.onUserCanceled);
             },
             onPayPalMobileInit : function() {
                 // must be called

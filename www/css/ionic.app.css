@@ -8005,17 +8005,14 @@ body.welcome .navbar {
   box-sizing: border-box;
   background: #222222;
   position: fixed;
-  background-size: 80px;
-  padding: 15px; }
+  background-size: 80px; }
 
 .push-bottom-logo {
   display: none; }
 
 .push-event {
-  height: 248px;
-  width: 248px;
-  margin: -14px -15px;
-  margin-bottom: 10px; }
+  height: 250px;
+  width: 250px; }
   .push-event img {
     height: 100%;
     width: 100%;
@@ -8024,7 +8021,7 @@ body.welcome .navbar {
     object-fit: cover;
     z-index: -1; }
     .push-event img.logo {
-      padding: 30px; }
+      padding: 40px; }
   .push-event span {
     box-sizing: border-box;
     font-weight: 500;
@@ -8054,6 +8051,14 @@ body.welcome .navbar {
   cursor: pointer; }
   .white-links i:hover, .white-links a:hover {
     color: #fff; }
+.white-links li.push-mine {
+  background-color: #9aca13; }
+.white-links li.push-adopted {
+  background-color: #FFC408; }
+.white-links li.push-lonely {
+  background-color: #DF2B46; }
+.white-links li.push-fb {
+  background-color: #3b5998; }
 
 /* Vertical menu that slides from the left or right */
 .cbp-spmenu-right {

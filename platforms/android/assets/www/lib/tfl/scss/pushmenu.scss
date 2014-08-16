@@ -34,7 +34,6 @@
   background: #222222;// url(<%# asset_data_uri 'texture-black.jpg' %>);
   position: fixed;
   background-size: 80px;
-  padding:15px;
 }
 
 .push-bottom-logo{
@@ -42,10 +41,8 @@
 }
 
 .push-event{
-  height: 248px;
-  width: 248px;
-  margin: -14px -15px;
-  margin-bottom: 10px;
+  height: 250px;
+  width: 250px;
   img{
     height:100%;
     width:100%;
@@ -54,7 +51,7 @@
     object-fit: cover;
     z-index: -1;
     &.logo{
-      padding:30px;
+      padding:40px;
     }
   }
   span{
@@ -94,6 +91,21 @@
     &:hover {
       color: #fff;
     }
+  }
+  li{
+    &.push-mine{
+      background-color: $scheme-green;
+    }
+    &.push-adopted {
+      background-color: $scheme-yellow;
+    }
+    &.push-lonely {
+      background-color: $scheme-red;
+    }
+    &.push-fb {
+      background-color: #3b5998;
+    }
+
   }
 }
 

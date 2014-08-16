@@ -127,7 +127,8 @@ angular.module('clientApp')
         }
 
         $scope.greetAdoption = function () {
-            $scope.showDialog('adopted');
+//            $scope.showDialog('adopted');
+            $scope.adopted();
         };
 
         $scope.adopt = function () {

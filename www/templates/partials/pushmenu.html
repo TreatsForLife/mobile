@@ -7,11 +7,11 @@
         <img src="images/logo.png" ng-if="!user.pet" class="logo"/>
     </div>
     <ul class="large white-links rtl">
-        <li><a ng-click="closePushMenu();" ng-href="{{'#/pet/' + user.pet._id}}" ng-if="user.pet">הכלב שלי</a></li>
-        <li><a ng-click="closePushMenu();" ng-href="#/pets/lonely">כלבים בודדים</a></li>
-        <li><a ng-click="closePushMenu();" ng-href="#/pets/adopted">כלבים מאומצים</a></li>
-        <li><a ng-click="closePushMenu(); showDialog('welcome')">מי אנחנו?</a></li>
-        <li><a ng-click="closePushMenu();" class="color-facebook" href="http://www.facebook.com/treatsforlife" target="_blank"><i class="fa fa-facebook-square color-facebook"></i> חטיפים לחיים</a></li>
+        <li class="push-mine"><a ng-click="closePushMenu();" ng-href="{{'#/pet/' + user.pet._id}}" ng-if="user.pet">הכלב שלי</a></li>
+        <li class="push-lonely"><a ng-click="closePushMenu();" ng-href="#/pets/lonely">כלבים בודדים</a></li>
+        <li class="push-adopted"><a ng-click="closePushMenu();" ng-href="#/pets/adopted">כלבים מאומצים</a></li>
+        <li class="push-who"><a ng-click="closePushMenu(); showDialog('welcome')">מי אנחנו?</a></li>
+        <li class="push-fb"><a ng-click="closePushMenu();" href="http://www.facebook.com/treatsforlife" target="_blank"><i class="fa fa-facebook-square color-facebook"></i> חטיפים לחיים</a></li>
     </ul>
 </nav>
 

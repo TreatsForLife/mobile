@@ -85,15 +85,15 @@ body, html {
   max-width: 600px;
   position: relative;
   margin: 0 auto;
-    &.ng-enter {
-      position: absolute;
-      top: 0;
-      z-index: 888;
-    }
     &.ng-leave {
       -webkit-animation: bounceOutLeft;
       -webkit-animation-duration: 11s;
       z-index: 999;
+      ~.container{
+        position: absolute;
+        top: 0;
+        z-index: 888;
+      }
     }
     &.reverse {
       &.ng-enter-active {

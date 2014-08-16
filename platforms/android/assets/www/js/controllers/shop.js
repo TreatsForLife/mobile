@@ -180,7 +180,7 @@ angular.module('clientApp')
             },
             buyNow: function(){
                 $timeout(function(){
-                        PayPalMobile.renderSinglePaymentUI($scope.paypal.createPayment(), $scope.paypal.onSuccesfulPayment, $scope.paypal.onUserCanceled);
+                    PayPalMobile.renderSinglePaymentUI($scope.paypal.createPayment(), $scope.paypal.onSuccesfulPayment, $scope.paypal.onUserCanceled);
                 });
             },
             onPayPalMobileInit : function() {

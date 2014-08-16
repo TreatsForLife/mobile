@@ -1,8 +1,8 @@
 <div class="navbar-inner">
-    <ion-nav-back-button class="navbar-back" ng-click="goBack();">
-        <i class="fa fa-chevron-left"></i>
+    <div class="navbar-back" ng-click="goBack();">
+        <i class="fa fa-chevron-left" ng-show="canGoBack()"></i>
         <div class="navbar-logo"></div>
-    </ion-nav-back-button>
+    </div>
     <div class="navbar-name" ng-bind="navbarTitle"></div>
     <div class="navbar-menu">
         <i class="fa fa-paw" ng-click="openPushMenu()"></i>

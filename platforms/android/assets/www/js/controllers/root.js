@@ -52,7 +52,11 @@ angular.module('clientApp')
             return $sce.trustAsResourceUrl(src);
         }
 
+        $rootScope.canGoBack = function(){
+            return (window.history.length > 0)
+        }
         $rootScope.goBack = function () {
+            if (!$scope.canGoBack()) return;
             $timeout(function () {
                 $scope.goingBack = true;
             }, 0);

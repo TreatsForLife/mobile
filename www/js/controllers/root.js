@@ -52,7 +52,11 @@ angular.module('clientApp')
             return $sce.trustAsResourceUrl(src);
         }
 
+        $rootScope.canGoBack = function(){
+            return (window.history.length > 0)
+        }
         $rootScope.goBack = function () {
+            if (!$scope.canGoBack()) return;
             $timeout(function () {
                 $scope.goingBack = true;
             }, 0);
@@ -113,7 +117,8 @@ angular.module('clientApp')
             $rootScope.windowHeight = $(window).height();
             $rootScope.containerWidth = $('.container').width();
             $rootScope.picHeight = $('.container').width() * 0.6;
-        }, 5)
+        }, 5);
+
         $timeout(function () {
             window.scrollTo(0, 1);
         }, 1000);

@@ -50,6 +50,11 @@ angular.module('clientApp', ['ionic',
                 templateUrl: 'templates/pet.html',
                 controller: 'PetCtrl'
             })
+            .state('adopt', {
+                url: "/pet/:id/:adopt",
+                templateUrl: 'templates/pet.html',
+                controller: 'PetCtrl'
+            })
             .state('shop', {
                 url: "/shop/:id",
                 templateUrl: 'templates/shop.html',

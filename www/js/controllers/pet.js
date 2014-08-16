@@ -23,7 +23,7 @@ angular.module('clientApp')
                     $scope.getPetId();
                 });
             }
-            if ($location.search()['adopt']){
+            if ($stateParams['adopt']){
                 $scope.greetAdoption();
             }
         }

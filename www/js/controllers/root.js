@@ -55,13 +55,14 @@ angular.module('clientApp')
         $scope.history = [];
         $scope.lastUrl = '';
         $rootScope.canGoBack = function(){
-            return ($scope.history.length > 1)
+            return ($scope.history.length > 0)
         }
         $rootScope.goBack = function () {
             if (!$scope.canGoBack()) return;
             var l = $scope.history.length;
             var path = $scope.history[l-1];
             $scope.history = $scope.history.slice(0, l-1);
+            $scope.lastUrl = '';
             $location.path(path);
         }
         $rootScope.addUrlToHistory = function(url){
@@ -70,7 +71,7 @@ angular.module('clientApp')
         }
         $rootScope.addDummyToHistory = function(){
             var l = $scope.history.length;
-            if ($scope.history[l-1] != $scope.lastUrl){
+            if ($scope.lastUrl && ($scope.history[l-1] != $scope.lastUrl)){
                 $scope.history.push($scope.lastUrl);
             }
         }

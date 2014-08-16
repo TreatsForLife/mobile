@@ -23,7 +23,7 @@
 
     <script type="text/javascript" src="js/paypal-mobile-js-helper.js"></script>
   </head>
-  <body ng-app="clientApp" ng-controller="RootCtrl" ng-class="bodyClass" >
+  <body ng-app="clientApp" ng-controller="RootCtrl" ng-class="bodyClass"  animation="slide-left-right-ios7">
     <!-- 
       The nav bar that will be updated as we navigate between views.
     -->
@@ -43,9 +43,7 @@
     <tip-dialog></tip-dialog>
 
     <div class="container-wrapper" style="padding: 0">
-        <!--<div class="container {{bodyClass}} {{bodyBg}}" ng-class="{goingBack: goingBack, animated: canAnimate}"-->
-        <!--ng-view="" ng-class=""></div>-->
-        <div class="container {{bodyClass}} {{bodyBg}}" ng-class="{goingBack: goingBack, animated: canAnimate}" >
+        <div class="container {{bodyClass}} {{bodyBg}}" >
             <ion-nav-view class="container" ></ion-nav-view>
         </div>
     </div>

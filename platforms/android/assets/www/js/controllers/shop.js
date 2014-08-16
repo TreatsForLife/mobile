@@ -10,6 +10,7 @@ angular.module('clientApp')
         var pet_id = $stateParams['id'] || $rootScope.user_pet_id;
 
         $rootScope.bodyClass = 'shop';
+        $rootScope.bodyBg = 'shop';
         $rootScope.navbarTitle = 'החנות';
 
         $scope.returnUrl = Consts.client_root + '#/pet/' + pet_id;

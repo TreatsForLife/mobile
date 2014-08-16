@@ -6,6 +6,7 @@ angular.module('clientApp')
         console.log('WelcomeCtrl');
 
         $rootScope.bodyClass = 'welcome';
+        $rootScope.bodyBg = 'welcome';
 
         $scope.placeLogo = function (iterations) {
             if (typeof iterations == 'undefined') iterations = 5;

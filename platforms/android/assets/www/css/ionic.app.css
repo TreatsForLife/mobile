@@ -7716,31 +7716,33 @@ body, html {
   max-width: 600px;
   position: relative;
   margin: 0 auto; }
-  .container.animated.ng-enter {
-    position: absolute;
-    top: 0;
-    z-index: 888; }
-  .container.animated.ng-leave {
-    animation: bounceOutLeft;
-    animation-duration: 1s;
+  .container.ng-leave {
+    -webkit-animation: bounceOutLeft;
+    -webkit-animation-duration: 1.3s;
+    position: absolute !important;
+    top: 0 !important;
     z-index: 999; }
-  .container.animated.goingBack.ng-enter-active {
+    .container.ng-leave ~ .container {
+      position: absolute !important;
+      top: 0 !important;
+      z-index: 888; }
+  .container.reverse {
     position: absolute;
     top: 0;
-    animation: bounceInLeft;
-    animation-duration: 1s;
+    -webkit-animation: bounceInLeft;
+    -webkit-animation-duration: 1.3s;
     z-index: 999; }
-  .container.animated.goingBack.ng-leave-active {
-    position: absolute;
-    top: 0;
-    animation: none;
-    animation-duration: 1s;
-    z-index: 888; }
-  .container.animated.zoom.ng-enter {
-    animation: zoomIn 0.5s both ease-in;
+    .container.reverse.ng-leave-active {
+      position: absolute;
+      top: 0;
+      -webkit-animation: none;
+      -webkit-animation-duration: 1.3s;
+      z-index: 888; }
+  .container.zoom.ng-enter {
+    -webkit-animation: zoomIn 0.5s both ease-in;
     z-index: 9999; }
-  .container.animated.zoom.ng-leave {
-    animation: fadeOut 0.5s both ease-in;
+  .container.zoom.ng-leave {
+    -webkit-animation: fadeOut 0.5s both ease-in;
     z-index: 8888; }
 
 html {
@@ -8164,15 +8166,15 @@ body.pushed .body-cover {
     line-height: 24px;
     cursor: pointer; }
 
-div.container.welcome {
+.container.welcome {
   background-color: #9aca13;
   padding: 0;
   height: 100%; }
-  div.container.welcome .welcome-logo-wrapper {
+  .container.welcome .welcome-logo-wrapper {
     display: block;
     width: 100%;
     height: auto; }
-    div.container.welcome .welcome-logo-wrapper .welcome-logo, div.container.welcome .welcome-logo-wrapper .welcome-logo-animation {
+    .container.welcome .welcome-logo-wrapper .welcome-logo, .container.welcome .welcome-logo-wrapper .welcome-logo-animation {
       width: 100%;
       height: 100%;
       max-width: 266px;
@@ -8180,23 +8182,23 @@ div.container.welcome {
       margin: auto;
       background: url('../images/animated-logo.png') no-repeat 0 center;
       background-size: auto 100%; }
-    div.container.welcome .welcome-logo-wrapper .welcome-logo {
+    .container.welcome .welcome-logo-wrapper .welcome-logo {
       background-image: url('../images/animated-logo-loop.gif'); }
-    div.container.welcome .welcome-logo-wrapper .welcome-logo-animation {
+    .container.welcome .welcome-logo-wrapper .welcome-logo-animation {
       background-image: url('../images/animated-logo.png'); }
-  div.container.welcome .welcome-app-what {
+  .container.welcome .welcome-app-what {
     position: fixed;
     right: 10px;
     top: 10px;
     color: white;
     font-size: 30px; }
-  div.container.welcome .bottom-wrapper {
+  .container.welcome .bottom-wrapper {
     position: relative;
     margin: 0 5%;
     width: 90%;
     display: block;
     text-align: center; }
-    div.container.welcome .bottom-wrapper .welcome-app-explained {
+    .container.welcome .bottom-wrapper .welcome-app-explained {
       margin: 10px auto;
       display: block;
       position: relative;
@@ -8206,7 +8208,7 @@ div.container.welcome {
       padding: 0 15px;
       font-weight: bold;
       color: #DF2B46; }
-    div.container.welcome .bottom-wrapper .welcome-login-explained {
+    .container.welcome .bottom-wrapper .welcome-login-explained {
       margin: 10px auto;
       display: block;
       position: relative;
@@ -8214,7 +8216,7 @@ div.container.welcome {
       color: #efefef;
       text-align: center;
       width: 100%; }
-    div.container.welcome .bottom-wrapper .fb-login {
+    .container.welcome .bottom-wrapper .fb-login {
       margin: 20px auto;
       display: block;
       position: relative;
@@ -8235,16 +8237,16 @@ div.container.welcome {
       background-color: #2b4170;
       /* fallback color */
       background: linear-gradient(top, #3b5998, #2b4170); }
-      div.container.welcome .bottom-wrapper .fb-login:active {
+      .container.welcome .bottom-wrapper .fb-login:active {
         background: linear-gradient(bottom, #3b5998, #2b4170); }
-      div.container.welcome .bottom-wrapper .fb-login i {
+      .container.welcome .bottom-wrapper .fb-login i {
         font-size: 30px;
         float: left; }
-      div.container.welcome .bottom-wrapper .fb-login p {
+      .container.welcome .bottom-wrapper .fb-login p {
         margin-left: 35px;
         text-align: center;
         border-left: 1px solid rgba(255, 255, 255, 0.4); }
-  div.container.welcome #inst-login {
+  .container.welcome #inst-login {
     width: 224px;
     height: 36px;
     position: absolute;
@@ -8266,7 +8268,7 @@ div.container.welcome {
     line-height: 16px;
     display: block;
     text-decoration: none; }
-    div.container.welcome #inst-login:before {
+    .container.welcome #inst-login:before {
       width: 30px;
       height: 34px;
       margin-left: -30px;
@@ -8278,7 +8280,7 @@ div.container.welcome {
       border-bottom-left-radius: 5px;
       background: linear-gradient(left, #ff2b2b 0%, #ff2b2b 25%, #f3ff0f 26%, #ffff1e 50%, #43e86c 51%, #30d165 75%, #36a3c1 76%, #55abc3 100%, #ededed 100%);
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2b2b', endColorstr='#ededed', GradientType=1); }
-    div.container.welcome #inst-login:after {
+    .container.welcome #inst-login:after {
       content: '';
       position: absolute;
       margin-left: -30px;
@@ -8291,62 +8293,62 @@ div.container.welcome {
       background: rgba(255, 255, 255, 0.2);
       background: linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(15, 15, 15, 0.3) 100%);
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#0f0f0f', GradientType=0); }
-    div.container.welcome #inst-login:hover {
+    .container.welcome #inst-login:hover {
       box-shadow: 0 0 1px black; }
-    div.container.welcome #inst-login:active::after {
+    .container.welcome #inst-login:active::after {
       background: linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(15, 15, 15, 0.3) 100%); }
 
-div.container.pets, div.container.pet {
+.container.pets, .container.pet {
   overflow-x: hidden;
   overflow-y: visible; }
-  div.container.pets.adopted, div.container.pet.adopted {
+  .container.pets.adopted, .container.pet.adopted {
     background-color: #FFC408; }
-  div.container.pets.lonely, div.container.pet.lonely {
+  .container.pets.lonely, .container.pet.lonely {
     background-color: #DF2B46; }
-  div.container.pets .pets-text, div.container.pet .pets-text {
+  .container.pets .pets-text, .container.pet .pets-text {
     display: block;
     width: 100%;
     padding: 24px 20px 0;
     direction: rtl;
     color: white;
     text-align: center; }
-  div.container.pets .pets-pic, div.container.pet .pets-pic {
+  .container.pets .pets-pic, .container.pet .pets-pic {
     display: block;
     width: 100%;
     overflow: visible; }
-    div.container.pets .pets-pic .pet, div.container.pet .pets-pic .pet {
+    .container.pets .pets-pic .pet, .container.pet .pets-pic .pet {
       padding: 25px 15px 25px; }
-  div.container.pets .pet, div.container.pet .pet {
+  .container.pets .pet, .container.pet .pet {
     display: block;
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
     position: relative; }
-    div.container.pets .pet .pet-inner, div.container.pet .pet .pet-inner {
+    .container.pets .pet .pet-inner, .container.pet .pet .pet-inner {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
       border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 5px;
       overflow: hidden; }
-      div.container.pets .pet .pet-inner .pet-pic, div.container.pet .pet .pet-inner .pet-pic {
+      .container.pets .pet .pet-inner .pet-pic, .container.pet .pet .pet-inner .pet-pic {
         width: 100%;
         background-position: center center;
         background-size: cover;
         display: block;
         line-height: 0;
         height: 210px; }
-        div.container.pets .pet .pet-inner .pet-pic .pet-pic-play, div.container.pet .pet .pet-inner .pet-pic .pet-pic-play {
+        .container.pets .pet .pet-inner .pet-pic .pet-pic-play, .container.pet .pet .pet-inner .pet-pic .pet-pic-play {
           line-height: inherit;
           width: 100%;
           color: white;
           font-size: 50px; }
-          div.container.pets .pet .pet-inner .pet-pic .pet-pic-play .pet-pic-play-circle, div.container.pet .pet .pet-inner .pet-pic .pet-pic-play .pet-pic-play-circle {
+          .container.pets .pet .pet-inner .pet-pic .pet-pic-play .pet-pic-play-circle, .container.pet .pet .pet-inner .pet-pic .pet-pic-play .pet-pic-play-circle {
             color: rgba(0, 0, 0, 0.6);
             margin-left: -4px; }
-      div.container.pets .pet .pet-inner .pet-bar, div.container.pet .pet .pet-inner .pet-bar {
+      .container.pets .pet .pet-inner .pet-bar, .container.pet .pet .pet-inner .pet-bar {
         height: 40px;
         background: #fefefe;
         position: relative; }
-        div.container.pets .pet .pet-inner .pet-bar .owner-pic, div.container.pet .pet .pet-inner .pet-bar .owner-pic {
+        .container.pets .pet .pet-inner .pet-bar .owner-pic, .container.pet .pet .pet-inner .pet-bar .owner-pic {
           position: absolute;
           height: 50px;
           width: 50px;
@@ -8354,12 +8356,12 @@ div.container.pets, div.container.pet {
           box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
           top: -20px;
           left: 10px; }
-        div.container.pets .pet .pet-inner .pet-bar .pet-gender, div.container.pet .pet .pet-inner .pet-bar .pet-gender {
+        .container.pets .pet .pet-inner .pet-bar .pet-gender, .container.pet .pet .pet-inner .pet-bar .pet-gender {
           height: 30px;
           width: 30px;
           float: right;
           margin: 5px 10px; }
-        div.container.pets .pet .pet-inner .pet-bar .pet-name, div.container.pet .pet .pet-inner .pet-bar .pet-name {
+        .container.pets .pet .pet-inner .pet-bar .pet-name, .container.pet .pet .pet-inner .pet-bar .pet-name {
           line-height: 30px;
           height: 30px;
           float: right;
@@ -8370,7 +8372,7 @@ div.container.pets, div.container.pet {
           text-align: right;
           direction: rtl;
           color: #333; }
-    div.container.pets .pet .pets-zoom, div.container.pet .pet .pets-zoom {
+    .container.pets .pet .pets-zoom, .container.pet .pet .pets-zoom {
       position: absolute;
       bottom: 27px;
       left: 50%;
@@ -8389,18 +8391,18 @@ div.container.pets, div.container.pet {
       box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
       border: solid 1px transparent; }
 
-div.container.pet {
+.container.adopted {
+  background-color: #FFC408; }
+.container.lonely {
+  background-color: #DF2B46; }
+.container.mine {
+  background-color: #9aca13; }
+.container.pet {
   overflow: hidden;
   transform: none; }
-  div.container.pet.adopted {
-    background-color: #FFC408; }
-  div.container.pet.lonely {
-    background-color: #DF2B46; }
-  div.container.pet.mine {
-    background-color: #9aca13; }
-  div.container.pet #pet-pic {
+  .container.pet #pet-pic {
     margin-bottom: -10px; }
-  div.container.pet .cart-wrapper {
+  .container.pet .cart-wrapper {
     background-color: #5EB4C1;
     border-top: 1px solid #111;
     transition: all 0.5s ease;
@@ -8411,119 +8413,113 @@ div.container.pet {
     width: 100%;
     max-width: 600px;
     z-index: 99; }
-    div.container.pet .cart-wrapper.up {
+    .container.pet .cart-wrapper.up {
       margin-top: 0;
       padding-top: 40px;
       top: 0;
       overflow: auto; }
-    div.container.pet .cart-wrapper .cart-items {
+    .container.pet .cart-wrapper .cart-items {
       float: right;
       line-height: 50px; }
-      div.container.pet .cart-wrapper .cart-items .cart-items-title {
+      .container.pet .cart-wrapper .cart-items .cart-items-title {
         font-size: 20px;
         color: #fefefe;
         float: right;
         line-height: 50px;
         text-align: right;
         direction: rtl; }
-      div.container.pet .cart-wrapper .cart-items .pet-info {
+      .container.pet .cart-wrapper .cart-items .pet-info {
         font-size: 32px;
         color: #fefefe;
         float: right;
         margin: 0 12px;
         line-height: 50px; }
-    div.container.pet .cart-wrapper .cart-center {
+    .container.pet .cart-wrapper .cart-center {
       width: 100%;
       text-align: center;
       line-height: 50px;
       height: 0; }
-      div.container.pet .cart-wrapper .cart-center div {
+      .container.pet .cart-wrapper .cart-center div {
         display: inline-block;
         width: 20px;
         height: 6px;
         border: 1px solid #111;
         border-width: 1px 0;
         margin: 22px; }
-    div.container.pet .cart-wrapper .cart-timer {
+    .container.pet .cart-wrapper .cart-timer {
       float: left;
       line-height: 50px; }
-      div.container.pet .cart-wrapper .cart-timer .pet-clock {
+      .container.pet .cart-wrapper .cart-timer .pet-clock {
         font-size: 32px;
         color: #fefefe;
         float: left;
         line-height: 50px;
         margin: 0 12px; }
-      div.container.pet .cart-wrapper .cart-timer .pet-timer {
+      .container.pet .cart-wrapper .cart-timer .pet-timer {
         font-size: 20px;
         color: #fefefe;
         float: left;
         height: 50px; }
-    div.container.pet .cart-wrapper .cart-shop-title {
+    .container.pet .cart-wrapper .cart-shop-title {
       font-size: 16px;
       color: #fefefe;
       text-align: center;
       padding: 15px; }
-  div.container.pet .pet-treat {
+  .container.pet .pet-treat {
     width: 100px; }
-
-.treat-wrapper {
+.container .treat-wrapper {
   text-align: center;
   margin-top: 0px; }
-  .treat-wrapper .pet-buy-button {
+  .container .treat-wrapper .pet-buy-button {
     background-image: url('../images/buy_button_row.png');
     margin: auto;
     background-position: 0 0;
     background-size: auto 100%; }
-  .treat-wrapper .pet-share-button {
+  .container .treat-wrapper .pet-share-button {
     background-image: url('../images/animated-share-button.png');
     margin: auto;
     background-position: 0 0;
     background-size: auto 100%; }
-  .treat-wrapper .pet-like-button {
+  .container .treat-wrapper .pet-like-button {
     background-image: url('../images/animated-like-button.png');
     margin: auto;
     background-position: 0 0;
     background-size: auto 100%; }
-  .treat-wrapper .pet-adopt-button-gif {
+  .container .treat-wrapper .pet-adopt-button-gif {
     background-image: url('../images/animated-adopt-button.gif');
     margin: auto;
     background-position: 0 0;
     background-size: auto 100%; }
-  .treat-wrapper .pet-adopt-button {
+  .container .treat-wrapper .pet-adopt-button {
     background-image: url('../images/animated-adopt-button.png');
     margin: auto;
     background-position: 0 0;
     background-size: auto 100%; }
-  .treat-wrapper .treat-share-wrapper i {
+  .container .treat-wrapper .treat-share-wrapper i {
     color: #DF2B46; }
-    .treat-wrapper .treat-share-wrapper i.fa-inverse {
+    .container .treat-wrapper .treat-share-wrapper i.fa-inverse {
       color: white; }
-  .treat-wrapper .treat-love-wrapper i.fa-circle {
+  .container .treat-wrapper .treat-love-wrapper i.fa-circle {
     color: #FFC408; }
-  .treat-wrapper .treat-love-wrapper i.fa-heart, .treat-wrapper .treat-love-wrapper i.fa-heart-o {
+  .container .treat-wrapper .treat-love-wrapper i.fa-heart, .container .treat-wrapper .treat-love-wrapper i.fa-heart-o {
     margin-top: 4px;
     color: #DF2B46; }
-
-.swipe {
+.container .swipe {
   overflow: hidden;
   position: relative; }
-
-.swipe-wrap {
+.container .swipe-wrap {
   overflow: hidden;
   position: relative; }
-
-.swipe-wrap > div {
+.container .swipe-wrap > div {
   float: left;
   width: 100%;
   position: relative; }
-
-.swipe-wrap.treat {
+.container .swipe-wrap.treat {
   width: 100%;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: auto 85%; }
-
-.dialog-video {
+.container .dialog-video {
   position: fixed;
   top: 0;
   left: 0;
@@ -8531,10 +8527,10 @@ div.container.pet {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.95);
   z-index: 100000; }
-  .dialog-video video {
+  .container .dialog-video video {
     width: 100%;
     height: 100%; }
-  .dialog-video #video-loading-indicator {
+  .container .dialog-video #video-loading-indicator {
     padding: 15px;
     background: rgba(0, 0, 0, 0.75);
     font-size: 24px;
@@ -8545,31 +8541,31 @@ div.container.pet {
     margin-left: -65px;
     border-radius: 5px;
     color: white; }
-    .dialog-video #video-loading-indicator i {
+    .container .dialog-video #video-loading-indicator i {
       margin-left: 10px; }
-  .dialog-video #video-controls-wrapper {
+  .container .dialog-video #video-controls-wrapper {
     position: absolute;
     bottom: 0;
     width: 100%; }
-    .dialog-video #video-controls-wrapper.ng-enter, .dialog-video #video-controls-wrapper.ng-leave.ng-leave-active {
+    .container .dialog-video #video-controls-wrapper.ng-enter, .container .dialog-video #video-controls-wrapper.ng-leave.ng-leave-active {
       opacity: 0; }
-    .dialog-video #video-controls-wrapper.ng-leave, .dialog-video #video-controls-wrapper.ng-enter.ng-enter-active {
+    .container .dialog-video #video-controls-wrapper.ng-leave, .container .dialog-video #video-controls-wrapper.ng-enter.ng-enter-active {
       opacity: 1; }
-    .dialog-video #video-controls-wrapper .video-controls {
+    .container .dialog-video #video-controls-wrapper .video-controls {
       font-size: 26px;
       padding: 6px 12px;
       color: white; }
-      .dialog-video #video-controls-wrapper .video-controls .video-controls-section {
+      .container .dialog-video #video-controls-wrapper .video-controls .video-controls-section {
         display: inline-block;
         margin: -3px; }
-        .dialog-video #video-controls-wrapper .video-controls .video-controls-section.progress-wrapper {
+        .container .dialog-video #video-controls-wrapper .video-controls .video-controls-section.progress-wrapper {
           position: absolute;
           left: 0;
           bottom: 33px;
           width: 100%;
           box-sizing: border-box;
           padding: 0 85px 0 42px; }
-          .dialog-video #video-controls-wrapper .video-controls .video-controls-section.progress-wrapper .video-progress-total {
+          .container .dialog-video #video-controls-wrapper .video-controls .video-controls-section.progress-wrapper .video-progress-total {
             position: relative;
             top: 25px;
             left: 10px;
@@ -8577,20 +8573,20 @@ div.container.pet {
             height: 10px;
             background: #333;
             border-radius: 10px; }
-            .dialog-video #video-controls-wrapper .video-controls .video-controls-section.progress-wrapper .video-progress-total .video-progress-current {
+            .container .dialog-video #video-controls-wrapper .video-controls .video-controls-section.progress-wrapper .video-progress-total .video-progress-current {
               height: 100%;
               background: #fff;
               border-radius: 10px;
               transition-property: width;
               transition-duration: 0.25s;
               transition-timing-function: linear; }
-      .dialog-video #video-controls-wrapper .video-controls .video-position-indicator {
+      .container .dialog-video #video-controls-wrapper .video-controls .video-position-indicator {
         position: absolute;
         top: 10px;
         right: 14px;
         font-size: 15px;
         font-family: Verdana, Arial, Helvetica; }
-  .dialog-video .dialog-video-close {
+  .container .dialog-video .dialog-video-close {
     background: transparent;
     color: white;
     position: absolute;
@@ -8600,7 +8596,7 @@ div.container.pet {
     border: none;
     padding: 0; }
 
-div.container.shop {
+.container.shop {
   background-color: #9aca13; }
 
 ul.shop-wrapper {

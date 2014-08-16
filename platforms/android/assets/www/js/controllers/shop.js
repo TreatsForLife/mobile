@@ -193,7 +193,7 @@ angular.module('clientApp')
                 return config;
             },
             onPrepareRender : function() {
-                $scope.paypal.buyNow();
+//                $scope.paypal.buyNow();
             },
             buyNow: function(){
                 PayPalMobile.renderSinglePaymentUI($scope.paypal.createPayment(), $scope.paypal.onSuccesfulPayment, $scope.paypal.onUserCanceled);

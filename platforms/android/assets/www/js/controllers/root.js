@@ -70,7 +70,7 @@ angular.module('clientApp')
             }, 0);
             $scope.cancelBack = $timeout(function () {
                 $scope.goingBack = false;
-            }, 3000);
+            }, 2000);
         }
         $rootScope.addUrlToHistory = function(url){
             $rootScope.addDummyToHistory();

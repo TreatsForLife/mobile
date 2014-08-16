@@ -39,4 +39,7 @@
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
     <icon height="96" src="icons/android/icon.png" width="96" />
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+    </feature>
 </widget>

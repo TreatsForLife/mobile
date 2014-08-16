@@ -14,7 +14,8 @@
                 "<access origin=\"https://api.facebook.com\" />": 1,
                 "<access origin=\"https://*.fbcdn.net\" />": 1,
                 "<access origin=\"https://*.akamaihd.net\" />": 1,
-                "<feature name=\"PayPalMobile\"><param name=\"android-package\" value=\"com.paypal.cordova.sdk.PayPalMobileCordovaPlugin\" /></feature>": 1
+                "<feature name=\"PayPalMobile\"><param name=\"android-package\" value=\"com.paypal.cordova.sdk.PayPalMobileCordovaPlugin\" /></feature>": 1,
+                "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /></feature>": 1
             }
         },
         "res/values/facebookconnect.xml": {
@@ -67,6 +68,9 @@
             "PACKAGE_NAME": "org.treatsforlife.app"
         },
         "com.paypal.cordova.mobilesdk": {
+            "PACKAGE_NAME": "org.treatsforlife.app"
+        },
+        "org.apache.cordova.splashscreen": {
             "PACKAGE_NAME": "org.treatsforlife.app"
         }
     },

@@ -27,6 +27,13 @@ module.exports = [
         "clobbers": [
             "PayPalMobile"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.splashscreen/www/splashscreen.js",
+        "id": "org.apache.cordova.splashscreen.SplashScreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -36,7 +43,8 @@ module.exports.metadata =
     "org.apache.cordova.console": "0.2.9",
     "org.apache.cordova.device": "0.2.10",
     "com.phonegap.plugins.facebookconnect": "0.7.0",
-    "com.paypal.cordova.mobilesdk": "2.0.2"
+    "com.paypal.cordova.mobilesdk": "2.0.2",
+    "org.apache.cordova.splashscreen": "0.3.3-dev"
 }
 // BOTTOM OF METADATA
 });

@@ -7721,26 +7721,26 @@ body, html {
     top: 0;
     z-index: 888; }
   .container.animated.ng-leave {
-    animation: bounceOutLeft;
-    animation-duration: 11s;
+    -webkit-animation: bounceOutLeft;
+    -webkit-animation-duration: 11s;
     z-index: 999; }
   .container.animated.goingBack.ng-enter-active {
     position: absolute;
     top: 0;
-    animation: bounceInLeft;
-    animation-duration: 11s;
+    -webkit-animation: bounceInLeft;
+    -webkit-animation-duration: 11s;
     z-index: 999; }
   .container.animated.goingBack.ng-leave-active {
     position: absolute;
     top: 0;
-    animation: none;
-    animation-duration: 11s;
+    -webkit-animation: none;
+    -webkit-animation-duration: 11s;
     z-index: 888; }
   .container.animated.zoom.ng-enter {
-    animation: zoomIn 0.5s both ease-in;
+    -webkit-animation: zoomIn 0.5s both ease-in;
     z-index: 9999; }
   .container.animated.zoom.ng-leave {
-    animation: fadeOut 0.5s both ease-in;
+    -webkit-animation: fadeOut 0.5s both ease-in;
     z-index: 8888; }
 
 html {

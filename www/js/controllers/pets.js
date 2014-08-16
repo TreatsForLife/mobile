@@ -13,19 +13,17 @@ angular.module('clientApp')
         if (filter == 'adopted') {
             $rootScope.navbarTitle = 'כלבים מאומצים';
             $scope.pets = Pets.adopted();
-            $rootScope.bodyClass += ' adopted';
-            $rootScope.addUrlToHistory('/pets/adopted');
+            $rootScope.bodyClass = 'pets adopted';
         } else if (filter == 'lonely') {
             $rootScope.navbarTitle = 'כלבים בודדים';
             $scope.pets = Pets.lonely();
-            $rootScope.bodyClass += ' lonely';
-            $rootScope.addUrlToHistory('/pets/lonely');
+            $rootScope.bodyClass = 'pets lonely';
         } else {
             if ($scope.user) {
-                $location.path('/' + ($scope.user.pet ? 'pet/'+$scope.user.pet : 'pets/lonely'));
+                $location.path('/' + ($scope.user.pet ? 'pet' : 'pets/lonely'));
             } else {
                 $scope.$on('userIsFetched', function () {
-                    $location.path('/' + ($scope.user.pet ? 'pet/'+$scope.user.pet : 'pets/lonely'));
+                    $location.path('/' + ($scope.user.pet ? 'pet' : 'pets/lonely'));
                 });
             }
         }

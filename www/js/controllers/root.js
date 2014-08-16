@@ -59,11 +59,17 @@ angular.module('clientApp')
         }
         $rootScope.goBack = function () {
             if (!$scope.canGoBack()) return;
-            var l = $scope.history.length;
-            var path = $scope.history[l-1];
-            $scope.history = $scope.history.slice(0, l-1);
-            $scope.lastUrl = '';
-            $location.path(path);
+            $timeout(function () {
+                var l = $scope.history.length;
+                var path = $scope.history[l-1];
+                $scope.history = $scope.history.slice(0, l-1);
+                $scope.lastUrl = '';
+                $scope.goingBack = true;
+                $location.path(path);
+            }, 0);
+            $timeout(function () {
+                $scope.goingBack = false;
+            }, 1000);
         }
         $rootScope.addUrlToHistory = function(url){
             $rootScope.addDummyToHistory();

@@ -69,7 +69,7 @@ angular.module('clientApp')
             }, 0);
             $timeout(function () {
                 $scope.goingBack = false;
-            }, 11000);
+            }, 1300);
         }
         $rootScope.addUrlToHistory = function(url){
             $rootScope.addDummyToHistory();

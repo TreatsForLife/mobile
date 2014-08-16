@@ -15,8 +15,8 @@
 <div class="shop-checkout" ng-if="showCheckout" ng-init="initCheckout()">
     <div class="shop-checkout-inner">
         <div class="shop-checkout-total">סה"כ תרומה: {{totalToPay}} שקלים</div>
-        <input type="button" class="shop-checkout-button button-{{paymentActive ? 'blue' : 'disabled'}}"
-               ng-click="paypal.buyNow()" value="לתשלום"/>
+        <button class="shop-checkout-button button-{{paymentActive ? 'blue' : 'disabled'}}"
+               ng-click="pay()"><i class="fa fa-cart"></i> לתשלום</button>
 
 <!--
         <form id="payment-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">

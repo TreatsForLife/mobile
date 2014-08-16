@@ -170,7 +170,8 @@ angular.module('clientApp')
                     merchantUserAgreementURL: "http://treatsforlife.org/agreement.pdf",
                     languageOrLocale: "he",
                     forceDefaultsInSandbox : true,
-                    sandboxUserPassword: "Treats41M$"
+                    sandboxUserPassword: "Treats41M$",
+                    sandboxUserPin: "treatsforlife.org-facilitator@gmail.com"
                 });
                 return config;
             },

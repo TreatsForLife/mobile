@@ -7715,31 +7715,38 @@ body, html {
   width: 100%;
   max-width: 600px;
   position: relative;
-  margin: 0 auto; }
-  .container.animated.ng-enter {
-    position: absolute;
-    top: 0;
-    z-index: 888; }
-  .container.animated.ng-leave {
+  margin: 0 auto;
+  /*
+    &.custom-animation {
+      position: absolute;
+      top: 0;
+      z-index: 888;
+    }
+*/ }
+  .container.custom-animation {
     -webkit-animation: bounceOutLeft;
     -webkit-animation-duration: 11s;
     z-index: 999; }
-  .container.animated.goingBack.ng-enter-active {
-    position: absolute;
-    top: 0;
-    -webkit-animation: bounceInLeft;
-    -webkit-animation-duration: 11s;
-    z-index: 999; }
-  .container.animated.goingBack.ng-leave-active {
-    position: absolute;
-    top: 0;
-    -webkit-animation: none;
-    -webkit-animation-duration: 11s;
-    z-index: 888; }
-  .container.animated.zoom.ng-enter {
+  .container.reverse {
+    /*
+      &.ng-leave-active {
+        position: absolute;
+        top: 0;
+        -webkit-animation: none;
+        -webkit-animation-duration:11s;
+        z-index: 888;
+      }
+*/ }
+    .container.reverse.custom-animation {
+      position: absolute;
+      top: 0;
+      -webkit-animation: bounceInLeft;
+      -webkit-animation-duration: 11s;
+      z-index: 999; }
+  .container.zoom.ng-enter {
     -webkit-animation: zoomIn 0.5s both ease-in;
     z-index: 9999; }
-  .container.animated.zoom.ng-leave {
+  .container.zoom.ng-leave {
     -webkit-animation: fadeOut 0.5s both ease-in;
     z-index: 8888; }
 

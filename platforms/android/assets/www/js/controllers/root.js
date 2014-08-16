@@ -117,7 +117,8 @@ angular.module('clientApp')
             $rootScope.windowHeight = $(window).height();
             $rootScope.containerWidth = $('.container').width();
             $rootScope.picHeight = $('.container').width() * 0.6;
-        }, 5)
+        }, 5);
+
         $timeout(function () {
             window.scrollTo(0, 1);
         }, 1000);

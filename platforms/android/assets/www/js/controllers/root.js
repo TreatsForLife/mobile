@@ -70,7 +70,7 @@ angular.module('clientApp')
         }
         $rootScope.addDummyToHistory = function(){
             var l = $scope.history.length;
-            if (!$scope.history[l] == $scope.lastUrl){
+            if ($scope.history[l-1] != $scope.lastUrl){
                 $scope.history.push($scope.lastUrl);
             }
         }

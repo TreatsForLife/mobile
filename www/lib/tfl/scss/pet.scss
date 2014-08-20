@@ -112,6 +112,7 @@
 
     .pet-buy-button {
       background-image: url('../images/buy_button_row.png');
+      background-repeat: no-repeat;
       margin: auto;
       background-position: 0 0;
       background-size: auto 100%;
@@ -119,6 +120,7 @@
 
     .pet-share-button {
       background-image: url('../images/animated-share-button.png');
+      background-repeat: no-repeat;
       margin: auto;
       background-position: 0 0;
       background-size: auto 100%;
@@ -127,18 +129,21 @@
     .pet-like-button {
       background-image: url('../images/animated-like-button.png');
       margin: auto;
+      background-repeat: no-repeat;
       background-position: 0 0;
       background-size: auto 100%;
     }
 
     .pet-adopt-button-gif {
       background-image: url('../images/animated-adopt-button.gif');
+      background-repeat: no-repeat;
       margin: auto;
       background-position: 0 0;
       background-size: auto 100%;
     }
     .pet-adopt-button {
       background-image: url('../images/animated-adopt-button.png');
+      background-repeat: no-repeat;
       margin: auto;
       background-position: 0 0;
       background-size: auto 100%;
@@ -281,15 +286,13 @@
   }
 
   .pet-adopted-button {
-    background: $scheme-green url('../images/animated-thankyou.png');
+    background: $scheme-green url('../images/animated-thankyou.png') no-repeat;
     margin: auto;
     background-position: 0 0;
     background-size: auto 100%;
     position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    top:40px;
+    left:40px;
     z-index: 999999;
 /*
     &::before{

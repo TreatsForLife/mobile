@@ -42,6 +42,7 @@ angular.module('clientApp')
             var frame = numOfFrames;
             var dim = $scope.logoWidth
             var animationBgPosition = 0;
+            $('.welcome-logo-animation').css('background-size', ($scope.logoWidth * numOfFrames) + 'px auto');
             var animationInterval = $interval(function () {
                 if (frame == 0) {
                     $interval.cancel(animationInterval);

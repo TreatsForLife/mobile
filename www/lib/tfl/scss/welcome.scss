@@ -21,9 +21,11 @@
     }
     .welcome-logo {
       background-image: url('../images/animated-logo-loop.gif');
+      background-repeat: no-repeat;
     }
     .welcome-logo-animation {
       background-image: url('../images/animated-logo.png');
+      background-repeat: no-repeat;
     }
   }
 

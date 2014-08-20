@@ -21,8 +21,10 @@ angular.module('clientApp')
                     $scope.logoWidth = parseInt($scope.logoHeight / 370 * 266) + 'px';
                     $scope.logoMargin = parseInt(($scope.logoSpace - $scope.logoHeight) / 2) + 'px auto';
 
-                    $scope.logoSpace += 'px';
-                    $scope.logoHeight += 'px';
+                    $scope.logoSpacePX = $scope.logoSpace + 'px';
+                    $scope.logoHeightPX = $scope.logoSpace + 'px';
+                    $scope.logoMarginPX = $scope.logoMargin + 'px';
+                    $scope.logoWidthPX = $scope.logoWidth + 'px';
                 }
                 if (iterations > 0) {
                     $timeout(function () {

@@ -269,9 +269,9 @@ angular.module('clientApp')
                 }
                 $timeout(function () {
                     var animationDuration = 1700;
-                    var numOfFrames = 48;
+                    var numOfFrames = 70;
                     var frame = numOfFrames;
-                    var dim = $scope.buttonHeight;
+                    var dim = $scope.adoptAnimationWidth;
                     var animationBgPosition = 0;
                     var animationInterval = $interval(function () {
                         if (frame == 0) {

@@ -88,7 +88,12 @@ angular.module('clientApp')
                     }, 80);
 
                     if (true || $stateParams['adopt']){
-                        $scope.animateAdoptionButton();
+                        if ($stateParams['adopt']=='adopt'){
+                            var callback = $scope.adopted();
+                        }else{
+                            var callback = $scope.bought();
+                        }
+                        $scope.animateAdoptionButton(callback);
                     }
 
                 });
@@ -250,7 +255,7 @@ angular.module('clientApp')
             }, (animationDuration / numOfFrames))
         }
 
-        $scope.animateAdoptionButton = function () {
+        $scope.animateAdoptionButton = function (callback) {
             $timeout(function () {
                 $scope.showAdoptionAnimation = true;
                 //frame dimension 423x633
@@ -278,7 +283,7 @@ angular.module('clientApp')
                         if (frame == 0) {
                             $interval.cancel(animationInterval);
                             $scope.showAdoptionAnimation = false;
-                            $scope.adopted();
+                            callback();
                             return;
                         }
                         $('.pet-adopted-button').css('background-position-x', -1 * animationBgPosition);

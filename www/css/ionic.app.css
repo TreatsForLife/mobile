@@ -8602,7 +8602,7 @@ body.pushed .body-cover {
     border: none;
     padding: 0; }
 .container .pet-adopted-button {
-  background-image: #9aca13 url('../images/animated-thankyou.png');
+  background: #9aca13 url('../images/animated-thankyou.png');
   margin: auto;
   background-position: 0 0;
   background-size: auto 100%;

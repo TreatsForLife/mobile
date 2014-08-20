@@ -87,7 +87,7 @@ angular.module('clientApp')
 
                     }, 80);
 
-                    if ($stateParams['adopt']){
+                    if (true || $stateParams['adopt']){
                         if ($stateParams['adopt']=='adopt'){
                             var callback = function(){
                                 $scope.adopted();
@@ -283,7 +283,11 @@ angular.module('clientApp')
                     var frame = numOfFrames;
                     var dim = $scope.adoptAnimationWidth;
                     var animationBgPosition = 0;
-                    $('.pet-adopted-button').css('background-size', ($scope.adoptAnimationWidth * numOfFrames) + 'px auto');
+                    $('.pet-adopted-button').css({
+                        'background-size':($scope.adoptAnimationWidth * numOfFrames) + 'px auto',
+                        'width': $scope.adoptAnimationWidth + 'px',
+                        'height': $scope.adoptAnimationHeight + 'px'
+                    });
                     var animationInterval = $interval(function () {
                         if (frame == 0) {
                             $interval.cancel(animationInterval);

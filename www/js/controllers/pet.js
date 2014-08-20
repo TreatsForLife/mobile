@@ -255,8 +255,8 @@ angular.module('clientApp')
                 $scope.showAdoptionAnimation = true;
                 //frame dimension 423x633
                 var ar = 423/633;
-                var wh = $scope.windowWidth;
-                var ww = $scope.windowHeight;
+                var ww = $scope.windowWidth;
+                var wh = $scope.windowHeight;
                 var wr = ww/wh;
                 if (ar < wr){
                     //match height

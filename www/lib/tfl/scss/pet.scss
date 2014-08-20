@@ -294,8 +294,7 @@
     top:40px;
     left:40px;
     z-index: 999999;
-/*
-    &::before{
+    &:before{
       content: ' ';
       position: fixed;
       top:0;
@@ -305,7 +304,6 @@
       z-index: 999998;
       background-color: $scheme-green;
     }
-*/
   }
 
 

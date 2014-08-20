@@ -288,18 +288,20 @@ angular.module('clientApp')
                         'width': $scope.adoptAnimationWidth + 'px',
                         'height': $scope.adoptAnimationHeight + 'px'
                     });
-                    var animationInterval = $interval(function () {
-                        if (frame == 0) {
-                            $interval.cancel(animationInterval);
-                            $scope.showAdoptionAnimation = false;
-                            callback();
-                            return;
-                        }
-                        $('.pet-adopted-button').css('background-position-x', -1 * animationBgPosition);
-                        frame--;
-                        animationBgPosition += dim;
-                    }, (animationDuration / numOfFrames))
-                })
+                    $timeout(function () {
+                        var animationInterval = $interval(function () {
+                            if (frame == 0) {
+                                $interval.cancel(animationInterval);
+                                $scope.showAdoptionAnimation = false;
+                                callback();
+                                return;
+                            }
+                            $('.pet-adopted-button').css('background-position-x', -1 * animationBgPosition);
+                            frame--;
+                            animationBgPosition += dim;
+                        }, (animationDuration / numOfFrames))
+                    });
+                });
             })
         }
 

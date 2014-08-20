@@ -23,8 +23,8 @@ angular.module('clientApp')
                     $scope.getPetId();
                 });
             }
-            if ($stateParams['adopt']){
-                $scope.greetAdoption();
+            if (true || $stateParams['adopt']){
+                $scope.animateAdoptionButton();
             }
         }
 
@@ -126,11 +126,6 @@ angular.module('clientApp')
 
         }
 
-        $scope.greetAdoption = function () {
-//            $scope.showDialog('adopted');
-            $scope.adopted();
-        };
-
         $scope.adopt = function () {
             $scope.showDialog('adopt');
         }
@@ -181,7 +176,25 @@ angular.module('clientApp')
                 link: pet_link,//$scope.pet.media.link,
                 picture: $scope.pet.media.image,
                 name: 'אתם לא מבינים מה עשיתי הרגע',
-                caption: 'אימצתי כלב! קוראים לו ' + $scope.pet.name + ' ולא הוא לא יבוא אליי הביתה. לא כרגע לפחות.. אבל הולך לקבל ים פינוקים ממני. מומלץ בחום לראות את הפרוייקט הזה',
+                caption: 'אימצתי כלב! קוראים לו ' + $scope.pet.name + ' ולא הוא לא יבוא אליי הביתה. לא כרגע לפחות.. אבל הולך לקבל ים פינוקים ממני.',
+                description: ' ',
+                actions: [
+                    {name: 'בואו לראות אותי', link: pet_link}
+                ],
+            }, function (response) {
+            });
+        }
+
+        $scope.bought = function () {
+            var pet_link = Consts.client_root + '#/pet/' + $scope.pet_id;
+            facebookConnectPlugin.showDialog({
+                method: 'feed',
+                app_id: Consts.fb_app_id,
+                display: ($scope.isWeb ? 'popup' : 'touch'),
+                link: pet_link,//$scope.pet.media.link,
+                picture: $scope.pet.media.image,
+                name: 'כל הזמן רק לפנק לפנק לפנק',
+                caption: 'הרגע קניתי ל' + $scope.pet.name + ' מתנה קטנה. בואו לראות!',
                 description: ' ',
                 actions: [
                     {name: 'בואו לראות אותי', link: pet_link}
@@ -235,6 +248,30 @@ angular.module('clientApp')
                 frame--;
                 animationBgPosition += dim;
             }, (animationDuration / numOfFrames))
+        }
+
+        $scope.animateAdoptionButton = function () {
+            $timeout(function () {
+                $scope.showAdoptionAnimation = true;
+                $timeout(function () {
+                    var animationDuration = 1700;
+                    var numOfFrames = 48;
+                    var frame = numOfFrames;
+                    var dim = $scope.buttonHeight;
+                    var animationBgPosition = 0;
+                    var animationInterval = $interval(function () {
+                        if (frame == 0) {
+                            $interval.cancel(animationInterval);
+                            $scope.showAdoptionAnimation = false;
+                            $scope.adopted();
+                            return;
+                        }
+                        $('.pet-adopted-button').css('background-position-x', -1 * animationBgPosition);
+                        frame--;
+                        animationBgPosition += dim;
+                    }, (animationDuration / numOfFrames))
+                })
+            })
         }
 
         $scope.animateShareButton = function () {

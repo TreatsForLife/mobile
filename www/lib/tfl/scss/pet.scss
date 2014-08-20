@@ -285,24 +285,23 @@
     }
   }
 
-  .pet-adopted-button {
-    background: $scheme-green url('../images/animated-thankyou.png') no-repeat;
-    margin: auto;
-    background-position: 0 0;
-    background-size: auto 100%;
+  .pet-adopted-wrapper {
     position: fixed;
-    top:40px;
-    left:40px;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
     z-index: 999999;
-    &:before{
-      content: ' ';
+    background: $scheme-green;
+    .pet-adopted-button {
+      background: $scheme-green url('../images/animated-thankyou.png') no-repeat;
+      margin: auto;
+      background-position: 0 0;
+      background-size: auto 100%;
       position: fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      z-index: -1;
-      background-color: $scheme-green;
+      top:40px;
+      left:40px;
+      z-index: 999999;
     }
   }
 

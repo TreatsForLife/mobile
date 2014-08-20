@@ -45,7 +45,7 @@ angular.module('clientApp')
         } else if (!$rootScope.user_id) {
             console.log('No user_id cookies found - redirecting to welcome screen', localStorage);
             localStorage.setItem("returnUrl", $location.path())
-//            $location.path('/welcome');
+            $location.path('/welcome');
         }
 
         $rootScope.trustSrc = function (src) {

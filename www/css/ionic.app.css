@@ -8624,7 +8624,7 @@ body.pushed .body-cover {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 999998;
+    z-index: -1;
     background-color: #9aca13; }
 
 .container.shop {

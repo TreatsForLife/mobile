@@ -264,8 +264,8 @@ angular.module('clientApp')
                 $scope.showAdoptionAnimation = true;
                 //frame dimension 423x633
                 var ar = 423/633;
-                var ww = $scope.windowWidth;
-                var wh = $scope.windowHeight;
+                var ww = $scope.windowWidth - 80;
+                var wh = $scope.windowHeight - 80;
                 var wr = ww/wh;
                 if (ar < wr){
                     //match height
@@ -283,6 +283,7 @@ angular.module('clientApp')
                     var frame = numOfFrames;
                     var dim = $scope.adoptAnimationWidth;
                     var animationBgPosition = 0;
+                    $('.pet-adopted-button').css('background-size', ($scope.adoptAnimationWidth * numOfFrames) + 'px auto');
                     var animationInterval = $interval(function () {
                         if (frame == 0) {
                             $interval.cancel(animationInterval);

@@ -8189,9 +8189,11 @@ body.pushed .body-cover {
       background: url('../images/animated-logo.png') no-repeat 0 center;
       background-size: auto 100%; }
     .container.welcome .welcome-logo-wrapper .welcome-logo {
-      background-image: url('../images/animated-logo-loop.gif'); }
+      background-image: url('../images/animated-logo-loop.gif');
+      background-repeat: no-repeat; }
     .container.welcome .welcome-logo-wrapper .welcome-logo-animation {
-      background-image: url('../images/animated-logo.png'); }
+      background-image: url('../images/animated-logo.png');
+      background-repeat: no-repeat; }
   .container.welcome .welcome-app-what {
     position: fixed;
     right: 10px;
@@ -8478,26 +8480,31 @@ body.pushed .body-cover {
   margin-top: 0px; }
   .container .treat-wrapper .pet-buy-button {
     background-image: url('../images/buy_button_row.png');
+    background-repeat: no-repeat;
     margin: auto;
     background-position: 0 0;
     background-size: auto 100%; }
   .container .treat-wrapper .pet-share-button {
     background-image: url('../images/animated-share-button.png');
+    background-repeat: no-repeat;
     margin: auto;
     background-position: 0 0;
     background-size: auto 100%; }
   .container .treat-wrapper .pet-like-button {
     background-image: url('../images/animated-like-button.png');
     margin: auto;
+    background-repeat: no-repeat;
     background-position: 0 0;
     background-size: auto 100%; }
   .container .treat-wrapper .pet-adopt-button-gif {
     background-image: url('../images/animated-adopt-button.gif');
+    background-repeat: no-repeat;
     margin: auto;
     background-position: 0 0;
     background-size: auto 100%; }
   .container .treat-wrapper .pet-adopt-button {
     background-image: url('../images/animated-adopt-button.png');
+    background-repeat: no-repeat;
     margin: auto;
     background-position: 0 0;
     background-size: auto 100%; }
@@ -8602,15 +8609,13 @@ body.pushed .body-cover {
     border: none;
     padding: 0; }
 .container .pet-adopted-button {
-  background: #9aca13 url('../images/animated-thankyou.png');
+  background: #9aca13 url('../images/animated-thankyou.png') no-repeat;
   margin: auto;
   background-position: 0 0;
   background-size: auto 100%;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 40px;
+  left: 40px;
   z-index: 999999;
   /*
     &::before{

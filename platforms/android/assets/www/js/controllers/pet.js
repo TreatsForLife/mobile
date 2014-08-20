@@ -89,9 +89,13 @@ angular.module('clientApp')
 
                     if (true || $stateParams['adopt']){
                         if ($stateParams['adopt']=='adopt'){
-                            var callback = $scope.adopted();
+                            var callback = function(){
+                                $scope.adopted();
+                            }
                         }else{
-                            var callback = $scope.bought();
+                            var callback = function(){
+                                $scope.bought();
+                            }
                         }
                         $scope.animateAdoptionButton(callback);
                     }
@@ -274,7 +278,7 @@ angular.module('clientApp')
                     $scope.adoptAnimationHeight = ww / ar;
                 }
                 $timeout(function () {
-                    var animationDuration = 1700;
+                    var animationDuration = 5700;
                     var numOfFrames = 70;
                     var frame = numOfFrames;
                     var dim = $scope.adoptAnimationWidth;

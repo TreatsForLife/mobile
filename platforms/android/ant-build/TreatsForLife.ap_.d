@@ -258,6 +258,7 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/animated-logo.png \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/default_owner.png \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/icon.png \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/animated-thankyou.png \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/animated-adopt-button.png \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/buy_button_row.png \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/welcome_logo.png \

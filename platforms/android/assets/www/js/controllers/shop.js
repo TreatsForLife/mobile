@@ -166,7 +166,7 @@ angular.module('clientApp')
                             if (!$scope.user || !$scope.user.pet){
                                 var path = ('/pet/' + $scope.pet._id + '/adopt');
                             }else{
-                                var path = ('/pet/' + $scope.pet._id);
+                                var path = ('/pet/' + $scope.pet._id + '/bought');
                             }
                             $scope.user = false;
                             $scope.pet = false;

@@ -253,6 +253,20 @@ angular.module('clientApp')
         $scope.animateAdoptionButton = function () {
             $timeout(function () {
                 $scope.showAdoptionAnimation = true;
+                //frame dimension 423x633
+                var ar = 423/633;
+                var wh = angular.element(window).height();
+                var ww = angular.element(window).width();
+                var wr = ww/wh;
+                if (ar < wr){
+                    //match height
+                    $scope.adoptAnimationHeight = wh;
+                    $scope.adoptAnimationWidth = wh * ar;
+                }else{
+                    //match width
+                    $scope.adoptAnimationWidth = ww;
+                    $scope.adoptAnimationHeight = ww / ar;
+                }
                 $timeout(function () {
                     var animationDuration = 1700;
                     var numOfFrames = 48;

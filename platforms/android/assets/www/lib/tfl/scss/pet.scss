@@ -281,7 +281,7 @@
   }
 
   .pet-adopted-button {
-    background-image: url('../images/animated-thankyou.png');
+    background-image: $scheme-green url('../images/animated-thankyou.png');
     margin: auto;
     background-position: 0 0;
     background-size: auto 100%;
@@ -291,6 +291,7 @@
     width:100%;
     height:100%;
     z-index: 999999;
+/*
     &::before{
       content: ' ';
       position: fixed;
@@ -301,6 +302,7 @@
       z-index: 999998;
       background-color: $scheme-green;
     }
+*/
   }
 
 

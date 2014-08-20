@@ -8602,7 +8602,7 @@ body.pushed .body-cover {
     border: none;
     padding: 0; }
 .container .pet-adopted-button {
-  background-image: url('../images/animated-thankyou.png');
+  background-image: #9aca13 url('../images/animated-thankyou.png');
   margin: auto;
   background-position: 0 0;
   background-size: auto 100%;
@@ -8611,16 +8611,19 @@ body.pushed .body-cover {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 999999; }
-  .container .pet-adopted-button::before {
-    content: ' ';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 999998;
-    background-color: #9aca13; }
+  z-index: 999999;
+  /*
+    &::before{
+      content: ' ';
+      position: fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      z-index: 999998;
+      background-color: $scheme-green;
+    }
+*/ }
 
 .container.shop {
   background-color: #9aca13; }

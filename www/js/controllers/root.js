@@ -31,8 +31,11 @@ angular.module('clientApp')
                 } else {
                     console.log('No user in DB - redirecting to welcome screen', localStorage);
                     localStorage.setItem("returnUrl", $location.path())
-//                    $location.path('/welcome');
+                    $location.path('/welcome');
                 }
+            }, function(){
+                console.log('DB failure - redirecting to welcome screen', localStorage);
+                $location.path('/welcome');
             });
         }
 

@@ -261,7 +261,8 @@ angular.module('clientApp')
                 if (ar < wr){
                     //match height
                     $scope.adoptAnimationHeight = wh;
-                    $scope.adoptAnimationWidth = wh * ar;
+                    $scope.adoptAnimationWidth = parseInt(wh * ar);
+                    $scope.adoptAnimationHeight = ww / ar;
                 }else{
                     //match width
                     $scope.adoptAnimationWidth = ww;

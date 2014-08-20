@@ -23,9 +23,6 @@ angular.module('clientApp')
                     $scope.getPetId();
                 });
             }
-            if (true || $stateParams['adopt']){
-                $scope.animateAdoptionButton();
-            }
         }
 
         $scope.getPetId = function () {
@@ -90,6 +87,9 @@ angular.module('clientApp')
 
                     }, 80);
 
+                    if (true || $stateParams['adopt']){
+                        $scope.animateAdoptionButton();
+                    }
 
                 });
             });

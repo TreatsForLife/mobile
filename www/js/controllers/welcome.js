@@ -18,12 +18,12 @@ angular.module('clientApp')
                     $scope.logoSpace = parseInt($rootScope.windowHeight - $('.bottom-wrapper').height()) - 20;
                     $scope.logoHeight = parseInt((($scope.logoSpace - 80) > 370) ? 370 : ($scope.logoSpace - 80));
 
-                    $scope.logoWidth = parseInt($scope.logoHeight / 370 * 266) + 'px';
-                    $scope.logoMargin = parseInt(($scope.logoSpace - $scope.logoHeight) / 2) + 'px auto';
+                    $scope.logoWidth = parseInt($scope.logoHeight / 370 * 266);
+                    $scope.logoMargin = parseInt(($scope.logoSpace - $scope.logoHeight) / 2);
 
                     $scope.logoSpacePX = $scope.logoSpace + 'px';
-                    $scope.logoHeightPX = $scope.logoSpace + 'px';
-                    $scope.logoMarginPX = $scope.logoMargin + 'px';
+                    $scope.logoHeightPX = $scope.logoHeight + 'px';
+                    $scope.logoMarginPX = $scope.logoMargin +  'px auto';
                     $scope.logoWidthPX = $scope.logoWidth + 'px';
                 }
                 if (iterations > 0) {

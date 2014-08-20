@@ -87,7 +87,7 @@ angular.module('clientApp')
 
                     }, 80);
 
-                    if (true || $stateParams['adopt']){
+                    if ($stateParams['adopt']){
                         if ($stateParams['adopt']=='adopt'){
                             var callback = function(){
                                 $scope.adopted();

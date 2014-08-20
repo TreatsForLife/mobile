@@ -15,7 +15,7 @@ var Utils = {
 
 var Consts = {
     debug: true,
-    api_root: Utils.isLocal ? 'http://localhost:3000/' : 'http://treatsforlife-api.herokuapp.com/',//'http://tfl.bchmn.com/'
+    api_root: Utils.isLocal ? 'http://localhost:3000/' : 'http://tfl.bchmn.com/',//'http://treatsforlife-api.herokuapp.com/'
     client_root: Utils.isLocal ? 'http://localhost:9000/': 'http://treatsforlife.org/',
     fb_app_id: Utils.isLocal ? '262700727225341' : '601219569953172'
 }

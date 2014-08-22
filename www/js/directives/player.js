@@ -21,7 +21,7 @@ angular.module('clientApp')
                 '</div>' +
                 '<div class="video-controls-section progress-wrapper">' +
                 '<div id="progressbar" class="video-progress-total" ng-click="seekVideo($event)">' +
-                '<div id="progress-current" class="video-progress-current" ng-style="{width: currentPosition}"></div>' +
+                '<div id="progress-current" class="video-progress-current" ng-style="{width: currentPosition+\'px\'}"></div>' +
                 '</div>' +
                 '</div>' +
                 '<span class="video-position-indicator" ng-bind="currentTime"></span>' +
@@ -47,7 +47,7 @@ angular.module('clientApp')
                     }
                 });
 
-                scope.$on('setVideoSrc', function(e, src){
+                scope.$on('setVideoSrc', function (e, src) {
                     scope.videoSrc = src;
                     scope.show = true;
                 });
@@ -116,17 +116,17 @@ angular.module('clientApp')
                     console.log('Video can play event');
                     $timeout(function () {
                         scope.isVideoLoaded = true;
-                        scope.isVideoBuffering = false;
                     });
                     console.log('Video play');
                     video.play();
-                    playing=true;
-                    };
+                    playing = true;
+                };
 
                 var videoPlaying = function (e) {
                     console.log('Video playing event');
                     $timeout(function () {
                         scope.isPlaying = true;
+                        scope.isVideoBuffering = false;
                     });
                 };
 

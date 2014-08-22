@@ -126,13 +126,14 @@ angular.module('clientApp')
                     console.log('Video playing event');
                     $timeout(function () {
                         scope.isPlaying = true;
-                        scope.isVideoBuffering = false;
                     });
                 };
 
                 var videoTimeUpdate = function (e) {
 
                     $timeout(function () {
+                        //remove loading indicator
+                        scope.isVideoBuffering = false;
                         //bar
                         scope.currentPosition = ((video.currentTime * progressBarWidth) / video.duration);
                         //text

@@ -7718,25 +7718,25 @@ body, html {
   margin: 0 auto; }
   .container.ng-leave {
     -webkit-animation: bounceOutLeft;
-    -webkit-animation-duration: 1.3s;
+    -webkit-animation-duration: 1.5s;
     position: absolute !important;
     top: 0 !important;
     z-index: 999; }
     .container.ng-leave ~ .container {
       position: absolute !important;
+      -webkit-animation: none;
       top: 0 !important;
       z-index: 888; }
   .container.reverse {
     position: absolute;
     top: 0;
     -webkit-animation: bounceInLeft;
-    -webkit-animation-duration: 1.3s;
+    -webkit-animation-duration: 1.5s;
     z-index: 999; }
     .container.reverse.ng-leave {
       position: absolute;
       top: 0;
       -webkit-animation: none;
-      -webkit-animation-duration: 1.3s;
       z-index: 888; }
   .container.zoom.ng-enter {
     -webkit-animation: zoomIn 0.5s both ease-in;

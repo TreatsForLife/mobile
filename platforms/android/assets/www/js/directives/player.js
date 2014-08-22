@@ -132,12 +132,15 @@ angular.module('clientApp')
                 var videoTimeUpdate = function (e) {
 
                     $timeout(function () {
-                        //remove loading indicator
-                        scope.isVideoBuffering = false;
                         //bar
                         scope.currentPosition = ((video.currentTime * progressBarWidth) / video.duration);
                         //text
                         scope.currentTime = video.currentTime.toString().toMMSS();
+
+                        if (video.currentTime > 0) {
+                            //remove loading indicator
+                            scope.isVideoBuffering = false;
+                        }
                     });
                 };
 

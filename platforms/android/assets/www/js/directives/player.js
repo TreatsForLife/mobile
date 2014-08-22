@@ -11,7 +11,7 @@ angular.module('clientApp')
             },
             template: '<div id="dialog-video" class="dialog-video" ng-show="show" bindonce bo-class="{preview: !isMobile}">' +
                 //'<video id="video-player"></video>' +
-                '<video id="video-player" ng-src="{{videoSrc}}" ng-click="toggleVideo()"></video>' +
+                '<video id="video-player" ng-src="{{videoSrc}}" ng-click="toggleVideo()" ng-hide="isVideoBuffering"></video>' +
                 '<div id="video-loading-indicator" ng-if="isVideoBuffering">Loading<i class="fa fa-spinner fa-spin"></i></div>' +
                 '<div id="video-controls-wrapper">' +
                 '<div class="video-controls">' +

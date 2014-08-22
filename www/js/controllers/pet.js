@@ -136,7 +136,12 @@ angular.module('clientApp')
         }
 
         $scope.adopt = function () {
-            $scope.showDialog('adopt');
+            if (localStorage.adoptDialogShown){
+                $location.path('#/shop/' + $scope.pet_id);
+            }else{
+                $scope.showDialog('adopt');
+                localStorage.adoptDialogShown = true;
+            }
         }
 
         $scope.share = function () {

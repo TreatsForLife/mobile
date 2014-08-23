@@ -33,7 +33,7 @@ angular.module('clientApp')
             if (!$scope.pet_id) {
                 $location.path('/pets');
             } else {
-                $rootScope.addUrlToHistory('/pet/' + $scope.pet_id);
+                $rootScope.addDummyToHistory('/pet/' + $scope.pet_id);
                 $scope.getPet();
             }
         }

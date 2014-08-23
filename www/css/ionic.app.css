@@ -7964,6 +7964,14 @@ body.welcome .navbar {
         height: 50px;
         line-height: 50px;
         padding: 0 5px; }
+        .navbar .navbar-inner .navbar-back i.fa-chevron-left {
+          font-size: 24px;
+          margin-left: -8px;
+          margin-right: 0px; }
+        .navbar .navbar-inner .navbar-back i.fa-bars {
+          font-size: 30px;
+          margin-left: -31px;
+          margin-right: 9px; }
       .navbar .navbar-inner .navbar-back .navbar-logo {
         float: left;
         background: url('../images/logo.png') no-repeat center center;
@@ -7971,10 +7979,10 @@ body.welcome .navbar {
         width: 50px;
         height: 50px; }
     .navbar .navbar-inner .navbar-name {
-      float: left;
-      font-size: 24px;
+      float: right;
+      font-size: 28px;
       font-weight: bold;
-      margin-left: 15px;
+      margin-right: 15px;
       font-family: 'Alef', Verdana, Arial, Helvetica;
       line-height: 50px;
       white-space: nowrap; }
@@ -8063,11 +8071,11 @@ body.welcome .navbar {
 
 /* Vertical menu that slides from the left or right */
 .cbp-spmenu-right {
-  right: -250px; }
+  left: -250px; }
 
 .cbp-spmenu-right.cbp-spmenu-open {
-  right: 0px;
-  box-shadow: -3px 0 7px -3px #333; }
+  left: 0px;
+  box-shadow: -3px -3px 7px 0px #333; }
 
 /* Push classes applied to the body */
 body.pushed .body-cover {

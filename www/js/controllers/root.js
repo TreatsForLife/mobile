@@ -55,6 +55,10 @@ angular.module('clientApp')
             return $sce.trustAsResourceUrl(src);
         }
 
+        function onOnline(){
+            $rootScope.online = true;
+        }
+
         $scope.history = [];
         $scope.lastUrl = '';
         $rootScope.canGoBack = function(){
@@ -62,28 +66,39 @@ angular.module('clientApp')
         }
         function onBackKeyDown() {
             // Handle the back button
-            if ($rootScope.canGoBack()){
-                $rootScope.goBack();
-                return true;
-            }else{
-                return false;
-            }
+            $rootScope.goBack();
+
+            //dirty trick to disable back button (nothing else seems to work)
+            throw "ignore"
         }
 
         $rootScope.goBack = function () {
-            if (!$scope.canGoBack()) return;
-            $timeout.cancel($scope.cancelBack);
-            $timeout(function () {
-                var l = $scope.history.length;
-                var path = $scope.history[l-1];
-                $scope.history = $scope.history.slice(0, l-1);
-                $scope.lastUrl = '';
-                $scope.goingBack = true;
-                $location.path(path);
-            }, 0);
-            $scope.cancelBack = $timeout(function () {
-                $scope.goingBack = false;
-            }, 2000);
+            if (!$scope.canGoBack()) {
+                if ($scope.pushMenuOpen){
+                    if (navigator.app) {
+                        navigator.app.exitApp();
+                    }
+                    else if (navigator.device) {
+                        navigator.device.exitApp();
+                    }
+                }else{
+                    $rootScope.openPushMenu();
+                }
+                return;
+            }else{
+                $timeout.cancel($scope.cancelBack);
+                $timeout(function () {
+                    var l = $scope.history.length;
+                    var path = $scope.history[l-1];
+                    $scope.history = [];
+                    $scope.lastUrl = '';
+                    $scope.goingBack = true;
+                    $location.path(path);
+                }, 0);
+                $scope.cancelBack = $timeout(function () {
+                    $scope.goingBack = false;
+                }, 2000);
+            }
         }
         $rootScope.addUrlToHistory = function(url){
             $rootScope.addDummyToHistory();
@@ -148,13 +163,15 @@ angular.module('clientApp')
             $rootScope.windowWidth = $(window).width();
             $rootScope.containerWidth = $('.container').width();
             $rootScope.picHeight = $('.container').width() * 0.6;
+            document.addEventListener("deviceready", cordovaReady, false);
         }, 5);
 
         $timeout(function () {
             window.scrollTo(0, 1);
         }, 1000);
 
-        //cordova
-        document.addEventListener("backbutton", onBackKeyDown, false);
-
+        function cordovaReady(){
+            document.addEventListener("backbutton", onBackKeyDown, false);
+            document.addEventListener("online", onOnline, false);
+        }
     }]);

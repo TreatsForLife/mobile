@@ -35,6 +35,16 @@ body.welcome .navbar{
         height: $navbarH;
         line-height: $navbarH;
         padding: 0 5px;
+        &.fa-chevron-left{
+          font-size: 24px;
+          margin-left: -8px;
+          margin-right: 0px;
+        }
+        &.fa-bars{
+          font-size: 30px;
+          margin-left: -31px;
+          margin-right: 9px;
+        }
       }
       .navbar-logo{
         float:left;
@@ -45,10 +55,10 @@ body.welcome .navbar{
       }
     }
     .navbar-name{
-      float:left;
-      font-size: 24px;
+      float:right;
+      font-size: 28px;
       font-weight: bold;
-      margin-left: 15px;
+      margin-right: 15px;
       font-family: 'Alef', Verdana, Arial, Helvetica;
       line-height: $navbarH;
       white-space: nowrap;

@@ -61,6 +61,7 @@ angular.module('clientApp')
         }, 1500);
 
         $scope.fbLogin = function () {
+            if (!$scope.online) return;
             facebookConnectPlugin.login(['email'], function (response) {
                 console.log('FB login responded', response);
                 if (response.authResponse) {

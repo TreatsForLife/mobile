@@ -8375,7 +8375,8 @@ body.pushed .body-cover {
             width: 50px;
             border-radius: 50px;
             top: -20px;
-            left: 10px; }
+            left: 10px;
+            border: 1px solid #111; }
           .container.pets .pets-list .pet .pet-inner .pet-bar .pet-gender, .container.pet .pets-list .pet .pet-inner .pet-bar .pet-gender {
             height: 30px;
             width: 30px;
@@ -8515,7 +8516,7 @@ body.pushed .body-cover {
   width: 100%;
   overflow: visible; }
   .container .pets-pic .pet {
-    padding: 10px 5px;
+    padding: 15px 5px 5px;
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -8550,7 +8551,8 @@ body.pushed .body-cover {
           width: 50px;
           border-radius: 50px;
           top: -20px;
-          left: 10px; }
+          left: 10px;
+          border: 1px solid #111; }
         .container .pets-pic .pet .pet-inner .pet-bar .pet-gender {
           height: 30px;
           width: 30px;

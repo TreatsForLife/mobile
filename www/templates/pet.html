@@ -8,6 +8,7 @@
                         <div class="pet-inner">
                             <div class="pet-pic" ng-click="playVideo(item.media.video)"
                                  ng-style="{'background-image': 'url('+item.media.image+')', height: picHeightPX}">
+                                <i class="ng-hide" ng-if="$index==0" ng-init="setVideo(item.media.video)"></i>
                                 <span class="pet-pic-play fa-stack fa-lg">
                                   <i class="fa fa-circle fa-stack-2x pet-pic-play-circle"
                                      ng-style="{lineHeight: (picHeight +'px')}"></i>

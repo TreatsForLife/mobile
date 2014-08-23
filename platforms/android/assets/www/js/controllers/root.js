@@ -116,7 +116,12 @@ angular.module('clientApp')
 
         $scope.playVideo = function (src) {
             $timeout(function () {
-                $scope.$broadcast('setVideoSrc', ($sce.trustAsResourceUrl(src)));
+                $scope.$broadcast('playVideoSrc', src);
+            }, 0);
+        }
+        $scope.setVideo = function (src) {
+            $timeout(function () {
+                $scope.$broadcast('setVideoSrc', src);
             }, 0);
         }
 

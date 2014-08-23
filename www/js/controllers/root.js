@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clientApp')
-    .controller('RootCtrl', ['$scope', '$rootScope', '$timeout', '$location', '$sce', 'Donations', 'Users', function ($scope, $rootScope, $timeout, $location, $sce, Donations, Users) {
+    .controller('RootCtrl', ['$scope', '$rootScope', '$timeout', '$interval', '$location', '$sce', '$http', 'Donations', 'Users', function ($scope, $rootScope, $timeout, $interval, $location, $sce, $http, Donations, Users) {
 
         console.log('APP VERSION: 1.0');
 
@@ -40,24 +40,24 @@ angular.module('clientApp')
         }
 
         //make sure that the user is fetched
-        if (!$rootScope.user && $rootScope.user_id) {
-            console.log('No user but user_id cookie is found - fetching from DB');
-            $timeout(function () {
-                $rootScope.getUser();
-            })
-        } else if (!$rootScope.user_id) {
-            console.log('No user_id cookies found - redirecting to welcome screen', localStorage);
-            localStorage.setItem("returnUrl", $location.path())
-            $location.path('/welcome');
+        function onOnline(){
+            $rootScope.online = true;
+            if (!$rootScope.user && $rootScope.user_id) {
+                console.log('No user but user_id cookie is found - fetching from DB');
+                $timeout(function () {
+                    $rootScope.getUser();
+                })
+            } else if (!$rootScope.user_id) {
+                console.log('No user_id cookies found - redirecting to welcome screen', localStorage);
+                localStorage.setItem("returnUrl", $location.path())
+                $location.path('/welcome');
+            }
         }
 
         $rootScope.trustSrc = function (src) {
             return $sce.trustAsResourceUrl(src);
         }
 
-        function onOnline(){
-            $rootScope.online = true;
-        }
         function onOffline(){
             $rootScope.online = false;
         }
@@ -172,6 +172,25 @@ angular.module('clientApp')
         $timeout(function () {
             window.scrollTo(0, 1);
         }, 1000);
+
+        //check internet connection (start online, ping api server - if success stay online. in any case after 3 seconds, go offline
+        $rootScope.online = true;
+        checkNetworkStatus();
+        var offlineTimer = $timeout(function(){
+            onOffline();
+        }, 3000);
+        var offlineInterval = $interval(function(){
+            checkNetworkStatus();
+        }, 5000);
+        function checkNetworkStatus(){
+            $http.get(Consts.api_root + 'ping').success(function(){
+                $timeout.cancel(offlineTimer);
+                $interval.cancel(offlineInterval);
+                onOnline();
+            }).error(function(){
+                onOffline();
+            });
+        }
 
         function cordovaReady(){
             document.addEventListener("backbutton", onBackKeyDown, false);

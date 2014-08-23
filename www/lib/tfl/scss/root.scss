@@ -76,15 +76,15 @@ body, html {
   background: #ffebe8;
   border-bottom: 1px solid #dd3c10;
   color: #dd3c10;
-  line-height: 20px;
+  line-height: 30px;
   font-size: 13px;
   position: fixed;
   width: 100%;
   z-index: 99999999;
 }
 
-.container-wrapper{
-  height:100%;
+.container-wrapper {
+  height: 100%;
   overflow-x: hidden;
   overflow-y: visible;
   max-width: 600px;
@@ -92,48 +92,61 @@ body, html {
   font-family: $font-alef;
   margin: 0 auto;
 }
+
 .container {
   min-height: 100%;
   width: 100%;
   max-width: 600px;
   position: relative;
   margin: 0 auto;
-    &.ng-leave {
-      -webkit-animation: bounceOutLeft;
-      -webkit-animation-duration: 1.5s;
+  &.ng-leave {
+    animation-duration: 3s !important;
+    -webkit-animation-duration: 3s !important;
+    animation: bounceOutLeft;
+    -webkit-animation: bounceOutLeft;
+    position: absolute !important;
+    top: 0 !important;
+    z-index: 999;
+  }
+  &.ng-enter {
+    animation-duration: 3s !important;
+    -webkit-animation-duration: 3s !important;
+    animation: fadeIn;
+    -webkit-animation: fadeIn;
+    position: absolute !important;
+    top: 0 !important;
+    z-index: 888;
+  }
+
+  &.reverse {
+    animation-duration: 2s !important;
+    -webkit-animation-duration: 2s !important;
+    &.ng-enter {
       position: absolute !important;
       top: 0 !important;
-      z-index: 999;
-      ~.container{
-        position: absolute !important;
-        -webkit-animation: none;
-        top: 0 !important;
-        z-index: 888;
-      }
-    }
-    &.reverse {
-      position: absolute;
-      top: 0;
+      animation: bounceInLeft;
       -webkit-animation: bounceInLeft;
-      -webkit-animation-duration:1.5s;
       z-index: 999;
-      &.ng-leave {
-        position: absolute;
-        top: 0;
-        -webkit-animation: none;
-        z-index: 888;
-      }
     }
-    &.zoom {
-      &.ng-enter {
-        -webkit-animation: zoomIn 0.5s both ease-in;
-        z-index: 9999;
-      }
-      &.ng-leave {
-        -webkit-animation: fadeOut 0.5s both ease-in;
-        z-index: 8888;
-      }
+    &.ng-leave {
+      animation: fadeOut;
+      -webkit-animation: fadeOut;
+      position: absolute !important;
+      top: 0 !important;
+      z-index: 888;
     }
+  }
+}
+
+&.zoom {
+  &.ng-enter {
+    -webkit-animation: zoomIn 0.5s both ease-in;
+    z-index: 9999;
+  }
+  &.ng-leave {
+    -webkit-animation: fadeOut 0.5s both ease-in;
+    z-index: 8888;
+  }
 }
 
 html {
@@ -165,9 +178,10 @@ html {
   clear: both;
 }
 
-.loading{
-  
+.loading {
+
 }
+
 i {
   text-rendering: auto !important;
 }
@@ -190,30 +204,36 @@ i {
 
 }
 
-
 //general classes
 
-.color-white{
+.color-white {
   color: $scheme-white !important;
 }
-.color-blue{
+
+.color-blue {
   color: $scheme-blue !important;
 }
-.color-green{
+
+.color-green {
   color: $scheme-green !important;
 }
-.color-red{
+
+.color-red {
   color: $scheme-red !important;
 }
-.color-facebook{
+
+.color-facebook {
   color: #3b5998 !important;
 }
-.blacknwhite{
+
+.blacknwhite {
 }
-.stretch{
+
+.stretch {
   width: 100%;
   display: block;
 }
+
 button, a.button, input[type="submit"] {
   font-size: 14px;
   background: none;
@@ -229,7 +249,7 @@ button, a.button, input[type="submit"] {
   user-select: none;
   background: white;
   background: linear-gradient(white, #f1f1f1); /* Standard syntax (must be last) */
-  border:none;
+  border: none;
   font-family: $font-alef;
 
   &:active, &.button-active, &.button-active:hover, &.button-active:active {
@@ -240,11 +260,11 @@ button, a.button, input[type="submit"] {
   }
 
   &.button-disabled, &.button-disabled:hover, &.button-disabled:active {
-    background: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
     box-shadow: none;
     text-decoration: none;
     border-color: transparent;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
   }
 
   &.button-facebook {
@@ -299,11 +319,9 @@ button, a.button, input[type="submit"] {
   }
 }
 
-
-
 //animations
 
-.delayed-animation{
+.delayed-animation {
   animation-delay: 0.5s;
 }
 

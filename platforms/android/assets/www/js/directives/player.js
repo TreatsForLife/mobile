@@ -69,7 +69,7 @@ angular.module('clientApp')
                 var initVideo = function () {
 
                     if (!alreadyInit) {
-                        
+
                         alreadyInit = true;
                         video = document.getElementById('video-player');
                         //angular.element(video).attr('src', scope.videoSrc);

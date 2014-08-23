@@ -42,12 +42,15 @@
 
     <tip-dialog></tip-dialog>
 
-    <div class="not-online" ng-if="!online">no internet connection</div>
+    <div class="not-online" ng-if="!online">
+        no internet connection
+        <i class="fa f-right fa-refresh fa-spin fa-fw loading"></i>
+    </div>
 
     <div class="container-wrapper" style="padding: 0">
         <div class="container {{bodyBg}}" >
             <ui-view class="container {{bodyClass}} {{bodyBg}}" ng-animate ng-class="{reverse: goingBack}">
-                <i class="fa fa-refreash fa-spin fa-fw loading"></i>
+                <i class="fa fa-refresh fa-spin fa-fw loading"></i>
             </ui-view>
         </div>
     </div>

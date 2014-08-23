@@ -7707,7 +7707,7 @@ body, html {
   background: #ffebe8;
   border-bottom: 1px solid #dd3c10;
   color: #dd3c10;
-  line-height: 20px;
+  line-height: 30px;
   font-size: 13px;
   position: fixed;
   width: 100%;
@@ -7729,33 +7729,43 @@ body, html {
   position: relative;
   margin: 0 auto; }
   .container.ng-leave {
+    animation-duration: 3s !important;
+    -webkit-animation-duration: 3s !important;
+    animation: bounceOutLeft;
     -webkit-animation: bounceOutLeft;
-    -webkit-animation-duration: 1.5s;
     position: absolute !important;
     top: 0 !important;
     z-index: 999; }
-    .container.ng-leave ~ .container {
+  .container.ng-enter {
+    animation-duration: 3s !important;
+    -webkit-animation-duration: 3s !important;
+    animation: fadeIn;
+    -webkit-animation: fadeIn;
+    position: absolute !important;
+    top: 0 !important;
+    z-index: 888; }
+  .container.reverse {
+    animation-duration: 2s !important;
+    -webkit-animation-duration: 2s !important; }
+    .container.reverse.ng-enter {
       position: absolute !important;
-      -webkit-animation: none;
+      top: 0 !important;
+      animation: bounceInLeft;
+      -webkit-animation: bounceInLeft;
+      z-index: 999; }
+    .container.reverse.ng-leave {
+      animation: fadeOut;
+      -webkit-animation: fadeOut;
+      position: absolute !important;
       top: 0 !important;
       z-index: 888; }
-  .container.reverse {
-    position: absolute;
-    top: 0;
-    -webkit-animation: bounceInLeft;
-    -webkit-animation-duration: 1.5s;
-    z-index: 999; }
-    .container.reverse.ng-leave {
-      position: absolute;
-      top: 0;
-      -webkit-animation: none;
-      z-index: 888; }
-  .container.zoom.ng-enter {
-    -webkit-animation: zoomIn 0.5s both ease-in;
-    z-index: 9999; }
-  .container.zoom.ng-leave {
-    -webkit-animation: fadeOut 0.5s both ease-in;
-    z-index: 8888; }
+
+.zoom.ng-enter {
+  -webkit-animation: zoomIn 0.5s both ease-in;
+  z-index: 9999; }
+.zoom.ng-leave {
+  -webkit-animation: fadeOut 0.5s both ease-in;
+  z-index: 8888; }
 
 html {
   background: #ccc;

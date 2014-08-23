@@ -78,12 +78,13 @@ angular.module('clientApp')
         $rootScope.goBack = function () {
             if (!$scope.canGoBack()) {
                 if ($scope.pushMenuOpen){
-                    if (navigator.app) {
-                        navigator.app.exitApp();
-                    }
-                    else if (navigator.device) {
-                        navigator.device.exitApp();
-                    }
+//                    if (navigator.app) {
+//                        navigator.app.exitApp();
+//                    }
+//                    else if (navigator.device) {
+//                        navigator.device.exitApp();
+//                    }
+                    $rootScope.closePushMenu();
                 }else{
                     $rootScope.openPushMenu();
                 }
@@ -96,11 +97,13 @@ angular.module('clientApp')
                     $scope.history = [];
                     $scope.lastUrl = '';
                     $scope.goingBack = true;
-                    $location.path(path);
+                    $timeout(function () {
+                        $location.path(path);
+                    }, 0);
                 }, 0);
                 $scope.cancelBack = $timeout(function () {
                     $scope.goingBack = false;
-                }, 2000);
+                }, 5000);
             }
         }
         $rootScope.addUrlToHistory = function(url){

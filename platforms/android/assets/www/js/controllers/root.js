@@ -96,11 +96,13 @@ angular.module('clientApp')
                     $scope.history = [];
                     $scope.lastUrl = '';
                     $scope.goingBack = true;
-                    $location.path(path);
+                    $timeout(function () {
+                        $location.path(path);
+                    }, 0);
                 }, 0);
                 $scope.cancelBack = $timeout(function () {
                     $scope.goingBack = false;
-                }, 2000);
+                }, 5000);
             }
         }
         $rootScope.addUrlToHistory = function(url){

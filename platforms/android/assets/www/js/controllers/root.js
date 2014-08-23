@@ -134,14 +134,12 @@ angular.module('clientApp')
             $('body').addClass('pushed');
             $('#menuRight').addClass('cbp-spmenu-open');
             $scope.pushMenuOpen = true;
-            $location.search({'push':'1'});
         };
         $rootScope.closePushMenu = function () {
             if (!$scope.pushMenuOpen) return;
             $('body').removeClass('pushed');
             $('#menuRight').removeClass('cbp-spmenu-open');
             $scope.pushMenuOpen = false;
-            $location.search({'push':null});
         };
 
         $rootScope.$on('$routeUpdate', function(){

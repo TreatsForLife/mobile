@@ -60,6 +60,16 @@ angular.module('clientApp')
         $rootScope.canGoBack = function(){
             return ($scope.history.length > 0)
         }
+        function onBackKeyDown() {
+            // Handle the back button
+            if ($rootScope.canGoBack()){
+                $rootScope.goBack();
+                return true;
+            }else{
+                return false;
+            }
+        }
+
         $rootScope.goBack = function () {
             if (!$scope.canGoBack()) return;
             $timeout.cancel($scope.cancelBack);
@@ -143,5 +153,8 @@ angular.module('clientApp')
         $timeout(function () {
             window.scrollTo(0, 1);
         }, 1000);
+
+        //cordova
+        document.addEventListener("backbutton", onBackKeyDown, false);
 
     }]);

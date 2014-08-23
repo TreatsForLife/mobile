@@ -58,6 +58,9 @@ angular.module('clientApp')
         function onOnline(){
             $rootScope.online = true;
         }
+        function onOffline(){
+            $rootScope.online = false;
+        }
 
         $scope.history = [];
         $scope.lastUrl = '';
@@ -173,5 +176,6 @@ angular.module('clientApp')
         function cordovaReady(){
             document.addEventListener("backbutton", onBackKeyDown, false);
             document.addEventListener("online", onOnline, false);
+            document.addEventListener("offline", onOffline, false);
         }
     }]);

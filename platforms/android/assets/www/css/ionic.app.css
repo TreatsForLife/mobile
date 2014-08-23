@@ -8352,7 +8352,7 @@ body.pushed .body-cover {
       position: relative; }
       .container.pets .pets-list .pet .pet-inner, .container.pet .pets-list .pet .pet-inner {
         border: 1px solid #111;
-        border-radius: 0px;
+        border-radius: 3px;
         overflow: visible; }
         .container.pets .pets-list .pet .pet-inner .pet-pic, .container.pet .pets-list .pet .pet-inner .pet-pic {
           width: 100%;
@@ -8360,11 +8360,15 @@ body.pushed .body-cover {
           background-size: cover;
           display: block;
           line-height: 0;
-          height: 210px; }
+          height: 210px;
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px; }
         .container.pets .pets-list .pet .pet-inner .pet-bar, .container.pet .pets-list .pet .pet-inner .pet-bar {
           height: 40px;
           background: #fefefe;
-          position: relative; }
+          position: relative;
+          border-bottom-left-radius: 3px;
+          border-bottom-right-radius: 3px; }
           .container.pets .pets-list .pet .pet-inner .pet-bar .owner-pic, .container.pet .pets-list .pet .pet-inner .pet-bar .owner-pic {
             position: absolute;
             height: 50px;
@@ -8397,7 +8401,9 @@ body.pushed .body-cover {
             background: white;
             bottom: -5px;
             border: 1px solid #111;
-            margin: 0 1%; }
+            margin: 0 1%;
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px; }
           .container.pets .pets-list .pet .pet-inner .pet-bar:after, .container.pet .pets-list .pet .pet-inner .pet-bar:after {
             content: ' ';
             position: absolute;
@@ -8406,7 +8412,9 @@ body.pushed .body-cover {
             background: white;
             bottom: -9px;
             border: 1px solid #111;
-            margin: 0 3%; }
+            margin: 0 3%;
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px; }
       .container.pets .pets-list .pet .pets-zoom, .container.pet .pets-list .pet .pets-zoom {
         position: absolute;
         bottom: 27px;

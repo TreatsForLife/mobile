@@ -8340,84 +8340,91 @@ body.pushed .body-cover {
     direction: rtl;
     color: white;
     text-align: center; }
-  .container.pets .pets-pic, .container.pet .pets-pic {
+  .container.pets .pets-list, .container.pet .pets-list {
     display: block;
     width: 100%;
     overflow: visible; }
-    .container.pets .pets-pic .pet, .container.pet .pets-pic .pet {
-      padding: 25px 15px 25px; }
-  .container.pets .pet, .container.pet .pet {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    position: relative; }
-    .container.pets .pet .pet-inner, .container.pet .pet .pet-inner {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 5px;
-      overflow: hidden; }
-      .container.pets .pet .pet-inner .pet-pic, .container.pet .pet .pet-inner .pet-pic {
-        width: 100%;
-        background-position: center center;
-        background-size: cover;
-        display: block;
-        line-height: 0;
-        height: 210px; }
-        .container.pets .pet .pet-inner .pet-pic .pet-pic-play, .container.pet .pet .pet-inner .pet-pic .pet-pic-play {
-          line-height: inherit;
-          width: 100%;
-          color: white;
-          font-size: 50px; }
-          .container.pets .pet .pet-inner .pet-pic .pet-pic-play .pet-pic-play-circle, .container.pet .pet .pet-inner .pet-pic .pet-pic-play .pet-pic-play-circle {
-            color: rgba(0, 0, 0, 0.6);
-            margin-left: -4px; }
-      .container.pets .pet .pet-inner .pet-bar, .container.pet .pet .pet-inner .pet-bar {
-        height: 40px;
-        background: #fefefe;
-        position: relative; }
-        .container.pets .pet .pet-inner .pet-bar .owner-pic, .container.pet .pet .pet-inner .pet-bar .owner-pic {
-          position: absolute;
-          height: 50px;
-          width: 50px;
-          border-radius: 50px;
-          box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
-          top: -20px;
-          left: 10px; }
-        .container.pets .pet .pet-inner .pet-bar .pet-gender, .container.pet .pet .pet-inner .pet-bar .pet-gender {
-          height: 30px;
-          width: 30px;
-          float: right;
-          margin: 5px 10px; }
-        .container.pets .pet .pet-inner .pet-bar .pet-name, .container.pet .pet .pet-inner .pet-bar .pet-name {
-          line-height: 30px;
-          height: 30px;
-          float: right;
-          font-size: 24px;
-          font-weight: bold;
-          margin: 5px 5px;
-          font-family: 'Alef', Verdana, Arial, Helvetica;
-          text-align: right;
-          direction: rtl;
-          color: #333; }
-    .container.pets .pet .pets-zoom, .container.pet .pet .pets-zoom {
-      position: absolute;
-      bottom: 27px;
-      left: 50%;
-      margin-left: -25px;
-      width: 50px;
-      height: 50px;
-      line-height: 43px;
-      text-align: center;
-      font-size: 25px;
+    .container.pets .pets-list .pet, .container.pet .pets-list .pet {
+      padding: 25px 15px 25px;
       display: block;
-      text-decoration: none;
-      background-color: #f7f7f7;
-      background-image: linear-gradient(top, #f7f7f7, #e7e7e7);
-      color: #a7a7a7;
-      border-radius: 50%;
-      box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
-      border: solid 1px transparent; }
+      width: 100%;
+      box-sizing: border-box;
+      position: relative; }
+      .container.pets .pets-list .pet .pet-inner, .container.pet .pets-list .pet .pet-inner {
+        border: 1px solid #111;
+        border-radius: 0px;
+        overflow: visible; }
+        .container.pets .pets-list .pet .pet-inner .pet-pic, .container.pet .pets-list .pet .pet-inner .pet-pic {
+          width: 100%;
+          background-position: center center;
+          background-size: cover;
+          display: block;
+          line-height: 0;
+          height: 210px; }
+        .container.pets .pets-list .pet .pet-inner .pet-bar, .container.pet .pets-list .pet .pet-inner .pet-bar {
+          height: 40px;
+          background: #fefefe;
+          position: relative; }
+          .container.pets .pets-list .pet .pet-inner .pet-bar .owner-pic, .container.pet .pets-list .pet .pet-inner .pet-bar .owner-pic {
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
+            top: -20px;
+            left: 10px; }
+          .container.pets .pets-list .pet .pet-inner .pet-bar .pet-gender, .container.pet .pets-list .pet .pet-inner .pet-bar .pet-gender {
+            height: 30px;
+            width: 30px;
+            float: right;
+            margin: 5px 10px; }
+          .container.pets .pets-list .pet .pet-inner .pet-bar .pet-name, .container.pet .pets-list .pet .pet-inner .pet-bar .pet-name {
+            line-height: 30px;
+            height: 30px;
+            float: right;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 5px 5px;
+            font-family: 'Alef', Verdana, Arial, Helvetica;
+            text-align: right;
+            direction: rtl;
+            color: #333;
+            white-space: nowrap; }
+          .container.pets .pets-list .pet .pet-inner .pet-bar:before, .container.pet .pets-list .pet .pet-inner .pet-bar:before {
+            content: ' ';
+            position: absolute;
+            width: 98%;
+            height: 5px;
+            background: white;
+            bottom: -5px;
+            border: 1px solid #111;
+            margin: 0 1%; }
+          .container.pets .pets-list .pet .pet-inner .pet-bar:after, .container.pet .pets-list .pet .pet-inner .pet-bar:after {
+            content: ' ';
+            position: absolute;
+            width: 94%;
+            height: 5px;
+            background: white;
+            bottom: -9px;
+            border: 1px solid #111;
+            margin: 0 3%; }
+      .container.pets .pets-list .pet .pets-zoom, .container.pet .pets-list .pet .pets-zoom {
+        position: absolute;
+        bottom: 27px;
+        left: 50%;
+        margin-left: -25px;
+        width: 50px;
+        height: 50px;
+        line-height: 43px;
+        text-align: center;
+        font-size: 25px;
+        display: block;
+        text-decoration: none;
+        background-color: #f7f7f7;
+        background-image: linear-gradient(top, #f7f7f7, #e7e7e7);
+        color: #a7a7a7;
+        border-radius: 50%;
+        box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+        border: solid 1px transparent; }
 
 .container.adopted {
   background-color: #FFC408; }
@@ -8495,6 +8502,82 @@ body.pushed .body-cover {
       padding: 15px; }
   .container.pet .pet-treat {
     width: 100px; }
+.container .pets-pic {
+  display: block;
+  width: 100%;
+  overflow: visible; }
+  .container .pets-pic .pet {
+    padding: 10px 5px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative; }
+    .container .pets-pic .pet .pet-inner {
+      border: 1px solid #111;
+      overflow: hidden;
+      border-radius: 3px; }
+      .container .pets-pic .pet .pet-inner .pet-pic {
+        width: 100%;
+        background-position: center center;
+        background-size: cover;
+        display: block;
+        line-height: 0;
+        height: 210px; }
+        .container .pets-pic .pet .pet-inner .pet-pic .pet-pic-play {
+          line-height: inherit;
+          width: 100%;
+          color: white;
+          font-size: 50px;
+          margin-top: 10px; }
+          .container .pets-pic .pet .pet-inner .pet-pic .pet-pic-play .pet-pic-play-circle {
+            color: rgba(0, 0, 0, 0.6);
+            margin-left: -4px; }
+      .container .pets-pic .pet .pet-inner .pet-bar {
+        height: 40px;
+        background: #fefefe;
+        position: relative; }
+        .container .pets-pic .pet .pet-inner .pet-bar .owner-pic {
+          position: absolute;
+          height: 50px;
+          width: 50px;
+          border-radius: 50px;
+          top: -20px;
+          left: 10px; }
+        .container .pets-pic .pet .pet-inner .pet-bar .pet-gender {
+          height: 30px;
+          width: 30px;
+          float: right;
+          margin: 5px 10px; }
+        .container .pets-pic .pet .pet-inner .pet-bar .pet-name {
+          line-height: 30px;
+          height: 30px;
+          float: right;
+          font-size: 24px;
+          font-weight: bold;
+          margin: 5px 5px;
+          font-family: 'Alef', Verdana, Arial, Helvetica;
+          text-align: right;
+          direction: rtl;
+          color: #333;
+          white-space: nowrap; }
+    .container .pets-pic .pet .pets-zoom {
+      position: absolute;
+      bottom: 27px;
+      left: 50%;
+      margin-left: -25px;
+      width: 50px;
+      height: 50px;
+      line-height: 43px;
+      text-align: center;
+      font-size: 25px;
+      display: block;
+      text-decoration: none;
+      background-color: #f7f7f7;
+      background-image: linear-gradient(top, #f7f7f7, #e7e7e7);
+      color: #a7a7a7;
+      border-radius: 50%;
+      box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+      border: solid 1px transparent; }
 .container .treat-wrapper {
   text-align: center;
   margin-top: 0px; }
@@ -8542,10 +8625,12 @@ body.pushed .body-cover {
   position: relative; }
 .container .swipe-wrap {
   overflow: hidden;
-  position: relative; }
+  position: relative;
+  padding-left: 10px;
+  box-sizing: content-box; }
 .container .swipe-wrap > div {
   float: left;
-  width: 100%;
+  width: 94%;
   position: relative; }
 .container .swipe-wrap.treat {
   width: 100%;

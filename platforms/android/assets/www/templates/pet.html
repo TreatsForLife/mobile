@@ -3,7 +3,7 @@
     <div id="pet-pic" ng-clock>
         <div id='slider' class='swipe'>
             <div class='swipe-wrap'>
-                <div ng-repeat="item in donations">
+                <div class="pets-pic" ng-repeat="item in donations">
                     <div class="pet">
                         <div class="pet-inner">
                             <div class="pet-pic" ng-click="playVideo(item.media.video)"
@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div class='treat-wrapper' ng-style="{height: grassHeightPX, padding: buttonMarginPX}" ng-swipe-left="goBack()">
+    <div class='treat-wrapper' ng-style="{height: grassHeightPX, padding: buttonMarginPX}" >
         <div ng-if="showButton == 'buy'">
             <div class="pet-buy-button" ng-click="animateButton();"
                  ng-style="{width:buttonHeightPX, height:buttonHeightPX}">

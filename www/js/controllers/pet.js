@@ -137,7 +137,7 @@ angular.module('clientApp')
 
         $scope.adopt = function () {
             if (localStorage.adoptDialogShown){
-                $location.path('#/shop/' + $scope.pet_id);
+                $location.path('/shop/' + $scope.pet_id);
             }else{
                 $scope.showDialog('adopt');
                 localStorage.adoptDialogShown = true;

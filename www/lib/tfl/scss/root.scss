@@ -70,6 +70,19 @@ body, html {
 
 //styles start
 
+.not-online {
+  text-align: center;
+  padding: 2px;
+  background: #ffebe8;
+  border-bottom: 1px solid #dd3c10;
+  color: #dd3c10;
+  line-height: 20px;
+  font-size: 13px;
+  position: fixed;
+  width: 100%;
+  z-index: 99999999;
+}
+
 .container-wrapper{
   height:100%;
   overflow-x: hidden;

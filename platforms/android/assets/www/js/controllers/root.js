@@ -78,12 +78,13 @@ angular.module('clientApp')
         $rootScope.goBack = function () {
             if (!$scope.canGoBack()) {
                 if ($scope.pushMenuOpen){
-                    if (navigator.app) {
-                        navigator.app.exitApp();
-                    }
-                    else if (navigator.device) {
-                        navigator.device.exitApp();
-                    }
+//                    if (navigator.app) {
+//                        navigator.app.exitApp();
+//                    }
+//                    else if (navigator.device) {
+//                        navigator.device.exitApp();
+//                    }
+                    $rootScope.closePushMenu();
                 }else{
                     $rootScope.openPushMenu();
                 }

@@ -1,5 +1,5 @@
 <ul class="shop-wrapper">
-    <li class="shop-item-wrapper" ng-repeat="treat in treats | orderBy:'order'" ng-click="cartChanged($index)">
+    <li class="shop-item-wrapper" ng-repeat="treat in treats | orderBy:'order'" ng-click="cartChanged(treat)">
         <div class="shop-item-image"
              style="background-image: url({{treat.image.length > 5 ? treat.image : '/images/placeholder.png'}})"></div>
         <div class="shop-item-price">₪{{treat.price}}</div>

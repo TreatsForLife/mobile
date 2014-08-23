@@ -76,10 +76,10 @@ angular.module('clientApp')
         }
 
         $scope.totalToPay = 0;
-        $scope.cartChanged = function (i) {
-            if (angular.isDefined(i)) {
+        $scope.cartChanged = function (treat) {
+            if (angular.isDefined(treat)) {
                 $timeout(function(){
-                    $scope.treats[i].cart = !$scope.treats[i].cart;
+                    treat.cart = !treat.cart;
                 });
             }
             $timeout(function(){

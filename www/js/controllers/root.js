@@ -146,9 +146,6 @@ angular.module('clientApp')
             if (!$location.search()['dialog']){
                 $rootScope.closeDialog();
             }
-            if (!$location.search()['push']){
-                $rootScope.closePushMenu();
-            }
         });
 
         $rootScope.showDialog = function(dialog){

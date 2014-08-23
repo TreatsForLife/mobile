@@ -114,12 +114,14 @@
 /* Vertical menu that slides from the left or right */
 
 .cbp-spmenu-right {
-  left: -250px;
+  margin-left: -249px;
+  visibility: hidden;
 }
 
 .cbp-spmenu-right.cbp-spmenu-open {
-  left: 0px;
-  box-shadow: -3px -3px 7px 0px #333;
+  margin-left: 0px;
+  visibility: visible;
+  //  box-shadow: -3px -3px 7px 0px #333;
 }
 
 /* Push classes applied to the body */
@@ -146,7 +148,7 @@ body.pushed .body-cover{
 .cbp-spmenu-push,
 body,
 .navbar{
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  transition: all 0.7s ease;
 }

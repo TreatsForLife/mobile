@@ -7790,6 +7790,13 @@ html {
 .clear {
   clear: both; }
 
+.loading {
+  width: 100%;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  color: #111; }
+
 i {
   text-rendering: auto !important; }
 
@@ -8093,11 +8100,12 @@ body.welcome .navbar {
 
 /* Vertical menu that slides from the left or right */
 .cbp-spmenu-right {
-  left: -250px; }
+  margin-left: -249px;
+  visibility: hidden; }
 
 .cbp-spmenu-right.cbp-spmenu-open {
-  left: 0px;
-  box-shadow: -3px -3px 7px 0px #333; }
+  margin-left: 0px;
+  visibility: visible; }
 
 /* Push classes applied to the body */
 body.pushed .body-cover {
@@ -8116,9 +8124,9 @@ body.pushed .body-cover {
 
 /* Transitions */
 .cbp-spmenu, .cbp-spmenu-push, body, .navbar {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  transition: all 0.7s ease; }
 
 .tip-dialog-container {
   position: fixed;

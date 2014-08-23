@@ -9,7 +9,8 @@ angular.module('clientApp', ['ionic',
         'ngResource',
         'ngSanitize',
         'ngAnimate',
-        'timer',
+        'ngTouch',
+        'timer'
     ])
 
     .run(function ($ionicPlatform) {

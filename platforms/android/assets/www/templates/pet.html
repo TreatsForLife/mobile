@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div class='treat-wrapper' ng-style="{height: grassHeightPX, padding: buttonMarginPX}">
+    <div class='treat-wrapper' ng-style="{height: grassHeightPX, padding: buttonMarginPX}" ng-swipe-left="goBack()">
         <div ng-if="showButton == 'buy'">
             <div class="pet-buy-button" ng-click="animateButton();"
                  ng-style="{width:buttonHeightPX, height:buttonHeightPX}">

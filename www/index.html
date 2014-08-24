@@ -42,7 +42,7 @@
 
     <tip-dialog></tip-dialog>
 
-    <div class="not-online" ng-if="!online && showOnlineMsg" ng-click="reloadApp()">
+    <div class="not-online ng-hide" ng-if="!online" ng-show="showOnlineMsg" ng-click="reloadApp()">
         no internet connection. click to retry
         <i class="fa f-right fa-repeat fa-fw"></i>
     </div>

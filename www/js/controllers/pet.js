@@ -274,6 +274,8 @@ angular.module('clientApp')
         $scope.animateAdoptionButton = function (callback) {
             $timeout(function () {
                 $scope.showAdoptionAnimation = true;
+                $('.pet-adopted-button').addClass('animated fadeIn');
+
                 //frame dimension 423x633
                 var ar = 423/633;
                 var ww = $scope.windowWidth - 80;
@@ -289,31 +291,33 @@ angular.module('clientApp')
                     $scope.adoptAnimationWidth = ww;
                     $scope.adoptAnimationHeight = ww / ar;
                 }
+
+                var animationDuration = 4500;
+                var numOfFrames = 70;
+                var frame = numOfFrames;
+                var dim = $scope.adoptAnimationWidth;
+                var animationBgPosition = 0;
+                $('.pet-adopted-button').css({
+                    'background-size':($scope.adoptAnimationWidth * numOfFrames) + 'px auto',
+                    'width': $scope.adoptAnimationWidth + 'px',
+                    'height': $scope.adoptAnimationHeight + 'px'
+                });
                 $timeout(function () {
-                    var animationDuration = 3000;
-                    var numOfFrames = 70;
-                    var frame = numOfFrames;
-                    var dim = $scope.adoptAnimationWidth;
-                    var animationBgPosition = 0;
-                    $('.pet-adopted-button').css({
-                        'background-size':($scope.adoptAnimationWidth * numOfFrames) + 'px auto',
-                        'width': $scope.adoptAnimationWidth + 'px',
-                        'height': $scope.adoptAnimationHeight + 'px'
-                    });
-                    $timeout(function () {
-                        var animationInterval = $interval(function () {
-                            if (frame == 0) {
-                                $interval.cancel(animationInterval);
+                    var animationInterval = $interval(function () {
+                        if (frame == 0) {
+                            $interval.cancel(animationInterval);
+                            $('.pet-adopted-button').removeClass('fadeIn').addClass('fadeOut');
+                            $timeout(function () {
                                 $scope.showAdoptionAnimation = false;
                                 callback();
-                                return;
-                            }
-                            $('.pet-adopted-button').css('background-position-x', -1 * animationBgPosition);
-                            frame--;
-                            animationBgPosition += dim;
-                        }, (animationDuration / numOfFrames))
-                    });
-                }, 3000);
+                            }, 1000);
+                            return;
+                        }
+                        $('.pet-adopted-button').css('background-position-x', -1 * animationBgPosition);
+                        frame--;
+                        animationBgPosition += dim;
+                    }, (animationDuration / numOfFrames))
+                }, 2500);
             })
         }
 

@@ -7727,38 +7727,33 @@ body, html {
   width: 100%;
   max-width: 600px;
   position: relative;
-  margin: 0 auto; }
+  margin: 0 auto;
+  animation-duration: 1.5s !important;
+  -webkit-animation-duration: 1.5s !important; }
   .container.ng-leave {
-    animation-duration: 2s !important;
-    -webkit-animation-duration: 2s !important;
     animation: bounceOutLeft;
     -webkit-animation: bounceOutLeft;
     position: absolute !important;
     top: 0 !important;
     z-index: 999; }
   .container.ng-enter {
-    animation-duration: 2s !important;
-    -webkit-animation-duration: 2s !important;
     animation: fadeIn;
     -webkit-animation: fadeIn;
     position: absolute !important;
     top: 0 !important;
     z-index: 888; }
-  .container.reverse {
-    animation-duration: 2s !important;
-    -webkit-animation-duration: 2s !important; }
-    .container.reverse.ng-enter {
-      position: absolute !important;
-      top: 0 !important;
-      animation: bounceInLeft;
-      -webkit-animation: bounceInLeft;
-      z-index: 999; }
-    .container.reverse.ng-leave {
-      animation: fadeOut;
-      -webkit-animation: fadeOut;
-      position: absolute !important;
-      top: 0 !important;
-      z-index: 888; }
+  .container.reverse.ng-enter {
+    position: absolute !important;
+    top: 0 !important;
+    animation: bounceInLeft;
+    -webkit-animation: bounceInLeft;
+    z-index: 999; }
+  .container.reverse.ng-leave {
+    animation: fadeOut;
+    -webkit-animation: fadeOut;
+    position: absolute !important;
+    top: 0 !important;
+    z-index: 888; }
 
 .zoom.ng-enter {
   -webkit-animation: zoomIn 0.5s both ease-in;
@@ -8844,8 +8839,7 @@ ul.shop-wrapper {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
-  opacity: 0; }
+  width: 100%; }
   .shop-checkout .shop-checkout-inner {
     position: relative;
     padding: 2px 10px 12px;

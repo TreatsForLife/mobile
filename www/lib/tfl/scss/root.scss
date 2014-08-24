@@ -99,9 +99,9 @@ body, html {
   max-width: 600px;
   position: relative;
   margin: 0 auto;
+  animation-duration: 1.5s !important;
+  -webkit-animation-duration: 1.5s !important;
   &.ng-leave {
-    animation-duration: 2s !important;
-    -webkit-animation-duration: 2s !important;
     animation: bounceOutLeft;
     -webkit-animation: bounceOutLeft;
     position: absolute !important;
@@ -109,8 +109,6 @@ body, html {
     z-index: 999;
   }
   &.ng-enter {
-    animation-duration: 2s !important;
-    -webkit-animation-duration: 2s !important;
     animation: fadeIn;
     -webkit-animation: fadeIn;
     position: absolute !important;
@@ -119,8 +117,6 @@ body, html {
   }
 
   &.reverse {
-    animation-duration: 2s !important;
-    -webkit-animation-duration: 2s !important;
     &.ng-enter {
       position: absolute !important;
       top: 0 !important;

@@ -33,7 +33,6 @@ angular.module('clientApp')
             if (!$scope.pet_id) {
                 $location.path('/pets');
             } else {
-                $rootScope.addDummyToHistory('/pet/' + $scope.pet_id);
                 $scope.getPet();
             }
         }
@@ -224,18 +223,26 @@ angular.module('clientApp')
                     // BUY : if its my pet
                     $scope.showButton = 'buy';
                     $rootScope.bodyBg = ' mine';
+                    $rootScope.currentPage = 'mine';
+                    $rootScope.currentPet = $scope.pet_id;
                 } else if (!!(!$scope.pet.user && $scope.user.pet)) {
                     // SHARE : if I have a pet and the pet has no owner
                     $scope.showButton = 'share';
                     $rootScope.bodyBg = ' lonely';
+                    $rootScope.currentPage = 'lonely';
+                    $rootScope.currentPet = $scope.pet_id;
                 } else if (!!($scope.pet.user && ($scope.pet.user._id != $scope.user._id))) {
                     // LOVE : if the pet has owner and its not me
                     $scope.showButton = 'love';
                     $rootScope.bodyBg = ' adopted';
+                    $rootScope.currentPage = 'adopted';
+                    $rootScope.currentPet = $scope.pet_id;
                 } else if (!$scope.pet.user && !$scope.user.pet) {
                     //ADOPT : if I have no pet and the this pet has no owner
                     $scope.showButton = 'adopt';
                     $rootScope.bodyBg = ' lonely';
+                    $rootScope.currentPage = 'lonely';
+                    $rootScope.currentPet = $scope.pet_id;
                 } else {
                     $scope.showButton = false;
                 }
@@ -283,7 +290,7 @@ angular.module('clientApp')
                     $scope.adoptAnimationHeight = ww / ar;
                 }
                 $timeout(function () {
-                    var animationDuration = 5700;
+                    var animationDuration = 3000;
                     var numOfFrames = 70;
                     var frame = numOfFrames;
                     var dim = $scope.adoptAnimationWidth;
@@ -306,7 +313,7 @@ angular.module('clientApp')
                             animationBgPosition += dim;
                         }, (animationDuration / numOfFrames))
                     });
-                });
+                }, 3000);
             })
         }
 

@@ -5,7 +5,7 @@ angular.module('clientApp')
 
         console.log('ShopCtrl');
 
-        $rootScope.addDummyToHistory();
+        $rootScope.currentPage = 'shop';
 
         var pet_id = $stateParams['id'] || $rootScope.user_pet_id;
 

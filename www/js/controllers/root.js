@@ -67,13 +67,33 @@ angular.module('clientApp')
 
         function onOffline(){
             $rootScope.online = false;
+            $rootScope.showOnlineMsg = true;
         }
 
         $scope.history = [];
         $scope.lastUrl = '';
-        $rootScope.canGoBack = function(){
-            return ($scope.history.length > 0)
+        $rootScope.currentPage = '';
+        $rootScope.currentPet = '';
+
+        $rootScope.getBackPage = function(){
+            var path = '';
+            switch ($rootScope.currentPage){
+                case 'shop':
+                    path = 'pet/' + $scope.currentPet;
+                    break;
+                case 'adopted':
+                    path = 'pets/adopted';
+                    break;
+                case 'lonely':
+                    path = 'pets/lonely';
+                    break;
+                default:
+                    return false;
+                    break;
+            }
+            return path;
         }
+
         function onBackKeyDown() {
             // Handle the back button
             $rootScope.goBack();
@@ -83,47 +103,29 @@ angular.module('clientApp')
         }
 
         $rootScope.goBack = function () {
-            if (!$scope.canGoBack()) {
-                if ($scope.pushMenuOpen){
-//                    if (navigator.app) {
-//                        navigator.app.exitApp();
-//                    }
-//                    else if (navigator.device) {
-//                        navigator.device.exitApp();
-//                    }
-                    $rootScope.closePushMenu();
-                }else{
-                    $rootScope.openPushMenu();
-                }
-                return;
+            if ($scope.cartIsUp || $scope.pushMenuOpen || $scope.dialogShown){
+                $scope.cartIsUp = false;
+                $rootScope.closePushMenu();
+                $rootScope.closeDialog();
             }else{
-                $timeout.cancel($scope.cancelBack);
-                $timeout(function () {
-                    var l = $scope.history.length;
-                    var path = $scope.history[l-1];
-                    $scope.history = [];
-                    $scope.lastUrl = '';
-                    $scope.goingBack = true;
-                    $timeout(function () {
-                        $location.path(path);
-                    }, 0);
-                }, 0);
-                $scope.cancelBack = $timeout(function () {
-                    $scope.goingBack = false;
-                }, 5000);
-            }
-        }
-        $rootScope.addUrlToHistory = function(url){
-            $rootScope.addDummyToHistory();
-            $scope.lastUrl = url;
-        }
-        $rootScope.addDummyToHistory = function(){
-            var l = $scope.history.length;
-            if ($scope.lastUrl && ($scope.history[l-1] != $scope.lastUrl)){
-                $scope.history.push($scope.lastUrl);
-            }
-        }
+                var goto = $rootScope.getBackPage();
 
+                if (!goto) {
+                    $rootScope.openPushMenu();
+                }else{
+                    $timeout.cancel($scope.cancelBack);
+                    $timeout(function () {
+                        $scope.goingBack = true;
+                        $timeout(function () {
+                            $location.path(goto);
+                        }, 0);
+                    }, 0);
+                    $scope.cancelBack = $timeout(function () {
+                        $scope.goingBack = false;
+                    }, 5000);
+                }
+            }
+        }
         $scope.playVideo = function (src) {
             $timeout(function () {
                 $scope.$broadcast('playVideoSrc', src);
@@ -156,6 +158,7 @@ angular.module('clientApp')
         });
 
         $rootScope.showDialog = function(dialog){
+            $scope.dialogShown = true;
             $timeout(function () {
                 $scope.$broadcast('showTipDialog', dialog);
                 $scope.$emit('showTipDialog', dialog);
@@ -163,6 +166,7 @@ angular.module('clientApp')
         }
 
         $rootScope.closeDialog = function(dialog){
+            $scope.dialogShown = false;
             $timeout(function () {
                 $scope.$broadcast('closeTipDialog', dialog);
                 $scope.$emit('closeTipDialog', dialog);
@@ -182,6 +186,10 @@ angular.module('clientApp')
         $timeout(function () {
             window.scrollTo(0, 1);
         }, 1000);
+
+        $scope.$on("$stateChangeStart", function (scope, next, current) {
+            $rootScope.closePushMenu();
+        });
 
         //check internet connection (start online, ping api server - if success stay online. in any case after 3 seconds, go offline
         $rootScope.online = true;

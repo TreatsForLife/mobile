@@ -100,8 +100,8 @@ body, html {
   position: relative;
   margin: 0 auto;
   &.ng-leave {
-    animation-duration: 3s !important;
-    -webkit-animation-duration: 3s !important;
+    animation-duration: 2s !important;
+    -webkit-animation-duration: 2s !important;
     animation: bounceOutLeft;
     -webkit-animation: bounceOutLeft;
     position: absolute !important;
@@ -109,8 +109,8 @@ body, html {
     z-index: 999;
   }
   &.ng-enter {
-    animation-duration: 3s !important;
-    -webkit-animation-duration: 3s !important;
+    animation-duration: 2s !important;
+    -webkit-animation-duration: 2s !important;
     animation: fadeIn;
     -webkit-animation: fadeIn;
     position: absolute !important;

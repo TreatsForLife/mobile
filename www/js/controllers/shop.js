@@ -5,7 +5,7 @@ angular.module('clientApp')
 
         console.log('ShopCtrl');
 
-        $rootScope.addDummyToHistory();
+        $rootScope.currentPage = 'shop';
 
         var pet_id = $stateParams['id'] || $rootScope.user_pet_id;
 
@@ -37,8 +37,8 @@ angular.module('clientApp')
         $scope.initCheckout = function () {
             $timeout(function () {
                 //animate the checkout - do not remove there are problems with fixed position otherwise
-                $('.shop-checkout')
-                    .addClass('animated fadeInUp')
+//                $('.shop-checkout')
+//                    .addClass('animated fadeInUp')
 
                 //calc the cart (to include defaults)
                 $scope.cartChanged();

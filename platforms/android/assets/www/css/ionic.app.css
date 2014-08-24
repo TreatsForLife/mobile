@@ -7729,16 +7729,16 @@ body, html {
   position: relative;
   margin: 0 auto; }
   .container.ng-leave {
-    animation-duration: 3s !important;
-    -webkit-animation-duration: 3s !important;
+    animation-duration: 2s !important;
+    -webkit-animation-duration: 2s !important;
     animation: bounceOutLeft;
     -webkit-animation: bounceOutLeft;
     position: absolute !important;
     top: 0 !important;
     z-index: 999; }
   .container.ng-enter {
-    animation-duration: 3s !important;
-    -webkit-animation-duration: 3s !important;
+    animation-duration: 2s !important;
+    -webkit-animation-duration: 2s !important;
     animation: fadeIn;
     -webkit-animation: fadeIn;
     position: absolute !important;
@@ -8480,7 +8480,7 @@ body.pushed .body-cover {
     z-index: 99; }
     .container.pet .cart-wrapper.up {
       margin-top: 0;
-      padding-top: 40px;
+      padding-top: 50px;
       top: 0;
       overflow: auto; }
     .container.pet .cart-wrapper .cart-items {

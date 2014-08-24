@@ -14,12 +14,12 @@ angular.module('clientApp')
             $rootScope.navbarTitle = 'כלבים מאומצים';
             $scope.pets = Pets.adopted();
             $rootScope.bodyBg = 'adopted';
-            $rootScope.addUrlToHistory('/pets/adopted');
+            $rootScope.currentPage = ('/pets/adopted');
         } else if (filter == 'lonely') {
             $rootScope.navbarTitle = 'כלבים בודדים';
             $scope.pets = Pets.lonely();
             $rootScope.bodyBg = 'lonely';
-            $rootScope.addUrlToHistory('/pets/lonely');
+            $rootScope.currentPage = ('/pets/lonely');
         } else {
             if ($scope.user) {
                 $location.path('/' + ($scope.user.pet ? 'pet/'+$scope.user.pet : 'pets/lonely'));

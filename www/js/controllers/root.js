@@ -41,21 +41,28 @@ angular.module('clientApp')
 
         //make sure that the user is fetched
         function onOnline(){
-            $rootScope.online = true;
-            if (!$rootScope.user && $rootScope.user_id) {
-                console.log('No user but user_id cookie is found - fetching from DB');
-                $timeout(function () {
-                    $rootScope.getUser();
-                })
-            } else if (!$rootScope.user_id) {
-                console.log('No user_id cookies found - redirecting to welcome screen', localStorage);
-                localStorage.setItem("returnUrl", $location.path())
-                $location.path('/welcome');
+            if ($rootScope.online == false){
+                $scope.reloadApp();
+            }else{
+                if (!$rootScope.user && $rootScope.user_id) {
+                    console.log('No user but user_id cookie is found - fetching from DB');
+                    $timeout(function () {
+                        $rootScope.getUser();
+                    })
+                } else if (!$rootScope.user_id) {
+                    console.log('No user_id cookies found - redirecting to welcome screen', localStorage);
+                    localStorage.setItem("returnUrl", $location.path())
+                    $location.path('/welcome');
+                }
             }
         }
 
         $rootScope.trustSrc = function (src) {
             return $sce.trustAsResourceUrl(src);
+        }
+
+        $rootScope.reloadApp = function(){
+            top.location.reload();
         }
 
         function onOffline(){
@@ -181,7 +188,7 @@ angular.module('clientApp')
         checkNetworkStatus();
         var offlineTimer = $timeout(function(){
             onOffline();
-        }, 3000);
+        }, 7000);
         var offlineInterval = $interval(function(){
             checkNetworkStatus();
         }, 5000);

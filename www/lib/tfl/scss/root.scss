@@ -76,8 +76,8 @@ body, html {
   background: #ffebe8;
   border-bottom: 1px solid #dd3c10;
   color: #dd3c10;
-  line-height: 30px;
-  font-size: 13px;
+  line-height: 40px;
+  font-size: 15px;
   position: fixed;
   width: 100%;
   z-index: 99999999;
@@ -179,9 +179,12 @@ html {
 }
 
 .loading {
+  position: fixed;
   width: 100%;
-  font-size: 40px;
+  font-size: 60px;
   line-height: 60px;
+  top:100px;
+  left: 0;
   text-align: center;
   color:#111;
 }

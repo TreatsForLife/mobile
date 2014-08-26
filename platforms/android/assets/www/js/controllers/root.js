@@ -188,7 +188,9 @@ angular.module('clientApp')
         }, 1000);
 
         $scope.$on("$stateChangeStart", function (scope, next, current) {
+            $scope.cartIsUp = false;
             $rootScope.closePushMenu();
+            $rootScope.closeDialog();
         });
 
         //check internet connection (start online, ping api server - if success stay online. in any case after 3 seconds, go offline

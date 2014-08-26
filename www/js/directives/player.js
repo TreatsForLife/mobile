@@ -11,7 +11,7 @@ angular.module('clientApp')
             },
             template: '<div id="dialog-video" class="dialog-video" ng-show="show" bindonce bo-class="{preview: !isMobile}">' +
                 //'<video id="video-player"></video>' +
-                '<video id="video-player" ng-click="toggleVideo()" ng-hide="isVideoBuffering" loop="on" autoplay="on" ></video>' +
+                '<video id="video-player" ng-click="toggleVideo()" ng-hide="isVideoBuffering" ></video>' +
                 '<div id="video-loading-indicator" ng-if="isVideoBuffering">Loading<i class="fa fa-spinner fa-spin"></i></div>' +
                 '<div id="video-controls-wrapper">' +
                 '<div class="video-controls">' +
@@ -35,6 +35,7 @@ angular.module('clientApp')
                 scope.isVideoBuffering = true;
                 scope.currentTime = "0:00";
                 scope.currentPosition = 0;
+                scope.autoplay = false;
 
                 //local variables
                 var video, progressbar, playing, progressBarWidth, progressBarOffset, scrollDisabled = false;
@@ -48,21 +49,21 @@ angular.module('clientApp')
 //                });
 //
                 scope.$on('setVideoSrc', function (e, src) {
+                    scope.autoplay = false;
                     scope.videoSrc = $sce.trustAsResourceUrl(src);
                     scope.videoSrcRaw = (src);
                     initVideo();
                 });
 
                 scope.$on('playVideoSrc', function (e, src) {
-                    if (scope.videoSrcRaw == src) {
-                        scope.show = true;
-                        scope.playVideo();
-                    } else {
-                        video.src = $sce.trustAsResourceUrl(src);
-                        scope.videoSrcRaw = src;
-                        scope.show = true;
-                        scope.playVideo();
+                    scope.autoplay = true;
+                    if (scope.videoSrcRaw != src) {
+                        scope.videoSrc = $sce.trustAsResourceUrl(src);
+                        scope.videoSrcRaw = (src);
+                        initVideo();
                     }
+                    scope.show = true;
+                    scope.playVideo();
                 });
 
                 var alreadyInit = false;
@@ -72,7 +73,6 @@ angular.module('clientApp')
 
                         alreadyInit = true;
                         video = document.getElementById('video-player');
-                        //angular.element(video).attr('src', scope.videoSrc);
 
                         video.volume = 0;
 
@@ -98,19 +98,9 @@ angular.module('clientApp')
                     $timeout(function () {
                         scope.currentTime = "0:00";
                         scope.currentPosition = 0;
-                        if (!scope.$root.isMobile) {
-                            setDimensions();
-                            video.volume = 1;
-                        }
                         video.src = scope.videoSrc;
                     });
 
-                }
-
-                var setDimensions = function () {
-                    //var dialogHeight = angular.element((window === window.top) ? '.editor-preview' : '#show-container').height() + 5;
-//                    angular.element('#dialog-video').height(dialogHeight).css('top', Math.abs(scope.$root.myScroll['show-container'].y));
-//                    scrollDisabled = true;
                 }
 
                 //browser events
@@ -126,9 +116,11 @@ angular.module('clientApp')
                         scope.isVideoLoaded = true;
                         scope.isVideoBuffering = false;
                     });
-                    console.log('Video play');
-                    scope.playVideo();
-                    playing = true;
+                    if (scope.autoplay){
+                        console.log('Auto Video play');
+                        scope.playVideo();
+                        playing = true;
+                    }
                 };
 
                 var videoPlaying = function (e) {

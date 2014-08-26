@@ -4,6 +4,7 @@
 
   overflow-x: hidden;
   overflow-y: visible;
+  height: auto;
 
   &.adopted {
     background-color: $scheme-yellow;

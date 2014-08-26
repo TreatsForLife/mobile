@@ -4,7 +4,7 @@
         <div id='slider' class='swipe'>
             <div class='swipe-wrap'>
                 <div class="pets-pic" ng-repeat="item in donations">
-                    <div class="pet">
+                    <div class="pet" ng-show="($index==0 || swipeComplete)">
                         <div class="pet-inner">
                             <div class="pet-pic" ng-click="playVideo(item.media.video)"
                                  ng-style="{'background-image': 'url('+item.media.image+')', height: picHeightPX}">

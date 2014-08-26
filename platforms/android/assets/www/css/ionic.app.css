@@ -7694,6 +7694,7 @@ blockquote, q {
 
 body, html {
   width: 100%;
+  min-height: 100%;
   height: 100%;
   padding: 0;
   background: transparent;
@@ -7723,7 +7724,7 @@ body, html {
   margin: 0 auto; }
 
 .container {
-  min-height: 100%;
+  height: 100%;
   width: 100%;
   max-width: 600px;
   position: relative;
@@ -8344,7 +8345,8 @@ body.pushed .body-cover {
 
 .container.pets, .container.pet {
   overflow-x: hidden;
-  overflow-y: visible; }
+  overflow-y: visible;
+  height: auto; }
   .container.pets.adopted, .container.pet.adopted {
     background-color: #FFC408; }
   .container.pets.lonely, .container.pet.lonely {
@@ -8461,6 +8463,7 @@ body.pushed .body-cover {
   overflow: hidden;
   transform: none; }
   .container.pet #pet-pic {
+    overflow: hidden;
     margin-bottom: -10px; }
   .container.pet .cart-wrapper {
     background-color: #5EB4C1;
@@ -8759,7 +8762,8 @@ body.pushed .body-cover {
     padding: 0; }
 
 .container.shop {
-  background-color: #9aca13; }
+  background-color: #9aca13;
+  height: auto; }
 
 ul.shop-wrapper {
   list-style-type: none;

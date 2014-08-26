@@ -6,11 +6,12 @@ angular.module('clientApp')
         console.log('PetCtrl');
 
         $rootScope.bodyClass = 'pet';
-        $scope.grassHeight = 0;
         $scope.buttonAnimationReady = false;
         $scope.buttonClicked = false;
         $scope.picHeight = $('.container').width() * 0.6;
+        $scope.grassHeight = $(window).height() - $scope.picHeight;
         $scope.cartIsUp = false;
+        $scope.swipeComplete = false;
 
         //search pet in route or in cookie
 
@@ -68,6 +69,7 @@ angular.module('clientApp')
                             }
                         });
 
+                        $scope.swipeComplete = true;
 
                     }, 500);
                     $timeout(function () {
@@ -104,7 +106,7 @@ angular.module('clientApp')
         }
 
         function calcDims(iterations) {
-            if (typeof iterations == 'undefined') iterations = 5;
+            if (typeof iterations == 'undefined') iterations = 3;
 
             $timeout(function () {
                 var min_button_height = 100;

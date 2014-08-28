@@ -158,7 +158,7 @@ angular.module('clientApp')
                 description: ' ',
                 actions: [
                     {name: 'תנו לי חטיף', link: pet_link}
-                ],
+                ]
             }, function (response) {
             });
         }
@@ -177,7 +177,7 @@ angular.module('clientApp')
                 description: ' ',
                 actions: [
                     {name: 'תנו לי חטיף', link: pet_link}
-                ],
+                ]
             }, function (response) {
             });
         }
@@ -195,7 +195,7 @@ angular.module('clientApp')
                 description: ' ',
                 actions: [
                     {name: 'בואו לראות אותי', link: pet_link}
-                ],
+                ]
             }, function (response) {
             });
         }
@@ -213,7 +213,7 @@ angular.module('clientApp')
                 description: ' ',
                 actions: [
                     {name: 'בואו לראות אותי', link: pet_link}
-                ],
+                ]
             }, function (response) {
             });
         }

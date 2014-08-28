@@ -22,7 +22,7 @@
     <feature name="PayPalMobile">
         <param name="android-package" value="com.paypal.cordova.sdk.PayPalMobileCordovaPlugin" />
     </feature>
-    <name>חטיפים לחיים</name>
+    <name>TreatsForLife</name>
     <description>
     ברוכים הבאים לפרויקט "חטיפים לחיים"
   אז איך זה עובד? מתחילים בבחירת החבר החדש שלכם, אחד הכלבים שנמצאים בבתי האומנה שעובדים איתנו. הכלב שתבחרו יהיה שלכם

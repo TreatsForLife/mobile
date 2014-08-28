@@ -198,7 +198,7 @@ angular.module('clientApp')
         checkNetworkStatus();
         var offlineTimer = $timeout(function(){
             onOffline();
-        }, 7000);
+        }, 15000);
         var offlineInterval = $interval(function(){
             checkNetworkStatus();
         }, 5000);

@@ -43,12 +43,12 @@
     <tip-dialog></tip-dialog>
 
     <div class="not-online ng-hide" ng-if="!online" ng-show="showOnlineMsg" ng-click="reloadApp()">
-        no internet connection. click to retry
+        WAITING FOR SERVER...
         <i class="fa f-right fa-repeat fa-fw"></i>
     </div>
 
     <div class="container-wrapper" style="padding: 0">
-        <div class="container {{bodyBg}}" >
+        <div class="container {{bodyBg}}" style="height: 100%;">
             <ui-view class="container {{bodyClass}} {{bodyBg}}" ng-animate ng-class="{reverse: goingBack}">
                 <i class="fa fa-refresh fa-spin loading"></i>
             </ui-view>

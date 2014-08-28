@@ -1,0 +1,24 @@
+<div style="height:1px;"></div>
+<div class="welcome-logo-wrapper" ng-init="placeLogo()" ng-click="fbLogin()">
+    <div class="welcome-logo animated ng-hide" ng-show="logoAnimationComplete" ng-style="{height: logoHeightPX, width: logoWidthPX, margin:logoMarginPX}" ></div>
+    <div class="welcome-logo-animation" ng-show="!logoAnimationComplete" ng-style="{height: logoHeightPX, width: logoWidthPX, margin:logoMarginPX}" ></div>
+</div>
+
+<i class="fa fa-question-circle welcome-app-what rtl" ng-click="showDialog('welcome')"></i>
+<div class="bottom-wrapper">
+    <p class="welcome-app-explained rtl">
+        כלב אמיתי. אימוץ וירטואלי.
+    </p>
+    <a class="fb-login" ng-click="fbLogin()">
+        <i class="fa fa-facebook-square"></i>
+
+        <p>Facebook Login</p>
+    </a>
+
+    <p class="welcome-login-explained rtl">
+        אנחנו רק נשתמש בשם ובתמונת הפרופיל שלך.<br/>
+        לעולם לא נפרסם שום דבר בשמך!
+    </p>
+</div>
+<!--<a id="inst-login" ng-href="{{instajam.authUrl}}"><p>Sign in with Instagram</p></a>-->
+

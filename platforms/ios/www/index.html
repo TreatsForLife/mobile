@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+
+    <script type="text/javascript" src="js/paypal-mobile-js-helper.js"></script>
+  </head>
+  <body ng-app="clientApp" ng-controller="RootCtrl" ng-class="bodyClass"  animation="custom-animation" class="platform-ios platform-cordova platform-webview">
+    <!-- 
+      The nav bar that will be updated as we navigate between views.
+    -->
+<!--
+    <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+      <ion-nav-back-button class="button-icon icon ion-ios7-arrow-back">
+      </ion-nav-back-button>
+    </ion-nav-bar>
+-->
+
+    <div ng-include="'templates/partials/pushmenu.html'"></div>
+
+    <div class="navbar" ng-include="'templates/partials/navbar.html'"></div>
+
+    <div player="player" show="show_player" video-src="player_src" is-edit-mode="false"></div>
+
+    <tip-dialog></tip-dialog>
+
+    <div class="not-online ng-hide" ng-if="!online" ng-show="showOnlineMsg" ng-click="reloadApp()">
+        no internet connection. click to retry
+        <i class="fa f-right fa-repeat fa-fw"></i>
+    </div>
+
+    <div class="container-wrapper" style="padding: 0">
+        <div class="container {{bodyBg}}" >
+            <ui-view class="container {{bodyClass}} {{bodyBg}}" ng-animate ng-class="{reverse: goingBack}">
+                <i class="fa fa-refresh fa-spin loading"></i>
+            </ui-view>
+        </div>
+    </div>
+
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/Swipe/swipe.js"></script>
+    <script src="bower_components/angular-timer/dist/angular-timer.js"></script>
+    <script src="bower_components/momentjs/moment.js"></script>
+
+    <script src="js/services/utils.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/root.js"></script>
+    <script src="js/services/instagram.js"></script>
+    <script src="js/services/pets.js"></script>
+    <script src="js/controllers/pet.js"></script>
+    <script src="js/controllers/pets.js"></script>
+    <script src="js/controllers/welcome.js"></script>
+    <script src="js/directives/draggable.js"></script>
+    <script src="js/directives/tipdialog.js"></script>
+    <script src="js/services/pets.js"></script>
+    <script src="js/services/users.js"></script>
+    <script src="js/services/donations.js"></script>
+    <script src="js/controllers/shop.js"></script>
+    <script src="js/services/treats.js"></script>
+    <script src="js/directives/player.js"></script>
+
+  </body>
+</html>

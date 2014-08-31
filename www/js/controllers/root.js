@@ -124,6 +124,7 @@ angular.module('clientApp')
             throw "ignore"
         }
 
+        $scope.shouldCloseApp = false;
         $rootScope.goBack = function () {
             if ($scope.cartIsUp || $scope.pushMenuOpen || $scope.dialogShown){
                 $scope.cartIsUp = false;
@@ -133,8 +134,20 @@ angular.module('clientApp')
                 var goto = $rootScope.getBackPage();
 
                 if (!goto) {
-                    $rootScope.openPushMenu();
+                    if($scope.shouldCloseApp){
+                        $scope.shouldCloseApp = false;
+                        if (navigator.app) {
+                            navigator.app.exitApp();
+                        }
+                        else if (navigator.device) {
+                            navigator.device.exitApp();
+                        }
+                    }else{
+                        $rootScope.openPushMenu();
+                        $scope.shouldCloseApp = true;
+                    }
                 }else{
+                    $scope.shouldCloseApp = false;
                     $timeout.cancel($scope.cancelBack);
                     $timeout(function () {
                         $scope.goingBack = true;

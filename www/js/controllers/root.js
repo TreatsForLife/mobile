@@ -116,9 +116,11 @@ angular.module('clientApp')
             return path;
         }
 
+        var backKeyDown = false;
         function onBackKeyDown() {
             // Handle the back button
             $rootScope.goBack();
+            backKeyDown = true;
 
             //dirty trick to disable back button (nothing else seems to work)
             throw "ignore"
@@ -134,7 +136,7 @@ angular.module('clientApp')
                 var goto = $rootScope.getBackPage();
 
                 if (!goto) {
-                    if($scope.shouldCloseApp){
+                    if($scope.shouldCloseApp && backKeyDown){
                         $scope.shouldCloseApp = false;
                         if (navigator.app) {
                             navigator.app.exitApp();
@@ -144,7 +146,7 @@ angular.module('clientApp')
                         }
                     }else{
                         $rootScope.openPushMenu();
-                        $scope.shouldCloseApp = true;
+                        if (backKeyDown) $scope.shouldCloseApp = true;
                     }
                 }else{
                     $scope.shouldCloseApp = false;
@@ -160,6 +162,7 @@ angular.module('clientApp')
                     }, 5000);
                 }
             }
+            backKeyDown = false;
         }
         $scope.playVideo = function (src) {
             $timeout(function () {

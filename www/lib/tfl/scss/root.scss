@@ -73,15 +73,26 @@ body, html {
 
 .not-online {
   text-align: center;
-  padding: 2px;
-  background: #ffebe8;
-  border-bottom: 1px solid #dd3c10;
-  color: #dd3c10;
-  line-height: 40px;
-  font-size: 15px;
   position: fixed;
   width: 100%;
+  height: 100%;
+  background-color: $scheme-green;
+//  background-image: url('../images/animated-logo-loop.gif');
+//  background-repeat: no-repeat;
+//  background-size: 266px auto;
+//  background-position: center center;
   z-index: 99999999;
+
+  .not-online-logo{
+    height:370px;
+    width:266px;
+    background-image: url('../images/animated-logo-loop.gif');
+    background-repeat: no-repeat;
+    margin:auto;
+  }
+  .not-online-logo-animation{
+    background-image: url('../images/animated-logo.png');
+  }
 }
 
 .container-wrapper {

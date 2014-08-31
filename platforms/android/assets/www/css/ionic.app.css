@@ -7724,6 +7724,7 @@ body, html {
   margin: 0 auto; }
 
 .container {
+  min-height: 100%;
   height: 100%;
   width: 100%;
   max-width: 600px;

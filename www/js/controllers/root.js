@@ -39,11 +39,34 @@ angular.module('clientApp')
             });
         }
 
-        //make sure that the user is fetched
+        $scope.logoAnimationComplete = false;
+        $scope.animateLogo = function () {
+            var animationDuration = 1700;
+            var numOfFrames = 48;
+            var frame = numOfFrames;
+            var dim = 266;
+            var animationBgPosition = 0;
+            $('.not-online-logo-animation').css('background-size', ($scope.logoWidth * numOfFrames) + 'px auto');
+            var animationInterval = $interval(function () {
+                if (frame == 0) {
+                    $interval.cancel(animationInterval);
+                    $timeout(function(){
+                        $scope.logoAnimationComplete = true;
+                        $rootScope.notOnlineAnimationCompleted = true;
+                    },500);
+                    return;
+                }
+                $('.not-online-logo-animation').css('background-position-x', -1 * animationBgPosition);
+                frame--;
+                animationBgPosition += dim;
+            }, (animationDuration / numOfFrames))
+        }
+        $timeout(function(){
+            $scope.animateLogo();
+        }, 0);
         function onOnline(){
             if ($rootScope.online == false){
-                $scope.reloadApp();
-            }else{
+                $rootScope.online = true;
                 if (!$rootScope.user && $rootScope.user_id) {
                     console.log('No user but user_id cookie is found - fetching from DB');
                     $timeout(function () {
@@ -67,7 +90,6 @@ angular.module('clientApp')
 
         function onOffline(){
             $rootScope.online = false;
-            $rootScope.showOnlineMsg = true;
         }
 
         $scope.history = [];
@@ -194,17 +216,13 @@ angular.module('clientApp')
         });
 
         //check internet connection (start online, ping api server - if success stay online. in any case after 3 seconds, go offline
-        $rootScope.online = true;
         checkNetworkStatus();
-        var offlineTimer = $timeout(function(){
-            onOffline();
-        }, 15000);
+        onOffline();
         var offlineInterval = $interval(function(){
             checkNetworkStatus();
         }, 5000);
         function checkNetworkStatus(){
             $http.get(Consts.api_root + 'ping').success(function(){
-                $timeout.cancel(offlineTimer);
                 $interval.cancel(offlineInterval);
                 onOnline();
             }).error(function(){

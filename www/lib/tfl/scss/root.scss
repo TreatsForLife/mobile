@@ -93,6 +93,15 @@ body, html {
   .not-online-logo-animation{
     background-image: url('../images/animated-logo.png');
   }
+  .not-online-spinner{
+    position: fixed;
+    bottom: 20px;
+    margin:auto;
+    width: 100%;
+    left: 0;
+    font-size: 40px;
+    color: white;
+  }
 }
 
 .container-wrapper {

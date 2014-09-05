@@ -43,9 +43,6 @@ angular.module('clientApp')
                     if (angular.isDefined(video)) {
                         console.log('play video action', video);
                         video.play();
-                        $timeout(function () {
-                            $scope.loading = true;
-                        });
                     }
                 };
                 $scope.pauseVideo = function () {
@@ -59,12 +56,10 @@ angular.module('clientApp')
                     }
                 };
                 $scope.initVideo = function () {
-                    $timeout(function () {
                         video.volume = 0;
                         video.addEventListener('ended', endVideo);
                         video.addEventListener('canplaythrough', videoCanPlay);
                         video.addEventListener('playing', videoPlaying);
-                    }, 0);
                 }
                 $scope.toggleVideo = function () {
                     $timeout(function () {

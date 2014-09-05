@@ -164,6 +164,7 @@ angular.module('clientApp')
             }
             backKeyDown = false;
         }
+/*
         $scope.playVideo = function (src) {
             $timeout(function () {
                 $scope.$broadcast('playVideoSrc', src);
@@ -174,6 +175,9 @@ angular.module('clientApp')
                 $scope.$broadcast('setVideoSrc', src);
             }, 0);
         }
+*/
+
+
 
         $scope.pushMenuOpen = false;
         $rootScope.openPushMenu = function () {

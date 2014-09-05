@@ -128,15 +128,30 @@
           display: block;
           line-height: 0;
           height: 210px;
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px;
+          .pet-video{
+            width: 100%;
+          }
           .pet-pic-play {
             line-height: inherit;
             width: 100%;
             color: white;
             font-size: 50px;
-            margin-top: 10px;
+            margin-top: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            i{
+              width:100%;
+              &.fa-refresh{
+                color:rgba(255,255,255,0.5);
+              }
+            }
             .pet-pic-play-circle {
               color: rgba(0, 0, 0, 0.6);
               margin-left: -4px;
+
             }
           }
         }
@@ -145,6 +160,8 @@
           height: 40px;
           background: #fefefe;
           position: relative;
+          border-bottom-left-radius: 3px;
+          border-bottom-right-radius: 3px;
           .owner-pic {
             position: absolute;
             height: 50px;

@@ -193,6 +193,7 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/ant-build/res/drawable-ldpi/icon.png \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/_where-is-www.txt \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/sounds \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/templates \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images \
@@ -205,6 +206,7 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/plugins \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/index.html \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/README.md \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/sounds/woof.mp3 \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/controllers \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/services \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/controllers.js \

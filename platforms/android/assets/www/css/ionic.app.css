@@ -7717,6 +7717,14 @@ body, html {
     margin: auto; }
   .not-online .not-online-logo-animation {
     background-image: url('../images/animated-logo.png'); }
+  .not-online .not-online-spinner {
+    position: fixed;
+    bottom: 20px;
+    margin: auto;
+    width: 100%;
+    left: 0;
+    font-size: 40px;
+    color: white; }
 
 .container-wrapper {
   height: 100%;
@@ -8555,20 +8563,33 @@ body.pushed .body-cover {
         background-size: cover;
         display: block;
         line-height: 0;
-        height: 210px; }
+        height: 210px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px; }
+        .container .pets-pic .pet .pet-inner .pet-pic .pet-video {
+          width: 100%; }
         .container .pets-pic .pet .pet-inner .pet-pic .pet-pic-play {
           line-height: inherit;
           width: 100%;
           color: white;
           font-size: 50px;
-          margin-top: 10px; }
+          margin-top: 20px;
+          position: absolute;
+          top: 0;
+          left: 0; }
+          .container .pets-pic .pet .pet-inner .pet-pic .pet-pic-play i {
+            width: 100%; }
+            .container .pets-pic .pet .pet-inner .pet-pic .pet-pic-play i.fa-refresh {
+              color: rgba(255, 255, 255, 0.5); }
           .container .pets-pic .pet .pet-inner .pet-pic .pet-pic-play .pet-pic-play-circle {
             color: rgba(0, 0, 0, 0.6);
             margin-left: -4px; }
       .container .pets-pic .pet .pet-inner .pet-bar {
         height: 40px;
         background: #fefefe;
-        position: relative; }
+        position: relative;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px; }
         .container .pets-pic .pet .pet-inner .pet-bar .owner-pic {
           position: absolute;
           height: 50px;

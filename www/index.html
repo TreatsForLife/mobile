@@ -34,11 +34,23 @@
     </ion-nav-bar>
 -->
 
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-54512535-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
     <div ng-include="'templates/partials/pushmenu.html'"></div>
 
     <div class="navbar" ng-include="'templates/partials/navbar.html'"></div>
 
-    <div player="player" show="show_player" video-src="player_src" is-edit-mode="false"></div>
+    <!--<div player="player" show="show_player" video-src="player_src" is-edit-mode="false"></div>-->
 
     <tip-dialog></tip-dialog>
 
@@ -78,7 +90,7 @@
     <script src="js/controllers/pet.js"></script>
     <script src="js/controllers/pets.js"></script>
     <script src="js/controllers/welcome.js"></script>
-    <script src="js/directives/draggable.js"></script>
+    <!--<script src="js/directives/draggable.js"></script>-->
     <script src="js/directives/tipdialog.js"></script>
     <script src="js/services/pets.js"></script>
     <script src="js/services/users.js"></script>

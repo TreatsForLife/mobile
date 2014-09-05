@@ -13,7 +13,8 @@
                 <div class="pet-pic" ng-style="{'background-image': 'url('+pet.media.image+')'}" ng-class="{blacknwhite: !pet.user}"></div>
                 <div class="pet-bar">
                     <img class="owner-pic" ng-src="{{pet.user.image || 'images/default_owner.png'}}"/>
-                    <img class="pet-gender" ng-src="images/pet_male.png"/>
+                    <img class="pet-gender"
+                         ng-src="{{item.gender=='f' ? 'images/pet_female.png' : 'images/pet_male.png'}}"/>
 
                     <div class="pet-name" ng-bind="pet.name"></div>
                 </div>

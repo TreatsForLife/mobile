@@ -7702,6 +7702,14 @@ body, html {
   position: relative;
   margin: 0 auto; }
 
+.top-text {
+  display: block;
+  width: 100%;
+  padding: 24px 20px 0;
+  direction: rtl;
+  color: white;
+  text-align: center; }
+
 .not-online {
   text-align: center;
   position: fixed;
@@ -8103,12 +8111,24 @@ body.welcome .navbar {
     color: #fff; }
 .white-links li.push-mine a {
   color: #9aca13; }
+  .white-links li.push-mine a:active, .white-links li.push-mine a:hover {
+    background-color: #9aca13;
+    color: white; }
 .white-links li.push-adopted a {
   color: #FFC408; }
+  .white-links li.push-adopted a:active, .white-links li.push-adopted a:hover {
+    background-color: #FFC408;
+    color: white; }
 .white-links li.push-lonely a {
   color: #DF2B46; }
+  .white-links li.push-lonely a:active, .white-links li.push-lonely a:hover {
+    background-color: #DF2B46;
+    color: white; }
 .white-links li.push-fb a {
   color: #3b5998; }
+  .white-links li.push-fb a:active, .white-links li.push-fb a:hover {
+    background-color: #3b5998;
+    color: white; }
 
 /* Vertical menu that slides from the left or right */
 .cbp-spmenu-right {
@@ -8364,13 +8384,6 @@ body.pushed .body-cover {
     background-color: #FFC408; }
   .container.pets.lonely, .container.pet.lonely {
     background-color: #DF2B46; }
-  .container.pets .pets-text, .container.pet .pets-text {
-    display: block;
-    width: 100%;
-    padding: 24px 20px 0;
-    direction: rtl;
-    color: white;
-    text-align: center; }
   .container.pets .pets-list, .container.pet .pets-list {
     display: block;
     width: 100%;

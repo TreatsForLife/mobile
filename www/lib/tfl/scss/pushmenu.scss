@@ -96,15 +96,31 @@
   li{
     &.push-mine a{
       color: $scheme-green;
+      &:active, &:hover{
+        background-color: $scheme-green;
+        color: white;
+      }
     }
     &.push-adopted a{
       color: $scheme-yellow;
+      &:active, &:hover{
+        background-color: $scheme-yellow;
+        color: white;
+      }
     }
     &.push-lonely a{
       color: $scheme-red;
+      &:active, &:hover{
+        background-color: $scheme-red;
+        color: white;
+      }
     }
     &.push-fb a {
       color: #3b5998;
+      &:active, &:hover{
+        background-color: #3b5998;
+        color: white;
+      }
     }
 
   }

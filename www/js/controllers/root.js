@@ -18,13 +18,13 @@ angular.module('clientApp')
                     console.log('Found user in DB', user);
                     $rootScope.user = user;
                     $scope.$broadcast('userIsFetched');
-                    //make sure that user_id cookie is saved
-                    if (!localStorage.user_id && $rootScope.user && $rootScope.user._id) {
+                    //make sure that user_id cookie is correct
+                    if ($rootScope.user && $rootScope.user._id) {
                         localStorage.user_id = $rootScope.user._id;
                         console.log('Saving user_id cookie', $rootScope.user._id, localStorage.user_id);
                     }
-                    //make sure that user_pet_id cookie is saved
-                    if (!localStorage.user_pet_id && $rootScope.user && $rootScope.user.pet && $rootScope.user.pet._id) {
+                    //make sure that user_pet_id cookie is correct
+                    if ($rootScope.user && $rootScope.user.pet && $rootScope.user.pet._id) {
                         localStorage.user_pet_id = $rootScope.user.pet._id;
                         console.log('Saving user_pet_id cookie', $rootScope.user.pet._id, localStorage.user_pet_id);
                     }

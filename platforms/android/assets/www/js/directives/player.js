@@ -8,14 +8,15 @@ angular.module('clientApp')
             scope: true,
             template: '<video class="pet-video" ng-src="{{trustSrc(item.media.video)}}" poster="{{item.media.image}}" ng-style="videoStyle"></video>' +
                 '<span class="pet-pic-play fa-stack fa-lg" ng-hide="playing">'+
-                '<i ng-hide="loading || playing" class="fa fa-circle fa-stack-2x pet-pic-play-circle" ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +
-                '<i ng-hide="loading || playing" class="fa fa-play fa-stack-1x fa-inverse" ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +
+                '<i ng-show="!loading && !playing" class="fa fa-circle fa-stack-2x pet-pic-play-circle" ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +
+                '<i ng-show="!loading && !playing" class="fa fa-play fa-stack-1x fa-inverse" ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +
                 '<i ng-show="loading && !playing" class="fa fa-refresh fa-fw fa-spin " ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +
                 '</span>',
             link: function ($scope, element, attrs) {
                 var video = $(element).children('.pet-video')[0];
                 $scope.playing = false;
-                $scope.loading = true;
+                $scope.loading = false;
+                $scope.working = false;
                 $(element).click(function(){
                     $scope.toggleVideo();
                 });
@@ -43,6 +44,10 @@ angular.module('clientApp')
                     if (angular.isDefined(video)) {
                         console.log('play video action', video);
                         video.play();
+                        $timeout(function () {
+                            $scope.playing = false;
+                            $scope.loading = true;
+                        });
                     }
                 };
                 $scope.pauseVideo = function () {
@@ -62,14 +67,17 @@ angular.module('clientApp')
                         video.addEventListener('playing', videoPlaying);
                 }
                 $scope.toggleVideo = function () {
-                    $timeout(function () {
+                    if (!$scope.working){
+                        $scope.working = true;
                         if ($scope.playing) {
                             $scope.pauseVideo();
                         } else {
-                            $scope.initVideo();
                             $scope.playVideo();
                         }
-                    }, 0);
+                        $timeout(function(){
+                            $scope.working = false;
+                        }, 100);
+                    }
                 }
                 $scope.initVideo();
 

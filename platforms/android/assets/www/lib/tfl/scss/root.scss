@@ -71,6 +71,15 @@ body, html {
 
 //styles start
 
+.top-text {
+  display: block;
+  width: 100%;
+  padding: 24px 20px 0;
+  direction: rtl;
+  color: white;
+  text-align: center;
+}
+
 .not-online {
   text-align: center;
   position: fixed;

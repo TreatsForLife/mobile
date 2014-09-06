@@ -139,6 +139,15 @@ angular.module('clientApp')
 
         }
 
+        var woof = new Audio('http://www.sounddogs.com/previews/101/mp3/121537_SOUNDDOGS__do.mp3');
+        $timeout(function(){
+            woof.load();
+            woof.volume = 0.5;
+        });
+        $scope.woof = function(){
+            woof.play();
+        }
+
         $scope.adopt = function () {
             if (localStorage.adoptDialogShown){
                 $location.path('/shop/' + $scope.pet_id);
@@ -259,6 +268,7 @@ angular.module('clientApp')
 
         $scope.animateButton = function () {
             if (!$scope.showButton) return;
+            $scope.woof();
             var animationDuration = 1700;
             var numOfFrames = 48;
             var frame = numOfFrames;

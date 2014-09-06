@@ -6,7 +6,7 @@ angular.module('clientApp')
             restrict: 'A',
             replace: false,
             scope: true,
-            template: '<video class="pet-video" ng-src="{{trustSrc(item.media.video)}}" poster="{{item.media.image}}" ng-style="videoStyle"></video>' +
+            template: '<video class="pet-video" ng-src="{{trustSrc(item.media.video)}}" ng-attr-poster="{{item.media.image}}" ng-style="videoStyle"></video>' +
                 '<span class="pet-pic-play fa-stack fa-lg" ng-hide="playing">'+
                 '<i ng-show="!loading && !playing" class="fa fa-circle fa-stack-2x pet-pic-play-circle" ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +
                 '<i ng-show="!loading && !playing" class="fa fa-play fa-stack-1x fa-inverse" ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +
@@ -61,7 +61,7 @@ angular.module('clientApp')
                     }
                 };
                 $scope.initVideo = function () {
-                        video.volume = 0;
+                        video.volume = 1;
                         video.addEventListener('ended', endVideo);
                         video.addEventListener('canplaythrough', videoCanPlay);
                         video.addEventListener('playing', videoPlaying);

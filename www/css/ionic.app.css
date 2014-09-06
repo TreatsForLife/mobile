@@ -8111,22 +8111,22 @@ body.welcome .navbar {
     color: #fff; }
 .white-links li.push-mine a {
   color: #9aca13; }
-  .white-links li.push-mine a:active, .white-links li.push-mine a:hover {
+  .white-links li.push-mine a:active, .white-links li.push-mine a:hover, .white-links li.push-mine a.active {
     background-color: #9aca13;
     color: white; }
 .white-links li.push-adopted a {
   color: #FFC408; }
-  .white-links li.push-adopted a:active, .white-links li.push-adopted a:hover {
+  .white-links li.push-adopted a:active, .white-links li.push-adopted a:hover, .white-links li.push-adopted a.active {
     background-color: #FFC408;
     color: white; }
 .white-links li.push-lonely a {
   color: #DF2B46; }
-  .white-links li.push-lonely a:active, .white-links li.push-lonely a:hover {
+  .white-links li.push-lonely a:active, .white-links li.push-lonely a:hover, .white-links li.push-lonely a.active {
     background-color: #DF2B46;
     color: white; }
 .white-links li.push-fb a {
   color: #3b5998; }
-  .white-links li.push-fb a:active, .white-links li.push-fb a:hover {
+  .white-links li.push-fb a:active, .white-links li.push-fb a:hover, .white-links li.push-fb a.active {
     background-color: #3b5998;
     color: white; }
 
@@ -8662,7 +8662,7 @@ body.pushed .body-cover {
     background-position: 0 0;
     background-size: auto 100%; }
   .container .treat-wrapper .pet-like-button {
-    background-image: url('../images/animated-like-button.png');
+    background-image: url('../images/animated-love-button.png');
     margin: auto;
     background-repeat: no-repeat;
     background-position: 0 0;

@@ -109,7 +109,7 @@ angular.module('clientApp')
             if (typeof iterations == 'undefined') iterations = 3;
 
             $timeout(function () {
-                var min_button_height = 120;
+                var min_button_height = 130;
                 $scope.grassHeight = $scope.windowHeight - ($scope.picHeight + 62) - 40 - ($scope.showCart ? 50 : 0);
                 $scope.buttonHeight = $scope.buttonWidth = parseInt(Math.min(parseInt(($scope.grassHeight - 30) * 0.9), 150));
                 $scope.buttonMargin = parseInt(($scope.grassHeight - $scope.buttonHeight) / 2);
@@ -361,7 +361,7 @@ angular.module('clientApp')
         $scope.animateLikeButton = function () {
             if (!$scope.showButton) return;
             var animationDuration = 1000;
-            var numOfFrames = 34;
+            var numOfFrames = 25; //34;
             var frame = numOfFrames;
             var dim = $scope.buttonHeight;
             var animationBgPosition = 0;

@@ -129,6 +129,7 @@ angular.module('clientApp')
                 $scope.videoStyle = {
                     'margin-top': -1 * ($scope.picHeight - $scope.windowWidth) / 2
                 }
+                     $scope.$broadcast('calcedDims');
 
                 if (iterations > 0) {
                     $timeout(function () {

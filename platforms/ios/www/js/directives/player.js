@@ -6,8 +6,8 @@ angular.module('clientApp')
             restrict: 'A',
             replace: false,
             scope: true,
-            template: '<video class="pet-video" ng-src="{{trustSrc(item.media.video)}}" ng-attr-poster="{{item.media.image}}" ng-style="videoStyle"></video>' +
-                '<span class="pet-pic-play fa-stack fa-lg" ng-hide="playing">'+
+            template: '<video class="pet-video" src="{{trustSrc(item.media.video)}}" poster="{{item.media.image}}"></video>' +
+                '<span class="pet-pic-play fa-stack fa-lg" ng-hide="playing" ng-if="!isIphone">'+
                 '<i ng-show="!loading && !playing" class="fa fa-circle fa-stack-2x pet-pic-play-circle" ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +
                 '<i ng-show="!loading && !playing" class="fa fa-play fa-stack-1x fa-inverse" ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +
                 '<i ng-show="loading && !playing" class="fa fa-refresh fa-fw fa-spin " ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +
@@ -17,9 +17,19 @@ angular.module('clientApp')
                 $scope.playing = false;
                 $scope.loading = false;
                 $scope.working = false;
+                if ($scope.isIphone){
                 $(element).click(function(){
                     $scope.toggleVideo();
                 });
+                }
+                             
+
+                             $scope.$on('calcedDims', function(){
+                             var containerH = $(element).height();
+                                var containerW = $(element).width();
+                                $(video).height(containerW).css('margin-top', '-'+((containerW-containerH)/2)+'px');
+                                        });
+                             
                 var videoCanPlay = function(e){
                     $timeout(function () {
                         $scope.loading = false;
@@ -79,8 +89,9 @@ angular.module('clientApp')
                         }, 100);
                     }
                 }
+                             $timeout(function(){
                 $scope.initVideo();
-
+                                      });
             }
         }
     }])

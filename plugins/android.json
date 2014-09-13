@@ -4,50 +4,148 @@
         "uninstalled": []
     },
     "config_munge": {
-        "res/xml/config.xml": {
-            "/*": {
-                "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"com.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>": 1,
-                "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>": 1,
-                "<feature name=\"FacebookConnectPlugin\"><param name=\"android-package\" value=\"org.apache.cordova.facebook.ConnectPlugin\" /></feature>": 1,
-                "<access origin=\"https://m.facebook.com\" />": 1,
-                "<access origin=\"https://graph.facebook.com\" />": 1,
-                "<access origin=\"https://api.facebook.com\" />": 1,
-                "<access origin=\"https://*.fbcdn.net\" />": 1,
-                "<access origin=\"https://*.akamaihd.net\" />": 1,
-                "<feature name=\"PayPalMobile\"><param name=\"android-package\" value=\"com.paypal.cordova.sdk.PayPalMobileCordovaPlugin\" /></feature>": 1
-            }
-        },
-        "res/values/facebookconnect.xml": {
-            "/*": {
-                "<string name=\"fb_app_id\">601219569953172</string>": 1,
-                "<string name=\"fb_app_name\">Treats For Life</string>": 1
-            }
-        },
-        "AndroidManifest.xml": {
-            "application": {
-                "<meta-data android:name=\"com.facebook.sdk.ApplicationId\" android:value=\"@string/fb_app_id\" />": 1,
-                "<activity android:label=\"@string/fb_app_name\" android:name=\"com.facebook.LoginActivity\" />": 1
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"com.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"FacebookConnectPlugin\"><param name=\"android-package\" value=\"org.apache.cordova.facebook.ConnectPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://m.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://graph.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://api.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://*.fbcdn.net\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://*.akamaihd.net\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"PayPalMobile\"><param name=\"android-package\" value=\"com.paypal.cordova.sdk.PayPalMobileCordovaPlugin\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
             },
-            "/manifest": {
-                "<uses-permission android:name=\"android.permission.CAMERA\" />": 1,
-                "<uses-permission android:name=\"android.permission.VIBRATE\" />": 1,
-                "<uses-feature android:name=\"android.hardware.camera\" android:required=\"false\" />": 1,
-                "<uses-feature android:name=\"android.hardware.camera.autofocus\" android:required=\"false\" />": 1,
-                "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />": 1,
-                "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />": 1,
-                "<uses-permission android:name=\"android.permission.INTERNET\" />": 1
+            "res/values/facebookconnect.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<string name=\"fb_app_id\">601219569953172</string>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<string name=\"fb_app_name\">Treats For Life</string>",
+                            "count": 1
+                        }
+                    ]
+                }
             },
-            "/manifest/application": {
-                "<service android:exported=\"false\" android:name=\"com.paypal.android.sdk.payments.PayPalService\" />": 1,
-                "<activity android:name=\"com.paypal.android.sdk.payments.PaymentActivity\" />": 1,
-                "<activity android:name=\"com.paypal.android.sdk.payments.LoginActivity\" />": 1,
-                "<activity android:name=\"com.paypal.android.sdk.payments.PaymentMethodActivity\" />": 1,
-                "<activity android:name=\"com.paypal.android.sdk.payments.PaymentConfirmActivity\" />": 1,
-                "<activity android:name=\"com.paypal.android.sdk.payments.PayPalFuturePaymentActivity\" />": 1,
-                "<activity android:name=\"com.paypal.android.sdk.payments.FuturePaymentConsentActivity\" />": 1,
-                "<activity android:name=\"com.paypal.android.sdk.payments.FuturePaymentInfoActivity\" />": 1,
-                "<activity android:configChanges=\"keyboardHidden|orientation\" android:name=\"io.card.payment.CardIOActivity\" />": 1,
-                "<activity android:name=\"io.card.payment.DataEntryActivity\" />": 1
+            "AndroidManifest.xml": {
+                "parents": {
+                    "application": [
+                        {
+                            "xml": "<meta-data android:name=\"com.facebook.sdk.ApplicationId\" android:value=\"@string/fb_app_id\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:label=\"@string/fb_app_name\" android:name=\"com.facebook.LoginActivity\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.camera\" android:required=\"false\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.camera.autofocus\" android:required=\"false\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<service android:exported=\"false\" android:name=\"com.paypal.android.sdk.payments.PayPalService\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:name=\"com.paypal.android.sdk.payments.PaymentActivity\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:name=\"com.paypal.android.sdk.payments.LoginActivity\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:name=\"com.paypal.android.sdk.payments.PaymentMethodActivity\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:name=\"com.paypal.android.sdk.payments.PaymentConfirmActivity\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:name=\"com.paypal.android.sdk.payments.PayPalFuturePaymentActivity\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:name=\"com.paypal.android.sdk.payments.FuturePaymentConsentActivity\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:name=\"com.paypal.android.sdk.payments.FuturePaymentInfoActivity\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:configChanges=\"keyboardHidden|orientation\" android:name=\"io.card.payment.CardIOActivity\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:name=\"io.card.payment.DataEntryActivity\" />",
+                            "count": 1
+                        }
+                    ]
+                }
             }
         }
     },

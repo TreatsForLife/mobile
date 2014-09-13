@@ -17,10 +17,6 @@
   <preference name="UIWebViewBounce"    value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="BackupWebStorage"   value="none"/>
-  <feature name="StatusBar">
-    <param name="ios-package" value="CDVStatusBar" onload="true"/>
-  </feature>
-
-  <icon src="icons/android/icon.png" width="96" height="96" />
-
+  <preference name="StatusBarOverlaysWebView" value="false" />
+  
 </widget>

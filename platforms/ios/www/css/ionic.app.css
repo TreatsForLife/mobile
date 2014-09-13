@@ -7702,17 +7702,37 @@ body, html {
   position: relative;
   margin: 0 auto; }
 
+.top-text {
+  display: block;
+  width: 100%;
+  padding: 24px 20px 0;
+  direction: rtl;
+  color: white;
+  text-align: center; }
+
 .not-online {
   text-align: center;
-  padding: 2px;
-  background: #ffebe8;
-  border-bottom: 1px solid #dd3c10;
-  color: #dd3c10;
-  line-height: 40px;
-  font-size: 15px;
   position: fixed;
   width: 100%;
+  height: 100%;
+  background-color: #9aca13;
   z-index: 99999999; }
+  .not-online .not-online-logo {
+    height: 370px;
+    width: 266px;
+    background-image: url('../images/animated-logo-loop.gif');
+    background-repeat: no-repeat;
+    margin: auto; }
+  .not-online .not-online-logo-animation {
+    background-image: url('../images/animated-logo.png'); }
+  .not-online .not-online-spinner {
+    position: fixed;
+    bottom: 20px;
+    margin: auto;
+    width: 100%;
+    left: 0;
+    font-size: 40px;
+    color: white; }
 
 .container-wrapper {
   height: 100%;
@@ -7724,6 +7744,7 @@ body, html {
   margin: 0 auto; }
 
 .container {
+  min-height: 100%;
   height: 100%;
   width: 100%;
   max-width: 600px;
@@ -8090,12 +8111,24 @@ body.welcome .navbar {
     color: #fff; }
 .white-links li.push-mine a {
   color: #9aca13; }
+  .white-links li.push-mine a:active, .white-links li.push-mine a:hover, .white-links li.push-mine a.active {
+    background-color: #9aca13;
+    color: white; }
 .white-links li.push-adopted a {
   color: #FFC408; }
+  .white-links li.push-adopted a:active, .white-links li.push-adopted a:hover, .white-links li.push-adopted a.active {
+    background-color: #FFC408;
+    color: white; }
 .white-links li.push-lonely a {
   color: #DF2B46; }
+  .white-links li.push-lonely a:active, .white-links li.push-lonely a:hover, .white-links li.push-lonely a.active {
+    background-color: #DF2B46;
+    color: white; }
 .white-links li.push-fb a {
   color: #3b5998; }
+  .white-links li.push-fb a:active, .white-links li.push-fb a:hover, .white-links li.push-fb a.active {
+    background-color: #3b5998;
+    color: white; }
 
 /* Vertical menu that slides from the left or right */
 .cbp-spmenu-right {
@@ -8351,13 +8384,6 @@ body.pushed .body-cover {
     background-color: #FFC408; }
   .container.pets.lonely, .container.pet.lonely {
     background-color: #DF2B46; }
-  .container.pets .pets-text, .container.pet .pets-text {
-    display: block;
-    width: 100%;
-    padding: 24px 20px 0;
-    direction: rtl;
-    color: white;
-    text-align: center; }
   .container.pets .pets-list, .container.pet .pets-list {
     display: block;
     width: 100%;
@@ -8550,20 +8576,33 @@ body.pushed .body-cover {
         background-size: cover;
         display: block;
         line-height: 0;
-        height: 210px; }
+        height: 210px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px; }
+        .container .pets-pic .pet .pet-inner .pet-pic .pet-video {
+          width: 100%; }
         .container .pets-pic .pet .pet-inner .pet-pic .pet-pic-play {
           line-height: inherit;
           width: 100%;
           color: white;
           font-size: 50px;
-          margin-top: 10px; }
+          margin-top: 20px;
+          position: absolute;
+          top: 0;
+          left: 0; }
+          .container .pets-pic .pet .pet-inner .pet-pic .pet-pic-play i {
+            width: 100%; }
+            .container .pets-pic .pet .pet-inner .pet-pic .pet-pic-play i.fa-refresh {
+              color: rgba(255, 255, 255, 0.5); }
           .container .pets-pic .pet .pet-inner .pet-pic .pet-pic-play .pet-pic-play-circle {
             color: rgba(0, 0, 0, 0.6);
             margin-left: -4px; }
       .container .pets-pic .pet .pet-inner .pet-bar {
         height: 40px;
         background: #fefefe;
-        position: relative; }
+        position: relative;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px; }
         .container .pets-pic .pet .pet-inner .pet-bar .owner-pic {
           position: absolute;
           height: 50px;
@@ -8623,7 +8662,7 @@ body.pushed .body-cover {
     background-position: 0 0;
     background-size: auto 100%; }
   .container .treat-wrapper .pet-like-button {
-    background-image: url('../images/animated-like-button.png');
+    background-image: url('../images/animated-love-button.png');
     margin: auto;
     background-repeat: no-repeat;
     background-position: 0 0;

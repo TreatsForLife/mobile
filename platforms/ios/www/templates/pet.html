@@ -6,16 +6,7 @@
                 <div class="pets-pic" ng-repeat="item in donations">
                     <div class="pet" ng-show="($index==0 || swipeComplete)">
                         <div class="pet-inner">
-                            <div class="pet-pic" ng-click="playVideo(item.media.video)"
-                                 ng-style="{'background-image': 'url('+item.media.image+')', height: picHeightPX}">
-                                <i class="ng-hide" ng-if="$index==0" ng-init="setVideo(item.media.video)"></i>
-                                <span class="pet-pic-play fa-stack fa-lg">
-                                  <i class="fa fa-circle fa-stack-2x pet-pic-play-circle"
-                                     ng-style="{lineHeight: (picHeight +'px')}"></i>
-                                  <i class="fa fa-play fa-stack-1x fa-inverse"
-                                     ng-style="{lineHeight: (picHeight +'px')}"></i>
-                                </span>
-                            </div>
+                            <div class="pet-pic" ng-style="{height:picHeightPX}" pet-player ></div>
                             <div class="pet-bar">
                                 <img class="owner-pic" ng-src="{{item.user.image || 'images/default_owner.png'}}"/>
                                 <img class="pet-gender"
@@ -30,7 +21,7 @@
         </div>
     </div>
 
-    <div class='treat-wrapper' ng-style="{height: grassHeightPX, padding: buttonMarginPX}" >
+    <div class='treat-wrapper' ng-style="{height: grassHeightPX, padding: buttonMarginPX}">
         <div ng-if="showButton == 'buy'">
             <div class="pet-buy-button" ng-click="animateButton();"
                  ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
@@ -55,7 +46,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="cart-wrapper" ng-class="{up: cartIsUp}" ng-click="cartIsUp=!cartIsUp" ng-if="showCart">
         <div class="cart-center">

@@ -1,3 +1,10 @@
+<div class="top-text rtl" ng-if="(user && !user.pet)">
+רוצה לאמץ אותי? ברגע שקנית לי משהו אני אהיה שלך, מבטיח!
+</div>
+<div class="top-text rtl" ng-if="(user && user.pet)">
+    אז מה בא לך לקנות לי הפעם?
+</div>
+
 <ul class="shop-wrapper">
     <li class="shop-item-wrapper" ng-repeat="treat in treats | orderBy:'order'" ng-click="cartChanged(treat)">
         <div class="shop-item-image"

@@ -8,7 +8,7 @@ angular.module('clientApp')
         $rootScope.bodyClass = 'pet';
         $scope.buttonAnimationReady = false;
         $scope.buttonClicked = false;
-        $scope.picHeight = $('.container').width() * 0.6;
+        $scope.picHeight = $('.container').width() * 1;
         $scope.grassHeight = $(window).height() - $scope.picHeight;
         $scope.cartIsUp = false;
         $scope.swipeComplete = false;
@@ -109,7 +109,7 @@ angular.module('clientApp')
             if (typeof iterations == 'undefined') iterations = 3;
 
             $timeout(function () {
-                var min_button_height = 100;
+                var min_button_height = 130;
                 $scope.grassHeight = $scope.windowHeight - ($scope.picHeight + 62) - 40 - ($scope.showCart ? 50 : 0);
                 $scope.buttonHeight = $scope.buttonWidth = parseInt(Math.min(parseInt(($scope.grassHeight - 30) * 0.9), 150));
                 $scope.buttonMargin = parseInt(($scope.grassHeight - $scope.buttonHeight) / 2);
@@ -126,6 +126,9 @@ angular.module('clientApp')
                 $scope.buttonHeightPX = $scope.buttonHeight + 'px';
                 $scope.buttonWidthPX = $scope.buttonWidth + 'px';
 
+                $scope.videoStyle = {
+                    'margin-top': -1 * ($scope.picHeight - $scope.windowWidth) / 2
+                }
 
                 if (iterations > 0) {
                     $timeout(function () {
@@ -134,6 +137,15 @@ angular.module('clientApp')
                 }
             });
 
+        }
+
+        var woof = new Audio('http://www.sounddogs.com/previews/101/mp3/121537_SOUNDDOGS__do.mp3');
+        $timeout(function(){
+            woof.load();
+            woof.volume = 0.5;
+        });
+        $scope.woof = function(){
+            woof.play();
         }
 
         $scope.adopt = function () {
@@ -256,6 +268,7 @@ angular.module('clientApp')
 
         $scope.animateButton = function () {
             if (!$scope.showButton) return;
+            $scope.woof();
             var animationDuration = 1700;
             var numOfFrames = 48;
             var frame = numOfFrames;
@@ -348,7 +361,7 @@ angular.module('clientApp')
         $scope.animateLikeButton = function () {
             if (!$scope.showButton) return;
             var animationDuration = 1000;
-            var numOfFrames = 34;
+            var numOfFrames = 25; //34;
             var frame = numOfFrames;
             var dim = $scope.buttonHeight;
             var animationBgPosition = 0;

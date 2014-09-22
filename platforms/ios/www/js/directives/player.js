@@ -1,6 +1,103 @@
 'use strict';
 
 angular.module('clientApp')
+    .directive('petPlayer', ['$location', '$timeout', '$sce', function ($location, $timeout, $sce) {
+        return {
+            restrict: 'A',
+            replace: false,
+            scope: true,
+            template: '<video class="pet-video" src="{{trustSrc(item.media.video)}}" poster="{{item.media.image}}" preload="auto" ng-cloak ></video>' +
+                '<span class="pet-pic-play fa-stack fa-lg" ng-hide="playing" ng-if="!isIphone">'+
+                '<i ng-show="!loading && !playing" class="fa fa-circle fa-stack-2x pet-pic-play-circle" ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +
+                '<i ng-show="!loading && !playing" class="fa fa-play fa-stack-1x fa-inverse" ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +
+                '<i ng-show="loading && !playing" class="fa fa-refresh fa-fw fa-spin " ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +
+                '</span>',
+            link: function ($scope, element, attrs) {
+                var video = $(element).children('.pet-video')[0];
+                $scope.playing = false;
+                $scope.loading = false;
+                $scope.working = false;
+                if ($scope.isIphone){
+                $(element).click(function(){
+                    $scope.toggleVideo();
+                });
+                }
+                             
+
+                             $scope.$on('calcedDims', function(){
+                             var containerH = $(element).height();
+                                var containerW = $(element).width();
+                                $(video).height(containerW).css('margin-top', '-'+((containerW-containerH)/2)+'px');
+                                        });
+                             
+                var videoCanPlay = function(e){
+                    $timeout(function () {
+                        $scope.loading = false;
+                    });
+                };
+                var endVideo = function(e){
+                    console.log('Auto Video Restart');
+                    video.pause();
+                    video.currentTime = 0;
+                    $timeout(function () {
+                        $scope.playing = false;
+                        $scope.loading = false;
+                    });
+                };
+                var videoPlaying = function(e){
+                    $timeout(function () {
+                        $scope.playing = true;
+                        $scope.loading = false;
+                    });
+                };
+                $scope.playVideo = function () {
+                    if (angular.isDefined(video)) {
+                        console.log('play video action', video);
+                        video.play();
+                        $timeout(function () {
+                            $scope.playing = false;
+                            $scope.loading = true;
+                        });
+                    }
+                };
+                $scope.pauseVideo = function () {
+                    console.log("pause video action");
+                    if (angular.isDefined(video)) {
+                        video.pause();
+                        $timeout(function () {
+                            $scope.playing = false;
+                            $scope.loading = false;
+                        });
+                    }
+                };
+                $scope.initVideo = function () {
+                        video.volume = 1;
+                        video.addEventListener('ended', endVideo);
+                        video.addEventListener('canplaythrough', videoCanPlay);
+                        video.addEventListener('playing', videoPlaying);
+                }
+                $scope.toggleVideo = function () {
+                    if (!$scope.working){
+                        $scope.working = true;
+                        if ($scope.playing) {
+                            $scope.pauseVideo();
+                        } else {
+                            $scope.playVideo();
+                        }
+                        $timeout(function(){
+                            $scope.working = false;
+                        }, 100);
+                    }
+                }
+                             $timeout(function(){
+                $scope.initVideo();
+                                      });
+            }
+        }
+    }])
+
+
+angular.module('clientApp')
     .directive('player', ['$location', '$timeout', '$sce', function ($location, $timeout, $sce) {
         return {
             restrict: 'AE',

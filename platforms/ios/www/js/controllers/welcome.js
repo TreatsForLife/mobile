@@ -35,6 +35,7 @@ angular.module('clientApp')
             });
         }
 
+/*
         $scope.logoAnimationComplete = false;
         $scope.animateLogo = function () {
             var animationDuration = 1700;
@@ -59,6 +60,7 @@ angular.module('clientApp')
         $timeout(function(){
             $scope.animateLogo();
         }, 1500);
+*/
 
         $scope.fbLogin = function () {
             if (!$scope.online) return;

@@ -177,8 +177,8 @@ angular.module('clientApp')
             },
             createPayment : function () {
                 // for simplicity use predefined amount
-                var paymentDetails = new PayPalPaymentDetails($scope.totalToPay, "0", "0");
-                var payment = new PayPalPayment($scope.totalToPay, "ILS", $scope.formattedItemName, "Sale", paymentDetails);
+                var paymentDetails = new PayPalPaymentDetails($scope.totalToPay+"", "0", "0");
+                var payment = new PayPalPayment($scope.totalToPay+""	, "ILS", $scope.formattedItemName, "Sale", paymentDetails);
                 return payment;
             },
             configuration : function () {

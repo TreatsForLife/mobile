@@ -5,7 +5,8 @@ angular.module('clientApp')
 
         console.log('APP VERSION: 1.0');
 
-        $scope.isWeb = $(window).width() > 700;
+        $rootScope.isWeb = $(window).width() > 700;
+        $rootScope.isIphone = (navigator.userAgent.indexOf('iPhone')>0);
 
         console.log('Getting data from cookies', localStorage);
         $rootScope.fb_id = localStorage.fb_id;
@@ -18,13 +19,13 @@ angular.module('clientApp')
                     console.log('Found user in DB', user);
                     $rootScope.user = user;
                     $scope.$broadcast('userIsFetched');
-                    //make sure that user_id cookie is saved
-                    if (!localStorage.user_id && $rootScope.user && $rootScope.user._id) {
+                    //make sure that user_id cookie is correct
+                    if ($rootScope.user && $rootScope.user._id) {
                         localStorage.user_id = $rootScope.user._id;
                         console.log('Saving user_id cookie', $rootScope.user._id, localStorage.user_id);
                     }
-                    //make sure that user_pet_id cookie is saved
-                    if (!localStorage.user_pet_id && $rootScope.user && $rootScope.user.pet && $rootScope.user.pet._id) {
+                    //make sure that user_pet_id cookie is correct
+                    if ($rootScope.user && $rootScope.user.pet && $rootScope.user.pet._id) {
                         localStorage.user_pet_id = $rootScope.user.pet._id;
                         console.log('Saving user_pet_id cookie', $rootScope.user.pet._id, localStorage.user_pet_id);
                     }
@@ -39,11 +40,34 @@ angular.module('clientApp')
             });
         }
 
-        //make sure that the user is fetched
+        $scope.logoAnimationComplete = false;
+        $scope.animateLogo = function () {
+            var animationDuration = 1700;
+            var numOfFrames = 48;
+            var frame = numOfFrames;
+            var dim = 266;
+            var animationBgPosition = 0;
+            $('.not-online-logo-animation').css('background-size', ($scope.logoWidth * numOfFrames) + 'px auto');
+            var animationInterval = $interval(function () {
+                if (frame == 0) {
+                    $interval.cancel(animationInterval);
+                    $timeout(function(){
+                        $scope.logoAnimationComplete = true;
+                        $rootScope.notOnlineAnimationCompleted = true;
+                    },500);
+                    return;
+                }
+                $('.not-online-logo-animation').css('background-position-x', -1 * animationBgPosition);
+                frame--;
+                animationBgPosition += dim;
+            }, (animationDuration / numOfFrames))
+        }
+        $timeout(function(){
+            $scope.animateLogo();
+        }, 0);
         function onOnline(){
             if ($rootScope.online == false){
-                $scope.reloadApp();
-            }else{
+                $rootScope.online = true;
                 if (!$rootScope.user && $rootScope.user_id) {
                     console.log('No user but user_id cookie is found - fetching from DB');
                     $timeout(function () {
@@ -67,7 +91,6 @@ angular.module('clientApp')
 
         function onOffline(){
             $rootScope.online = false;
-            $rootScope.showOnlineMsg = true;
         }
 
         $scope.history = [];
@@ -94,14 +117,17 @@ angular.module('clientApp')
             return path;
         }
 
+        var backKeyDown = false;
         function onBackKeyDown() {
             // Handle the back button
             $rootScope.goBack();
+            backKeyDown = true;
 
             //dirty trick to disable back button (nothing else seems to work)
             throw "ignore"
         }
 
+        $scope.shouldCloseApp = false;
         $rootScope.goBack = function () {
             if ($scope.cartIsUp || $scope.pushMenuOpen || $scope.dialogShown){
                 $scope.cartIsUp = false;
@@ -111,8 +137,20 @@ angular.module('clientApp')
                 var goto = $rootScope.getBackPage();
 
                 if (!goto) {
-                    $rootScope.openPushMenu();
+                    if($scope.shouldCloseApp && backKeyDown){
+                        $scope.shouldCloseApp = false;
+                        if (navigator.app) {
+                            navigator.app.exitApp();
+                        }
+                        else if (navigator.device) {
+                            navigator.device.exitApp();
+                        }
+                    }else{
+                        $rootScope.openPushMenu();
+                        if (backKeyDown) $scope.shouldCloseApp = true;
+                    }
                 }else{
+                    $scope.shouldCloseApp = false;
                     $timeout.cancel($scope.cancelBack);
                     $timeout(function () {
                         $scope.goingBack = true;
@@ -125,7 +163,9 @@ angular.module('clientApp')
                     }, 5000);
                 }
             }
+            backKeyDown = false;
         }
+/*
         $scope.playVideo = function (src) {
             $timeout(function () {
                 $scope.$broadcast('playVideoSrc', src);
@@ -136,6 +176,9 @@ angular.module('clientApp')
                 $scope.$broadcast('setVideoSrc', src);
             }, 0);
         }
+*/
+
+
 
         $scope.pushMenuOpen = false;
         $rootScope.openPushMenu = function () {
@@ -194,17 +237,13 @@ angular.module('clientApp')
         });
 
         //check internet connection (start online, ping api server - if success stay online. in any case after 3 seconds, go offline
-        $rootScope.online = true;
         checkNetworkStatus();
-        var offlineTimer = $timeout(function(){
-            onOffline();
-        }, 7000);
+        onOffline();
         var offlineInterval = $interval(function(){
             checkNetworkStatus();
         }, 5000);
         function checkNetworkStatus(){
             $http.get(Consts.api_root + 'ping').success(function(){
-                $timeout.cancel(offlineTimer);
                 $interval.cancel(offlineInterval);
                 onOnline();
             }).error(function(){

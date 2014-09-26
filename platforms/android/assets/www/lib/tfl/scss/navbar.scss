@@ -1,5 +1,18 @@
 @import 'consts';
 
+.platform-ios{
+  .container{
+    padding-top: $navbarHi;
+  }
+  .navbar{
+    height: $navbarHi;
+    .navbar-inner{
+      height: $navbarHi;
+      padding-top: 20px;
+    }
+  }
+  
+}
 .container{
   padding-top: $navbarH;
   &.welcome{

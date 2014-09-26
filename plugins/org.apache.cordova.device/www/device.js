@@ -45,6 +45,7 @@ function Device() {
     var me = this;
 
     channel.onCordovaReady.subscribe(function() {
+        debugger;
         me.getInfo(function(info) {
             //ignoring info.cordova returning from native, we should use value from cordova.version defined in cordova.js
             //TODO: CB-5105 native implementations should not return info.cordova

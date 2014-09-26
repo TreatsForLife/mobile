@@ -7980,6 +7980,14 @@ button, a.button, input[type="submit"] {
   to {
     opacity: 0; } }
 
+.platform-ios .container {
+  padding-top: 70px; }
+.platform-ios .navbar {
+  height: 70px; }
+  .platform-ios .navbar .navbar-inner {
+    height: 70px;
+    padding-top: 20px; }
+
 .container {
   padding-top: 50px; }
   .container.welcome {
@@ -8569,7 +8577,8 @@ body.pushed .body-cover {
     .container .pets-pic .pet .pet-inner {
       border: 1px solid #111;
       overflow: hidden;
-      border-radius: 3px; }
+      border-radius: 3px;
+      position: relative; }
       .container .pets-pic .pet .pet-inner .pet-pic {
         width: 100%;
         background-position: center center;

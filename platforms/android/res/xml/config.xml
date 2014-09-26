@@ -4,24 +4,6 @@
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
     </feature>
-    <feature name="Keyboard">
-        <param name="android-package" value="com.ionic.keyboard.IonicKeyboard" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="Device">
-        <param name="android-package" value="org.apache.cordova.device.Device" />
-    </feature>
-    <feature name="FacebookConnectPlugin">
-        <param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
-    </feature>
-    <access origin="https://m.facebook.com" />
-    <access origin="https://graph.facebook.com" />
-    <access origin="https://api.facebook.com" />
-    <access origin="https://*.fbcdn.net" />
-    <access origin="https://*.akamaihd.net" />
-    <feature name="PayPalMobile">
-        <param name="android-package" value="com.paypal.cordova.sdk.PayPalMobileCordovaPlugin" />
-    </feature>
     <name>TreatsForLife</name>
     <description>
     ברוכים הבאים לפרויקט "חטיפים לחיים"
@@ -39,5 +21,5 @@
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="none" />
-    <icon height="96" src="icons/android/icon.png" width="96" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
 </widget>

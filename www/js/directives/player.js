@@ -6,7 +6,7 @@ angular.module('clientApp')
             restrict: 'A',
             replace: false,
             scope: true,
-            template: '<video class="pet-video" src="{{trustSrc(item.media.video)}}" poster="{{item.media.image}}"></video>' +
+            template: '<video class="pet-video" src="{{trustSrc(item.media.video)}}" poster="{{item.media.image}}" preload="auto" ng-cloak ></video>' +
                 '<span class="pet-pic-play fa-stack fa-lg" ng-hide="playing" ng-if="!isIphone">'+
                 '<i ng-show="!loading && !playing" class="fa fa-circle fa-stack-2x pet-pic-play-circle" ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +
                 '<i ng-show="!loading && !playing" class="fa fa-play fa-stack-1x fa-inverse" ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +

@@ -5,7 +5,8 @@ angular.module('clientApp')
 
         console.log('APP VERSION: 1.0');
 
-        $scope.isWeb = $(window).width() > 700;
+        $rootScope.isWeb = $(window).width() > 700;
+        $rootScope.isIphone = (navigator.userAgent.indexOf('iPhone')>0);
 
         console.log('Getting data from cookies', localStorage);
         $rootScope.fb_id = localStorage.fb_id;

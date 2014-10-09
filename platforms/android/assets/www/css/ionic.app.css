@@ -8616,6 +8616,28 @@ body.pushed .body-cover {
           .container .pets-pic .pet .pet-inner .pet-pic .pet-pic-play .pet-pic-play-circle {
             color: rgba(0, 0, 0, 0.6);
             margin-left: -4px; }
+      .container .pets-pic .pet .pet-inner.pet-kennel-info {
+        background: white;
+        text-align: right;
+        direction: rtl;
+        position: relative; }
+        .container .pets-pic .pet .pet-inner.pet-kennel-info .pet-kennel-info-title {
+          font-size: 20px;
+          font-weight: bold;
+          padding: 10px;
+          line-height: 30px; }
+        .container .pets-pic .pet .pet-inner.pet-kennel-info .pet-kennel-info-body {
+          font-size: 18px;
+          font-weight: normal;
+          padding: 10px;
+          line-height: 26px; }
+        .container .pets-pic .pet .pet-inner.pet-kennel-info .pet-kennel-info-link {
+          display: block;
+          font-size: 16px;
+          font-weight: normal;
+          padding: 10px;
+          color: #3772bc;
+          text-decoration: none; }
       .container .pets-pic .pet .pet-inner .pet-bar {
         height: 40px;
         background: #fefefe;

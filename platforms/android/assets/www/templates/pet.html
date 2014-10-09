@@ -3,6 +3,16 @@
     <div id="pet-pic" ng-clock>
         <div id='slider' class='swipe'>
             <div class='swipe-wrap'>
+                <div class="pets-pic">
+                    <div class="pet">
+                        <div class="pet-inner pet-kennel-info" ng-style="{height:infoHeightPX}">
+                            <div class="pet-kennel-info-title">{{pet.name}} - {{pet.kennel.name}}</div>
+                            <div class="pet-kennel-info-body">{{pet.kennel.info}}</div>
+                            <a class="pet-kennel-info-link" target="_blank" ng-href="{{trustSrc('geo:' + pet.kennel.latlon)}}"><i class="fa fa-crosshairs fa-fw"></i>&nbsp;לצפייה במפה</a>
+                            <a class="pet-kennel-info-link" target="_blank" ng-href="{{trustSrc(pet.kennel.link)}}"><i class="fa fa-external-link fa-fw"></i>&nbsp;לאתר הכלבייה</a>
+                        </div>
+                    </div>
+                </div>
                 <div class="pets-pic" ng-repeat="item in donations">
                     <div class="pet" ng-show="($index==0 || swipeComplete)">
                         <div class="pet-inner">

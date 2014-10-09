@@ -59,7 +59,7 @@ angular.module('clientApp')
                     });
                     $timeout(function () {
                         window.videosSwipe = new Swipe(document.getElementById('slider'), {
-                            startSlide: 0,
+                            startSlide: 1,
                             continuous: true,
                             disableScroll: true,
                             stopPropagation: false,
@@ -121,6 +121,7 @@ angular.module('clientApp')
                 }
 
                 $scope.picHeightPX = $scope.picHeight + 'px';
+                $scope.infoHeightPX = ($scope.picHeight + 42) + 'px';
                 $scope.grassHeightPX = $scope.grassHeight + 'px';
                 $scope.buttonMarginPX = $scope.buttonMargin + 'px';
                 $scope.buttonHeightPX = $scope.buttonHeight + 'px';

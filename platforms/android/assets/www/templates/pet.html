@@ -9,7 +9,7 @@
                             <div class="pet-kennel-info-title">{{pet.name}} - {{pet.kennel.name}}</div>
                             <div class="pet-kennel-info-body">{{pet.kennel.info}}</div>
                             <a class="pet-kennel-info-link" target="_blank" ng-href="{{trustSrc('geo:' + pet.kennel.latlon)}}"><i class="fa fa-crosshairs fa-fw"></i>&nbsp;לצפייה במפה</a>
-                            <a class="pet-kennel-info-link" target="_blank" ng-href="{{trustSrc(pet.kennel.link)}}"><i class="fa fa-external-link fa-fw"></i>&nbsp;לאתר הכלבייה</a>
+                            <span class="pet-kennel-info-link" ng-click="gotoKennel()"><i class="fa fa-external-link fa-fw"></i>&nbsp;לאתר הכלבייה</span>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
         </div>
     </div>
 
-    <div class="cart-wrapper" ng-class="{up: cartIsUp}" ng-click="cartIsUp=!cartIsUp" ng-if="showCart">
+    <div class="cart-wrapper" ng-class="{up: cartIsUp, iPhone:isIphone}" ng-click="cartIsUp=!cartIsUp" ng-if="showCart">
         <div class="cart-center">
             <div></div>
         </div>

@@ -37,6 +37,9 @@
         padding-top: 50px;
         top: 0;
         overflow: auto;
+        &.iPhone{
+          padding-top: 70px;
+        }
       }
 
       .cart-items {

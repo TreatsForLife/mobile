@@ -275,6 +275,7 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/angular-ui-router \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/angular \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/collide \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/fastclick \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/angular-animate \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/angular-sanitize/angular-sanitize.min.js.map \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/angular-sanitize/angular-sanitize.js \
@@ -403,6 +404,11 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/collide/test/animator.spec.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/collide/test/core/timeline.spec.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/collide/test/util/simple-emitter.spec.js \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/fastclick/lib \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/fastclick/bower.json \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/fastclick/LICENSE \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/fastclick/README.md \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/fastclick/lib/fastclick.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/angular-animate/angular-animate.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/angular-animate/angular-animate.min.js.map \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/lib/angular-animate/bower.json \
@@ -422,6 +428,7 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/angular-route \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/angular-mocks \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/angular-timer \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/fastclick \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/angular-animate \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/angular-scenario \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/angular-seo/angular-seo-server.js \
@@ -1112,6 +1119,11 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/angular-timer/dist/angular-timer.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/angular-timer/dist/angular-timer.min.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/angular-timer/dist/README.md \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/fastclick/lib \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/fastclick/bower.json \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/fastclick/LICENSE \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/fastclick/README.md \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/fastclick/lib/fastclick.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/angular-animate/angular-animate.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/angular-animate/angular-animate.min.js.map \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/bower_components/angular-animate/bower.json \

@@ -416,7 +416,17 @@ angular.module('clientApp')
         }
 
         //calc next friday at 12:00
-        $scope.nextFriday = moment().hour(0).minute(0).second(0).add('days', 2).weekday(5).add('hours', 12).format();
+        //$scope.nextFriday = moment().hour(0).minute(0).second(0).add('days', 2).weekday(5).add('hours', 12).format();
+
+        $scope.gotoKennel = function(){
+            var url = $scope.trustSrc($scope.pet.kennel.link);
+            if ($scope.isIphone){
+                window.open(url, '_system');
+            }else{
+                navigator.app.loadUrl(url, {openExternal : true});
+            }
+
+        }
 
         init();
 

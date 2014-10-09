@@ -13,6 +13,8 @@ angular.module('clientApp')
         $rootScope.user_id = localStorage.user_id;
         $rootScope.user_pet_id = localStorage.user_pet_id;
 
+        FastClick.attach(document.body);
+
         $rootScope.getUser = function () {
             Users.query({id: $rootScope.user_id}, function (user) {
                 if (user._id) {

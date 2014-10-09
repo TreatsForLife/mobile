@@ -7,16 +7,17 @@
                     <div class="pet" ng-show="($index==0 || swipeComplete)">
                         <div class="pet-inner">
                             <div class="pet-pic" ng-click="playVideo(item.media.video)" ng-if="isIphone"
-                                style="position:absolute; left: 0;"
-                                ng-style="{'background-image': 'url('+item.media.image+')', height: picHeightPX}">
+                                 style="position:absolute; left: 0;"
+                                 ng-style="{'background-image': 'url('+item.media.image+')', height: picHeightPX}">
                                 <span class="pet-pic-play fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x pet-pic-play-circle"
-                                        ng-style="{lineHeight: (picHeight +'px')}"></i>
+                                       ng-style="{lineHeight: (picHeight +'px')}"></i>
                                     <i class="fa fa-play fa-stack-1x fa-inverse"
-                                        ng-style="{lineHeight: (picHeight +'px')}"></i>
+                                       ng-style="{lineHeight: (picHeight +'px')}"></i>
                                 </span>
                             </div>
-                             <div class="pet-pic" ng-style="{height:picHeightPX, opacity: (isIphone ? '0' : '1')}" pet-player ></div>
+                            <div class="pet-pic" ng-style="{height:picHeightPX, opacity: (isIphone ? '0' : '1')}"
+                                 pet-player></div>
                             <div class="pet-bar">
                                 <img class="owner-pic" ng-src="{{item.user.image || 'images/default_owner.png'}}"/>
                                 <img class="pet-gender"

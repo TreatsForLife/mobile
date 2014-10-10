@@ -218,6 +218,7 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/controllers/pet.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/controllers/root.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/controllers/welcome.js \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/controllers/thanks.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/services/treats.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/services/instagram.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/services/users.js \
@@ -238,6 +239,7 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/templates/main.html \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/templates/shop.html \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/templates/test.html \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/templates/thanks.html \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/templates/tab-friends.html \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/templates/partials/pets-dialog.html \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/templates/partials/pet-dialog.html \

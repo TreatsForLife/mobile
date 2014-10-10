@@ -88,19 +88,6 @@ angular.module('clientApp')
 
                     }, 80);
 
-                    if ($stateParams['adopt']){
-                        if ($stateParams['adopt']=='adopt'){
-                            var callback = function(){
-                                $scope.adopted();
-                            }
-                        }else{
-                            var callback = function(){
-                                $scope.bought();
-                            }
-                        }
-                        $scope.animateAdoptionButton(callback);
-                    }
-
                 });
             });
         }
@@ -196,42 +183,6 @@ angular.module('clientApp')
             });
         }
 
-        $scope.adopted = function () {
-            var pet_link = Consts.client_root + '#/pet/' + $scope.pet_id;
-            facebookConnectPlugin.showDialog({
-                method: 'feed',
-                app_id: Consts.fb_app_id,
-                display: ($scope.isWeb ? 'popup' : 'touch'),
-                link: pet_link,//$scope.pet.media.link,
-                picture: $scope.pet.media.image,
-                name: 'אתם לא מבינים מה עשיתי הרגע',
-                caption: 'אימצתי כלב! קוראים לו ' + $scope.pet.name + ' ולא הוא לא יבוא אליי הביתה. לא כרגע לפחות.. אבל הולך לקבל ים פינוקים ממני.',
-                description: ' ',
-                actions: [
-                    {name: 'בואו לראות אותי', link: pet_link}
-                ]
-            }, function (response) {
-            });
-        }
-
-        $scope.bought = function () {
-            var pet_link = Consts.client_root + '#/pet/' + $scope.pet_id;
-            facebookConnectPlugin.showDialog({
-                method: 'feed',
-                app_id: Consts.fb_app_id,
-                display: ($scope.isWeb ? 'popup' : 'touch'),
-                link: pet_link,//$scope.pet.media.link,
-                picture: $scope.pet.media.image,
-                name: 'כל הזמן רק לפנק לפנק לפנק',
-                caption: 'הרגע קניתי ל' + $scope.pet.name + ' מתנה קטנה. בואו לראות!',
-                description: ' ',
-                actions: [
-                    {name: 'בואו לראות אותי', link: pet_link}
-                ]
-            }, function (response) {
-            });
-        }
-
         $scope.initButtonInterval = function () {
             var showButtonInterval = $interval(function () {
                 if (!$scope.user || !$scope.pet) return;
@@ -286,56 +237,6 @@ angular.module('clientApp')
                 frame--;
                 animationBgPosition += dim;
             }, (animationDuration / numOfFrames))
-        }
-
-        $scope.animateAdoptionButton = function (callback) {
-            $timeout(function () {
-                $scope.showAdoptionAnimation = true;
-                $('.pet-adopted-button').addClass('animated fadeIn');
-
-                //frame dimension 423x633
-                var ar = 423/633;
-                var ww = $scope.windowWidth - 80;
-                var wh = $scope.windowHeight - 80;
-                var wr = ww/wh;
-                if (ar < wr){
-                    //match height
-                    $scope.adoptAnimationHeight = wh;
-                    $scope.adoptAnimationWidth = parseInt(wh * ar);
-                    $scope.adoptAnimationHeight = ww / ar;
-                }else{
-                    //match width
-                    $scope.adoptAnimationWidth = ww;
-                    $scope.adoptAnimationHeight = ww / ar;
-                }
-
-                var animationDuration = 4500;
-                var numOfFrames = 70;
-                var frame = numOfFrames;
-                var dim = $scope.adoptAnimationWidth;
-                var animationBgPosition = 0;
-                $('.pet-adopted-button').css({
-                    'background-size':($scope.adoptAnimationWidth * numOfFrames) + 'px auto',
-                    'width': $scope.adoptAnimationWidth + 'px',
-                    'height': $scope.adoptAnimationHeight + 'px'
-                });
-                $timeout(function () {
-                    var animationInterval = $interval(function () {
-                        if (frame == 0) {
-                            $interval.cancel(animationInterval);
-                            $('.pet-adopted-button').removeClass('fadeIn').addClass('fadeOut');
-                            $timeout(function () {
-                                $scope.showAdoptionAnimation = false;
-                                callback();
-                            }, 1000);
-                            return;
-                        }
-                        $('.pet-adopted-button').css('background-position-x', -1 * animationBgPosition);
-                        frame--;
-                        animationBgPosition += dim;
-                    }, (animationDuration / numOfFrames))
-                }, 2500);
-            })
         }
 
         $scope.animateShareButton = function () {

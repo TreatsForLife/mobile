@@ -12,6 +12,8 @@
         <li class="push-adopted"><a ng-href="#/pets/adopted">כלבים מאומצים</a></li>
         <li class="push-who"><a ng-click="closePushMenu(); showDialog('welcome')">מה זה?</a></li>
         <li class="push-fb"><a href="http://www.facebook.com/treatsforlife" target="_blank"><i class="fa fa-facebook-square color-facebook"></i> חטיפים לחיים</a></li>
+        <li class="push-mine"><a ng-href="{{'#/pet/' + user.pet._id + '/bought'}}" ng-if="user.pet">bought</a></li>
+        <li class="push-mine"><a ng-href="{{'#/pet/' + user.pet._id + '/adopt'}}" ng-if="user.pet">adopt</a></li>
     </ul>
 </nav>
 

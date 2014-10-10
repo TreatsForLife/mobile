@@ -33,7 +33,7 @@ angular.module('clientApp', ['ionic',
         // Learn more here: https://github.com/angular-ui/ui-router
         // Set up the various states which the app can be in.
         // Each state's controller can be found in controllers.js
-        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|geo):/);
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|geo|file):/);
 
         $stateProvider
 
@@ -55,8 +55,8 @@ angular.module('clientApp', ['ionic',
             })
             .state('adopt', {
                 url: "/pet/:id/:adopt",
-                templateUrl: 'templates/pet.html',
-                controller: 'PetCtrl'
+                templateUrl: 'templates/thanks.html',
+                controller: 'ThanksCtrl'
             })
             .state('shop', {
                 url: "/shop/:id",

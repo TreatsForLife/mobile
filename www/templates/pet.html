@@ -2,7 +2,7 @@
 
     <div id="pet-pic" ng-clock>
         <div id='slider' class='swipe'>
-            <div class='swipe-wrap'>
+            <div class='swipe-wrap' ng-show="swipeComplete">
                 <div class="pets-pic">
                     <div class="pet">
                         <div class="pet-inner pet-kennel-info" ng-style="{height:infoHeightPX}">
@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="pets-pic" ng-repeat="item in donations">
-                    <div class="pet" ng-show="($index==0 || swipeComplete)">
+                    <div class="pet">
                         <div class="pet-inner">
                             <div class="pet-pic" ng-click="playVideo(item.media.video)" ng-if="isIphone"
                                  style="position:absolute; left: 0;"
@@ -44,17 +44,17 @@
 
     <div class='treat-wrapper' ng-style="{height: grassHeightPX, padding: buttonMarginPX}">
         <div ng-if="showButton == 'buy'">
-            <div class="pet-buy-button" ng-click="animateButton();"
+            <div class="pet-buy-button" ng-click="buyClicked();"
                  ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
             </div>
         </div>
         <div ng-if="showButton == 'share'">
-            <div class="pet-share-button" ng-click="animateShareButton();"
+            <div class="pet-share-button" ng-click="shareClicked();"
                  ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
             </div>
         </div>
         <div ng-if="showButton == 'adopt'" class="treat-share-wrapper">
-            <div class="pet-adopt-button-gif" ng-click="animateAdoptButton();"
+            <div class="pet-adopt-button-gif" ng-click="adoptClicked();"
                  ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
             </div>
             <div class="pet-adopt-button" style="display:none;"
@@ -62,7 +62,7 @@
             </div>
         </div>
         <div ng-if="showButton == 'love'">
-            <div class="pet-like-button" ng-click="animateLikeButton();"
+            <div class="pet-like-button" ng-click="likeClicked();"
                  ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
             </div>
         </div>
@@ -75,7 +75,7 @@
         </div>
 -->
 
-        <div class="cart-items">
+        <div class="cart-items" ng-click="cartIsUp=!cartIsUp">
             <div>
                 <i class="pet-info fa fa-shopping-cart fa-flip-horizontal"></i>
                 <div class="cart-items-title" ng-bind="cartTitle"></div>

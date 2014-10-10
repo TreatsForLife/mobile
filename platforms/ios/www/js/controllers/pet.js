@@ -47,7 +47,7 @@ angular.module('clientApp')
                 $scope.donations = [];
                 $scope.donations[0] = pet;
 
-                $scope.initButtonInterval();
+                $scope.initChooseButtonInterval();
 
                 console.log('Getting given donations: ' + $scope.pet_id);
                 Donations.given({pet_id: $scope.pet_id}, function (res) {
@@ -231,7 +231,7 @@ angular.module('clientApp')
             });
         }
 
-        $scope.initButtonInterval = function () {
+        $scope.initChooseButtonInterval = function () {
             var showButtonInterval = $interval(function () {
                 if (!$scope.user || !$scope.pet) return;
                 if (!!($scope.pet.user && ($scope.pet.user._id == $scope.user._id))) {

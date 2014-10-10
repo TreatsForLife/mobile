@@ -116,6 +116,8 @@ angular.module('clientApp')
                             console.log('Found pending donations: ', res);
                             $timeout(function () {
                                 $scope.pending = res;
+                                $scope.pendingAccumulated = {};
+                                accumulatePendingItems();
                                 $scope.showCart = (res.length > 0);
                                 $scope.cartTitle = ((res.length > 1) ? res.length + ' פינוקים' : 'פינוק אחד') + ' בדרך ל' + pet.name + '';
 
@@ -127,6 +129,20 @@ angular.module('clientApp')
 
                 });
             });
+        }
+
+        function accumulatePendingItems(){
+            var items = $scope.pending;
+            var accumulated = $scope.pendingAccumulated;
+            for (var item,i=0; item= items[i]; i++){
+                var idx = item.treat.name;
+                if (accumulated[idx]){
+                    accumulated[idx]['sum']++;
+                }else{
+                    accumulated[idx] = item;
+                    accumulated[idx]['sum'] = 1;
+                }
+            }
         }
 
         $scope.initChooseButtonInterval = function () {

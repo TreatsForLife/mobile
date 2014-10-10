@@ -22,7 +22,7 @@ angular.module('clientApp')
 
         $timeout(function () {
             if (!window.localStorage['shop-dialog-shown']) {
-//                $scope.showDialog('shop');
+                $scope.showDialog('shop');
             }
         });
 

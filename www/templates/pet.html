@@ -90,14 +90,14 @@
         <div class="cart-shop-title" ng-if="cartIsUp">הפינוקים ימסרו לבייבי שלכם בקרוב. אנחנו מבטיחים לשלוח לכם סרטון מפנק בתמורה!</div>
 
         <ul class="shop-wrapper" ng-if="cartIsUp">
-            <li class="shop-item-wrapper" ng-repeat="donation in pending">
+            <li class="shop-item-wrapper" ng-repeat="donation in pendingAccumulated">
                 <div class="shop-item-image"
                      style="background-image: url({{donation.treat.image.length > 5 ? donation.treat.image : '/images/placeholder.png'}})"></div>
                 <div class="shop-item-price">₪{{donation.treat.price}}</div>
                 <div class="shop-item-name" ng-bind="donation.treat.name"></div>
                 <div class="shop-item-desc" ng-bind="donation.treat.desc"></div>
                 <div class="shop-item-checkbox cart">
-                    1x
+                    {{donation.sum}}x
                 </div>
                 <div class="clear"></div>
             </li>

@@ -8549,11 +8549,17 @@ body.pushed .body-cover {
       float: left;
       line-height: 50px; }
       .container.pet .cart-wrapper .cart-timer .pet-clock {
-        font-size: 32px;
-        color: #fefefe;
+        font-size: 24px;
+        color: #111;
         float: left;
-        line-height: 50px;
-        margin: 0 12px; }
+        line-height: 17px;
+        width: 23px;
+        height: 22px;
+        border: 2px solid #111;
+        padding: inherit;
+        text-align: center;
+        border-radius: 4px;
+        margin: 14px; }
       .container.pet .cart-wrapper .cart-timer .pet-timer {
         font-size: 20px;
         color: #fefefe;

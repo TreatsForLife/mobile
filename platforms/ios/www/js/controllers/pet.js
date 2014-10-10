@@ -80,7 +80,7 @@ angular.module('clientApp')
                             $timeout(function () {
                                 $scope.pending = res;
                                 $scope.showCart = (res.length > 0);
-                                $scope.cartTitle = res.length + ' ' + ((res.length > 0) ? 'פריטים' : 'פריט');
+                                $scope.cartTitle = ((res.length > 1) ? res.length + ' פינוקים' : 'פינוק אחד') + ' בדרך ל' + pet.name + '...';
 
                                 calcDims();
                             });

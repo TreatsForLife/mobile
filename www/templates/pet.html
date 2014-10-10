@@ -68,37 +68,21 @@
         </div>
     </div>
 
-    <div class="cart-wrapper" ng-class="{up: cartIsUp, iPhone:isIphone}" ng-click="cartIsUp=!cartIsUp" ng-if="showCart">
+    <div class="cart-wrapper" ng-class="{up: cartIsUp, iPhone:isIphone}" ng-if="showCart">
+<!--
         <div class="cart-center">
             <div></div>
         </div>
+-->
 
         <div class="cart-items">
-            <i class="pet-info fa fa-times" ng-show="cartIsUp"></i>
-
-            <div ng-hide="cartIsUp">
+            <div>
                 <i class="pet-info fa fa-shopping-cart fa-flip-horizontal"></i>
-
                 <div class="cart-items-title" ng-bind="cartTitle"></div>
             </div>
         </div>
-        <div class="cart-timer">
-            <i class="pet-clock fa fa-clock-o"></i>
-            <span data-timer="timer" data-end-time="nextFriday" class="pet-timer">
-                <div class="timer-title">
-                </div>
-                <table>
-                    <tr>
-                        <td>{{days}}</td>
-                        <td>:</td>
-                        <td>{{hhours}}</td>
-                        <td>:</td>
-                        <td>{{mminutes}}</td>
-                        <td>:</td>
-                        <td>{{sseconds}}</td>
-                    </tr>
-                </table>
-            </span>
+        <div class="cart-timer" ng-click="cartIsUp=!cartIsUp">
+            <i class="pet-clock fa fa-angle-{{cartIsUp ? 'down' : 'up'}}"></i>
         </div>
 
         <div class="clear"></div>

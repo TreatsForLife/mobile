@@ -195,9 +195,13 @@ angular.module('clientApp')
             }
         });
         $scope.$on("$stateChangeStart", function (scope, next, current) {
+            console.log('Start changing route from: ' + current + ' to: ' + next);
             $scope.cartIsUp = false;
             $rootScope.closePushMenu();
             $rootScope.closeDialog();
+        });
+        $scope.$on("$stateChangeSuccess", function (scope, next, current) {
+            console.log('Changed route from: ' + current + ' to: ' + next);
         });
 
 

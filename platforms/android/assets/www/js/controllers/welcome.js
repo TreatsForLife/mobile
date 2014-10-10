@@ -35,33 +35,6 @@ angular.module('clientApp')
             });
         }
 
-/*
-        $scope.logoAnimationComplete = false;
-        $scope.animateLogo = function () {
-            var animationDuration = 1700;
-            var numOfFrames = 48;
-            var frame = numOfFrames;
-            var dim = $scope.logoWidth
-            var animationBgPosition = 0;
-            $('.welcome-logo-animation').css('background-size', ($scope.logoWidth * numOfFrames) + 'px auto');
-            var animationInterval = $interval(function () {
-                if (frame == 0) {
-                    $interval.cancel(animationInterval);
-                    $timeout(function(){
-                        $scope.logoAnimationComplete = true;
-                    });
-                    return;
-                }
-                $('.welcome-logo-animation').css('background-position-x', -1 * animationBgPosition);
-                frame--;
-                animationBgPosition += dim;
-            }, (animationDuration / numOfFrames))
-        }
-        $timeout(function(){
-            $scope.animateLogo();
-        }, 1500);
-*/
-
         $scope.fbLogin = function () {
             if (!$scope.online) return;
             facebookConnectPlugin.login(['email'], function (response) {
@@ -115,6 +88,9 @@ angular.module('clientApp')
                     }
                 } else if (response.status === 'not_authorized') {
                     console.log('the user is logged in to Facebook, but has not authenticated your app');
+                    localStorage.fb_id = undefined;
+                    localStorage.user_id = undefined;
+                    localStorage.user_pet_id = undefined;
                 } else {
                     console.log('the user isnt logged in to Facebook');
                 }

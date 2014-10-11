@@ -224,6 +224,7 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/services/users.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/services/pets.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/services/utils.js \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/services/push-notifications.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/services/donations.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/directives/tipdialog.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/directives/player.js \
@@ -259,6 +260,7 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/pet_female.png \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/placeholder.png \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/animated-logo.png \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/woof.mp3 \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/default_owner.png \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/icon.png \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/animated-thankyou.png \

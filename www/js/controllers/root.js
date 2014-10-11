@@ -256,6 +256,8 @@ angular.module('clientApp')
             document.addEventListener("backbutton", onBackKeyDown, false);
             document.addEventListener("online", onOnline, false);
             document.addEventListener("offline", onOffline, false);
+
+            initPushNotifications();
         }
         function init(){
             $scope.canAnimate = true;

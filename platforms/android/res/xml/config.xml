@@ -25,7 +25,7 @@
     <feature name="PushPlugin">
         <param name="android-package" value="com.plugin.gcm.PushPlugin" />
     </feature>
-    <name>TreatsForLife</name>
+    <name>חטיפים לחיים</name>
     <description>
     ברוכים הבאים לפרויקט "חטיפים לחיים"
   אז איך זה עובד? מתחילים בבחירת החבר החדש שלכם, אחד הכלבים שנמצאים בבתי האומנה שעובדים איתנו. הכלב שתבחרו יהיה שלכם

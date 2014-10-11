@@ -62,13 +62,13 @@
     },
     "installed_plugins": {
         "com.ionic.keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.treatsforlife803933"
+            "PACKAGE_NAME": "org.treatsforlife.app"
         },
         "org.apache.cordova.console": {
-            "PACKAGE_NAME": "com.ionicframework.treatsforlife803933"
+            "PACKAGE_NAME": "org.treatsforlife.app"
         },
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.ionicframework.treatsforlife803933"
+            "PACKAGE_NAME": "org.treatsforlife.app"
         },
         "com.phonegap.plugins.facebookconnect": {
             "APP_ID": "601219569953172",

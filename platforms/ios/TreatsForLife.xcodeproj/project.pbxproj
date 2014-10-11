@@ -53,6 +53,9 @@
 		C2184359387A44F7A00D26E2 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DC71D2A1E14CDA84DF4AE8 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C63C1F9A186344DB9D768595 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8253949FE1437A96B7B4D8 /* MessageUI.framework */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
+		E31CC7C719E88C9400105181 /* icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = E31CC7C619E88C9400105181 /* icon-57.png */; };
+		E31CC7C919E88CA300105181 /* icon-57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E31CC7C819E88CA300105181 /* icon-57@2x.png */; };
+		E31CC7CB19E88DED00105181 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E31CC7CA19E88DED00105181 /* icon.png */; };
 		E34D50DC19ADC7BF00C9E2B6 /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E34D50D419ADC7BF00C9E2B6 /* libPayPalMobile.a */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +132,9 @@
 		C1143323A5B04667B9BCD1B6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = TreatsForLife/Plugins/com.phonegap.plugins.facebookconnect/FacebookSDK.framework; sourceTree = "<group>"; };
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
 		D75C5849362A491180E05292 /* AVFoundation.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E31CC7C619E88C9400105181 /* icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-57.png"; sourceTree = "<group>"; };
+		E31CC7C819E88CA300105181 /* icon-57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-57@2x.png"; sourceTree = "<group>"; };
+		E31CC7CA19E88DED00105181 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		E34D50D419ADC7BF00C9E2B6 /* libPayPalMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMobile.a; sourceTree = "<group>"; };
 		E34D50D519ADC7BF00C9E2B6 /* PayPalConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalConfiguration.h; sourceTree = "<group>"; };
 		E34D50D619ADC7BF00C9E2B6 /* PayPalFuturePaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalFuturePaymentViewController.h; sourceTree = "<group>"; };
@@ -309,8 +315,11 @@
 				7E7966D81810823500FA85AD /* icon-60.png */,
 				7E7966D91810823500FA85AD /* icon-60@2x.png */,
 				7E7966DA1810823500FA85AD /* icon-76.png */,
+				E31CC7C619E88C9400105181 /* icon-57.png */,
+				E31CC7C819E88CA300105181 /* icon-57@2x.png */,
 				7E7966DB1810823500FA85AD /* icon-76@2x.png */,
 				7E7966DC1810823500FA85AD /* icon-small.png */,
+				E31CC7CA19E88DED00105181 /* icon.png */,
 				7E7966DD1810823500FA85AD /* icon-small@2x.png */,
 				30FC414816E50CA1004E6F35 /* icon-72@2x.png */,
 				308D052E1370CCF300D202BF /* icon-72.png */,
@@ -450,6 +459,7 @@
 			files = (
 				7E7966E41810823500FA85AD /* icon-76.png in Resources */,
 				7E7966DF1810823500FA85AD /* icon-40@2x.png in Resources */,
+				E31CC7CB19E88DED00105181 /* icon.png in Resources */,
 				308D05371370CCF300D202BF /* icon-72.png in Resources */,
 				308D05381370CCF300D202BF /* icon.png in Resources */,
 				308D05391370CCF300D202BF /* icon@2x.png in Resources */,
@@ -472,6 +482,8 @@
 				7E7966E11810823500FA85AD /* icon-50@2x.png in Resources */,
 				7E7966E51810823500FA85AD /* icon-76@2x.png in Resources */,
 				30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */,
+				E31CC7C719E88C9400105181 /* icon-57.png in Resources */,
+				E31CC7C919E88CA300105181 /* icon-57@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +575,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Guy Sopher (8PV6TD2K37)";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"TreatsForLife/Plugins/com.phonegap.plugins.facebookconnect\"",
@@ -596,6 +609,7 @@
 				PRODUCT_NAME = "חטיפים לחיים";
 				PROVISIONING_PROFILE = "ff16f5b8-2fb7-4a6b-a691-f6dbd80d8aa3";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "";
 			};
 			name = Debug;
 		};
@@ -606,6 +620,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Guy Sopher (8PV6TD2K37)";
 				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"TreatsForLife/Plugins/com.phonegap.plugins.facebookconnect\"",
@@ -635,8 +650,9 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "חטיפים לחיים";
-				PROVISIONING_PROFILE = "1c04f521-cc40-4467-8eba-2865596c91f1";
+				PROVISIONING_PROFILE = "b7d7ec80-4021-4fdf-97c7-4ad6f7989e3d";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "";
 			};
 			name = Release;
 		};

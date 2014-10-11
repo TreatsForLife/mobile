@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="2" id="org.treatsforlife.app" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="2" id="org.treatsforlife.app" version="2.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
@@ -22,7 +22,10 @@
     <feature name="PayPalMobile">
         <param name="android-package" value="com.paypal.cordova.sdk.PayPalMobileCordovaPlugin" />
     </feature>
-    <name>TreatsForLife</name>
+    <feature name="PushPlugin">
+        <param name="android-package" value="com.plugin.gcm.PushPlugin" />
+    </feature>
+    <name>חטיפים לחיים</name>
     <description>
     ברוכים הבאים לפרויקט "חטיפים לחיים"
   אז איך זה עובד? מתחילים בבחירת החבר החדש שלכם, אחד הכלבים שנמצאים בבתי האומנה שעובדים איתנו. הכלב שתבחרו יהיה שלכם

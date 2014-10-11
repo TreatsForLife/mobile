@@ -27,6 +27,13 @@ module.exports = [
         "clobbers": [
             "PayPalMobile"
         ]
+    },
+    {
+        "file": "plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js",
+        "id": "com.phonegap.plugins.PushPlugin.PushNotification",
+        "clobbers": [
+            "PushNotification"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -36,7 +43,8 @@ module.exports.metadata =
     "org.apache.cordova.console": "0.2.9",
     "org.apache.cordova.device": "0.2.10",
     "com.phonegap.plugins.facebookconnect": "0.7.0",
-    "com.paypal.cordova.mobilesdk": "2.0.2"
+    "com.paypal.cordova.mobilesdk": "2.0.2",
+    "com.phonegap.plugins.PushPlugin": "2.4.0"
 }
 // BOTTOM OF METADATA
 });

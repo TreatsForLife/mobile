@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		0590AF644C9A44D7B38C1B35 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A232DC2F2D4CAC9B1185AC /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -57,6 +56,8 @@
 		E31CC7C919E88CA300105181 /* icon-57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E31CC7C819E88CA300105181 /* icon-57@2x.png */; };
 		E31CC7CB19E88DED00105181 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E31CC7CA19E88DED00105181 /* icon.png */; };
 		E34D50DC19ADC7BF00C9E2B6 /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E34D50D419ADC7BF00C9E2B6 /* libPayPalMobile.a */; };
+		836D6254EF634154B4B68316 /* AppDelegate+notification.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2B9E32D80B4796B35D832D /* AppDelegate+notification.m */; };
+		03A157BC466D41F39D698CE7 /* PushPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7609A98BBC4B4AA00AA36B /* PushPlugin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,10 @@
 		F163F2404CC7480391613FDA /* libc++.dylib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = TreatsForLife/config.xml; sourceTree = "<group>"; };
 		FA8C7A2D6D3A4AE89A02A1E0 /* UIWebViewExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIWebViewExtension.h; path = com.ionic.keyboard/UIWebViewExtension.h; sourceTree = "<group>"; };
+		BF2B9E32D80B4796B35D832D /* AppDelegate+notification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AppDelegate+notification.m"; path = "com.phonegap.plugins.PushPlugin/AppDelegate+notification.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		6B7609A98BBC4B4AA00AA36B /* PushPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "PushPlugin.m"; path = "com.phonegap.plugins.PushPlugin/PushPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		0AA8653AD7484D54B5A65271 /* AppDelegate+notification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate+notification.h"; path = "com.phonegap.plugins.PushPlugin/AppDelegate+notification.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		08BE9F64EF894FA38264C797 /* PushPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PushPlugin.h"; path = "com.phonegap.plugins.PushPlugin/PushPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +305,10 @@
 				9393CB35D41644F5BE3F5A7C /* PayPalMobileCordovaPlugin.h */,
 				340B181D057B47A38824DAA5 /* FacebookConnectPlugin.m */,
 				38D411D5ADBE44EB96A28192 /* FacebookConnectPlugin.h */,
+				BF2B9E32D80B4796B35D832D /* AppDelegate+notification.m */,
+				6B7609A98BBC4B4AA00AA36B /* PushPlugin.m */,
+				0AA8653AD7484D54B5A65271 /* AppDelegate+notification.h */,
+				08BE9F64EF894FA38264C797 /* PushPlugin.h */,
 			);
 			name = Plugins;
 			path = TreatsForLife/Plugins;
@@ -519,6 +528,8 @@
 				300CCE69B56345E3B34D512E /* UIWebViewExtension.m in Sources */,
 				8C62BA74DAC444AFBE77F0AC /* PayPalMobileCordovaPlugin.m in Sources */,
 				83B18D171E3D4D269B3E1FB5 /* FacebookConnectPlugin.m in Sources */,
+				836D6254EF634154B4B68316 /* AppDelegate+notification.m in Sources */,
+				03A157BC466D41F39D698CE7 /* PushPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

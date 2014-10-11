@@ -28,6 +28,15 @@
 # view AndroidManifest.xml #generated:17
 -keep class com.paypal.android.sdk.payments.PaymentMethodActivity { <init>(...); }
 
+# view AndroidManifest.xml #generated:25
+-keep class com.plugin.gcm.CordovaGCMBroadcastReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:32
+-keep class com.plugin.gcm.GCMIntentService { <init>(...); }
+
+# view AndroidManifest.xml #generated:24
+-keep class com.plugin.gcm.PushHandlerActivity { <init>(...); }
+
 # view AndroidManifest.xml #generated:22
 -keep class io.card.payment.CardIOActivity { <init>(...); }
 

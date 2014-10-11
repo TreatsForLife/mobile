@@ -133,6 +133,11 @@
                     ]
                 }
             }
+        },
+        "config.xml": {
+            "/*": {
+                "<feature name=\"PushPlugin\"><param name=\"ios-package\" value=\"PushPlugin\" /></feature>": 1
+            }
         }
     },
     "installed_plugins": {
@@ -145,6 +150,9 @@
         "com.phonegap.plugins.facebookconnect": {
             "APP_ID": "601219569953172",
             "APP_NAME": "Treats For Life",
+            "PACKAGE_NAME": "org.treatsforlife.app"
+        },
+        "com.phonegap.plugins.PushPlugin": {
             "PACKAGE_NAME": "org.treatsforlife.app"
         }
     },

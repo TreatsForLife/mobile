@@ -1,7 +1,7 @@
 @import 'consts';
 
 .platform-ios{
-  .container{
+  .container-inner{
     padding-top: $navbarHi;
   }
   .navbar{
@@ -13,7 +13,7 @@
   }
   
 }
-.container{
+.container-inner{
   padding-top: $navbarH;
   &.welcome{
     padding-top: 0;
@@ -55,8 +55,14 @@ body.welcome .navbar{
         }
         &.fa-bars{
           font-size: 30px;
-          margin-left: -31px;
-          margin-right: 9px;
+          margin-left: -24px;
+          margin-right: 2px;
+          -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+          &.open{
+            margin-left: -31px;
+            margin-right: 9px;
+          }
         }
       }
       .navbar-logo{

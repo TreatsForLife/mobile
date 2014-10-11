@@ -7,35 +7,35 @@ angular.module('clientApp')
             replace: false,
             scope: true,
             template: '<video class="pet-video" src="{{trustSrc(item.media.video)}}" poster="{{item.media.image}}" preload="auto" ng-cloak ></video>' +
-                '<span class="pet-pic-play fa-stack fa-lg" ng-hide="playing" ng-if="!isIphone">'+
+                '<span class="pet-pic-play fa-stack fa-lg" ng-hide="playing" ng-if="!isIphone">' +
                 '<i ng-show="!loading && !playing" class="fa fa-circle fa-stack-2x pet-pic-play-circle" ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +
                 '<i ng-show="!loading && !playing" class="fa fa-play fa-stack-1x fa-inverse" ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +
-                '<i ng-show="loading && !playing" class="fa fa-refresh fa-fw fa-spin " ng-style="{lineHeight: (picHeight +\'px\')}"></i>' +
-                '</span>',
+                '</span>' +
+                '<i ng-show="loading && !playing" class="pet-pic-loading fa fa-refresh fa-fw fa-spin"></i>',
             link: function ($scope, element, attrs) {
                 var video = $(element).children('.pet-video')[0];
                 $scope.playing = false;
                 $scope.loading = false;
                 $scope.working = false;
-                if ($scope.isIphone){
-                $(element).click(function(){
-                    $scope.toggleVideo();
-                });
-                }
-                             
+//                if ($scope.isIphone) {
+                    $(element).click(function () {
+                        $scope.toggleVideo();
+                    });
+//                }
 
-                             $scope.$on('calcedDims', function(){
-                             var containerH = $(element).height();
-                                var containerW = $(element).width();
-                                $(video).height(containerW).css('margin-top', '-'+((containerW-containerH)/2)+'px');
-                                        });
-                             
-                var videoCanPlay = function(e){
+
+                $scope.$on('calcedDims', function () {
+                    var containerH = $(element).height();
+                    var containerW = $(element).width();
+                    $(video).height(containerW).css('margin-top', '-' + ((containerW - containerH) / 2) + 'px');
+                });
+
+                var videoCanPlay = function (e) {
                     $timeout(function () {
                         $scope.loading = false;
                     });
                 };
-                var endVideo = function(e){
+                var endVideo = function (e) {
                     console.log('Auto Video Restart');
                     video.pause();
                     video.currentTime = 0;
@@ -44,7 +44,7 @@ angular.module('clientApp')
                         $scope.loading = false;
                     });
                 };
-                var videoPlaying = function(e){
+                var videoPlaying = function (e) {
                     $timeout(function () {
                         $scope.playing = true;
                         $scope.loading = false;
@@ -71,27 +71,27 @@ angular.module('clientApp')
                     }
                 };
                 $scope.initVideo = function () {
-                        video.volume = 1;
-                        video.addEventListener('ended', endVideo);
-                        video.addEventListener('canplaythrough', videoCanPlay);
-                        video.addEventListener('playing', videoPlaying);
+                    video.volume = 1;
+                    video.addEventListener('ended', endVideo);
+                    video.addEventListener('canplaythrough', videoCanPlay);
+                    video.addEventListener('playing', videoPlaying);
                 }
                 $scope.toggleVideo = function () {
-                    if (!$scope.working){
+                    if (!$scope.working) {
                         $scope.working = true;
                         if ($scope.playing) {
                             $scope.pauseVideo();
                         } else {
                             $scope.playVideo();
                         }
-                        $timeout(function(){
+                        $timeout(function () {
                             $scope.working = false;
                         }, 100);
                     }
                 }
-                             $timeout(function(){
-                $scope.initVideo();
-                                      });
+                $timeout(function () {
+                    $scope.initVideo();
+                });
             }
         }
     }])
@@ -213,7 +213,7 @@ angular.module('clientApp')
                         scope.isVideoLoaded = true;
                         scope.isVideoBuffering = false;
                     });
-                    if (scope.autoplay){
+                    if (scope.autoplay) {
                         console.log('Auto Video play');
                         scope.playVideo();
                         playing = true;

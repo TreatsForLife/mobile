@@ -24,9 +24,10 @@
 
 .cbp-spmenu-vertical {
   width: 250px;
+  padding-top:50px;
   height: 100%;
   top: 0;
-  z-index: 9999999;
+  z-index: 9990;
   overflow-y: auto;
   overflow-x: hidden;
   border-left:1px solid #333;
@@ -153,7 +154,7 @@ body.pushed .body-cover{
   height:100%;
   background: rgba(0,0,0,0.1);
   cursor: pointer;
-  z-index: 9999999;
+  z-index: 9980;
   top: 0;
   left: 0;
 }

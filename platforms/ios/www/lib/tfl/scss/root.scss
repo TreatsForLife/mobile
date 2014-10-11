@@ -86,10 +86,6 @@ body, html {
   width: 100%;
   height: 100%;
   background-color: $scheme-green;
-//  background-image: url('../images/animated-logo-loop.gif');
-//  background-repeat: no-repeat;
-//  background-size: 266px auto;
-//  background-position: center center;
   z-index: 99999999;
 
   .not-online-logo{
@@ -130,14 +126,13 @@ body, html {
   max-width: 600px;
   position: relative;
   margin: 0 auto;
-  animation-duration: 1.5s !important;
-  -webkit-animation-duration: 1.5s !important;
-  &.ng-leave {
-    animation: bounceOutLeft;
-    -webkit-animation: bounceOutLeft;
-    position: absolute !important;
-    top: 0 !important;
-    z-index: 999;
+  animation-duration: 1.2s !important;
+  -webkit-animation-duration: 1.2s !important;
+  &:first-of-type{ //&.ng-enter {
+    display: block !important;
+  }
+  &:last-of-type{ //&.ng-leave {
+    display: none;
   }
   &.ng-enter {
     animation: fadeIn;
@@ -145,6 +140,14 @@ body, html {
     position: absolute !important;
     top: 0 !important;
     z-index: 888;
+  }
+  &.ng-leave {
+    animation: bounceOutLeft;
+    -webkit-animation: bounceOutLeft;
+    position: absolute !important;
+    top: 0 !important;
+    z-index: 999;
+    display: block;
   }
 
   &.reverse {
@@ -161,6 +164,7 @@ body, html {
       position: absolute !important;
       top: 0 !important;
       z-index: 888;
+      display: block;
     }
   }
 }

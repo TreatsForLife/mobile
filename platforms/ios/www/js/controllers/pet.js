@@ -26,8 +26,45 @@ angular.module('clientApp')
             }
         }
 
+        function calcDims(iterations) {
+            if (typeof iterations == 'undefined') iterations = 3;
+
+            $timeout(function () {
+                var min_button_height = 130;
+                $scope.grassHeight = $scope.windowHeight - ($scope.picHeight + 62) - 40 - ($scope.showCart ? 50 : 0) - ($scope.isIphone ? 20 : 0);
+                $scope.buttonHeight = $scope.buttonWidth = parseInt(Math.min(parseInt(($scope.grassHeight - 30) * 0.9), 150));
+                $scope.buttonMargin = parseInt(($scope.grassHeight - $scope.buttonHeight) / 2);
+                if ($scope.buttonHeight < min_button_height) {
+                    $scope.buttonHeight = $scope.buttonWidth = min_button_height;
+                    $scope.buttonMargin = 20;
+                    $scope.grassHeight = min_button_height + ($scope.buttonMargin * 2);
+                    $scope.picHeight = $scope.windowHeight - ($scope.grassHeight + 62) - 40 - ($scope.showCart ? 50 : 0) - ($scope.isIphone ? 20 : 0);
+                }
+
+                $scope.picHeightPX = $scope.picHeight + 'px';
+                $scope.infoHeightPX = ($scope.picHeight + 42) + 'px';
+                $scope.grassHeightPX = $scope.grassHeight + 'px';
+                $scope.buttonMarginPX = $scope.buttonMargin + 'px';
+                $scope.buttonHeightPX = $scope.buttonHeight + 'px';
+                $scope.buttonWidthPX = $scope.buttonWidth + 'px';
+
+                $scope.videoStyle = {
+                    'margin-top': -1 * ($scope.picHeight - $scope.windowWidth) / 2
+                }
+                $scope.$broadcast('calcedDims');
+
+                if (iterations > 0) {
+                    $timeout(function () {
+                        calcDims(iterations - 1);
+                    }, 1000);
+                }
+            });
+
+        }
+
         $scope.getPetId = function () {
             $scope.pet_id = $stateParams['id'] || $rootScope.user_pet_id;
+            $scope.pet_link = Consts.client_root + '#/pet/' + $scope.pet_id;
             if (!$scope.pet_id && $rootScope.user && $rootScope.user.pet && $rootScope.user.pet._id) {
                 $scope.pet_id = $rootScope.user.pet._id;
             }
@@ -59,7 +96,7 @@ angular.module('clientApp')
                     });
                     $timeout(function () {
                         window.videosSwipe = new Swipe(document.getElementById('slider'), {
-                            startSlide: 0,
+                            startSlide: 1,
                             continuous: true,
                             disableScroll: true,
                             stopPropagation: false,
@@ -79,8 +116,10 @@ angular.module('clientApp')
                             console.log('Found pending donations: ', res);
                             $timeout(function () {
                                 $scope.pending = res;
+                                $scope.pendingAccumulated = {};
+                                accumulatePendingItems();
                                 $scope.showCart = (res.length > 0);
-                                $scope.cartTitle = ((res.length > 1) ? res.length + ' פינוקים' : 'פינוק אחד') + ' בדרך ל' + pet.name + '...';
+                                $scope.cartTitle = ((res.length > 1) ? res.length + ' פינוקים' : 'פינוק אחד') + ' בדרך ל' + pet.name + '';
 
                                 calcDims();
                             });
@@ -88,147 +127,22 @@ angular.module('clientApp')
 
                     }, 80);
 
-                    if ($stateParams['adopt']){
-                        if ($stateParams['adopt']=='adopt'){
-                            var callback = function(){
-                                $scope.adopted();
-                            }
-                        }else{
-                            var callback = function(){
-                                $scope.bought();
-                            }
-                        }
-                        $scope.animateAdoptionButton(callback);
-                    }
-
                 });
             });
         }
 
-        function calcDims(iterations) {
-            if (typeof iterations == 'undefined') iterations = 3;
-
-            $timeout(function () {
-                var min_button_height = 130;
-                $scope.grassHeight = $scope.windowHeight - ($scope.picHeight + 62) - 40 - ($scope.showCart ? 50 : 0) - ($scope.isIphone ? 20 : 0);
-                $scope.buttonHeight = $scope.buttonWidth = parseInt(Math.min(parseInt(($scope.grassHeight - 30) * 0.9), 150));
-                $scope.buttonMargin = parseInt(($scope.grassHeight - $scope.buttonHeight) / 2);
-                if ($scope.buttonHeight < min_button_height) {
-                    $scope.buttonHeight = $scope.buttonWidth = min_button_height;
-                    $scope.buttonMargin = 20;
-                    $scope.grassHeight = min_button_height + ($scope.buttonMargin * 2);
-                    $scope.picHeight = $scope.windowHeight - ($scope.grassHeight + 62) - 40 - ($scope.showCart ? 50 : 0) - ($scope.isIphone ? 20 : 0);
+        function accumulatePendingItems(){
+            var items = $scope.pending;
+            var accumulated = $scope.pendingAccumulated;
+            for (var item,i=0; item= items[i]; i++){
+                var idx = item.treat.name;
+                if (accumulated[idx]){
+                    accumulated[idx]['sum']++;
+                }else{
+                    accumulated[idx] = item;
+                    accumulated[idx]['sum'] = 1;
                 }
-
-                $scope.picHeightPX = $scope.picHeight + 'px';
-                $scope.grassHeightPX = $scope.grassHeight + 'px';
-                $scope.buttonMarginPX = $scope.buttonMargin + 'px';
-                $scope.buttonHeightPX = $scope.buttonHeight + 'px';
-                $scope.buttonWidthPX = $scope.buttonWidth + 'px';
-
-                $scope.videoStyle = {
-                    'margin-top': -1 * ($scope.picHeight - $scope.windowWidth) / 2
-                }
-                     $scope.$broadcast('calcedDims');
-
-                if (iterations > 0) {
-                    $timeout(function () {
-                        calcDims(iterations - 1);
-                    }, 1000);
-                }
-            });
-
-        }
-
-        var woof = new Audio('http://www.sounddogs.com/previews/101/mp3/121537_SOUNDDOGS__do.mp3');
-        $timeout(function(){
-            woof.load();
-            woof.volume = 0.5;
-        });
-        $scope.woof = function(){
-            woof.play();
-        }
-
-        $scope.adopt = function () {
-            if (localStorage.adoptDialogShown){
-                $location.path('/shop/' + $scope.pet_id);
-            }else{
-                $scope.showDialog('adopt');
-                localStorage.adoptDialogShown = true;
             }
-        }
-
-        $scope.share = function () {
-            var pet_link = Consts.client_root + '#/pet/' + $scope.pet_id;
-            facebookConnectPlugin.showDialog({
-                method: 'feed',
-                app_id: Consts.fb_app_id,
-                display: ($scope.isWeb ? 'popup' : 'touch'),
-                link: pet_link,//$scope.pet.media.link,
-                picture: $scope.pet.media.image,
-                name: 'נעים מאוד להכיר, אני ' + $scope.pet.name,
-                caption: 'תמיד רצית לאמץ כלב ולא יכולת בגלל 1042 סיבות? מצאנו דרך שתוכלו לעזור, להציל חיים או לפחות לעשות אותם קצת יותר קלים עבורם. בואו תראו.',
-                description: ' ',
-                actions: [
-                    {name: 'תנו לי חטיף', link: pet_link}
-                ]
-            }, function (response) {
-            });
-        }
-
-        $scope.like = function () {
-            var pet_link = Consts.client_root + '#/pet/' + $scope.pet_id;
-            facebookConnectPlugin.showDialog({
-                method: 'feed',
-                app_id: Consts.fb_app_id,
-                to: $scope.pet.user.fb_id,
-                display: ($scope.isWeb ? 'popup' : 'touch'),
-                link: pet_link,//$scope.pet.media.link,
-                picture: $scope.pet.media.image,
-                name: $scope.pet.name + ' הזה הרס אותי עכשיו ',
-                caption: 'איזה יופי של סרטונים, למות :)',
-                description: ' ',
-                actions: [
-                    {name: 'תנו לי חטיף', link: pet_link}
-                ]
-            }, function (response) {
-            });
-        }
-
-        $scope.adopted = function () {
-            var pet_link = Consts.client_root + '#/pet/' + $scope.pet_id;
-            facebookConnectPlugin.showDialog({
-                method: 'feed',
-                app_id: Consts.fb_app_id,
-                display: ($scope.isWeb ? 'popup' : 'touch'),
-                link: pet_link,//$scope.pet.media.link,
-                picture: $scope.pet.media.image,
-                name: 'אתם לא מבינים מה עשיתי הרגע',
-                caption: 'אימצתי כלב! קוראים לו ' + $scope.pet.name + ' ולא הוא לא יבוא אליי הביתה. לא כרגע לפחות.. אבל הולך לקבל ים פינוקים ממני.',
-                description: ' ',
-                actions: [
-                    {name: 'בואו לראות אותי', link: pet_link}
-                ]
-            }, function (response) {
-            });
-        }
-
-        $scope.bought = function () {
-            var pet_link = Consts.client_root + '#/pet/' + $scope.pet_id;
-            facebookConnectPlugin.showDialog({
-                method: 'feed',
-                app_id: Consts.fb_app_id,
-                display: ($scope.isWeb ? 'popup' : 'touch'),
-                link: pet_link,//$scope.pet.media.link,
-                picture: $scope.pet.media.image,
-                name: 'כל הזמן רק לפנק לפנק לפנק',
-                caption: 'הרגע קניתי ל' + $scope.pet.name + ' מתנה קטנה. בואו לראות!',
-                description: ' ',
-                actions: [
-                    {name: 'בואו לראות אותי', link: pet_link}
-                ]
-            }, function (response) {
-            });
         }
 
         $scope.initChooseButtonInterval = function () {
@@ -267,155 +181,63 @@ angular.module('clientApp')
             }, 250);
         }
 
-        $scope.animateButton = function () {
+        $scope.buyClicked = function () {
             if (!$scope.showButton) return;
-            $scope.woof();
-            var animationDuration = 1700;
-            var numOfFrames = 48;
-            var frame = numOfFrames;
-            var dim = $scope.buttonHeight;
-            var animationBgPosition = 0;
-            var animationInterval = $interval(function () {
-                if (frame == 0) {
-                    $interval.cancel(animationInterval);
-                    $location.path('/shop/' + $scope.pet_id);
-                    return;
-                }
-                $('.pet-buy-button').css('background-position-x', -1 * animationBgPosition);
-                frame--;
-                animationBgPosition += dim;
-            }, (animationDuration / numOfFrames))
+            $rootScope.runAnimation('.pet-buy-button', 1700, 48, $scope.buttonHeight, function () {
+                $location.path('/shop/' + $scope.pet_id);
+            });
         }
 
-        $scope.animateAdoptionButton = function (callback) {
-            $timeout(function () {
-                $scope.showAdoptionAnimation = true;
-                $('.pet-adopted-button').addClass('animated fadeIn');
-
-                //frame dimension 423x633
-                var ar = 423/633;
-                var ww = $scope.windowWidth - 80;
-                var wh = $scope.windowHeight - 80;
-                var wr = ww/wh;
-                if (ar < wr){
-                    //match height
-                    $scope.adoptAnimationHeight = wh;
-                    $scope.adoptAnimationWidth = parseInt(wh * ar);
-                    $scope.adoptAnimationHeight = ww / ar;
-                }else{
-                    //match width
-                    $scope.adoptAnimationWidth = ww;
-                    $scope.adoptAnimationHeight = ww / ar;
-                }
-
-                var animationDuration = 4500;
-                var numOfFrames = 70;
-                var frame = numOfFrames;
-                var dim = $scope.adoptAnimationWidth;
-                var animationBgPosition = 0;
-                $('.pet-adopted-button').css({
-                    'background-size':($scope.adoptAnimationWidth * numOfFrames) + 'px auto',
-                    'width': $scope.adoptAnimationWidth + 'px',
-                    'height': $scope.adoptAnimationHeight + 'px'
-                });
-                $timeout(function () {
-                    var animationInterval = $interval(function () {
-                        if (frame == 0) {
-                            $interval.cancel(animationInterval);
-                            $('.pet-adopted-button').removeClass('fadeIn').addClass('fadeOut');
-                            $timeout(function () {
-                                $scope.showAdoptionAnimation = false;
-                                callback();
-                            }, 1000);
-                            return;
-                        }
-                        $('.pet-adopted-button').css('background-position-x', -1 * animationBgPosition);
-                        frame--;
-                        animationBgPosition += dim;
-                    }, (animationDuration / numOfFrames))
-                }, 2500);
-            })
+        $scope.shareClicked = function () {
+            if (!$scope.showButton) return;
+            $rootScope.runAnimation('.pet-share-button', 1000, 25, $scope.buttonHeight, function () {
+                $scope.fbShare(
+                    $scope.pet_link,
+                    $scope.pet.media.image,
+                        'נעים מאוד להכיר, אני ' + $scope.pet.name,
+                    'תמיד רצית לאמץ כלב ולא יכולת בגלל 1042 סיבות? מצאנו דרך שתוכלו לעזור, להציל חיים או לפחות לעשות אותם קצת יותר קלים עבורם. בואו תראו.',
+                    'תנו לי חטיף',
+                    function () {
+                    }
+                )
+            });
         }
 
-        $scope.animateShareButton = function () {
+        $scope.likeClicked = function () {
             if (!$scope.showButton) return;
-            var animationDuration = 1000;
-            var numOfFrames = 25;
-            var frame = numOfFrames;
-            var dim = $scope.buttonHeight;
-            var animationBgPosition = 0;
-            var animationInterval = $interval(function () {
-                if (frame == 0) {
-                    $interval.cancel(animationInterval);
-                    $timeout(function () {
-                        $scope.share();
-                        $('.pet-share-button').css('background-position-x', 0);
-                    }, 500);
-                    return;
-                }
-                $('.pet-share-button').css('background-position-x', -1 * animationBgPosition);
-                frame--;
-                animationBgPosition += dim;
-            }, (animationDuration / numOfFrames))
+            $rootScope.runAnimation('.pet-like-button', 1000, 25, $scope.buttonHeight, function () {
+                $scope.fbShare(
+                    $scope.pet_link,
+                    $scope.pet.media.image,
+                    $scope.pet.name + ' הזה הרס אותי עכשיו ',
+                    'איזה יופי של סרטונים, למות :)',
+                    'תראו אותי',
+                    function () {
+                    }
+                )
+            });
         }
 
-        $scope.animateLikeButton = function () {
+        $scope.adoptClicked = function () {
             if (!$scope.showButton) return;
-            var animationDuration = 1000;
-            var numOfFrames = 25; //34;
-            var frame = numOfFrames;
-            var dim = $scope.buttonHeight;
-            var animationBgPosition = 0;
-            var animationInterval = $interval(function () {
-                if (frame == 0) {
-                    $interval.cancel(animationInterval);
-                    $timeout(function () {
-                        $scope.like();
-                        $('.pet-like-button').css('background-position-x', 0);
-                    }, 500);
-                    return;
-                }
-                $('.pet-like-button').css('background-position-x', -1 * animationBgPosition);
-                frame--;
-                animationBgPosition += dim;
-            }, (animationDuration / numOfFrames))
-        }
-
-        $scope.animateAdoptButton = function () {
-            if (!$scope.showButton) return;
-            $scope.animatingAdopt = false;
-            var animationDuration = 1700;
-            var numOfFrames = 34;
-            var frame = numOfFrames;
-            var dim = $scope.buttonHeight;
-            var animationBgPosition = 0;
             $('.pet-adopt-button-gif').hide();
             $('.pet-adopt-button').show();
-            var animationInterval = $interval(function () {
-                if (frame == 0) {
-                    $interval.cancel(animationInterval);
-                    $timeout(function () {
-                        $scope.adopt();
-                    }, 100);
-                    $timeout(function () {
-                        $('.pet-adopt-button-gif').show();
-                        $('.pet-adopt-button').hide();
-                        $('.pet-adopt-button').css('background-position-x', 0);
-                    }, 1000);
-                    return;
-                }
-                $('.pet-adopt-button').css('background-position-x', -1 * animationBgPosition);
-                frame--;
-                animationBgPosition += dim;
-            }, (animationDuration / numOfFrames))
+            $rootScope.runAnimation('.pet-adopt-button', 1700, 34, $scope.buttonHeight, function () {
+                $location.path('/shop/' + $scope.pet_id);
+                $('.pet-adopt-button-gif').show();
+                $('.pet-adopt-button').hide();
+            });
         }
 
-        $scope.flip = function () {
-            $('.flipper').toggleClass('flip');
-        }
+        $scope.gotoKennel = function () {
+            var url = $scope.trustSrc($scope.pet.kennel.link);
+            if ($scope.isIphone) {
+                window.open(url, '_system');
+            } else {
+                navigator.app.loadUrl(url, {openExternal: true});
+            }
 
-        //calc next friday at 12:00
-        $scope.nextFriday = moment().hour(0).minute(0).second(0).add('days', 2).weekday(5).add('hours', 12).format();
+        }
 
         init();
 

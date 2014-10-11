@@ -7750,20 +7750,25 @@ body, html {
   max-width: 600px;
   position: relative;
   margin: 0 auto;
-  animation-duration: 1.5s !important;
-  -webkit-animation-duration: 1.5s !important; }
-  .container.ng-leave {
-    animation: bounceOutLeft;
-    -webkit-animation: bounceOutLeft;
-    position: absolute !important;
-    top: 0 !important;
-    z-index: 999; }
+  animation-duration: 1.2s !important;
+  -webkit-animation-duration: 1.2s !important; }
+  .container:first-of-type {
+    display: block !important; }
+  .container:last-of-type {
+    display: none; }
   .container.ng-enter {
     animation: fadeIn;
     -webkit-animation: fadeIn;
     position: absolute !important;
     top: 0 !important;
     z-index: 888; }
+  .container.ng-leave {
+    animation: bounceOutLeft;
+    -webkit-animation: bounceOutLeft;
+    position: absolute !important;
+    top: 0 !important;
+    z-index: 999;
+    display: block; }
   .container.reverse.ng-enter {
     position: absolute !important;
     top: 0 !important;
@@ -7775,7 +7780,8 @@ body, html {
     -webkit-animation: fadeOut;
     position: absolute !important;
     top: 0 !important;
-    z-index: 888; }
+    z-index: 888;
+    display: block; }
 
 .zoom.ng-enter {
   -webkit-animation: zoomIn 0.5s both ease-in;
@@ -7980,7 +7986,7 @@ button, a.button, input[type="submit"] {
   to {
     opacity: 0; } }
 
-.platform-ios .container {
+.platform-ios .container-inner {
   padding-top: 70px; }
 .platform-ios .navbar {
   height: 70px; }
@@ -7988,9 +7994,9 @@ button, a.button, input[type="submit"] {
     height: 70px;
     padding-top: 20px; }
 
-.container {
+.container-inner {
   padding-top: 50px; }
-  .container.welcome {
+  .container-inner.welcome {
     padding-top: 0; }
 
 body.welcome .navbar {
@@ -8027,8 +8033,13 @@ body.welcome .navbar {
           margin-right: 0px; }
         .navbar .navbar-inner .navbar-back i.fa-bars {
           font-size: 30px;
-          margin-left: -31px;
-          margin-right: 9px; }
+          margin-left: -24px;
+          margin-right: 2px;
+          -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease; }
+          .navbar .navbar-inner .navbar-back i.fa-bars.open {
+            margin-left: -31px;
+            margin-right: 9px; }
       .navbar .navbar-inner .navbar-back .navbar-logo {
         float: left;
         background: url('../images/logo.png') no-repeat center center;
@@ -8061,9 +8072,10 @@ body.welcome .navbar {
 /* Orientation-dependent styles for the content of the menu */
 .cbp-spmenu-vertical {
   width: 250px;
+  padding-top: 50px;
   height: 100%;
   top: 0;
-  z-index: 9999999;
+  z-index: 9990;
   overflow-y: auto;
   overflow-x: hidden;
   border-left: 1px solid #333;
@@ -8158,7 +8170,7 @@ body.pushed .body-cover {
   height: 100%;
   background: rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  z-index: 9999999;
+  z-index: 9980;
   top: 0;
   left: 0; }
 
@@ -8515,6 +8527,8 @@ body.pushed .body-cover {
       padding-top: 50px;
       top: 0;
       overflow: auto; }
+      .container.pet .cart-wrapper.up.iPhone {
+        padding-top: 70px; }
     .container.pet .cart-wrapper .cart-items {
       float: right;
       line-height: 50px; }
@@ -8547,11 +8561,17 @@ body.pushed .body-cover {
       float: left;
       line-height: 50px; }
       .container.pet .cart-wrapper .cart-timer .pet-clock {
-        font-size: 32px;
+        font-size: 24px;
         color: #fefefe;
         float: left;
-        line-height: 50px;
-        margin: 0 12px; }
+        line-height: 17px;
+        width: 23px;
+        height: 22px;
+        border: 2px solid #fefefe;
+        padding: inherit;
+        text-align: center;
+        border-radius: 4px;
+        margin: 14px; }
       .container.pet .cart-wrapper .cart-timer .pet-timer {
         font-size: 20px;
         color: #fefefe;
@@ -8590,6 +8610,16 @@ body.pushed .body-cover {
         border-top-right-radius: 3px; }
         .container .pets-pic .pet .pet-inner .pet-pic .pet-video {
           width: 100%; }
+        .container .pets-pic .pet .pet-inner .pet-pic .pet-pic-loading {
+          position: absolute;
+          left: 0;
+          top: 0px;
+          width: 50px;
+          height: 50px;
+          line-height: 50px;
+          text-align: center;
+          font-size: 24px;
+          color: white; }
         .container .pets-pic .pet .pet-inner .pet-pic .pet-pic-play {
           line-height: inherit;
           width: 100%;
@@ -8606,6 +8636,28 @@ body.pushed .body-cover {
           .container .pets-pic .pet .pet-inner .pet-pic .pet-pic-play .pet-pic-play-circle {
             color: rgba(0, 0, 0, 0.6);
             margin-left: -4px; }
+      .container .pets-pic .pet .pet-inner.pet-kennel-info {
+        background: white;
+        text-align: right;
+        direction: rtl;
+        position: relative; }
+        .container .pets-pic .pet .pet-inner.pet-kennel-info .pet-kennel-info-title {
+          font-size: 20px;
+          font-weight: bold;
+          padding: 10px;
+          line-height: 30px; }
+        .container .pets-pic .pet .pet-inner.pet-kennel-info .pet-kennel-info-body {
+          font-size: 18px;
+          font-weight: normal;
+          padding: 10px;
+          line-height: 26px; }
+        .container .pets-pic .pet .pet-inner.pet-kennel-info .pet-kennel-info-link {
+          display: block;
+          font-size: 16px;
+          font-weight: normal;
+          padding: 10px;
+          color: #3772bc;
+          text-decoration: none; }
       .container .pets-pic .pet .pet-inner .pet-bar {
         height: 40px;
         background: #fefefe;

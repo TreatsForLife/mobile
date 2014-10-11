@@ -15,7 +15,8 @@
     "angular-timer": "~1.1.6",
     "momentjs": "~2.7.0",
     "angular-touch": "~1.2.20",
-    "angular-seo": "*"
+    "angular-seo": "*",
+    "fastclick": "~1.0.3"
   },
   "devDependencies": {
     "angular-mocks": "1.2.6",

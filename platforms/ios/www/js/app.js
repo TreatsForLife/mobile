@@ -10,7 +10,6 @@ angular.module('clientApp', ['ionic',
         'ngSanitize',
         'ngAnimate',
         'ngTouch',
-        'timer'
     ])
 
     .run(function ($ionicPlatform) {
@@ -27,12 +26,14 @@ angular.module('clientApp', ['ionic',
         });
     })
 
-    .config(function ($stateProvider, $urlRouterProvider) {
+    .config(function ($stateProvider, $urlRouterProvider, $compileProvider) {
 
         // Ionic uses AngularUI Router which uses the concept of states
         // Learn more here: https://github.com/angular-ui/ui-router
         // Set up the various states which the app can be in.
         // Each state's controller can be found in controllers.js
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|geo|file):/);
+
         $stateProvider
 
             // setup an abstract state for the tabs directive
@@ -53,8 +54,8 @@ angular.module('clientApp', ['ionic',
             })
             .state('adopt', {
                 url: "/pet/:id/:adopt",
-                templateUrl: 'templates/pet.html',
-                controller: 'PetCtrl'
+                templateUrl: 'templates/thanks.html',
+                controller: 'ThanksCtrl'
             })
             .state('shop', {
                 url: "/shop/:id",

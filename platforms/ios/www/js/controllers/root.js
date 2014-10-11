@@ -5,14 +5,25 @@ angular.module('clientApp')
 
         console.log('APP VERSION: 1.0');
 
+        //Global scope vars
         $rootScope.isWeb = $(window).width() > 700;
         $rootScope.isIphone = (navigator.userAgent.indexOf('iPhone')>0);
 
+
+        //get localstorage data
         console.log('Getting data from cookies', localStorage);
         $rootScope.fb_id = localStorage.fb_id;
         $rootScope.user_id = localStorage.user_id;
         $rootScope.user_pet_id = localStorage.user_pet_id;
 
+
+        //General utils functions
+        $rootScope.trustSrc = function (src) {
+            return $sce.trustAsResourceUrl(src);
+        }
+        $rootScope.reloadApp = function(){
+            top.location.reload();
+        }
         $rootScope.getUser = function () {
             Users.query({id: $rootScope.user_id}, function (user) {
                 if (user._id) {
@@ -39,65 +50,73 @@ angular.module('clientApp')
                 $location.path('/welcome');
             });
         }
-
-        $scope.logoAnimationComplete = false;
-        $scope.animateLogo = function () {
-            var animationDuration = 1700;
-            var numOfFrames = 48;
-            var frame = numOfFrames;
-            var dim = 266;
+        $rootScope.showDialog = function(dialog){
+            $scope.dialogShown = true;
+            $timeout(function () {
+                $scope.$broadcast('showTipDialog', dialog);
+                $scope.$emit('showTipDialog', dialog);
+            }, 0);
+        }
+        $rootScope.closeDialog = function(dialog){
+            $scope.dialogShown = false;
+            $timeout(function () {
+                $scope.$broadcast('closeTipDialog', dialog);
+                $scope.$emit('closeTipDialog', dialog);
+            }, 0);
+        }
+        $rootScope.fbShare = function (link, picture, name, caption, action, callback) {
+            facebookConnectPlugin.showDialog({
+                method: 'feed',
+                app_id: Consts.fb_app_id,
+                display: ($scope.isWeb ? 'popup' : 'touch'),
+                link: link,
+                picture: picture,
+                name: name,
+                caption: caption,
+                description: ' ',
+                actions: [
+                    {name: action, link: link}
+                ]
+            }, function (response) {
+                if (angular.isFunction(callback)) callback(response);
+            });
+        }
+        $rootScope.runAnimation = function (selector, duration, frames, dim, callback) {
+            $(selector).css('background-size', (dim * frames) + 'px auto');
+            var frame = frames;
             var animationBgPosition = 0;
-            $('.not-online-logo-animation').css('background-size', ($scope.logoWidth * numOfFrames) + 'px auto');
             var animationInterval = $interval(function () {
-                if (frame == 0) {
+                if (frame == 0 && (angular.isFunction(callback))) {
                     $interval.cancel(animationInterval);
-                    $timeout(function(){
-                        $scope.logoAnimationComplete = true;
-                        $rootScope.notOnlineAnimationCompleted = true;
-                    },500);
+                    $timeout(function() {
+                        callback();
+                    });
+                    $timeout(function() {
+                        $(selector).css('background-position-x', 0);
+                    }, 1000);
                     return;
                 }
-                $('.not-online-logo-animation').css('background-position-x', -1 * animationBgPosition);
+                $(selector).css('background-position-x', -1 * animationBgPosition);
                 frame--;
                 animationBgPosition += dim;
-            }, (animationDuration / numOfFrames))
-        }
-        $timeout(function(){
-            $scope.animateLogo();
-        }, 0);
-        function onOnline(){
-            if ($rootScope.online == false){
-                $rootScope.online = true;
-                if (!$rootScope.user && $rootScope.user_id) {
-                    console.log('No user but user_id cookie is found - fetching from DB');
-                    $timeout(function () {
-                        $rootScope.getUser();
-                    })
-                } else if (!$rootScope.user_id) {
-                    console.log('No user_id cookies found - redirecting to welcome screen', localStorage);
-                    localStorage.setItem("returnUrl", $location.path())
-                    $location.path('/welcome');
-                }
-            }
+            }, (duration / frames))
         }
 
-        $rootScope.trustSrc = function (src) {
-            return $sce.trustAsResourceUrl(src);
-        }
 
-        $rootScope.reloadApp = function(){
-            top.location.reload();
-        }
-
-        function onOffline(){
-            $rootScope.online = false;
-        }
-
+        //history management
         $scope.history = [];
         $scope.lastUrl = '';
         $rootScope.currentPage = '';
         $rootScope.currentPet = '';
+        var backKeyDown = false;
+        function onBackKeyDown() {
+            // Handle the back button
+            $rootScope.goBack();
+            backKeyDown = true;
 
+            //dirty trick to disable back button (nothing else seems to work)
+            throw "ignore"
+        }
         $rootScope.getBackPage = function(){
             var path = '';
             switch ($rootScope.currentPage){
@@ -116,17 +135,6 @@ angular.module('clientApp')
             }
             return path;
         }
-
-        var backKeyDown = false;
-        function onBackKeyDown() {
-            // Handle the back button
-            $rootScope.goBack();
-            backKeyDown = true;
-
-            //dirty trick to disable back button (nothing else seems to work)
-            throw "ignore"
-        }
-
         $scope.shouldCloseApp = false;
         $rootScope.goBack = function () {
             if ($scope.cartIsUp || $scope.pushMenuOpen || $scope.dialogShown){
@@ -165,21 +173,9 @@ angular.module('clientApp')
             }
             backKeyDown = false;
         }
-/*
-        $scope.playVideo = function (src) {
-            $timeout(function () {
-                $scope.$broadcast('playVideoSrc', src);
-            }, 0);
-        }
-        $scope.setVideo = function (src) {
-            $timeout(function () {
-                $scope.$broadcast('setVideoSrc', src);
-            }, 0);
-        }
-*/
 
 
-
+        //dialogs and push menu
         $scope.pushMenuOpen = false;
         $rootScope.openPushMenu = function () {
             if ($scope.pushMenuOpen) return;
@@ -193,55 +189,50 @@ angular.module('clientApp')
             $('#menuRight').removeClass('cbp-spmenu-open');
             $scope.pushMenuOpen = false;
         };
-
         $rootScope.$on('$routeUpdate', function(){
             if (!$location.search()['dialog']){
                 $rootScope.closeDialog();
             }
         });
-
-        $rootScope.showDialog = function(dialog){
-            $scope.dialogShown = true;
-            $timeout(function () {
-                $scope.$broadcast('showTipDialog', dialog);
-                $scope.$emit('showTipDialog', dialog);
-            }, 0);
-        }
-
-        $rootScope.closeDialog = function(dialog){
-            $scope.dialogShown = false;
-            $timeout(function () {
-                $scope.$broadcast('closeTipDialog', dialog);
-                $scope.$emit('closeTipDialog', dialog);
-            }, 0);
-        }
-
-
-        $timeout(function () {
-            $scope.canAnimate = true;
-            $rootScope.windowHeight = $(window).height();
-            $rootScope.windowWidth = $(window).width();
-            $rootScope.containerWidth = $('.container').width();
-            $rootScope.picHeight = $('.container').width() * 0.6;
-            document.addEventListener("deviceready", cordovaReady, false);
-        }, 5);
-
-        $timeout(function () {
-            window.scrollTo(0, 1);
-        }, 1000);
-
         $scope.$on("$stateChangeStart", function (scope, next, current) {
+            console.log('Start changing route from: ' + current + ' to: ' + next);
             $scope.cartIsUp = false;
             $rootScope.closePushMenu();
             $rootScope.closeDialog();
         });
+        $scope.$on("$stateChangeSuccess", function (scope, next, current) {
+            console.log('Changed route from: ' + current + ' to: ' + next);
+        });
 
-        //check internet connection (start online, ping api server - if success stay online. in any case after 3 seconds, go offline
-        checkNetworkStatus();
-        onOffline();
-        var offlineInterval = $interval(function(){
-            checkNetworkStatus();
-        }, 5000);
+
+        //loading screen
+        $scope.logoAnimationComplete = false;
+        $scope.animateSplashScreen = function () {
+            $rootScope.runAnimation('.not-online-logo-animation', 1700, 48, 266, function(){
+                $timeout(function(){
+                    $scope.logoAnimationComplete = true;
+                    $rootScope.notOnlineAnimationCompleted = true;
+                }, 1000);
+            });
+        }
+        function onOnline(){
+            if ($rootScope.online == false){
+                $rootScope.online = true;
+                if (!$rootScope.user && $rootScope.user_id) {
+                    console.log('No user but user_id cookie is found - fetching from DB');
+                    $timeout(function () {
+                        $rootScope.getUser();
+                    })
+                } else if (!$rootScope.user_id) {
+                    console.log('No user_id cookies found - redirecting to welcome screen', localStorage);
+                    localStorage.setItem("returnUrl", $location.path())
+                    $location.path('/welcome');
+                }
+            }
+        }
+        function onOffline(){
+            $rootScope.online = false;
+        }
         function checkNetworkStatus(){
             $http.get(Consts.api_root + 'ping').success(function(){
                 $interval.cancel(offlineInterval);
@@ -250,10 +241,38 @@ angular.module('clientApp')
                 onOffline();
             });
         }
+        checkNetworkStatus();
+        onOffline();
+        var offlineInterval = $interval(function(){
+            checkNetworkStatus();
+        }, 5000);
+        $timeout(function(){
+            $scope.animateSplashScreen();
+        }, 0);
 
+
+        //app init
         function cordovaReady(){
             document.addEventListener("backbutton", onBackKeyDown, false);
             document.addEventListener("online", onOnline, false);
             document.addEventListener("offline", onOffline, false);
+
+            initPushNotifications();
         }
+        function init(){
+            $scope.canAnimate = true;
+            $rootScope.windowHeight = $(window).height();
+            $rootScope.windowWidth = $(window).width();
+            $rootScope.containerWidth = $('.container').width();
+            $rootScope.picHeight = $('.container').width() * 0.6;
+            document.addEventListener("deviceready", cordovaReady, false);
+            FastClick.attach(document.body);
+            $timeout(function () {
+                window.scrollTo(0, 1);
+            }, 1000);
+        }
+        $timeout(function () {
+            init();
+        }, 5);
+
     }]);

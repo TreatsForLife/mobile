@@ -22,6 +22,9 @@
     <feature name="PayPalMobile">
         <param name="android-package" value="com.paypal.cordova.sdk.PayPalMobileCordovaPlugin" />
     </feature>
+    <feature name="PushPlugin">
+        <param name="android-package" value="com.plugin.gcm.PushPlugin" />
+    </feature>
     <name>TreatsForLife</name>
     <description>
     ברוכים הבאים לפרויקט "חטיפים לחיים"

@@ -20,6 +20,13 @@ module.exports = [
         "clobbers": [
             "window.facebookConnectPlugin"
         ]
+    },
+    {
+        "file": "plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js",
+        "id": "com.phonegap.plugins.PushPlugin.PushNotification",
+        "clobbers": [
+            "PushNotification"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -27,7 +34,8 @@ module.exports.metadata =
 {
     "com.ionic.keyboard": "1.0.2",
     "com.paypal.cordova.mobilesdk": "2.0.2",
-    "com.phonegap.plugins.facebookconnect": "0.7.0"
+    "com.phonegap.plugins.facebookconnect": "0.7.0",
+    "com.phonegap.plugins.PushPlugin": "2.4.0"
 }
 // BOTTOM OF METADATA
 });

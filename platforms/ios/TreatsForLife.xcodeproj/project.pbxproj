@@ -57,6 +57,7 @@
 		E31CC7C919E88CA300105181 /* icon-57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E31CC7C819E88CA300105181 /* icon-57@2x.png */; };
 		E31CC7CB19E88DED00105181 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E31CC7CA19E88DED00105181 /* icon.png */; };
 		E34D50DC19ADC7BF00C9E2B6 /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E34D50D419ADC7BF00C9E2B6 /* libPayPalMobile.a */; };
+		23107680F58C4C71A2CBDE76 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2E01E17E4744DC9C982463 /* CDVInAppBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,8 @@
 		F163F2404CC7480391613FDA /* libc++.dylib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = TreatsForLife/config.xml; sourceTree = "<group>"; };
 		FA8C7A2D6D3A4AE89A02A1E0 /* UIWebViewExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIWebViewExtension.h; path = com.ionic.keyboard/UIWebViewExtension.h; sourceTree = "<group>"; };
+		6B2E01E17E4744DC9C982463 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVInAppBrowser.m"; path = "org.apache.cordova.inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		205B8639C172431B95B0A037 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVInAppBrowser.h"; path = "org.apache.cordova.inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +311,8 @@
 				6B7609A98BBC4B4AA00AA36B /* PushPlugin.m */,
 				0AA8653AD7484D54B5A65271 /* AppDelegate+notification.h */,
 				08BE9F64EF894FA38264C797 /* PushPlugin.h */,
+				6B2E01E17E4744DC9C982463 /* CDVInAppBrowser.m */,
+				205B8639C172431B95B0A037 /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
 			path = TreatsForLife/Plugins;
@@ -528,6 +533,7 @@
 				83B18D171E3D4D269B3E1FB5 /* FacebookConnectPlugin.m in Sources */,
 				836D6254EF634154B4B68316 /* AppDelegate+notification.m in Sources */,
 				03A157BC466D41F39D698CE7 /* PushPlugin.m in Sources */,
+				23107680F58C4C71A2CBDE76 /* CDVInAppBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

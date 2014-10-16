@@ -27,6 +27,13 @@ module.exports = [
         "clobbers": [
             "PushNotification"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
+        "id": "org.apache.cordova.inappbrowser.inappbrowser",
+        "clobbers": [
+            "window.open"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -35,7 +42,8 @@ module.exports.metadata =
     "com.ionic.keyboard": "1.0.2",
     "com.paypal.cordova.mobilesdk": "2.0.2",
     "com.phonegap.plugins.facebookconnect": "0.7.0",
-    "com.phonegap.plugins.PushPlugin": "2.4.0"
+    "com.phonegap.plugins.PushPlugin": "2.4.0",
+    "org.apache.cordova.inappbrowser": "0.5.2"
 }
 // BOTTOM OF METADATA
 });

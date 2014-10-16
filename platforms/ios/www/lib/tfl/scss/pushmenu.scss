@@ -116,15 +116,16 @@
         color: white;
       }
     }
-    &.push-fb {
-      a,i {
-        color: #3b5998;
-        &:active, &:hover, &.active{
-          background-color: #3b5998;
-          color: white;
-        }
+    &.push-fb a {
+      color: #3b5998;
+      &:active, &:hover, &.active{
+        background-color: #3b5998;
+        color: white;
       }
-    }
+      i {
+        color: inherit;
+      }
+   }
 
   }
 }

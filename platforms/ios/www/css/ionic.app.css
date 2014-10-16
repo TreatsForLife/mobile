@@ -8144,9 +8144,9 @@ body.welcome .navbar {
   .white-links li.push-lonely a:active, .white-links li.push-lonely a:hover, .white-links li.push-lonely a.active {
     background-color: #DF2B46;
     color: white; }
-.white-links li.push-fb a {
+.white-links li.push-fb a, .white-links li.push-fb i {
   color: #3b5998; }
-  .white-links li.push-fb a:active, .white-links li.push-fb a:hover, .white-links li.push-fb a.active {
+  .white-links li.push-fb a:active, .white-links li.push-fb a:hover, .white-links li.push-fb a.active, .white-links li.push-fb i:active, .white-links li.push-fb i:hover, .white-links li.push-fb i.active {
     background-color: #3b5998;
     color: white; }
 

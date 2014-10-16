@@ -98,7 +98,7 @@ angular.module('clientApp')
                         window.videosSwipe = new Swipe(document.getElementById('slider'), {
                             startSlide: 1,
                             continuous: true,
-                            disableScroll: true,
+                            disableScroll: false,
                             stopPropagation: false,
                             callback: function (index, elem) {
                             },

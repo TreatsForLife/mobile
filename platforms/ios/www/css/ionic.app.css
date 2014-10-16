@@ -8640,7 +8640,8 @@ body.pushed .body-cover {
         background: white;
         text-align: right;
         direction: rtl;
-        position: relative; }
+        position: relative;
+        overflow: scroll; }
         .container .pets-pic .pet .pet-inner.pet-kennel-info .pet-kennel-info-title {
           font-size: 20px;
           font-weight: bold;

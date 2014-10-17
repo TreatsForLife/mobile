@@ -230,6 +230,7 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/index.html \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/README.md \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/controllers \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/PushNotification.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/services \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/controllers.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/directives \

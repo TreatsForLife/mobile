@@ -48,7 +48,7 @@ module.exports.metadata =
 {
     "com.ionic.keyboard": "1.0.2",
     "org.apache.cordova.console": "0.2.9",
-    "org.apache.cordova.device": "0.2.10",
+    "org.apache.cordova.device": "0.2.12",
     "com.phonegap.plugins.facebookconnect": "0.7.0",
     "com.paypal.cordova.mobilesdk": "2.0.2",
     "com.phonegap.plugins.PushPlugin": "2.4.0",

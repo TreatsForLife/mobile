@@ -267,6 +267,10 @@ angular.module('clientApp')
             $scope.animateSplashScreen();
         }, 0);
 
+        window.handlePushRegistration = function(platform, push_token){
+            var res = Users.update({_id:$scope.user_id, platform: platform, push_token: push_token});
+            console.log("Update push data", res);
+        }
 
         //app init
         function cordovaReady(){

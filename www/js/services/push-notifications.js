@@ -3,7 +3,7 @@ var pushNotification;
 function initPushNotifications() {
     pushNotification = window.plugins.pushNotification;
 
-    console.log('<li>registering ' + device.platform + '</li>');
+    console.log('registering ' + device.platform);
     if (device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos") {
         pushNotification.register(
             PushPluginSuccessHandler,
@@ -27,7 +27,7 @@ function initPushNotifications() {
             });
     } else {
         pushNotification.register(
-            PushPluginSuccessHandler,
+            tokenHandler,
             PushPluginErrorHandler,
             {
                 "badge": "true",
@@ -59,17 +59,17 @@ function onNotificationAPN (event) {
 
 // Android and Amazon Fire OS
 function onNotification(e) {
-    console.log('<li>EVENT -> RECEIVED:' + e.event + '</li>');
+    console.log('EVENT -> RECEIVED:' + e.event);
 
     switch( e.event )
     {
         case 'registered':
             if ( e.regid.length > 0 )
             {
-                console.log('<li>REGISTERED -> REGID:' + e.regid + "</li>");
+                console.log('REGISTERED -> REGID:' + e.regid);
                 // Your GCM push server needs to know the regID before it can push to this device
                 // here is where you might want to send it the regID for later use.
-                console.log("regID = " + e.regid);
+                window.handlePushRegistration('android', e.regid);
             }
             break;
 
@@ -78,7 +78,7 @@ function onNotification(e) {
             // you might want to play a sound to get the user's attention, throw up a dialog, etc.
             if ( e.foreground )
             {
-                console.log('<li>--INLINE NOTIFICATION--' + '</li>');
+                console.log('--INLINE NOTIFICATION--');
 
                 // on Android soundname is outside the payload.
                 // On Amazon FireOS all custom attributes are contained within payload
@@ -91,29 +91,35 @@ function onNotification(e) {
             {  // otherwise we were launched because the user touched a notification in the notification tray.
                 if ( e.coldstart )
                 {
-                    console.log('<li>--COLDSTART NOTIFICATION--' + '</li>');
+                    console.log('--COLDSTART NOTIFICATION--');
                 }
                 else
                 {
-                    console.log('<li>--BACKGROUND NOTIFICATION--' + '</li>');
+                    console.log('--BACKGROUND NOTIFICATION--');
                 }
             }
 
-            console.log('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
+            console.log('MESSAGE -> MSG: ' + e.payload.message);
             //Only works for GCM
-            console.log('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+            console.log('MESSAGE -> MSGCNT: ' + e.payload.msgcnt);
             //Only works on Amazon Fire OS
-            //$status.append('<li>MESSAGE -> TIME: ' + e.payload.timeStamp + '</li>');
+            //$status.append('<li>MESSAGE -> TIME: ' + e.payload.timeStamp);
             break;
 
         case 'error':
-            console.log('<li>ERROR -> MSG:' + e.msg + '</li>');
+            console.log('ERROR -> MSG:' + e.msg);
             break;
 
         default:
-            console.log('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
+            console.log('EVENT -> Unknown, an event was received and we do not know what it is</li>');
             break;
     }
+}
+
+function tokenHandler (result) {
+    // Your iOS push server needs to know the token before it can push to this device
+    // here is where you might want to send it the token for later use.
+    window.handlePushRegistration('ios', result);
 }
 
 function PushPluginSuccessHandler (result) {

@@ -41,7 +41,7 @@ angular.module('clientApp')
                     $scope.picHeight = $scope.windowHeight - ($scope.grassHeight + 62) - 40 - ($scope.showCart ? 50 : 0) - ($scope.isIphone ? 20 : 0);
                 }
 
-                $scope.picHeightPX = $scope.picHeight + 'px';
+                $scope.picHeightPX = Math.min($scope.picHeight, ($scope.windowWidth-20)) + 'px';
                 $scope.infoHeightPX = ($scope.picHeight + 42) + 'px';
                 $scope.grassHeightPX = $scope.grassHeight + 'px';
                 $scope.buttonMarginPX = $scope.buttonMargin + 'px';
@@ -98,7 +98,7 @@ angular.module('clientApp')
                         window.videosSwipe = new Swipe(document.getElementById('slider'), {
                             startSlide: 1,
                             continuous: true,
-                            disableScroll: true,
+                            disableScroll: false,
                             stopPropagation: false,
                             callback: function (index, elem) {
                             },

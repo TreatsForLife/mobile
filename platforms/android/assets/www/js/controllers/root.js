@@ -101,6 +101,16 @@ angular.module('clientApp')
                 animationBgPosition += dim;
             }, (duration / frames))
         }
+        $rootScope.goto = function(link){
+            if (link.indexOf('http')==0){
+                window.open(link + '#phonegap=external', '_system');
+            }else if (link.indexOf('#')==0){
+                location.href = link;
+            }else{
+                $location.path(link);
+            }
+        }
+                             
 
 
         //history management
@@ -111,11 +121,15 @@ angular.module('clientApp')
         var backKeyDown = false;
         function onBackKeyDown() {
             // Handle the back button
-            $rootScope.goBack();
             backKeyDown = true;
+            var preventDefault = $rootScope.goBack();
+            backKeyDown = false;
 
-            //dirty trick to disable back button (nothing else seems to work)
-            throw "ignore"
+            if (preventDefault){
+                //dirty trick to disable back button (nothing else seems to work)
+                throw "ignore"
+            }
+
         }
         $rootScope.getBackPage = function(){
             var path = '';
@@ -141,24 +155,27 @@ angular.module('clientApp')
                 $scope.cartIsUp = false;
                 $rootScope.closePushMenu();
                 $rootScope.closeDialog();
+                return true;
             }else{
                 var goto = $rootScope.getBackPage();
 
                 if (!goto) {
-                    if($scope.shouldCloseApp && backKeyDown){
-                        $scope.shouldCloseApp = false;
+                    if(backKeyDown){
+/*
                         if (navigator.app) {
                             navigator.app.exitApp();
                         }
                         else if (navigator.device) {
                             navigator.device.exitApp();
                         }
+*/
+                        return false;
                     }else{
                         $rootScope.openPushMenu();
                         if (backKeyDown) $scope.shouldCloseApp = true;
+                        return true;
                     }
                 }else{
-                    $scope.shouldCloseApp = false;
                     $timeout.cancel($scope.cancelBack);
                     $timeout(function () {
                         $scope.goingBack = true;
@@ -169,9 +186,9 @@ angular.module('clientApp')
                     $scope.cancelBack = $timeout(function () {
                         $scope.goingBack = false;
                     }, 5000);
+                    return true;
                 }
             }
-            backKeyDown = false;
         }
 
 

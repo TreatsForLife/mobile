@@ -122,7 +122,10 @@
         background-color: #3b5998;
         color: white;
       }
-    }
+      i {
+        color: inherit;
+      }
+   }
 
   }
 }

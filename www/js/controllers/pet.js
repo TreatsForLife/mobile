@@ -231,12 +231,7 @@ angular.module('clientApp')
 
         $scope.gotoKennel = function () {
             var url = $scope.trustSrc($scope.pet.kennel.link);
-            if ($scope.isIphone) {
-                window.open(url, '_system');
-            } else {
-                navigator.app.loadUrl(url, {openExternal: true});
-            }
-
+            window.open(url, '_system');
         }
 
         init();

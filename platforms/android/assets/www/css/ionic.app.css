@@ -8149,6 +8149,8 @@ body.welcome .navbar {
   .white-links li.push-fb a:active, .white-links li.push-fb a:hover, .white-links li.push-fb a.active {
     background-color: #3b5998;
     color: white; }
+  .white-links li.push-fb a i {
+    color: inherit; }
 
 /* Vertical menu that slides from the left or right */
 .cbp-spmenu-right {
@@ -8640,7 +8642,8 @@ body.pushed .body-cover {
         background: white;
         text-align: right;
         direction: rtl;
-        position: relative; }
+        position: relative;
+        overflow: scroll; }
         .container .pets-pic .pet .pet-inner.pet-kennel-info .pet-kennel-info-title {
           font-size: 20px;
           font-weight: bold;

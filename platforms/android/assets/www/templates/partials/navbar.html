@@ -1,8 +1,8 @@
 <div class="navbar-inner">
-    <div class="navbar-back" ng-click="goBack();">
-        <i class="fa fa-chevron-left" ng-show="getBackPage()"></i>
-        <i class="fa fa-bars" ng-show="!getBackPage()" ng-class="{open: pushMenuOpen}"></i>
-        <div class="navbar-logo"></div>
+    <div class="navbar-back">
+        <i class="fa fa-chevron-left" ng-show="getBackPage()" ng-click="goBack();"></i>
+        <i class="fa fa-bars" ng-show="!getBackPage()" ng-class="{open: pushMenuOpen}" ng-click="goBack();"></i>
+        <a class="navbar-logo" ng-click="goBack();"></a>
     </div>
     <div class="navbar-name" ng-bind="navbarTitle"></div>
 <!--

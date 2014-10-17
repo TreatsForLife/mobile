@@ -123,7 +123,8 @@ angular.module('clientApp')
             // Handle the back button
             backKeyDown = true;
             var preventDefault = $rootScope.goBack();
-            
+            backKeyDown = false;
+
             if (preventDefault){
                 //dirty trick to disable back button (nothing else seems to work)
                 throw "ignore"
@@ -160,12 +161,14 @@ angular.module('clientApp')
 
                 if (!goto) {
                     if(backKeyDown){
+/*
                         if (navigator.app) {
                             navigator.app.exitApp();
                         }
                         else if (navigator.device) {
                             navigator.device.exitApp();
                         }
+*/
                         return false;
                     }else{
                         $rootScope.openPushMenu();
@@ -186,7 +189,6 @@ angular.module('clientApp')
                     return true;
                 }
             }
-            backKeyDown = false;
         }
 
 

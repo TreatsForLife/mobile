@@ -18,5 +18,9 @@
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="BackupWebStorage"   value="none"/>
   <preference name="StatusBarOverlaysWebView" value="false" />
-  
+ 
+ <feature name="PushPlugin">
+     <param name="ios-package" value="PushPlugin"/>
+ </feature>
+
 </widget>

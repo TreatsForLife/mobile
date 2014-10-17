@@ -38,6 +38,9 @@
     <feature name="InAppBrowser">
         <param name="ios-package" value="CDVInAppBrowser" />
     </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
+    </feature>
     <name>TreatsForLife</name>
     <description>
     ברוכים הבאים לפרויקט "חטיפים לחיים"
@@ -56,4 +59,7 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="StatusBarOverlaysWebView" value="false" />
+    <feature name="PushPlugin">
+        <param name="ios-package" value="PushPlugin" />
+    </feature>
 </widget>

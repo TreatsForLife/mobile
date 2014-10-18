@@ -171,7 +171,7 @@ angular.module('clientApp')
 
                             $scope.user = false;
                             $rootScope.getUser();
-                            
+
                             $scope.pet = false;
 
                             $location.path(path);
@@ -192,9 +192,9 @@ angular.module('clientApp')
                     merchantPrivacyPolicyURL: "http://treatsforlife.org/policy.pdf",
                     merchantUserAgreementURL: "http://treatsforlife.org/agreement.pdf",
                     languageOrLocale: "he",
-                    forceDefaultsInSandbox : true,
-                    sandboxUserPassword: "Treats41M$",
-                    defaultUserEmail: "sandbox@treatsforlife.org"
+//                    forceDefaultsInSandbox : true,
+//                    sandboxUserPassword: "Treats41M$",
+//                    defaultUserEmail: "sandbox@treatsforlife.org"
                 });
                 return config;
             },
@@ -207,7 +207,7 @@ angular.module('clientApp')
             onPayPalMobileInit : function() {
                 // must be called
                 // use PayPalEnvironmentNoNetwork mode to get look and feel of the flow
-                PayPalMobile.prepareToRender("PayPalEnvironmentSandbox", $scope.paypal.configuration(), $scope.paypal.onPrepareRender);
+                PayPalMobile.prepareToRender("PayPalEnvironmentProduction", $scope.paypal.configuration(), $scope.paypal.onPrepareRender);
             },
             onUserCanceled : function(result) {
                 console.log(result);

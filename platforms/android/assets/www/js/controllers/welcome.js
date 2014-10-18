@@ -40,11 +40,11 @@ angular.module('clientApp')
             facebookConnectPlugin.login(['email'], function (response) {
                 console.log('FB login responded', response);
                 if (response.authResponse) {
-                    var fb_id = response.authResponse.userID;
-                    localStorage.setItem('fb_id', fb_id);
-                    console.log('saved fb_id', localStorage['fb_id'], response.authResponse.userID);
                     facebookConnectPlugin.api('/me', ['email'], function (response) {
                         console.log('fetched /me data from facebook - creating user', response);
+                        var fb_id = response.id;
+                        localStorage.setItem('fb_id', fb_id);
+                        console.log('saved fb_id', localStorage['fb_id'], response.id);
                         Users.create({fb_id: fb_id, name: response.name, email: response.email, image: 'https://graph.facebook.com/' + fb_id + '/picture'}, function (user) {
                             console.log('user created', user);
                             storeUserAndRedirect(user);
@@ -59,31 +59,21 @@ angular.module('clientApp')
         $timeout(function () {
             facebookConnectPlugin.getLoginStatus(function (response) {
                 console.log('Auto response arrived from facebook', response);
+                console.log('the user is logged in and has authenticated your app', response.authResponse);
                 if (response.status === 'connected') {
-                    console.log('the user is logged in and has authenticated your app', response.authResponse);
-                    var fb_id = response.authResponse.userID;
-                    localStorage.setItem('fb_id', fb_id);
                     var user = $rootScope.user;
                     if (user) {
                         console.log('User found in scope', $rootScope.user);
                         storeUserAndRedirect(user)
                     } else {
-                        console.log('User not found in scope - fetching from db - by fb_id', response.authResponse.userID);
-                        Users.all({fb_id: response.authResponse.userID}, function (users) {
-                            console.log('Users found in db', users);
-                            user = users[0];
-                            if (user){
-                                console.log('User found in db', user);
+                        facebookConnectPlugin.api('/me', ['email'], function (response) {
+                            console.log('fetched /me data from facebook - creating user', response);
+                            var fb_id = response.id;
+                            localStorage.setItem('fb_id', fb_id);
+                            Users.create({fb_id: fb_id, name: response.name, email: response.email, image: 'https://graph.facebook.com/' + fb_id + '/picture'}, function (user) {
+                                console.log('user created', user);
                                 storeUserAndRedirect(user);
-                            }else{
-                                facebookConnectPlugin.api('/me', ['email'], function (response) {
-                                    console.log('fetched /me data from facebook - creating user', response);
-                                    Users.create({fb_id: fb_id, name: response.name, email: response.email, image: 'https://graph.facebook.com/' + response.username + '/picture'}, function (user) {
-                                        console.log('user created', user);
-                                        storeUserAndRedirect(user);
-                                    });
-                                });
-                            }
+                            });
                         });
                     }
                 } else if (response.status === 'not_authorized') {
@@ -102,11 +92,13 @@ angular.module('clientApp')
             console.log('storeUserAndRedirect called', user);
             if (typeof user == 'undefined' || !user || !user._id) return;
             localStorage.setItem('user_id', user._id);
+            $rootScope.user_id = localStorage.user_id;
             console.log('saved user_id', localStorage['user_id'], user._id);
             $rootScope.user = user;
             console.log('saved user to root scope', $rootScope.user, user);
             if (user.pet) {
                 localStorage.setItem('user_pet_id', user.pet._id);
+                $rootScope.user_pet_id = localStorage.user_pet_id;
                 console.log('saved user_pet_id', localStorage['user_pet_id'], user.pet._id);
             }
             var returnUrl = localStorage.returnUrl;

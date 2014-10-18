@@ -24,6 +24,10 @@ angular.module('clientApp')
                     $scope.getPetId();
                 });
             }
+
+            if ($location.search()['given']){
+                $scope.showDialogIfNeeded('given');
+            }
         }
 
         function calcDims(iterations) {
@@ -194,7 +198,7 @@ angular.module('clientApp')
                 $scope.fbShare(
                     $scope.pet_link,
                     $scope.pet.media.image,
-                        'נעים מאוד להכיר, אני ' + $scope.pet.name,
+                    'נעים מאוד להכיר, אני ' + $scope.pet.name,
                     'תמיד רצית לאמץ כלב ולא יכולת בגלל 1042 סיבות? מצאנו דרך שתוכלו לעזור, להציל חיים או לפחות לעשות אותם קצת יותר קלים עבורם. בואו תראו.',
                     'תנו לי חטיף',
                     function () {

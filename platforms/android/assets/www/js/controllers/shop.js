@@ -21,9 +21,7 @@ angular.module('clientApp')
         var chosenTreats = [];
 
         $timeout(function () {
-            if (!window.localStorage['shop-dialog-shown']) {
-                $scope.showDialog('shop');
-            }
+            $scope.showDialogIfNeeded('shop');
         });
 
         if (!$scope.pet) {
@@ -168,8 +166,14 @@ angular.module('clientApp')
                             }else{
                                 var path = ('/pet/' + $scope.pet._id + '/bought');
                             }
+                            localStorage.setItem('user_pet_id', $scope.pet._id);
+                            $rootScope.user_pet_id = localStorage.user_pet_id;
+
                             $scope.user = false;
+                            $rootScope.getUser();
+                            
                             $scope.pet = false;
+
                             $location.path(path);
                         }
                     });

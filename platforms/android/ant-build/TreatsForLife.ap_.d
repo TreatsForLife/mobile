@@ -268,7 +268,7 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/templates/thanks.html \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/templates/tab-friends.html \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/templates/partials/pets-dialog.html \
-/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/templates/partials/pet-dialog.html \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/templates/partials/given-dialog.html \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/templates/partials/shop-dialog.html \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/templates/partials/adopt-dialog.html \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/templates/partials/pushmenu.html \

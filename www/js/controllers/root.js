@@ -42,6 +42,7 @@ angular.module('clientApp')
                     }
                 } else {
                     console.log('No user in DB - redirecting to welcome screen', localStorage);
+                    localStorage.clear();
                     localStorage.setItem("returnUrl", $location.path())
                     $location.path('/welcome');
                 }
@@ -56,6 +57,14 @@ angular.module('clientApp')
                 $scope.$broadcast('showTipDialog', dialog);
                 $scope.$emit('showTipDialog', dialog);
             }, 0);
+        }
+        $rootScope.showDialogIfNeeded = function(dialog){
+            if (typeof(localStorage.dialogs) == 'undefined') localStorage.dialogs = {};
+            if (typeof(localStorage.dialogs[dialog]) == 'undefined') {
+                localStorage.dialogs[dialog] = 'shown';
+                $rootScope.showDialog(dialog);
+            }
+
         }
         $rootScope.closeDialog = function(dialog){
             $scope.dialogShown = false;

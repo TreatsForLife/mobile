@@ -39,6 +39,7 @@ angular.module('clientApp')
             if ($stateParams['adopt']){
                 if ($stateParams['adopt']=='adopt'){
                     var callback = function(){
+                        $scope.showDialogIfNeeded('adopted');
                         $scope.adopted();
                         $location.path('/pet/' + $scope.pet_id);
                     }

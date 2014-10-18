@@ -21,9 +21,7 @@ angular.module('clientApp')
         var chosenTreats = [];
 
         $timeout(function () {
-            if (!window.localStorage['shop-dialog-shown']) {
-                $scope.showDialog('shop');
-            }
+            $scope.showDialogIfNeeded('shop');
         });
 
         if (!$scope.pet) {

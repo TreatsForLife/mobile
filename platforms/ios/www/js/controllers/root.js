@@ -42,6 +42,7 @@ angular.module('clientApp')
                     }
                 } else {
                     console.log('No user in DB - redirecting to welcome screen', localStorage);
+                    localStorage.clear();
                     localStorage.setItem("returnUrl", $location.path())
                     $location.path('/welcome');
                 }
@@ -57,6 +58,13 @@ angular.module('clientApp')
                 $scope.$emit('showTipDialog', dialog);
             }, 0);
         }
+        $rootScope.showDialogIfNeeded = function(dialog){
+            if (typeof(localStorage[dialog + '-dialog-shown']) == 'undefined') {
+                localStorage[dialog + '-dialog-shown'] = 'shown';
+                $rootScope.showDialog(dialog);
+            }
+
+        }
         $rootScope.closeDialog = function(dialog){
             $scope.dialogShown = false;
             $timeout(function () {
@@ -65,6 +73,9 @@ angular.module('clientApp')
             }, 0);
         }
         $rootScope.fbShare = function (link, picture, name, caption, action, callback) {
+            $scope.showDialog('share-disabled');
+            return true;
+/*
             facebookConnectPlugin.showDialog({
                 method: 'feed',
                 app_id: Consts.fb_app_id,
@@ -80,6 +91,7 @@ angular.module('clientApp')
             }, function (response) {
                 if (angular.isFunction(callback)) callback(response);
             });
+*/
         }
         $rootScope.runAnimation = function (selector, duration, frames, dim, callback) {
             $(selector).css('background-size', (dim * frames) + 'px auto');

@@ -32,10 +32,9 @@ angular.module('clientApp')
 
         $scope.$on('userIsFetched', function () {
             $timeout(function () {
-                if (filter == 'lonely' && !$scope.user.pet && !$scope.petsDialogShown && !localStorage.petsDialogShown) {
+                if (filter == 'lonely' && !$scope.user.pet && !$scope.petsDialogShown) {
                     $scope.petsDialogShown = true;
-                    localStorage.petsDialogShown = true;
-                    $scope.showDialog('pets');
+                    $scope.showDialogIfNeeded('pets');
                 }
             });
         });

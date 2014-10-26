@@ -59,9 +59,8 @@ angular.module('clientApp')
             }, 0);
         }
         $rootScope.showDialogIfNeeded = function(dialog){
-            if (typeof(localStorage.dialogs) == 'undefined') localStorage.dialogs = {};
-            if (typeof(localStorage.dialogs[dialog]) == 'undefined') {
-                localStorage.dialogs[dialog] = 'shown';
+            if (typeof(localStorage[dialog + '-dialog-shown']) == 'undefined') {
+                localStorage[dialog + '-dialog-shown'] = 'shown';
                 $rootScope.showDialog(dialog);
             }
 

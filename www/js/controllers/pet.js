@@ -188,7 +188,11 @@ angular.module('clientApp')
         $scope.buyClicked = function () {
             if (!$scope.showButton) return;
             $rootScope.runAnimation('.pet-buy-button', 1700, 48, $scope.buttonHeight, function () {
-                $location.path('/shop/' + $scope.pet_id);
+                if (window.ionic.Platform.isIOS()){
+                    $scope.goto(Consts.client_root + 'shop/' + $scope.pet_id);
+                }else{
+                    $location.path('/shop/' + $scope.pet_id);
+                }
             });
         }
 

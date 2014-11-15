@@ -113,7 +113,7 @@ angular.module('clientApp')
         }
         $rootScope.goto = function(link){
             if (link.indexOf('http')==0){
-                window.open(link + '#phonegap=external', '_system');
+                window.open(link, '_system');
             }else if (link.indexOf('#')==0){
                 location.href = link;
             }else{

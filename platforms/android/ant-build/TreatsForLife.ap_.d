@@ -232,7 +232,6 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/controllers \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/PushNotification.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/services \
-/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/controllers.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/directives \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/paypal-mobile-js-helper.js \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/js/services.js \

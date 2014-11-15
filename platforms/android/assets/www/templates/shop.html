@@ -8,7 +8,7 @@
 <ul class="shop-wrapper">
     <li class="shop-item-wrapper" ng-repeat="treat in treats | orderBy:'order'" ng-click="cartChanged(treat)">
         <div class="shop-item-image"
-             style="background-image: url({{treat.image.length > 5 ? treat.image : '/images/placeholder.png'}})"></div>
+             ng-style="{'background-image': 'url('+(treat.image.length > 5 ? treat.image : '/images/placeholder.png')+')'}"></div>
         <div class="shop-item-price">₪{{treat.price}}</div>
         <div class="shop-item-name" ng-bind="treat.name"></div>
         <div class="shop-item-desc" ng-bind="treat.desc">אחלה חטיף תענוג גדול!</div>
@@ -18,6 +18,30 @@
         <div class="clear"></div>
     </li>
 </ul>
+
+<form id="payment-form" action="https://www.paypal.com/cgi-bin/webscr#phonegap=external" method="post" target="_blank">
+    <input type="hidden" name="cmd" value="_xclick">
+    <input type="hidden" name="business" value="treatsforlife.org@gmail.com">
+    <input type="hidden" name="lc" value="IL">
+    <input type="hidden" name="item_name" value="{{formattedItemName}}">
+    <input type="hidden" name="item_number" value="{{ItemNumber}}">
+    <input type="hidden" name="amount" value="{{totalToPay}}">
+    <input type="hidden" name="currency_code" value="ILS">
+    <input type="hidden" name="tax_rate" value="0.000">
+    <input type="hidden" name="shipping" value="0.00">
+    <input type="hidden" name="return" value="{{returnUrl}}">
+    <input type="hidden" name="rm" value="2">
+    <input type="hidden" name="cancel_return" value="{{returnUrl}}">
+    <input type="hidden" name="no_shipping" value="1">
+    <input type="hidden" name="lc" value="he_IL">
+    <input type="hidden" name="cpp_logo_image"
+           value="http://www.treatsforlife.org/images/logo.png">
+    <input type="hidden" name="image_url"
+           value="http://www.treatsforlife.org/images/logo.png">
+    <input type="hidden" name="cpp_cart_border_color" value="9aca13">
+    <input type="hidden" name="cbt" value="Thank You! Back to Your Pet!">
+</form>
+
 <div class="shop-checkout-placeholder"></div>
 <div class="shop-checkout" ng-init="initCheckout()">
     <div class="shop-checkout-inner">

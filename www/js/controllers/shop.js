@@ -107,16 +107,32 @@ angular.module('clientApp')
                 }, function(res){
                     $scope.donationsCreated.push(res);
                     if ( $scope.donationsCreated.length >= (chosenTreats.length) ) {
-                        $scope.paypal.buyNow();
-//                        if (fakeIt){
-//                            document.location.href = ($scope.returnUrl + '?fake=1&item_number=' + $scope.ItemNumber);
-//                        }else{
-//                            $('#payment-form').submit();
-//                        }
+                        //$scope.paypal.buyNow();
+                        if (fakeIt){
+                            document.location.href = ($scope.returnUrl + '?fake=1&item_number=' + $scope.ItemNumber);
+                        }else{
+                            $scope.submitPaymentFrom();
+                        }
                     }
                 });
             }
 
+        }
+
+        $scope.submitPaymentFrom = function(){
+            var $form = $('#payment-form');
+            var form = document.getElementById('payment-form');
+            var getParams = [];
+            $form.children('input').each(function(){
+                getParams.push(this.name + '=' + this.value);
+            })
+            $scope.goto(form.action + '?' + getParams.join('&'));
+        }
+
+        function processForm(){
+            debugger;
+            var w = window.open('about:blank','Popup_Window','toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=400,height=300,left = 312,top = 234');
+            this.target = 'Popup_Window';
         }
 
         //PAYPAL-START

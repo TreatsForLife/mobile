@@ -10,29 +10,29 @@
 	<string>TreatsForLife</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>F388A2FF-F4A6-451E-BF2D-B45553C77F3A</key>
-		<string>ssh://github.com/TreatsForLife/mobile.git</string>
+		<key>2D038B3D766CF0D09036BE4C706EDE31E1D6E223</key>
+		<string>github.com:TreatsForLife/mobile.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>platforms/ios/TreatsForLife.xcodeproj/project.xcworkspace</string>
+	<string>platforms/ios/TreatsForLife.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F388A2FF-F4A6-451E-BF2D-B45553C77F3A</key>
+		<key>2D038B3D766CF0D09036BE4C706EDE31E1D6E223</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/TreatsForLife/mobile.git</string>
+	<string>github.com:TreatsForLife/mobile.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F388A2FF-F4A6-451E-BF2D-B45553C77F3A</string>
+	<string>2D038B3D766CF0D09036BE4C706EDE31E1D6E223</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F388A2FF-F4A6-451E-BF2D-B45553C77F3A</string>
+			<string>2D038B3D766CF0D09036BE4C706EDE31E1D6E223</string>
 			<key>IDESourceControlWCCName</key>
 			<string>mobile</string>
 		</dict>

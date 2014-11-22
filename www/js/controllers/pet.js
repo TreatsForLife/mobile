@@ -193,7 +193,7 @@ angular.module('clientApp')
                 $('.pet-buy-button-gif').show();
                 $('.pet-buy-button').hide();
                 if (window.ionic.Platform.isIOS()){
-                    $scope.goto(Consts.client_root + '#/shop/' + $scope.pet_id);
+                    $scope.goto(Consts.client_root + '#/shop/' + $scope.user_id + '/' + $scope.pet_id);
                 }else{
                     $location.path('/shop/' + $scope.pet_id);
                 }

@@ -232,7 +232,7 @@ angular.module('clientApp')
             $('.pet-adopt-button').show();
             $rootScope.runAnimation('.pet-adopt-button', 1700, 34, $scope.buttonHeight, function () {
                 if (window.ionic.Platform.isIOS()){
-                    $scope.goto(Consts.client_root + '#/shop/' + $scope.pet_id);
+                    $scope.goto(Consts.client_root + '#/shop/' + $scope.user_id + '/' + $scope.pet_id);
                 }else{
                     $location.path('/shop/' + $scope.pet_id);
                 }

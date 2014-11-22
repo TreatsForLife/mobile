@@ -268,14 +268,28 @@
     text-align: center;
     margin-top: 0px;
 
+    .pet-buy-button-gif {
+      background-image: url('../images/animated-buy-button.gif');
+      background-repeat: no-repeat;
+      margin: auto;
+      background-position: 0 0;
+      background-size: auto 100%;
+    }
     .pet-buy-button {
-      background-image: url('../images/buy_button_row.png');
+      background-image: url('../images/animated-buy-button.png');
       background-repeat: no-repeat;
       margin: auto;
       background-position: 0 0;
       background-size: auto 100%;
     }
 
+    .pet-share-button-gif {
+      background-image: url('../images/animated-share-button.gif');
+      background-repeat: no-repeat;
+      margin: auto;
+      background-position: 0 0;
+      background-size: auto 100%;
+    }
     .pet-share-button {
       background-image: url('../images/animated-share-button.png');
       background-repeat: no-repeat;
@@ -284,6 +298,13 @@
       background-size: auto 100%;
     }
 
+    .pet-like-button-gif {
+      background-image: url('../images/animated-love-button.gif');
+      margin: auto;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: auto 100%;
+    }
     .pet-like-button {
       background-image: url('../images/animated-love-button.png');
       margin: auto;

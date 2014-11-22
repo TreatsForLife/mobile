@@ -289,11 +289,14 @@
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/woof.mp3 \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/default_owner.png \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/icon.png \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/animated-share-button.gif \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/animated-thankyou.png \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/animated-adopt-button.png \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/animated-buy-button.png \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/buy_button_row.png \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/welcome_logo.png \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/ionic.png \
+/home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/animated-buy-button.gif \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/animated-adopt-button.gif \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/buy_button.gif \
 /home/guy/Projects/TreatsForLife/mobile/platforms/android/assets/www/images/animated-share-button.png \

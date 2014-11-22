@@ -187,7 +187,11 @@ angular.module('clientApp')
 
         $scope.buyClicked = function () {
             if (!$scope.showButton) return;
+            $('.pet-buy-button-gif').hide();
+            $('.pet-buy-button').show();
             $rootScope.runAnimation('.pet-buy-button', 1700, 48, $scope.buttonHeight, function () {
+                $('.pet-buy-button-gif').show();
+                $('.pet-buy-button').hide();
                 if (window.ionic.Platform.isIOS()){
                     $scope.goto(Consts.client_root + '#/shop/' + $scope.pet_id);
                 }else{
@@ -198,7 +202,11 @@ angular.module('clientApp')
 
         $scope.shareClicked = function () {
             if (!$scope.showButton) return;
+            $('.pet-share-button-gif').hide();
+            $('.pet-share-button').show();
             $rootScope.runAnimation('.pet-share-button', 1000, 25, $scope.buttonHeight, function () {
+                $('.pet-share-button-gif').show();
+                $('.pet-share-button').hide();
                 $scope.fbShare(
                     $scope.pet_link,
                     $scope.pet.media.image,
@@ -213,7 +221,11 @@ angular.module('clientApp')
 
         $scope.likeClicked = function () {
             if (!$scope.showButton) return;
+            $('.pet-like-button-gif').hide();
+            $('.pet-like-button').show();
             $rootScope.runAnimation('.pet-like-button', 1000, 25, $scope.buttonHeight, function () {
+                $('.pet-like-button-gif').show();
+                $('.pet-like-button').hide();
                 $scope.fbShare(
                     $scope.pet_link,
                     $scope.pet.media.image,
@@ -232,7 +244,7 @@ angular.module('clientApp')
             $('.pet-adopt-button').show();
             $rootScope.runAnimation('.pet-adopt-button', 1700, 34, $scope.buttonHeight, function () {
                 if (window.ionic.Platform.isIOS()){
-                    $scope.goto(Consts.client_root + '#/shop/' + $scope.pet_id);
+                    $scope.goto(Consts.client_root + '#/shop/' + $scope.user_id + '/' + $scope.pet_id);
                 }else{
                     $location.path('/shop/' + $scope.pet_id);
                 }

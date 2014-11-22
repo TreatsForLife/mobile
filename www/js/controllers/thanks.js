@@ -114,6 +114,7 @@ angular.module('clientApp')
         }
 
         $scope.adopted = function () {
+            return; //disabled during testing period
             var pet_link = Consts.client_root + '#/pet/' + $scope.pet_id;
             facebookConnectPlugin.showDialog({
                 method: 'feed',
@@ -132,6 +133,7 @@ angular.module('clientApp')
         }
 
         $scope.bought = function () {
+            return; //disabled during testing period
             var pet_link = Consts.client_root + '#/pet/' + $scope.pet_id;
             facebookConnectPlugin.showDialog({
                 method: 'feed',

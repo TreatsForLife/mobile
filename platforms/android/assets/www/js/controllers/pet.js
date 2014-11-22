@@ -188,7 +188,11 @@ angular.module('clientApp')
         $scope.buyClicked = function () {
             if (!$scope.showButton) return;
             $rootScope.runAnimation('.pet-buy-button', 1700, 48, $scope.buttonHeight, function () {
-                $location.path('/shop/' + $scope.pet_id);
+                if (window.ionic.Platform.isIOS()){
+                    $scope.goto(Consts.client_root + '#/shop/' + $scope.pet_id);
+                }else{
+                    $location.path('/shop/' + $scope.pet_id);
+                }
             });
         }
 
@@ -227,7 +231,11 @@ angular.module('clientApp')
             $('.pet-adopt-button-gif').hide();
             $('.pet-adopt-button').show();
             $rootScope.runAnimation('.pet-adopt-button', 1700, 34, $scope.buttonHeight, function () {
-                $location.path('/shop/' + $scope.pet_id);
+                if (window.ionic.Platform.isIOS()){
+                    $scope.goto(Consts.client_root + '#/shop/' + $scope.pet_id);
+                }else{
+                    $location.path('/shop/' + $scope.pet_id);
+                }
                 $('.pet-adopt-button-gif').show();
                 $('.pet-adopt-button').hide();
             });

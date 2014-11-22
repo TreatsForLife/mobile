@@ -73,9 +73,8 @@ angular.module('clientApp')
             }, 0);
         }
         $rootScope.fbShare = function (link, picture, name, caption, action, callback) {
-            $scope.showDialog('share-disabled');
-            return true;
-/*
+            //$scope.showDialog('share-disabled');
+            //return true;
             facebookConnectPlugin.showDialog({
                 method: 'feed',
                 app_id: Consts.fb_app_id,
@@ -91,7 +90,6 @@ angular.module('clientApp')
             }, function (response) {
                 if (angular.isFunction(callback)) callback(response);
             });
-*/
         }
         $rootScope.runAnimation = function (selector, duration, frames, dim, callback) {
             $(selector).css('background-size', (dim * frames) + 'px auto');
@@ -115,7 +113,7 @@ angular.module('clientApp')
         }
         $rootScope.goto = function(link){
             if (link.indexOf('http')==0){
-                window.open(link + '#phonegap=external', '_system');
+                window.open(link, '_system');
             }else if (link.indexOf('#')==0){
                 location.href = link;
             }else{

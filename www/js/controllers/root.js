@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clientApp')
-    .controller('RootCtrl', ['$scope', '$rootScope', '$timeout', '$interval', '$location', '$sce', '$http', 'Donations', 'Users', function ($scope, $rootScope, $timeout, $interval, $location, $sce, $http, Donations, Users) {
+    .controller('RootCtrl', ['$scope', '$rootScope', '$state', '$timeout', '$interval', '$location', '$sce', '$http', 'Donations', 'Users', function ($scope, $rootScope, $state, $timeout, $interval, $location, $sce, $http, Donations, Users) {
 
         console.log('APP VERSION: 1.0');
 
@@ -117,7 +117,11 @@ angular.module('clientApp')
             }else if (link.indexOf('#')==0){
                 location.href = link;
             }else{
-                $location.path(link);
+                if ($location.path() == link) {
+                    $state.reload();
+                }else{
+                    $location.path(link);
+                }
             }
         }
                              

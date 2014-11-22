@@ -8,6 +8,9 @@ angular.module('clientApp')
         $rootScope.bodyClass = 'welcome';
         $rootScope.bodyBg = 'welcome';
 
+        var fb_at = '';
+        var fb_id = '';
+
         $scope.placeLogo = function (iterations) {
             if (typeof iterations == 'undefined') iterations = 5;
             $timeout(function () {
@@ -40,12 +43,13 @@ angular.module('clientApp')
             facebookConnectPlugin.login(['email'], function (response) {
                 console.log('FB login responded', response);
                 if (response.authResponse) {
+                    fb_id = response.authResponse.userID;
+                    fb_at = response.authResponse.accessToken;
+                    localStorage.setItem('fb_id', fb_id);
+                    console.log('saved fb_id', localStorage['fb_id'], response.id);
                     facebookConnectPlugin.api('/me', ['email'], function (response) {
                         console.log('fetched /me data from facebook - creating user', response);
-                        var fb_id = response.id;
-                        localStorage.setItem('fb_id', fb_id);
-                        console.log('saved fb_id', localStorage['fb_id'], response.id);
-                        Users.create({fb_id: fb_id, name: response.name, email: response.email, image: 'https://graph.facebook.com/' + fb_id + '/picture'}, function (user) {
+                        Users.create({fb_id: fb_id, fb_at: fb_at, name: response.name, email: response.email, image: 'https://graph.facebook.com/' + fb_id + '/picture'}, function (user) {
                             console.log('user created', user);
                             storeUserAndRedirect(user);
                         });
@@ -62,15 +66,17 @@ angular.module('clientApp')
                 console.log('the user is logged in and has authenticated your app', response.authResponse);
                 if (response.status === 'connected') {
                     var user = $rootScope.user;
+                    fb_id = response.authResponse.userID;
+                    fb_at = response.authResponse.accessToken;
+                    localStorage.setItem('fb_id', fb_id);
+                    console.log('saved fb_id', localStorage['fb_id'], response.id);
                     if (user) {
                         console.log('User found in scope', $rootScope.user);
                         storeUserAndRedirect(user)
                     } else {
                         facebookConnectPlugin.api('/me', ['email'], function (response) {
                             console.log('fetched /me data from facebook - creating user', response);
-                            var fb_id = response.id;
-                            localStorage.setItem('fb_id', fb_id);
-                            Users.create({fb_id: fb_id, name: response.name, email: response.email, image: 'https://graph.facebook.com/' + fb_id + '/picture'}, function (user) {
+                            Users.create({fb_id: fb_id, fb_at: fb_at, name: response.name, email: response.email, image: 'https://graph.facebook.com/' + fb_id + '/picture'}, function (user) {
                                 console.log('user created', user);
                                 storeUserAndRedirect(user);
                             });

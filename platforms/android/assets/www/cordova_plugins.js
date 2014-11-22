@@ -52,7 +52,7 @@ module.exports.metadata =
     "com.phonegap.plugins.facebookconnect": "0.7.0",
     "com.paypal.cordova.mobilesdk": "2.0.2",
     "com.phonegap.plugins.PushPlugin": "2.4.0",
-    "org.apache.cordova.inappbrowser": "0.5.2"
+    "org.apache.cordova.inappbrowser": "0.5.3"
 }
 // BOTTOM OF METADATA
 });

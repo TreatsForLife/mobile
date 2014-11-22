@@ -189,8 +189,7 @@ angular.module('clientApp')
             if (!$scope.showButton) return;
             $('.pet-buy-button-gif').hide();
             $('.pet-buy-button').show();
-            $rootScope.the
-            therunAnimation('.pet-buy-button', 3500, 85, $scope.buttonHeight, function () {
+            $rootScope.runAnimation('.pet-buy-button', 3500, 85, $scope.buttonHeight, function () {
                 $timeout(function () {
                     $('.pet-buy-button-gif').show();
                     $('.pet-buy-button').hide();

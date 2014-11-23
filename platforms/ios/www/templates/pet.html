@@ -43,26 +43,35 @@
     </div>
 
     <div class='treat-wrapper' ng-style="{height: grassHeightPX, padding: buttonMarginPX}">
-        <div ng-if="showButton == 'buy'">
-            <div class="pet-buy-button" ng-click="buyClicked();"
+        <div ng-if="showButton == 'buy'" ng-click="buyClicked();">
+            <div class="pet-buy-button-gif"
+                 ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
+            </div>
+            <div class="pet-buy-button" style="display:none;"
                  ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
             </div>
         </div>
-        <div ng-if="showButton == 'share'">
-            <div class="pet-share-button" ng-click="shareClicked();"
+        <div ng-if="showButton == 'share'" ng-click="shareClicked();">
+            <div class="pet-share-button-gif"
+                 ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
+            </div>
+            <div class="pet-share-button" style="display:none;"
                  ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
             </div>
         </div>
-        <div ng-if="showButton == 'adopt'" class="treat-share-wrapper">
-            <div class="pet-adopt-button-gif" ng-click="adoptClicked();"
+        <div ng-if="showButton == 'adopt'" class="treat-share-wrapper" ng-click="adoptClicked();">
+            <div class="pet-adopt-button-gif"
                  ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
             </div>
             <div class="pet-adopt-button" style="display:none;"
                  ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
             </div>
         </div>
-        <div ng-if="showButton == 'love'">
-            <div class="pet-like-button" ng-click="likeClicked();"
+        <div ng-if="showButton == 'love'" ng-click="likeClicked();">
+            <div class="pet-like-button-gif"
+                 ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
+            </div>
+            <div class="pet-like-button" style="display:none;"
                  ng-style="{width:buttonHeightPX, height:buttonHeightPX}">
             </div>
         </div>

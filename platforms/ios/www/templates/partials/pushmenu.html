@@ -5,11 +5,11 @@
         <img src="images/logo.png" ng-if="!user.pet" class="logo"/>
     </div>
     <ul class="large white-links rtl">
-        <li class="push-mine"><a ng-click="goto('/pet/' + user.pet._id)" ng-if="user.pet">הכלב שלי</a></li>
-        <li class="push-lonely"><a ng-click="goto('/pets/lonely')">כלבים בודדים</a></li>
-        <li class="push-adopted"><a ng-click="goto('/pets/adopted')">כלבים מאומצים</a></li>
+        <li class="push-mine"><a ng-click="closePushMenu(); goto('/pet/' + user.pet._id)" ng-if="user.pet">הכלב שלי</a></li>
+        <li class="push-lonely"><a ng-click="closePushMenu(); goto('/pets/lonely')">כלבים בודדים</a></li>
+        <li class="push-adopted"><a ng-click="closePushMenu(); goto('/pets/adopted')">כלבים מאומצים</a></li>
         <li class="push-who"><a ng-click="closePushMenu(); showDialog('welcome')">מה קורה פה?</a></li>
-        <li class="push-fb"><a ng-click="goto('http://www.facebook.com/346441348840238')" target="_blank"><i class="fa fa-facebook-square"></i> חטיפים לחיים</a></li>
+        <li class="push-fb"><a ng-click="closePushMenu(); goto('http://www.facebook.com/346441348840238')" target="_blank"><i class="fa fa-facebook-square"></i> חטיפים לחיים</a></li>
     </ul>
 </nav>
 

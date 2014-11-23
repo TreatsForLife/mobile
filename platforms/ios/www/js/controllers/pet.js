@@ -25,7 +25,7 @@ angular.module('clientApp')
                 });
             }
 
-            if ($location.search()['given']){
+            if ($location.search()['given']) {
                 $scope.showDialogIfNeeded('given');
             }
         }
@@ -45,7 +45,7 @@ angular.module('clientApp')
                     $scope.picHeight = $scope.windowHeight - ($scope.grassHeight + 62) - 40 - ($scope.showCart ? 50 : 0) - ($scope.isIphone ? 20 : 0);
                 }
 
-                $scope.picHeightPX = Math.min($scope.picHeight, ($scope.windowWidth-20)) + 'px';
+                $scope.picHeightPX = Math.min($scope.picHeight, ($scope.windowWidth - 20)) + 'px';
                 $scope.infoHeightPX = ($scope.picHeight + 42) + 'px';
                 $scope.grassHeightPX = $scope.grassHeight + 'px';
                 $scope.buttonMarginPX = $scope.buttonMargin + 'px';
@@ -135,14 +135,14 @@ angular.module('clientApp')
             });
         }
 
-        function accumulatePendingItems(){
+        function accumulatePendingItems() {
             var items = $scope.pending;
             var accumulated = $scope.pendingAccumulated;
-            for (var item,i=0; item= items[i]; i++){
+            for (var item, i = 0; item = items[i]; i++) {
                 var idx = item.treat.name;
-                if (accumulated[idx]){
+                if (accumulated[idx]) {
                     accumulated[idx]['sum']++;
-                }else{
+                } else {
                     accumulated[idx] = item;
                     accumulated[idx]['sum'] = 1;
                 }
@@ -187,14 +187,30 @@ angular.module('clientApp')
 
         $scope.buyClicked = function () {
             if (!$scope.showButton) return;
-            $rootScope.runAnimation('.pet-buy-button', 1700, 48, $scope.buttonHeight, function () {
-                $location.path('/shop/' + $scope.pet_id);
+            $('.pet-buy-button-gif').hide();
+            $('.pet-buy-button').show();
+            $rootScope.runAnimation('.pet-buy-button', 3500, 85, $scope.buttonHeight, function () {
+                $timeout(function () {
+                    $('.pet-buy-button-gif').show();
+                    $('.pet-buy-button').hide();
+                }, 800);
+                if (window.ionic.Platform.isIOS()) {
+                    $scope.goto(Consts.client_root + '#/shop/' + $scope.user_id + '/' + $scope.pet_id);
+                } else {
+                    $location.path('/shop/' + $scope.pet_id);
+                }
             });
         }
 
         $scope.shareClicked = function () {
             if (!$scope.showButton) return;
-            $rootScope.runAnimation('.pet-share-button', 1000, 25, $scope.buttonHeight, function () {
+            $('.pet-share-button-gif').hide();
+            $('.pet-share-button').show();
+            $rootScope.runAnimation('.pet-share-button', 2000, 48, $scope.buttonHeight, function () {
+                $timeout(function () {
+                    $('.pet-share-button-gif').show();
+                    $('.pet-share-button').hide();
+                }, 800);
                 $scope.fbShare(
                     $scope.pet_link,
                     $scope.pet.media.image,
@@ -209,7 +225,13 @@ angular.module('clientApp')
 
         $scope.likeClicked = function () {
             if (!$scope.showButton) return;
-            $rootScope.runAnimation('.pet-like-button', 1000, 25, $scope.buttonHeight, function () {
+            $('.pet-like-button-gif').hide();
+            $('.pet-like-button').show();
+            $rootScope.runAnimation('.pet-like-button', 2000, 48, $scope.buttonHeight, function () {
+                $timeout(function () {
+                    $('.pet-like-button-gif').show();
+                    $('.pet-like-button').hide();
+                }, 800);
                 $scope.fbShare(
                     $scope.pet_link,
                     $scope.pet.media.image,
@@ -226,10 +248,16 @@ angular.module('clientApp')
             if (!$scope.showButton) return;
             $('.pet-adopt-button-gif').hide();
             $('.pet-adopt-button').show();
-            $rootScope.runAnimation('.pet-adopt-button', 1700, 34, $scope.buttonHeight, function () {
-                $location.path('/shop/' + $scope.pet_id);
-                $('.pet-adopt-button-gif').show();
-                $('.pet-adopt-button').hide();
+            $rootScope.runAnimation('.pet-adopt-button', 2042, 49, $scope.buttonHeight, function () {
+                if (window.ionic.Platform.isIOS()) {
+                    $scope.goto(Consts.client_root + '#/shop/' + $scope.user_id + '/' + $scope.pet_id);
+                } else {
+                    $location.path('/shop/' + $scope.pet_id);
+                }
+                $timeout(function () {
+                    $('.pet-adopt-button-gif').show();
+                    $('.pet-adopt-button').hide();
+                }, 800);
             });
         }
 

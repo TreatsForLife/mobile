@@ -50,7 +50,7 @@ module.exports.metadata =
     "com.paypal.cordova.mobilesdk": "2.0.2",
     "com.phonegap.plugins.facebookconnect": "0.7.0",
     "com.phonegap.plugins.PushPlugin": "2.4.0",
-    "org.apache.cordova.inappbrowser": "0.5.2",
+    "org.apache.cordova.inappbrowser": "0.5.3",
     "org.apache.cordova.device": "0.2.12"
 }
 // BOTTOM OF METADATA

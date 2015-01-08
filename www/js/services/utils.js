@@ -1,5 +1,5 @@
 var Utils = {
-    isLocal: true,//(document.location.host.search('localhost') > -1) || (document.location.host.search('lvh.me') > -1),
+    isLocal: (document.location.host.search('localhost') > -1) || (document.location.host.search('lvh.me') > -1),
     isBchmn: (document.location.host.search('bchmn.com') > -1),
     isHeroku: (document.location.host.search('herokuapp.com') > -1),
     findIdInArray: function(arr, idVal, idKey){
@@ -15,7 +15,7 @@ var Utils = {
 
 var Consts = {
     debug: true,
-    api_root: Utils.isLocal ?   'http://10.0.2.2:3000/': 'http://treatsforlife-api.herokuapp.com/',//'http://tfl.bchmn.com/',//'http://treatsforlife-api.herokuapp.com/','http://10.0.2.2:3000/','http://localhost:3000/'
+    api_root: Utils.isLocal ? 'http://localhost:3000/' : 'http://treatsforlife-api.herokuapp.com/',//'http://tfl.bchmn.com/',//'http://treatsforlife-api.herokuapp.com/'
     client_root: Utils.isLocal ? 'http://localhost:9000/': 'http://app.treatsforlife.org/',
     fb_app_id: Utils.isLocal ? '262700727225341' : '601219569953172'
 }

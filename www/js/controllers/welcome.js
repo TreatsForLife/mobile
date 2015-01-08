@@ -1,15 +1,14 @@
 'use strict';
 
 angular.module('clientApp')
-    .controller('WelcomeCtrl', ['$scope', '$rootScope', '$timeout', '$interval', '$location', 'Users', function ($scope, $rootScope, $timeout, $interval, $location, Users) {
+    .controller('WelcomeCtrl', ['$scope', '$rootScope','$http', '$timeout', '$interval', '$location', 'Users', function ($scope, $rootScope, $http , $timeout, $interval, $location, Users) {
 
         console.log('WelcomeCtrl');
 
         $rootScope.bodyClass = 'welcome';
         $rootScope.bodyBg = 'welcome';
 
-        var fb_at = '';
-        var fb_id = '';
+        var username = '';
 
         $scope.placeLogo = function (iterations) {
             if (typeof iterations == 'undefined') iterations = 5;
@@ -38,61 +37,46 @@ angular.module('clientApp')
             });
         }
 
-        $scope.fbLogin = function () {
-            if (!$scope.online) return;
-            facebookConnectPlugin.login(['email'], function (response) {
-                console.log('FB login responded', response);
-                if (response.authResponse) {
-                    fb_id = response.authResponse.userID;
-                    fb_at = response.authResponse.accessToken;
-                    localStorage.setItem('fb_id', fb_id);
-                    console.log('saved fb_id', localStorage['fb_id'], response.id);
-                    facebookConnectPlugin.api('/me', ['email'], function (response) {
-                        console.log('fetched /me data from facebook - creating user', response);
-                        Users.create({fb_id: fb_id, fb_at: fb_at, name: response.name, email: response.email, image: 'https://graph.facebook.com/' + fb_id + '/picture'}, function (user) {
-                            console.log('user created', user);
-                            storeUserAndRedirect(user);
-                        });
-                    });
-                } else {
-                    console.log('User cancelled login or did not fully authorize.');
-                }
+        $scope.register = function () {
+            //if (!$scope.online) return;
+            $http.post(Consts.api_root + 'register', {
+                username: $scope.loginData.username,
+                email: $scope.loginData.email,
+                password: $scope.loginData.password
+            }).success(function (user) {
+                console.log('Register responded', user);
+
+                username =  $scope.loginData.username;
+                //fb_at = response.authResponse.accessToken;
+                localStorage.setItem('username',  $scope.loginData.username);
+                console.log('saved username', localStorage['username'],  $scope.loginData.username);
+                storeUserAndRedirect(user);
+            }).error(function (err) {
+                console.log('User registration failed. ' + err);
+                $scope.loginData.loginError =true;
+                $scope.loginData.Error = err.message;
             });
         }
 
-        $timeout(function () {
-            facebookConnectPlugin.getLoginStatus(function (response) {
-                console.log('Auto response arrived from facebook', response);
-                console.log('the user is logged in and has authenticated your app', response.authResponse);
-                if (response.status === 'connected') {
-                    var user = $rootScope.user;
-                    fb_id = response.authResponse.userID;
-                    fb_at = response.authResponse.accessToken;
-                    localStorage.setItem('fb_id', fb_id);
-                    console.log('saved fb_id', localStorage['fb_id'], response.id);
-                    if (user) {
-                        console.log('User found in scope', $rootScope.user);
-                        storeUserAndRedirect(user)
-                    } else {
-                        facebookConnectPlugin.api('/me', ['email'], function (response) {
-                            console.log('fetched /me data from facebook - creating user', response);
-                            Users.create({fb_id: fb_id, fb_at: fb_at, name: response.name, email: response.email, image: 'https://graph.facebook.com/' + fb_id + '/picture'}, function (user) {
-                                console.log('user created', user);
-                                storeUserAndRedirect(user);
-                            });
-                        });
-                    }
-                } else if (response.status === 'not_authorized') {
-                    console.log('the user is logged in to Facebook, but has not authenticated your app');
-                    localStorage.fb_id = undefined;
-                    localStorage.user_id = undefined;
-                    localStorage.user_pet_id = undefined;
-                } else {
-                    console.log('the user isnt logged in to Facebook');
-                }
-            });
+        $scope.fbLogin = function () {
+            //if (!$scope.online) return;
+            $http.post(Consts.api_root + 'login', {
+                username: $scope.loginData.username,
+                password: $scope.loginData.password
+            }).success(function (user) {
+                console.log('FB login responded', user);
 
-        }, 500);
+                username =  $scope.loginData.username;
+                //fb_at = response.authResponse.accessToken;
+                localStorage.setItem('username',  $scope.loginData.username);
+                console.log('saved username', localStorage['username'],  $scope.loginData.username);
+                storeUserAndRedirect(user);
+            }).error(function (err) {
+                console.log('User cancelled login or did not fully authorize.');
+                $scope.loginData.loginError =true;
+                $scope.loginData.Error = err;
+            });
+        }
 
         function storeUserAndRedirect(user) {
             console.log('storeUserAndRedirect called', user);

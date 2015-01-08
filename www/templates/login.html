@@ -6,32 +6,27 @@
 
 <i class="fa fa-question-circle welcome-app-what rtl" ng-click="showDialog('welcome')"></i>
 <div class="top-text rtl" >
-    Register
+   Login
 </div>
-<form name="myForm" ng-submit="myForm.$valid && register()">
+<form name="myForm" ng-submit="myForm.$valid &&fbLogin()">
+
     <div class="list">
         <div class="form-group">
             <label class="item item-input">
                 <span class="input-label">Name</span>
-                <input type="text" name="Name" ng-model="loginData.username"  ng-minlength=5  required >
-            </label>
-        </div>
-        <div class="form-group">
-            <label class="item item-input">
-                <span class="input-label">Email</span>
-                <input type="email" name="Email" ng-model="loginData.email" required>
+                <input type="text" name="Name" ng-model="loginData.username" required>
             </label>
         </div>
         <div class="form-group">
             <label class="item item-input">
                 <span class="input-label">Password</span>
-                <input type="password" name="password" ng-model="loginData.password" ng-minlength=8  required >
+                <input type="password" name="password" ng-model="loginData.password" required>
             </label>
         </div>
     </div>
     <div class="bottom-wrapper">
-        <a class="fb-login" ng-click="myForm.$valid && register()" >
-            <p> Register</p>
+        <a class="fb-login" ng-click="myForm.$valid && fbLogin()">
+            <p> Login</p>
         </a>
     </div>
 </form>
@@ -39,8 +34,9 @@
     {{loginData.Error}}
 </p>
 <p class="text-center">
-    <a ng-href="#/login">Login</a>
+    <a ng-href="#/welcome">Register</a>
 </p>
+
 
 <!--<a id="inst-login" ng-href="{{instajam.authUrl}}"><p>Sign in with Instagram</p></a>-->
 

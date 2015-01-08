@@ -157,5 +157,10 @@
       background: linear-gradient(bottom, rgba(255, 255, 255, .0) 0%, rgba(15, 15, 15, .3) 100%);
     }
   }
-
+	input.ng-invalid {
+	  border: 1px solid red;
+	}
+	.errorMessage{
+	  color: red;
+	}
 }

@@ -41,6 +41,10 @@ angular.module('clientApp', ['ionic',
                 url: "/welcome",
                 templateUrl: 'templates/welcome.html',
                 controller: 'WelcomeCtrl'
+            }).state('login', {
+                url: "/login",
+                templateUrl: 'templates/login.html',
+                controller: 'WelcomeCtrl'
             })
             .state('pets', {
                 url: "/pets/:filter",
@@ -108,7 +112,7 @@ angular.module('clientApp', ['ionic',
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise(function(){
             console.log('localStorage', localStorage);
-            if (!localStorage.fb_id) {
+            if (!localStorage.username) {
                 console.log('ROUTER: Redirecting to Welcome');
                 return ('/welcome');
             } else if (!localStorage.user_pet_id) {

@@ -16,15 +16,15 @@ angular.module('clientApp')
         //search pet in route or in cookie
 
         function init() {
-            if ($rootScope.user) {
-                $scope.getPetId();
-            } else {
-                $scope.$on('userIsFetched', function () {
-                    //check if the user has a pet
-                    $scope.getPetId();
-                });
-            }
-
+            //if ($rootScope.user) {
+            //    $scope.getPetId();
+            //} else {
+            //    $scope.$on('userIsFetched', function () {
+            //        //check if the user has a pet
+            //        $scope.getPetId();
+            //    });
+            //}
+            $scope.getPetId();
             if ($location.search()['given']) {
                 $scope.showDialogIfNeeded('given');
             }
@@ -151,8 +151,14 @@ angular.module('clientApp')
 
         $scope.initChooseButtonInterval = function () {
             var showButtonInterval = $interval(function () {
-                if (!$scope.user || !$scope.pet) return;
-                if (!!($scope.pet.user && ($scope.pet.user._id == $scope.user._id))) {
+                if (!$scope.pet) return;
+                if (! $scope.user) {
+                    //ADOPT : if I have no pet and the this pet has no owner
+                    $scope.showButton = 'adopt';
+                    $rootScope.bodyBg = ' lonely';
+                    $rootScope.currentPage = 'lonely';
+                    $rootScope.currentPet = $scope.pet_id;
+                } else if (!!($scope.pet.user && ($scope.pet.user._id == $scope.user._id))) {
                     // BUY : if its my pet
                     $scope.showButton = 'buy';
                     $rootScope.bodyBg = ' mine';

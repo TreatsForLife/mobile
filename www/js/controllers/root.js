@@ -7,7 +7,7 @@ angular.module('clientApp')
 
         //Global scope vars
         $rootScope.isWeb = $(window).width() > 700;
-        $rootScope.isIphone = (navigator.userAgent.indexOf('iPhone')>0);
+        $rootScope.isIphone = (navigator.userAgent.indexOf('iPhone') > 0);
 
 
         //get localstorage data
@@ -21,7 +21,7 @@ angular.module('clientApp')
         $rootScope.trustSrc = function (src) {
             return $sce.trustAsResourceUrl(src);
         }
-        $rootScope.reloadApp = function(){
+        $rootScope.reloadApp = function () {
             top.location.reload();
         }
         $rootScope.getUser = function () {
@@ -46,26 +46,26 @@ angular.module('clientApp')
                     localStorage.setItem("returnUrl", $location.path())
                     $location.path('/welcome');
                 }
-            }, function(){
+            }, function () {
                 console.log('DB failure - redirecting to welcome screen', localStorage);
                 $location.path('/welcome');
             });
         }
-        $rootScope.showDialog = function(dialog){
+        $rootScope.showDialog = function (dialog) {
             $scope.dialogShown = true;
             $timeout(function () {
                 $scope.$broadcast('showTipDialog', dialog);
                 $scope.$emit('showTipDialog', dialog);
             }, 0);
         }
-        $rootScope.showDialogIfNeeded = function(dialog){
+        $rootScope.showDialogIfNeeded = function (dialog) {
             if (typeof(localStorage[dialog + '-dialog-shown']) == 'undefined') {
                 localStorage[dialog + '-dialog-shown'] = 'shown';
                 $rootScope.showDialog(dialog);
             }
 
         }
-        $rootScope.closeDialog = function(dialog){
+        $rootScope.closeDialog = function (dialog) {
             $scope.dialogShown = false;
             $timeout(function () {
                 $scope.$broadcast('closeTipDialog', dialog);
@@ -98,10 +98,10 @@ angular.module('clientApp')
             var animationInterval = $interval(function () {
                 if (frame == 0 && (angular.isFunction(callback))) {
                     $interval.cancel(animationInterval);
-                    $timeout(function() {
+                    $timeout(function () {
                         callback();
                     });
-                    $timeout(function() {
+                    $timeout(function () {
                         $(selector).css('background-position-x', 0);
                     }, 1000);
                     return;
@@ -111,20 +111,19 @@ angular.module('clientApp')
                 animationBgPosition += dim;
             }, (duration / frames))
         }
-        $rootScope.goto = function(link){
-            if (link.indexOf('http')==0){
+        $rootScope.goto = function (link) {
+            if (link.indexOf('http') == 0) {
                 window.open(link, '_system');
-            }else if (link.indexOf('#')==0){
+            } else if (link.indexOf('#') == 0) {
                 location.href = link;
-            }else{
+            } else {
                 if ($location.path() == link) {
                     $state.reload();
-                }else{
+                } else {
                     $location.path(link);
                 }
             }
         }
-                             
 
 
         //history management
@@ -133,21 +132,23 @@ angular.module('clientApp')
         $rootScope.currentPage = '';
         $rootScope.currentPet = '';
         var backKeyDown = false;
+
         function onBackKeyDown() {
             // Handle the back button
             backKeyDown = true;
             var preventDefault = $rootScope.goBack();
             backKeyDown = false;
 
-            if (preventDefault){
+            if (preventDefault) {
                 //dirty trick to disable back button (nothing else seems to work)
                 throw "ignore"
             }
 
         }
-        $rootScope.getBackPage = function(){
+
+        $rootScope.getBackPage = function () {
             var path = '';
-            switch ($rootScope.currentPage){
+            switch ($rootScope.currentPage) {
                 case 'shop':
                     path = 'pet/' + $scope.currentPet;
                     break;
@@ -165,31 +166,31 @@ angular.module('clientApp')
         }
         $scope.shouldCloseApp = false;
         $rootScope.goBack = function () {
-            if ($scope.cartIsUp || $scope.pushMenuOpen || $scope.dialogShown){
+            if ($scope.cartIsUp || $scope.pushMenuOpen || $scope.dialogShown) {
                 $scope.cartIsUp = false;
                 $rootScope.closePushMenu();
                 $rootScope.closeDialog();
                 return true;
-            }else{
+            } else {
                 var goto = $rootScope.getBackPage();
 
                 if (!goto) {
-                    if(backKeyDown){
-/*
-                        if (navigator.app) {
-                            navigator.app.exitApp();
-                        }
-                        else if (navigator.device) {
-                            navigator.device.exitApp();
-                        }
-*/
+                    if (backKeyDown) {
+                        /*
+                         if (navigator.app) {
+                         navigator.app.exitApp();
+                         }
+                         else if (navigator.device) {
+                         navigator.device.exitApp();
+                         }
+                         */
                         return false;
-                    }else{
+                    } else {
                         $rootScope.openPushMenu();
                         if (backKeyDown) $scope.shouldCloseApp = true;
                         return true;
                     }
-                }else{
+                } else {
                     $timeout.cancel($scope.cancelBack);
                     $timeout(function () {
                         $scope.goingBack = true;
@@ -220,16 +221,27 @@ angular.module('clientApp')
             $('#menuRight').removeClass('cbp-spmenu-open');
             $scope.pushMenuOpen = false;
         };
-        $rootScope.$on('$routeUpdate', function(){
-            if (!$location.search()['dialog']){
+        $rootScope.$on('$routeUpdate', function () {
+            if (!$location.search()['dialog']) {
                 $rootScope.closeDialog();
             }
         });
-        $scope.$on("$stateChangeStart", function (scope, next, current) {
-            console.log('Start changing route from: ' + current + ' to: ' + next);
+        $scope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
+            var isRouteClean = routeClean($location.url());
+            if (!isRouteClean && !localStorage.username) {
+                // redirect back to login
+                localStorage.setItem("returnUrl", $location.path())
+                event.preventDefault();
+                $timeout(function () {
+                    $location.path('/welcome');
+                }, 0);
+            }
+            console.log('Start changing route from: ' + fromState.name + ' to: ' + toState.name);
             $scope.cartIsUp = false;
             $rootScope.closePushMenu();
             $rootScope.closeDialog();
+
+
         });
         $scope.$on("$stateChangeSuccess", function (scope, next, current) {
             console.log('Changed route from: ' + current + ' to: ' + next);
@@ -239,62 +251,67 @@ angular.module('clientApp')
         //loading screen
         $scope.logoAnimationComplete = false;
         $scope.animateSplashScreen = function () {
-            $rootScope.runAnimation('.not-online-logo-animation', 1700, 48, 266, function(){
-                $timeout(function(){
+            $rootScope.runAnimation('.not-online-logo-animation', 1700, 48, 266, function () {
+                $timeout(function () {
                     $scope.logoAnimationComplete = true;
                     $rootScope.notOnlineAnimationCompleted = true;
                 }, 1000);
             });
         }
-        function onOnline(){
-            if ($rootScope.online == false){
+        function onOnline() {
+            if ($rootScope.online == false) {
                 $rootScope.online = true;
                 if (!$rootScope.user && $rootScope.user_id) {
                     console.log('No user but user_id cookie is found - fetching from DB');
                     $timeout(function () {
                         $rootScope.getUser();
                     })
-                } else if (!$rootScope.user_id) {
-                    console.log('No user_id cookies found - redirecting to welcome screen', localStorage);
-                    localStorage.setItem("returnUrl", $location.path())
-                    $location.path('/welcome');
                 }
+                //else if (!$rootScope.user_id) {
+                //    console.log('No user_id cookies found - redirecting to welcome screen', localStorage);
+                //    localStorage.setItem("returnUrl", $location.path())
+                //    $location.path('/welcome');
+                //}
             }
         }
-        function onOffline(){
+
+        function onOffline() {
             $rootScope.online = false;
         }
-        function checkNetworkStatus(){
-            $http.get(Consts.api_root + 'ping').success(function(){
+
+        function checkNetworkStatus() {
+            $http.get(Consts.api_root + 'ping').success(function () {
                 $interval.cancel(offlineInterval);
                 onOnline();
-            }).error(function(){
+            }).error(function () {
                 onOffline();
             });
         }
+
         checkNetworkStatus();
         onOffline();
-        var offlineInterval = $interval(function(){
+        var offlineInterval = $interval(function () {
             checkNetworkStatus();
         }, 5000);
-        $timeout(function(){
+        $timeout(function () {
             $scope.animateSplashScreen();
         }, 0);
 
-        window.handlePushRegistration = function(platform, push_token){
-            var res = Users.update({_id:$scope.user_id, platform: platform, push_token: push_token});
+        window.handlePushRegistration = function (platform, push_token) {
+            var res = Users.update({_id: $scope.user_id, platform: platform, push_token: push_token});
             console.log("Update push data", res);
         }
 
         //app init
-        function cordovaReady(){
+        function cordovaReady() {
             document.addEventListener("backbutton", onBackKeyDown, false);
             document.addEventListener("online", onOnline, false);
             document.addEventListener("offline", onOffline, false);
-
+            Utils.isMobile = true;
             initPushNotifications();
         }
-        function init(){
+
+        function init() {
             $scope.canAnimate = true;
             $rootScope.windowHeight = $(window).height();
             $rootScope.windowWidth = $(window).width();
@@ -306,8 +323,33 @@ angular.module('clientApp')
                 window.scrollTo(0, 1);
             }, 1000);
         }
+
+        var routesThatRequireAuth = ['/shop'];
+
+        //function routeClean(route) {
+        //    return routesThatRequireAuth.find(function (element) {
+        //        if (route.startsWith(element))
+        //            return true;
+        //        else
+        //            return false;
+        //    });
+        //}
+        function routeClean(route) {
+            var result = true;
+            routesThatRequireAuth.forEach(function (element) {
+                if (route.indexOf(element) >-1)
+                    result = false;
+
+            });
+            return result;
+        }
+
         $timeout(function () {
             init();
         }, 5);
 
     }]);
+//if (!localStorage.username) {
+//    console.log('ROUTER: Redirecting to Welcome');
+//    return ('/welcome');
+//} else

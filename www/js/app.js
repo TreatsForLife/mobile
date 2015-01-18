@@ -6,11 +6,11 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular.module('clientApp', ['ionic',
-        'ngResource',
-        'ngSanitize',
-        'ngAnimate',
-        'ngTouch',
-    ])
+    'ngResource',
+    'ngSanitize',
+    'ngAnimate',
+    'ngTouch',
+])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -27,7 +27,7 @@ angular.module('clientApp', ['ionic',
     })
 
     .config(function ($stateProvider, $urlRouterProvider, $compileProvider) {
-
+        localStorage.clear();
         // Ionic uses AngularUI Router which uses the concept of states
         // Learn more here: https://github.com/angular-ui/ui-router
         // Set up the various states which the app can be in.
@@ -110,17 +110,14 @@ angular.module('clientApp', ['ionic',
          */
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise(function(){
+        $urlRouterProvider.otherwise(function () {
             console.log('localStorage', localStorage);
-            if (!localStorage.username) {
-                console.log('ROUTER: Redirecting to Welcome');
-                return ('/welcome');
-            } else if (!localStorage.user_pet_id) {
+            if (!localStorage.user_pet_id) {
                 console.log('ROUTER: Redirecting to Pets');
                 return ('/pets/lonely');
             } else {
                 console.log('ROUTER: Redirecting to Pet');
-                return ('/pet/'+localStorage.user_pet_id);
+                return ('/pet/' + localStorage.user_pet_id);
             }
         });
 
